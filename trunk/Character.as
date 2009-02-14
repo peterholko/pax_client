@@ -24,20 +24,5 @@
 			this.image = new Bitmap(imageData);
 			this.addChild(this.image);	
 		}
-		
-		/*public function setId(newId:int) : void
-		{
-			this.id = newId;
-		}
-		
-		public function setX(newX:int) : void
-		{
-			this.x = newX;
-		}
-		
-		public functio nsetY(newY:int) : void
-		{
-			this.y = newY;
-		}*/
 	}
 }
