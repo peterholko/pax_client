@@ -13,8 +13,10 @@
 		public static var CLOCKSYNC:int = 3;
 		public static var CLIENTREADY:int = 4;
 		public static var PLAYER_ID:int = 5;
-		public static var MAP:int = 39;
+		public static var EXPLORED_MAP:int = 39;
 		public static var PERCEPTION:int = 40;
+		public static var MOVE:int = 42;
+		public static var ATTACK:int = 43;		
 		public static var BAD:int = 255;
 		
 		//Errors
@@ -44,6 +46,25 @@
 			socket.flush();
 		}
 		
+		public static function sendMove(socket:Socket, id:int, xPos:int, yPos:int) : void
+		{
+			trace("Packet - sendMove");
+			socket.writeByte(MOVE);
+			socket.writeInt(id);
+			socket.writeShort(xPos);
+			socket.writeShort(yPos);
+			socket.flush();
+		}
+		
+		public static function sendAttack(socket:Socket, id:int, targetId:int) : void
+		{
+			trace("Packet - sendAttack");
+			socket.writeByte(ATTACK);
+			socket.writeInt(id);
+			socket.writeInt(targetId);
+			socket.flush();
+		}		
+		
 		public static function readBad(byteArray:ByteArray) : String
 		{
 			var cmd:int = byteArray.readUnsignedByte();
@@ -53,25 +74,50 @@
 			return msg;
 		}
 		
-		public static function readMap(byteArray:ByteArray) : Array
+		public static function readExploredMap(byteArray:ByteArray) : Array
 		{
-			var coordX:int = byteArray.readUnsignedShort();
-			var coordY:int = byteArray.readUnsignedShort();
-			
-			var numObjects:int = byteArray.readUnsignedShort();
-			var array:Array = new Array();
-			
-			for(var i:int = 0; i < numObjects; i++)
+			var numTiles:int = byteArray.readInt();
+			var exploredMap:Array = new Array();
+						
+			for(var i:int = 0; i < numTiles; i++)
 			{			
-				array.push(byteArray.readUnsignedByte());
+				var tileInfo:Object = {tileIndex: byteArray.readInt(), tile: byteArray.readUnsignedByte()};
+				exploredMap.push(tileInfo);
 			}
 			
-			var parameters = new Array();
-			parameters.push(coordX);
-			parameters.push(coordY);
-			parameters.push(array);
+			return exploredMap;
+		}
+		
+		public static function readPerception(byteArray:ByteArray) : Object
+		{
+			var numEntities:int = byteArray.readUnsignedShort();
+			var entityList:Array = new Array();
+			var i:int;
+							
+			for(i = 0; i < numEntities; i++)
+			{
+				var entityInfo:Object = {id: byteArray.readInt(), 
+										playerId: byteArray.readInt(),
+										type: byteArray.readUnsignedShort(),
+										state: byteArray.readUnsignedShort(),
+										x: byteArray.readUnsignedShort(),
+										y: byteArray.readUnsignedShort()};
+							
+				entityList.push(entityInfo);
+			}			
 			
-			return parameters;
+			var numTiles:int = byteArray.readInt();
+			var tileList:Array = new Array();
+			
+			for(i = 0; i < numTiles; i++)
+			{
+				var tileInfo:Object = {tileIndex: byteArray.readInt(), tile: byteArray.readUnsignedByte()};
+				tileList.push(tileInfo);
+			}
+			
+			var perception:Object = {entities: entityList, tiles: tileList};
+			
+			return perception;
 		}
 		
 		

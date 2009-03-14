@@ -1,0 +1,10 @@
+ArgumentError: Error #2015: Invalid BitmapData.
+	at flash.display::BitmapData()
+	at Tile/setTile()[C:\hd\workspace\client\Tile.as:60]
+	at Map/setInitialExploredMap()[C:\hd\workspace\client\Map.as:28]
+	at Game/setInitialExploredMap()[C:\hd\workspace\client\Game.as:48]
+	at Game/addPerceptionData()[C:\hd\workspace\client\Game.as:128]
+	at Game/connectionPerception()[C:\hd\workspace\client\Game.as:165]
+	at flash.events::EventDispatcher/dispatchEventFunction()
+	at flash.events::EventDispatcher/dispatchEvent()
+	at Connection/socketDataHandler()[C:\hd\workspace\client\Connection.as:133]

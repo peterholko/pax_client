@@ -5,11 +5,13 @@
 	import flash.utils.getTimer;
 	import flash.utils.Timer;
 	import flash.events.Event;
+	import flash.geom.Rectangle;
+	import flash.events.KeyboardEvent;
 	
 	public class Main extends MovieClip
 	{
 		public static var DEBUG:Boolean = true;
-		public static var VERSION:String = "0.020";
+		public static var VERSION:String = "0.0219";
 		
 		private var account:String;
 		private var password:String;
@@ -27,21 +29,20 @@
 			Version.text = "Version: " + VERSION;
 			Login.addEventListener(MouseEvent.CLICK, loginHandler);
 		}
-				
+						
 		private function loginHandler(event:MouseEvent) : void
 		{
 			account = Account.text;
 			password = Password.text;
 			
-			connection = new Connection();
+			connection = Connection.INSTANCE;
+			connection.initialize();
 			connection.addEventListener(Connection.onConnectEvent, connectionComplete);
 			connection.addEventListener(Connection.onIOErrorEvent, connectionIOError);
 			connection.addEventListener(Connection.onSecurityErrorEvent, connectionSecurityError);
 			connection.addEventListener(Connection.onCloseEvent, connectionCloseError);
 			connection.addEventListener(Connection.onLoggedInEvent, connectionLoggedIn);
 			connection.addEventListener(Connection.onClockSyncEvent, connectionClockSync);
-			connection.addEventListener(Connection.onMapEvent, connectionMap);
-			connection.addEventListener(Connection.onPerceptionEvent, connectionPerception);
 			
 			connection.connect();
 		}		
@@ -82,29 +83,21 @@
 		private function connectionLoggedIn(e:Event) : void
 		{
 			gotoAndStop("Game");
-			game = new Game();
+			game = Game.INSTANCE;
 			game.setLastLoopTime(connection.clockSyncStartTime);
+			game.playerId = connection.playerId;
 		}
 		
 		private function connectionClockSync(e:Event) : void
 		{
 			connection.doClientReady();
 			game.startLoop();
+			game.x = 50;
+			game.y = 0;
+			game.scrollRect = new Rectangle(0, 0, 974, 540);
+						
+			stage.addEventListener(KeyboardEvent.KEY_DOWN,game.keyDownEvent);
 			addChild(game);
-		}
-		
-		private function connectionMap(e:Event) : void
-		{
-			var xCoord:int = connection.parameters[0];
-			var yCoord:int = connection.parameters[1];
-			var mapData:Array = connection.parameters[2];
-			game.addMapData(xCoord, yCoord, mapData);
-		}
-		
-		private function connectionPerception(e:Event) : void
-		{
-			var perceptionData:Array = connection.parameters[0];
-			game.addPerceptionData(perceptionData);
 		}
 	}
 }

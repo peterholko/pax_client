@@ -10,8 +10,10 @@
 	
 	public class Connection extends EventDispatcher
 	{
-		public static var HOST:String = "localhost";
-		//public static var HOST:String = "www.cowwit.com";		
+		public static var INSTANCE:Connection = new Connection();
+		
+		//public static var HOST:String = "localhost";
+		public static var HOST:String = "www.cowwit.com";		
 		public static var PORT:int = 2345
 				
 		//Events
@@ -25,10 +27,13 @@
 		public static var onMapEvent:String = "onMapEvent";
 		public static var onPerceptionEvent:String = "onPerceptionEvent";
 		
+		public static var onSendMoveArmy:String = "onSendMoveArmy";
+		public static var onSendAttackTarget:String = "onSendAttackTarget";
+				
 		public var clockSyncStartTime:Number = 0;
 		public var clockSyncEndTime:Number = 0;
+		public var playerId:Number;
 		public var serverErrorMsg:String;
-		public var parameters:Array;
 				
 		private var socket:Socket;
 		
@@ -36,6 +41,11 @@
 		{
 		}
 		
+		public function initialize() : void
+		{
+			addEventListeners();
+		}
+				
 		public function connect() : void
 		{			
 			socket = new Socket();
@@ -45,7 +55,18 @@
 			socket.addEventListener(SecurityErrorEvent.SECURITY_ERROR, securityErrorHandler);
 			socket.addEventListener(ProgressEvent.SOCKET_DATA, socketDataHandler);
 			
-			socket.connect(Connection.HOST, Connection.PORT);
+			try
+			{
+				socket.connect(Connection.HOST, Connection.PORT);
+			}
+			catch(error:IOError)
+			{
+				trace("Connection - connect - IOError exception.");
+			}
+			catch(error:SecurityError)
+			{
+				trace("Connection - connect - Security exception.");
+			}
 		}
 		
 		public function doLogin(account:String, password:String) : void
@@ -56,6 +77,12 @@
 		public function doClientReady() : void
 		{
 			Packet.sendClientReady(socket);
+		}
+				
+		private function addEventListeners() : void
+		{
+			addEventListener(Connection.onSendMoveArmy, sendMoveArmy);
+			addEventListener(Connection.onSendAttackTarget, sendAttackTarget);
 		}
 		
 		private function closeHandler(event:Event):void {
@@ -80,62 +107,70 @@
 	
 		private function socketDataHandler(event:ProgressEvent):void 
 		{
+			var pEvent:ParamEvent;
 			var bArr:ByteArray = new ByteArray();
+			
+			try
+			{
+				socket.readBytes(bArr, 0, socket.bytesAvailable);
+				var cmd:int = bArr.readUnsignedByte();
 				
-			socket.readBytes(bArr, 0, socket.bytesAvailable);
-			
-			var cmd:int = bArr.readUnsignedByte();
-			
-			if(cmd == Packet.PLAYER_ID)
-			{
-				var playerId = bArr.readUnsignedByte();
-				trace("Connection - player Id: " + playerId);		
-				clockSyncStartTime = getTimer();
-				Packet.sendClockSync(socket);
-				dispatchEvent(new Event(Connection.onLoggedInEvent));
-			}			
-			else if(cmd == Packet.CLOCKSYNC)
-			{		
-				trace("Connection - clock sync");
-				clockSyncEndTime = getTimer();
-				dispatchEvent(new Event(Connection.onClockSyncEvent));
-			}
-			else if(cmd == Packet.MAP)
-			{
-				trace("Connection - map");
-				parameters = Packet.readMap(bArr);
-				dispatchEvent(new Event(Connection.onMapEvent));
-			}
-			else if(cmd == Packet.PERCEPTION)
-			{				
-				var numObjects:int = bArr.readUnsignedByte();
-				var characterList:Array = new Array();
-								
-				for(var i:int = 0; i < numObjects; i++)
+				if(cmd == Packet.PLAYER_ID)
 				{
-					var objectId:int =  bArr.readUnsignedShort();
-					var xPos:int = bArr.readUnsignedShort();
-					var yPos:int = bArr.readUnsignedShort();
-					var action:int = bArr.readUnsignedShort();
-					
-					var character:Character = new Character();
-					character.objectId = objectId;
-					character.xPos = xPos;
-					character.yPos = yPos;		
-					character.action = action;
-										
-					characterList.push(character);
+					playerId = bArr.readInt();
+					trace("Connection - player Id: " + playerId);		
+					clockSyncStartTime = getTimer();
+					Packet.sendClockSync(socket);
+					dispatchEvent(new Event(Connection.onLoggedInEvent));
 				}			
-				
-				parameters[0] = characterList;
-				dispatchEvent(new Event(Connection.onPerceptionEvent));
-			}
-			else if(cmd == Packet.BAD)
+				else if(cmd == Packet.CLOCKSYNC)
+				{		
+					trace("Connection - clock sync");
+					clockSyncEndTime = getTimer();
+					dispatchEvent(new Event(Connection.onClockSyncEvent));
+				}
+				else if(cmd == Packet.EXPLORED_MAP)
+				{
+					trace("Connection - initial explored map");
+					pEvent = new ParamEvent(Connection.onMapEvent);
+					pEvent.params = Packet.readExploredMap(bArr);
+					dispatchEvent(pEvent);
+				}
+				else if(cmd == Packet.PERCEPTION)
+				{				
+					trace("Connection - perception");
+					pEvent = new ParamEvent(Connection.onPerceptionEvent);
+					pEvent.params = Packet.readPerception(bArr);
+					trace("Connection - dispatchEvent - perception");
+					dispatchEvent(pEvent);
+				}
+				else if(cmd == Packet.BAD)
+				{
+					serverErrorMsg = Packet.readBad(bArr);
+					dispatchEvent(new Event(Connection.onBadEvent));
+				}
+			} 
+			catch(error:IOError)
 			{
-				serverErrorMsg = Packet.readBad(bArr);
-				dispatchEvent(new Event(Connection.onBadEvent));
+				trace("Connection - connect - IOError exception.");
+			}
+			catch(error:EOFError)
+			{
+				trace("Connection - connect - EOFError exception.");
 			}
 		}
+		
+		private function sendMoveArmy(e:ParamEvent) : void
+		{
+			trace("Connection - sendMoveArmy");
+			Packet.sendMove(socket, e.params.id, e.params.x, e.params.y);
+		}
+		
+		private function sendAttackTarget(e:ParamEvent) : void
+		{
+			trace("Connection - sendAttackTarget");
+			Packet.sendAttack(socket, e.params.id, e.params.targetId);
+		}		
 	}
 }
 		
