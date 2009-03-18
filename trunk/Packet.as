@@ -16,7 +16,10 @@
 		public static var EXPLORED_MAP:int = 39;
 		public static var PERCEPTION:int = 40;
 		public static var MOVE:int = 42;
-		public static var ATTACK:int = 43;		
+		public static var ATTACK:int = 43;	
+		public static var REQUEST_INFO:int = 50;
+		public static var INFO_ARMY:int = 52; 
+		public static var INFO_CITY:int = 53; 
 		public static var BAD:int = 255;
 		
 		//Errors
@@ -63,7 +66,16 @@
 			socket.writeInt(id);
 			socket.writeInt(targetId);
 			socket.flush();
-		}		
+		}	
+		
+		public static function sendRequestInfo(socket:Socket, type:int, targetId:int) : void
+		{
+			trace("Packet - sendRequestInfo");
+			socket.writeByte(REQUEST_INFO);
+			socket.writeShort(type);
+			socket.writeInt(targetId);
+			socket.flush();
+		}
 		
 		public static function readBad(byteArray:ByteArray) : String
 		{
@@ -120,6 +132,42 @@
 			return perception;
 		}
 		
+		public static function readInfoArmy(byteArray:ByteArray) : Object
+		{
+			var heroId:int = byteArray.readInt();
+			var numUnits:int = byteArray.readUnsignedShort();
+			var unitList:Array = new Array();
+			
+			for (var i:int = 0; i < numUnits; i++)
+			{
+				var unitInfo:Object = { id: byteArray.readInt(),
+										type: byteArray.readUTF(),
+										size: byteArray.readInt() };
+				
+				unitList.push(unitInfo);
+			}
+			
+			var infoArmy:Object = { hero: heroId, units: unitList };
+			
+			return infoArmy;
+		}
+		
+		public static function readInfoCity(byteArray:ByteArray) : Object
+		{
+			var numBuildings:int = byteArray.readUnsignedShort();
+			var buildingList:Array = new Array();
+			
+			for (var i:int = 0; i < numBuildings; i++)
+			{
+				var buildingInfo:Object = { id: byteArray.readInt()};
+				
+				buildingList.push(buildingInfo);
+			}
+			
+			var infoCity:Object = { buildings: buildingList };
+			
+			return infoCity;
+		}	
 		
 		public static function getCmd(cmd:int) : String
 		{

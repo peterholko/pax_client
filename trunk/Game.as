@@ -1,6 +1,6 @@
 ﻿package
 {
-	import flash.display.MovieClip;
+	import flash.display.Sprite;
 	import flash.events.MouseEvent;	
 	import flash.events.KeyboardEvent;
 	import flash.utils.getTimer;
@@ -8,119 +8,51 @@
 	import flash.events.Event;
 	import flash.geom.Rectangle;
 	
-	public class Game extends MovieClip
+	public class Game extends Sprite
 	{				
-		public static var INSTANCE:Game = new Game();
-	
-		public static var onMoveArmy:String = "onMoveArmy";
-	
+		public static var INSTANCE:Game = new Game();	
+		public static var SCROLL_SPEED:int = 8;
 		public static var GAME_LOOP_TIME:int = 50;	
 		
+		public var main:Main;
 		public var selectedTarget:Army;
 		public var playerId:Number;
 		
 		private var lastLoopTime:Number;
+		private var entityManager:EntityManager;
 		private var map:Map;
-		private var entities:Array;
 		
 		public function Game() : void
 		{
-			selectedTarget = null;			
-			entities = new Array();
-						
+			selectedTarget = null;							
+			
 			map = new Map();
-			addChild(map);			
+			entityManager = new EntityManager();
+			
+			addChild(map);
+			addChild(entityManager);				
 			
 			Connection.INSTANCE.addEventListener(Connection.onMapEvent, connectionMap);
-			Connection.INSTANCE.addEventListener(Connection.onPerceptionEvent, connectionPerception);			
+			Connection.INSTANCE.addEventListener(Connection.onPerceptionEvent, connectionPerception);		
+			Connection.INSTANCE.addEventListener(Connection.onInfoArmyEvent, connectionInfoArmy);
+			Connection.INSTANCE.addEventListener(Connection.onInfoCityEvent, connectionInfoCity);
 			addEventListener(Tile.onClick, tileClicked);
 			addEventListener(Army.onClick, armyClicked);
+			addEventListener(Army.onDoubleClick, armyDoubleClicked);
 			addEventListener(City.onClick, cityClicked);
+			addEventListener(City.onDoubleClick, cityDoubleClicked);
+		}
+				
+		public function addPerceptionData(perception:Object) : void
+		{								
+			entityManager.setEntities(perception.entities);
+			map.setTiles(perception.tiles);
 		}
 		
 		public function setLastLoopTime(time:Number) : void
 		{
 			lastLoopTime = time;
-		}
-		
-		public function addPerceptionData(perception:Object) : void
-		{						
-			var perceptionEntityList:Array = perception.entities;
-			var newEntities:Array = new Array();
-			var tileList:Array = perception.tiles;
-			
-			trace("perceptionEntityList.length: " +perceptionEntityList.length);
-			
-			for(var i:int = 0; i < perceptionEntityList.length; i++)
-			{
-				var perceptionEntity:Object = perceptionEntityList[i];
-				var entityIndex = indexOfEntity(perceptionEntity.id);
-				
-				if(entityIndex == -1)
-				{
-					if(perceptionEntity.type == 0)
-					{
-						var army:Army = new Army();
-						army.id = perceptionEntity.id;
-						army.playerId = perceptionEntity.playerId;
-						army.xPos = perceptionEntity.x;
-						army.yPos = perceptionEntity.y;
-						army.state = perceptionEntity.state;
-						army.initialize();
-						
-						army.x = army.xPos * Tile.WIDTH;
-						army.y = army.yPos * Tile.HEIGHT;
-						addChild(army);	
-						
-						newEntities.push(army);
-					}
-					else if(perceptionEntity.type == 1)
-					{
-						var city:City = new City();
-						city.id = perceptionEntity.id;
-						city.playerId = perceptionEntity.playerId;
-						city.xPos = perceptionEntity.x;
-						city.yPos = perceptionEntity.y;
-						city.state = perceptionEntity.state;	
-						city.initialize();
-						
-						city.x = city.xPos * Tile.WIDTH;
-						city.y = city.yPos * Tile.HEIGHT;
-						addChild(city);
-						
-						newEntities.push(city);
-					}				
-				}
-				else 
-				{					
-					entities[entityIndex].xPos = perceptionEntity.x;
-					entities[entityIndex].yPos = perceptionEntity.y;
-					entities[entityIndex].state = perceptionEntity.state;
-					entities[entityIndex].x = entities[entityIndex].xPos * Tile.WIDTH;
-					entities[entityIndex].y = entities[entityIndex].yPos * Tile.HEIGHT;
-					
-					newEntities.push(entities[entityIndex]);
-					entities.splice(entityIndex, 1);
-					trace("entities: " + entities);
-				}
-			}
-			
-			trace("entities.length: " + entities.length);
-			trace("entities: " + entities);
-			
-			for(var j = 0; j < entities.length; j++)
-			{
-				trace("entities[j]: " + entities[j]);
-				
-				if(entities[j] != null)
-					removeChild(entities[j]);
-			}
-			
-			entities.length = 0;
-			entities = newEntities;
-			
-			map.setTiles(tileList);
-		}
+		}		
 		
 		public function startLoop() : void
 		{
@@ -137,18 +69,30 @@
 			}
 		}
 		
-		private function indexOfEntity(id:int) : int
+		public function keyDownEvent(e:KeyboardEvent) : void
 		{
-			for(var i = 0; i < entities.length; i++)
-			{
-				if(id == entities[i].id)
-				{
-					return i;
-				}
-			}
-			return -1;
-		}	
+			var rect:Rectangle = Game.INSTANCE.scrollRect;
 		
+			if (e.keyCode == 87) //w
+			{
+				rect.y -= Game.SCROLL_SPEED;	
+			}
+			else if (e.keyCode == 68) //d
+			{
+				rect.x += Game.SCROLL_SPEED;
+			}
+			else if (e.keyCode == 83) //s
+			{ 
+				rect.y += Game.SCROLL_SPEED;						 
+			}
+			else if (e.keyCode == 65) //a
+			{
+				rect.x -= Game.SCROLL_SPEED;					 
+			}			
+			
+			Game.INSTANCE.scrollRect = rect;
+		}		
+				
 		private function tileClicked(e:ParamEvent) : void
 		{
 			trace("Game - tileClicked");
@@ -163,59 +107,45 @@
 		
 		private function armyClicked(e:ParamEvent) : void
 		{
+			var parameters:Object
+			
 			if(selectedTarget != null)
 			{
+				selectedTarget.hideBorder();
+				
 				if(e.params.playerId != playerId)
-				{
-					selectedTarget.hideBorder();
-					
-					var parameters:Object = {id: selectedTarget.id, targetId: e.params.id};
-					var pEvent = new ParamEvent(Connection.onSendAttackTarget);
-					pEvent.params = parameters;				
-					Connection.INSTANCE.dispatchEvent(pEvent);
+				{					
+					parameters = {id: selectedTarget.id, targetId: e.params.id};
+					var attackEvent = new ParamEvent(Connection.onSendAttackTarget);
+					attackEvent.params = parameters;				
+					Connection.INSTANCE.dispatchEvent(attackEvent);
 				}				
 			}
 			
-			if(e.params.playerId == playerId)
-			{
-				selectedTarget = e.params;
-				selectedTarget.showBorder();
-				trace("Game - armyClicked - selectedTarget: " + selectedTarget.id);
-			}
+			selectedTarget = e.params;
+			selectedTarget.showBorder();
 		}
 		
-		public function keyDownEvent(e:KeyboardEvent) : void
+		private function armyDoubleClicked(e:ParamEvent) : void
 		{
-			var rect:Rectangle = Game.INSTANCE.scrollRect;
-		
-			if (e.keyCode == 87) //w
-			{
-				trace("Send Move North");
-				rect.y -= 5;	
-			}
-			else if (e.keyCode == 68) //d
-			{
-				trace("Send Move East");
-				rect.x += 5;
-			}
-			else if (e.keyCode == 83) //s
-			{
-				trace("Send Move South"); 
-				rect.y += 5;						 
-			}
-			else if (e.keyCode == 65) //a
-			{
-				trace("Send Move West"); 
-				rect.x -= 5;					 
-			}			
-			
-			Game.INSTANCE.scrollRect = rect;
+			var parameters:Object = { type: Army.TYPE, targetId: e.params.id };
+			var requestInfoEvent:ParamEvent = new ParamEvent(Connection.onSendRequestInfo);
+			requestInfoEvent.params = parameters;
+			Connection.INSTANCE.dispatchEvent(requestInfoEvent);
 		}
 		
+		private function cityDoubleClicked(e:ParamEvent) : void
+		{
+			var parameters:Object = { type: City.TYPE, targetId: e.params.id };
+			var requestInfoEvent:ParamEvent = new ParamEvent(Connection.onSendRequestInfo);
+			requestInfoEvent.params = parameters;
+			Connection.INSTANCE.dispatchEvent(requestInfoEvent);
+		}		
+				
 		private function cityClicked(e:ParamEvent) : void
 		{
 			trace("Game - cityClicked");
-		}
+		}	
 		
 		private function connectionMap(e:ParamEvent) : void
 		{
@@ -225,7 +155,42 @@
 		
 		private function connectionPerception(e:ParamEvent) : void
 		{
+			trace("Game - perception");
 			addPerceptionData(e.params);
+		}
+		
+		private function connectionInfoArmy(e:ParamEvent) : void
+		{
+			trace("Game - infoArmy");
+			var entityPanelText:String;
+			var hero:int = e.params.hero;
+			var units:Array = e.params.units;
+			
+			entityPanelText = "Hero: " + hero + "\n\n";
+			entityPanelText += "Units\n";
+						
+			for (var i = 0; i < units.length; i++)
+			{
+				entityPanelText += units[i].type + " " + units[i].size + "\n";
+			}
+			
+			main.setArmyInfoPanel(entityPanelText);			
+		}
+		
+		private function connectionInfoCity(e:ParamEvent) : void
+		{
+			trace("Game - infoCity");
+			var entityPanelText:String;
+			var buildings:Array = e.params.buildings;
+			
+			entityPanelText = "Buildings\n";
+						
+			for (var i = 0; i < buildings.length; i++)
+			{
+				entityPanelText += buildings[i].id + "\n";
+			}
+			
+			main.setCityInfoPanel(entityPanelText);			
 		}		
 	}
 }

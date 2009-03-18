@@ -12,7 +12,9 @@
 	
 	public class Army extends Entity
 	{
-		public static var onClick:String = "onArmyClick";		
+		public static var TYPE:int = 1;
+		public static var onClick:String = "onArmyClick";
+		public static var onDoubleClick:String = "onArmyDoubleClick";
 		
 		public var id:int;
 		public var playerId:int;
@@ -41,9 +43,6 @@
 			
 			this.image = new Bitmap(imageData);
 			this.addChild(this.image);	
-			
-			
-			addEventListener(MouseEvent.CLICK, mouseClick);
 		}
 		
 		public function showBorder() : void
@@ -62,6 +61,15 @@
 		{
 			trace("Army - mouseClick");			
 			var pEvent:ParamEvent = new ParamEvent(Army.onClick);
+			pEvent.params = this;
+						
+			Game.INSTANCE.dispatchEvent(pEvent);
+		}
+		
+		override protected function mouseDoubleClick(e:Event) : void
+		{
+			trace("Army - mouseDoubleClick");
+			var pEvent:ParamEvent = new ParamEvent(Army.onDoubleClick);
 			pEvent.params = this;
 						
 			Game.INSTANCE.dispatchEvent(pEvent);

@@ -16,7 +16,7 @@
 		public static var HOST:String = "www.cowwit.com";		
 		public static var PORT:int = 2345
 				
-		//Events
+		//Events 
 		public static var onConnectEvent:String = "onConnectEvent";
 		public static var onCloseEvent:String = "onCloseEvent";
 		public static var onIOErrorEvent:String = "onIOErrorEvent";
@@ -26,9 +26,12 @@
 		public static var onBadEvent:String = "onBadEvent";
 		public static var onMapEvent:String = "onMapEvent";
 		public static var onPerceptionEvent:String = "onPerceptionEvent";
+		public static var onInfoArmyEvent:String = "onInfoArmyEvent";
+		public static var onInfoCityEvent:String = "onInfoCityEvent";
 		
 		public static var onSendMoveArmy:String = "onSendMoveArmy";
 		public static var onSendAttackTarget:String = "onSendAttackTarget";
+		public static var onSendRequestInfo:String = "onSendRequestInfo";
 				
 		public var clockSyncStartTime:Number = 0;
 		public var clockSyncEndTime:Number = 0;
@@ -83,6 +86,7 @@
 		{
 			addEventListener(Connection.onSendMoveArmy, sendMoveArmy);
 			addEventListener(Connection.onSendAttackTarget, sendAttackTarget);
+			addEventListener(Connection.onSendRequestInfo, sendRequestInfo);
 		}
 		
 		private function closeHandler(event:Event):void {
@@ -141,8 +145,21 @@
 					trace("Connection - perception");
 					pEvent = new ParamEvent(Connection.onPerceptionEvent);
 					pEvent.params = Packet.readPerception(bArr);
-					trace("Connection - dispatchEvent - perception");
 					dispatchEvent(pEvent);
+				}
+				else if(cmd == Packet.INFO_ARMY)
+				{
+					trace("Connection - info_army");
+					pEvent = new ParamEvent(Connection.onInfoArmyEvent);
+					pEvent.params = Packet.readInfoArmy(bArr);
+					dispatchEvent(pEvent);
+				}
+				else if (cmd == Packet.INFO_CITY)
+				{
+					trace("Connection - info_city");
+					pEvent = new ParamEvent(Connection.onInfoCityEvent);
+					pEvent.params = Packet.readInfoCity(bArr);
+					dispatchEvent(pEvent);					
 				}
 				else if(cmd == Packet.BAD)
 				{
@@ -170,7 +187,13 @@
 		{
 			trace("Connection - sendAttackTarget");
 			Packet.sendAttack(socket, e.params.id, e.params.targetId);
-		}		
+		}
+		
+		private function sendRequestInfo(e:ParamEvent) : void
+		{
+			trace("Connection - sendRequestInfo");
+			Packet.sendRequestInfo(socket, e.params.type, e.params.targetId);
+		}
 	}
 }
 		

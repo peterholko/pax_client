@@ -83,7 +83,13 @@
 		private function connectionLoggedIn(e:Event) : void
 		{
 			gotoAndStop("Game");
+			ArmyInfoPanel.visible = false;
+			CityInfoPanel.visible = false;
+			ArmyInfoPanel.InfoPanelClose.addEventListener(MouseEvent.CLICK, closeInfoPanel);
+			CityInfoPanel.InfoPanelClose.addEventListener(MouseEvent.CLICK, closeInfoPanel);
+			
 			game = Game.INSTANCE;
+			game.main = this;
 			game.setLastLoopTime(connection.clockSyncStartTime);
 			game.playerId = connection.playerId;
 		}
@@ -92,13 +98,33 @@
 		{
 			connection.doClientReady();
 			game.startLoop();
-			game.x = 50;
+			game.x = 100;
 			game.y = 0;
-			game.scrollRect = new Rectangle(0, 0, 974, 540);
+			game.scrollRect = new Rectangle(0, 0, 920, 538);
 						
 			stage.addEventListener(KeyboardEvent.KEY_DOWN,game.keyDownEvent);
-			addChild(game);
+			addChildAt(game, 0);
 		}
+		
+		private function closeInfoPanel(e:MouseEvent) : void
+		{
+			//Hide Info Panel
+			e.target.parent.visible = false;
+		}
+		
+		public function setArmyInfoPanel(entityPanelText:String) : void
+		{
+			ArmyInfoPanel.visible = true;
+			ArmyInfoPanel.InfoPanelTitle.htmlText = "<font face='Arial' color='#EEEEEE' size='15'>" + "Army Info" + "</font>";
+			ArmyInfoPanel.InfoPanelText.htmlText = "<font face='Arial' color='#EEEEEE' size='12'>" + entityPanelText + "</font>";
+		}
+		
+		public function setCityInfoPanel(entityPanelText:String) : void
+		{
+			CityInfoPanel.visible = true;
+			CityInfoPanel.InfoPanelTitle.htmlText = "<font face='Arial' color='#EEEEEE' size='15'>" + "City Info" + "</font>";
+			CityInfoPanel.InfoPanelText.htmlText = "<font face='Arial' color='#EEEEEE' size='12'>" + entityPanelText + "</font>";
+		}		
 	}
 }
 		

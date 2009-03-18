@@ -10,7 +10,9 @@
 	
 	public class City extends Entity
 	{
-		public static var onClick:String = "onCityClick";		
+		public static var TYPE:int = 2;
+		public static var onClick:String = "onCityClick";	
+		public static var onDoubleClick:String = "onCityDoubleClick";
 		
 		public var id:int;
 		public var playerId:int;
@@ -30,8 +32,6 @@
 			
 			this.image = new Bitmap(imageData);
 			this.addChild(this.image);	
-			
-			addEventListener(MouseEvent.CLICK, mouseClick);
 		}
 		
 		override protected function mouseClick(e:Event) : void
@@ -42,5 +42,14 @@
 			
 			Game.INSTANCE.dispatchEvent(pEvent);
 		}
+		
+		override protected function mouseDoubleClick(e:Event) : void
+		{
+			trace("City - mouseDoubleClick");
+			var pEvent:ParamEvent = new ParamEvent(City.onDoubleClick);
+			pEvent.params = this;
+						
+			Game.INSTANCE.dispatchEvent(pEvent);
+		}		
 	}
 }
