@@ -10,7 +10,7 @@
 	
 	public class City extends Entity
 	{
-		public static var TYPE:int = 2;
+		public static var TYPE:int = 3;
 		public static var onClick:String = "onCityClick";	
 		public static var onDoubleClick:String = "onCityDoubleClick";
 		

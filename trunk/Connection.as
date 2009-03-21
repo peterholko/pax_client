@@ -12,8 +12,8 @@
 	{
 		public static var INSTANCE:Connection = new Connection();
 		
-		//public static var HOST:String = "localhost";
-		public static var HOST:String = "www.cowwit.com";		
+		public static var HOST:String = "localhost";
+		//public static var HOST:String = "www.cowwit.com";		
 		public static var PORT:int = 2345
 				
 		//Events 
