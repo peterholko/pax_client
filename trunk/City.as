@@ -10,18 +10,15 @@
 	
 	public class City extends Entity
 	{
-		public static var TYPE:int = 3;
+		public static var TYPE:int = Entity.CITY;
 		public static var onClick:String = "onCityClick";	
 		public static var onDoubleClick:String = "onCityDoubleClick";
 		
-		public var id:int;
-		public var playerId:int;
-		public var state:int;
-		public var xPos:int;
-		public var yPos:int;
+		public var buildings:Array;
 		
 		public function City() : void
 		{
+			buildings = new Array();
 		}
 		
 		override public function initialize() : void

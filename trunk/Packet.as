@@ -20,6 +20,7 @@
 		public static var REQUEST_INFO:int = 50;
 		public static var INFO_ARMY:int = 52; 
 		public static var INFO_CITY:int = 53; 
+		public static var INFO_UNIT_QUEUE:int = 55;
 		public static var BAD:int = 255;
 		
 		//Errors
@@ -134,6 +135,7 @@
 		
 		public static function readInfoArmy(byteArray:ByteArray) : Object
 		{
+			var armyId:int = byteArray.readInt();
 			var heroId:int = byteArray.readInt();
 			var numUnits:int = byteArray.readUnsignedShort();
 			var unitList:Array = new Array();
@@ -147,27 +149,49 @@
 				unitList.push(unitInfo);
 			}
 			
-			var infoArmy:Object = { hero: heroId, units: unitList };
+			var infoArmy:Object = { id: armyId, hero: heroId, units: unitList };
 			
 			return infoArmy;
 		}
 		
 		public static function readInfoCity(byteArray:ByteArray) : Object
 		{
+			var cityId:int = byteArray.readInt();
 			var numBuildings:int = byteArray.readUnsignedShort();
 			var buildingList:Array = new Array();
 			
 			for (var i:int = 0; i < numBuildings; i++)
 			{
-				var buildingInfo:Object = { id: byteArray.readInt()};
+				//var buildingInfo:Object = { id: };
 				
-				buildingList.push(buildingInfo);
+				buildingList.push(byteArray.readInt());
 			}
 			
-			var infoCity:Object = { buildings: buildingList };
+			var infoCity:Object = { id: cityId, buildings: buildingList };
 			
 			return infoCity;
 		}	
+		
+		public static function readInfoUnitQueue(byteArray:ByteArray) : Object
+		{
+			var buildingType:int = byteArray.readByte();
+			var numQueues:int = byteArray.readByte();
+			var queueList:Array = new Array();
+			
+			for (var i:int = 0; i < numQueues; i++)
+			{
+				var queueInfo:Object = {unitId: byteArray.readInt(),
+										unitAmount: byteArray.readInt(),
+										startTime: byteArray.readInt(),
+										buildTime: byteArray.readInt() };
+				
+				queueList.push(queueInfo);
+			}
+			
+			var infoUnitQueue:Object = { buildingType: buildingType, queueList: queueList };
+			
+			return infoUnitQueue;
+		}
 		
 		public static function getCmd(cmd:int) : String
 		{

@@ -16,7 +16,7 @@
 		
 		public var main:Main;
 		public var selectedTarget:Army;
-		public var playerId:Number;
+		public var player:Player;
 		
 		private var lastLoopTime:Number;
 		private var entityManager:EntityManager;
@@ -26,6 +26,7 @@
 		{
 			selectedTarget = null;							
 			
+			player = new Player();
 			map = new Map();
 			entityManager = new EntityManager();
 			
@@ -36,6 +37,7 @@
 			Connection.INSTANCE.addEventListener(Connection.onPerceptionEvent, connectionPerception);		
 			Connection.INSTANCE.addEventListener(Connection.onInfoArmyEvent, connectionInfoArmy);
 			Connection.INSTANCE.addEventListener(Connection.onInfoCityEvent, connectionInfoCity);
+			Connection.INSTANCE.addEventListener(Connection.onInfoUnitQueueEvent, connectionInfoUnitQueue);
 			addEventListener(Tile.onClick, tileClicked);
 			addEventListener(Army.onClick, armyClicked);
 			addEventListener(Army.onDoubleClick, armyDoubleClicked);
@@ -44,8 +46,14 @@
 		}
 				
 		public function addPerceptionData(perception:Object) : void
-		{								
+		{	
+			//Clear player's entities
+			player.clearEntities();
+			
+			//Set entities from perception
 			entityManager.setEntities(perception.entities);
+			
+			//Set map tiles from perception
 			map.setTiles(perception.tiles);
 		}
 		
@@ -113,7 +121,7 @@
 			{
 				selectedTarget.hideBorder();
 				
-				if(e.params.playerId != playerId)
+				if(e.params.playerId != player.id)
 				{					
 					parameters = {id: selectedTarget.id, targetId: e.params.id};
 					var attackEvent = new ParamEvent(Connection.onSendAttackTarget);
@@ -140,8 +148,8 @@
 			var requestInfoEvent:ParamEvent = new ParamEvent(Connection.onSendRequestInfo);
 			requestInfoEvent.params = parameters;
 			Connection.INSTANCE.dispatchEvent(requestInfoEvent);
-		}		
-				
+		}
+						
 		private function cityClicked(e:ParamEvent) : void
 		{
 			trace("Game - cityClicked");
@@ -172,25 +180,33 @@
 			for (var i = 0; i < units.length; i++)
 			{
 				entityPanelText += units[i].type + " " + units[i].size + "\n";
-			}
-			
-			main.setArmyInfoPanel(entityPanelText);			
+			}			
 		}
 		
 		private function connectionInfoCity(e:ParamEvent) : void
 		{
 			trace("Game - infoCity");
-			var entityPanelText:String;
+			var cityId:int = e.params.id;
 			var buildings:Array = e.params.buildings;
-			
-			entityPanelText = "Buildings\n";
 						
-			for (var i = 0; i < buildings.length; i++)
-			{
-				entityPanelText += buildings[i].id + "\n";
-			}
+			var city:City = City(entityManager.getEntity(cityId));
+			city.buildings = buildings;	
 			
-			main.setCityInfoPanel(entityPanelText);			
+			CityPanelController.INSTANCE.city = city;
+			CityPanelController.INSTANCE.showPanel();
 		}		
+		
+		private function connectionInfoUnitQueue(e:ParamEvent): void
+		{
+			trace("Game - infoUnitQueue");
+			var buildingType:int = e.params.id;
+			var queueList:Array = e.params.queueList;
+			
+			QueueBuildingPanelController.INSTANCE.setQueueList(queueList);
+			QueueBuildingPanelController.INSTANCE.setBuildingType(buildingType);
+			QueueBuildingPanelController.INSTANCE.showPanel();
+		}
+		
+		
 	}
 }

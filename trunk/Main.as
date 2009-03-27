@@ -19,6 +19,10 @@
 		private var connection:Connection;
 		private var game:Game;
 		
+		private var cityPanelController:CityPanelController;
+		private var armyPanelController:ArmyPanelController;
+		private var queueBuildingPanelController:QueueBuildingPanelController;
+		
 		public function Main() : void
 		{
 			setupLoginFrame();
@@ -83,15 +87,23 @@
 		private function connectionLoggedIn(e:Event) : void
 		{
 			gotoAndStop("Game");
-			ArmyInfoPanel.visible = false;
-			CityInfoPanel.visible = false;
-			ArmyInfoPanel.InfoPanelClose.addEventListener(MouseEvent.CLICK, closeInfoPanel);
-			CityInfoPanel.InfoPanelClose.addEventListener(MouseEvent.CLICK, closeInfoPanel);
+			
+			armyPanelController = ArmyPanelController.INSTANCE;
+			armyPanelController.main = this;
+			armyPanelController.initialize();
+			
+			cityPanelController = CityPanelController.INSTANCE;
+			cityPanelController.main = this;
+			cityPanelController.initialize();
+			
+			queueBuildingPanelController = QueueBuildingPanelController.INSTANCE;
+			queueBuildingPanelController.main = this;
+			queueBuildingPanelController.initialize();
 			
 			game = Game.INSTANCE;
 			game.main = this;
 			game.setLastLoopTime(connection.clockSyncStartTime);
-			game.playerId = connection.playerId;
+			game.player.id = connection.playerId;
 		}
 		
 		private function connectionClockSync(e:Event) : void
@@ -104,26 +116,6 @@
 						
 			stage.addEventListener(KeyboardEvent.KEY_DOWN,game.keyDownEvent);
 			addChildAt(game, 0);
-		}
-		
-		private function closeInfoPanel(e:MouseEvent) : void
-		{
-			//Hide Info Panel
-			e.target.parent.visible = false;
-		}
-		
-		public function setArmyInfoPanel(entityPanelText:String) : void
-		{
-			ArmyInfoPanel.visible = true;
-			ArmyInfoPanel.InfoPanelTitle.htmlText = "<font face='Arial' color='#EEEEEE' size='15'>" + "Army Info" + "</font>";
-			ArmyInfoPanel.InfoPanelText.htmlText = "<font face='Arial' color='#EEEEEE' size='12'>" + entityPanelText + "</font>";
-		}
-		
-		public function setCityInfoPanel(entityPanelText:String) : void
-		{
-			CityInfoPanel.visible = true;
-			CityInfoPanel.InfoPanelTitle.htmlText = "<font face='Arial' color='#EEEEEE' size='15'>" + "City Info" + "</font>";
-			CityInfoPanel.InfoPanelText.htmlText = "<font face='Arial' color='#EEEEEE' size='12'>" + entityPanelText + "</font>";
 		}		
 	}
 }

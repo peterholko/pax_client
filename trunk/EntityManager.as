@@ -13,12 +13,11 @@
 		}
 		
 		public function setEntities(perceptionEntities:Array) : void
-		{
+		{			
 			var perceptionEntityList:Array = perceptionEntities;
 			var newEntities:Array = new Array();
-			
-			trace("perceptionEntityList.length: " +perceptionEntityList.length);
-			
+			var entity:Entity;
+						
 			for(var i:int = 0; i < perceptionEntityList.length; i++)
 			{
 				var perceptionEntity:Object = perceptionEntityList[i];
@@ -26,66 +25,75 @@
 				
 				if(entityIndex == -1)
 				{
-					if(perceptionEntity.type == 0)
-					{
-						var army:Army = new Army();
-						army.id = perceptionEntity.id;
-						army.playerId = perceptionEntity.playerId;
-						army.xPos = perceptionEntity.x;
-						army.yPos = perceptionEntity.y;
-						army.state = perceptionEntity.state;
-						army.initialize();
-						
-						army.x = army.xPos * Tile.WIDTH;
-						army.y = army.yPos * Tile.HEIGHT;
-						addChild(army);	
-						
-						newEntities.push(army);
-					}
-					else if(perceptionEntity.type == 1)
-					{
-						var city:City = new City();
-						city.id = perceptionEntity.id;
-						city.playerId = perceptionEntity.playerId;
-						city.xPos = perceptionEntity.x;
-						city.yPos = perceptionEntity.y;
-						city.state = perceptionEntity.state;	
-						city.initialize();
-						
-						city.x = city.xPos * Tile.WIDTH;
-						city.y = city.yPos * Tile.HEIGHT;
-						addChild(city);
-						
-						newEntities.push(city);
-					}				
+					//Entity does not exist create one from perception data
+					entity = createEntityFromPerception(perceptionEntity);
+					newEntities.push(entity);
+					addChild(entity);
 				}
 				else 
-				{					
-					entities[entityIndex].xPos = perceptionEntity.x;
-					entities[entityIndex].yPos = perceptionEntity.y;
-					entities[entityIndex].state = perceptionEntity.state;
-					entities[entityIndex].x = entities[entityIndex].xPos * Tile.WIDTH;
-					entities[entityIndex].y = entities[entityIndex].yPos * Tile.HEIGHT;
+				{	
+					//Copy new perception data to entity
+					copyPerceptionToEntity(entities[entityIndex], perceptionEntity);
+					
+					//Update display position
+					entities[entityIndex].update();
 					
 					newEntities.push(entities[entityIndex]);
 					entities.splice(entityIndex, 1);
-					trace("entities: " + entities);
 				}
+				
+				//If entity is player's entity add to Player instance
+				if (entity.playerId == Game.INSTANCE.player.id)
+						Game.INSTANCE.player.addEntity(entity);				
 			}
 			
-			trace("entities.length: " + entities.length);
-			trace("entities: " + entities);
+			clearEntities();
+			entities = newEntities;			
+		}
+		
+		public function getEntity(id:int) : Entity
+		{
+			var index:int = indexOfEntity(id);
 			
+			if (index < 0)
+				throw new Error("Entity not found");
+			
+			return entities[index];
+		}
+		
+		private function createEntityFromPerception(perceptionEntity:Object) : Entity
+		{
+			var entity:Entity = EntityFactory.getEntity(perceptionEntity.type);		
+			
+			entity.id = perceptionEntity.id;
+			entity.playerId = perceptionEntity.playerId;
+			entity.xPos = perceptionEntity.x;
+			entity.yPos = perceptionEntity.y;
+			entity.state = perceptionEntity.state;
+			entity.initialize();
+			
+			entity.x = entity.xPos * Tile.WIDTH;
+			entity.y = entity.yPos * Tile.HEIGHT;
+						
+			return entity;
+		}
+		
+		private function copyPerceptionToEntity(entity:Entity, perceptionEntity:Object) : void
+		{
+			entity.xPos = perceptionEntity.x;
+			entity.yPos = perceptionEntity.y;
+			entity.state = perceptionEntity.state;
+		}
+		
+		private function clearEntities() : void
+		{
 			for(var j = 0; j < entities.length; j++)
-			{
-				trace("entities[j]: " + entities[j]);
-				
+			{				
 				if(entities[j] != null)
 					removeChild(entities[j]);
 			}
 			
-			entities.length = 0;
-			entities = newEntities;			
+			entities.length = 0;			
 		}
 		
 		private function indexOfEntity(id:int) : int
@@ -99,6 +107,7 @@
 			}
 			return -1;
 		}	
+
 	}
 }
 		

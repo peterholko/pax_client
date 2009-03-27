@@ -12,19 +12,12 @@
 	
 	public class Army extends Entity
 	{
-		public static var TYPE:int = 1;
+		public static var TYPE:int = Entity.ARMY;
 		public static var onClick:String = "onArmyClick";
 		public static var onDoubleClick:String = "onArmyDoubleClick";
-		
-		public var id:int;
-		public var playerId:int;
-		public var state:int;
-		public var xPos:int;
-		public var yPos:int;
-		
+				
 		private var border:GlowFilter = null;
 
-		
 		public function Army() : void
 		{
 			this.border = new GlowFilter(0x27F80B, 0);
@@ -36,7 +29,7 @@
 		{
 			var imageData:BitmapData = null;
 			
-			if(playerId == Game.INSTANCE.playerId)
+			if(playerId == Game.INSTANCE.player.id)
 				imageData = new ArmyImage(0,0);
 			else
 				imageData = new EnemyImage(0,0);

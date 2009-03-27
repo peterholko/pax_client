@@ -28,6 +28,7 @@
 		public static var onPerceptionEvent:String = "onPerceptionEvent";
 		public static var onInfoArmyEvent:String = "onInfoArmyEvent";
 		public static var onInfoCityEvent:String = "onInfoCityEvent";
+		public static var onInfoUnitQueueEvent:String = "onInfoUnitQueueEvent";
 		
 		public static var onSendMoveArmy:String = "onSendMoveArmy";
 		public static var onSendAttackTarget:String = "onSendAttackTarget";
@@ -160,6 +161,13 @@
 					pEvent = new ParamEvent(Connection.onInfoCityEvent);
 					pEvent.params = Packet.readInfoCity(bArr);
 					dispatchEvent(pEvent);					
+				}
+				else if (cmd == Packet.INFO_UNIT_QUEUE)
+				{
+					trace("Connection - info_unit_queue");
+					pEvent = new ParamEvent(Connection.onInfoUnitQueueEvent);
+					pEvent.params = Packet.readInfoUnitQueue(bArr);
+					dispatchEvent(pEvent);	
 				}
 				else if(cmd == Packet.BAD)
 				{
