@@ -159,38 +159,47 @@
 			var cityId:int = byteArray.readInt();
 			var numBuildings:int = byteArray.readUnsignedShort();
 			var buildingList:Array = new Array();
+			var landQueue:Array = new Array();
+			var seaQueue:Array = new Array();
+			var airQueue:Array = new Array();
 			
 			for (var i:int = 0; i < numBuildings; i++)
-			{
-				//var buildingInfo:Object = { id: };
-				
+			{	
 				buildingList.push(byteArray.readInt());
 			}
 			
-			var infoCity:Object = { id: cityId, buildings: buildingList };
-			
+			landQueue = readUnitQueue(byteArray);
+			seaQueue = readUnitQueue(byteArray);
+			airQueue = readUnitQueue(byteArray);
+					
+			var infoCity:Object = { id: cityId, 
+									buildings: buildingList, 
+									landQueue: landQueue, 
+									seaQueue: seaQueue, 
+									airQueue: airQueue };			
 			return infoCity;
 		}	
 		
-		public static function readInfoUnitQueue(byteArray:ByteArray) : Object
-		{
-			var buildingType:int = byteArray.readByte();
-			var numQueues:int = byteArray.readByte();
-			var queueList:Array = new Array();
+		private static function readUnitQueue(byteArray:ByteArray) : Array
+		{	
+			var numQueue:int = byteArray.readByte();
+			trace("numQueue: " + numQueue);
+			var queue:Array = new Array();
 			
-			for (var i:int = 0; i < numQueues; i++)
+			for (var i:int = 0; i < numQueue; i++)
 			{
-				var queueInfo:Object = {unitId: byteArray.readInt(),
-										unitAmount: byteArray.readInt(),
-										startTime: byteArray.readInt(),
-										buildTime: byteArray.readInt() };
-				
-				queueList.push(queueInfo);
+				var queueInfo:Object = { 	unitId: byteArray.readInt(),
+											unitAmount: byteArray.readInt(),
+											startTime: byteArray.readInt(),
+											buildTime: byteArray.readInt() };
+								
+				trace("queueInfo.id: " + queueInfo.unitId);
+				queue.push(queueInfo);
 			}
 			
-			var infoUnitQueue:Object = { buildingType: buildingType, queueList: queueList };
 			
-			return infoUnitQueue;
+			
+			return queue;
 		}
 		
 		public static function getCmd(cmd:int) : String

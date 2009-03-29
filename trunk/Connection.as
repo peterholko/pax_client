@@ -114,6 +114,7 @@
 		{
 			var pEvent:ParamEvent;
 			var bArr:ByteArray = new ByteArray();
+			trace("Socket Bytes Available: " + socket.bytesAvailable);
 			
 			try
 			{
@@ -161,13 +162,6 @@
 					pEvent = new ParamEvent(Connection.onInfoCityEvent);
 					pEvent.params = Packet.readInfoCity(bArr);
 					dispatchEvent(pEvent);					
-				}
-				else if (cmd == Packet.INFO_UNIT_QUEUE)
-				{
-					trace("Connection - info_unit_queue");
-					pEvent = new ParamEvent(Connection.onInfoUnitQueueEvent);
-					pEvent.params = Packet.readInfoUnitQueue(bArr);
-					dispatchEvent(pEvent);	
 				}
 				else if(cmd == Packet.BAD)
 				{

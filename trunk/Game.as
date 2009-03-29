@@ -37,7 +37,6 @@
 			Connection.INSTANCE.addEventListener(Connection.onPerceptionEvent, connectionPerception);		
 			Connection.INSTANCE.addEventListener(Connection.onInfoArmyEvent, connectionInfoArmy);
 			Connection.INSTANCE.addEventListener(Connection.onInfoCityEvent, connectionInfoCity);
-			Connection.INSTANCE.addEventListener(Connection.onInfoUnitQueueEvent, connectionInfoUnitQueue);
 			addEventListener(Tile.onClick, tileClicked);
 			addEventListener(Army.onClick, armyClicked);
 			addEventListener(Army.onDoubleClick, armyDoubleClicked);
@@ -188,25 +187,19 @@
 			trace("Game - infoCity");
 			var cityId:int = e.params.id;
 			var buildings:Array = e.params.buildings;
+			var landQueue:Array = e.params.landQueue;
+			var seaQueue:Array = e.params.seaQueue;
+			var airQueue:Array = e.params.airQueue;
 						
 			var city:City = City(entityManager.getEntity(cityId));
 			city.buildings = buildings;	
+			city.setLandQueue(landQueue);
+			city.setSeaQueue(seaQueue);
+			city.setAirQueue(airQueue);
 			
 			CityPanelController.INSTANCE.city = city;
 			CityPanelController.INSTANCE.showPanel();
-		}		
-		
-		private function connectionInfoUnitQueue(e:ParamEvent): void
-		{
-			trace("Game - infoUnitQueue");
-			var buildingType:int = e.params.id;
-			var queueList:Array = e.params.queueList;
-			
-			QueueBuildingPanelController.INSTANCE.setQueueList(queueList);
-			QueueBuildingPanelController.INSTANCE.setBuildingType(buildingType);
-			QueueBuildingPanelController.INSTANCE.showPanel();
-		}
-		
+		}				
 		
 	}
 }

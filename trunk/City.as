@@ -16,11 +16,18 @@
 		
 		public var buildings:Array;
 		
+		private var landQueue:Array;
+		private var seaQueue:Array;
+		private var airQueue:Array;
+		
 		public function City() : void
 		{
 			buildings = new Array();
+			landQueue = new Array();
+			seaQueue = new Array();
+			airQueue = new Array();
 		}
-		
+				
 		override public function initialize() : void
 		{
 			var imageData:BitmapData = null;
@@ -47,6 +54,56 @@
 			pEvent.params = this;
 						
 			Game.INSTANCE.dispatchEvent(pEvent);
+		}	
+		
+		public function setLandQueue(queue:Array) : void
+		{
+			landQueue = setQueue(queue);
+		}
+		
+		public function setSeaQueue(queue:Array) : void 
+		{
+			seaQueue = setQueue(queue);
+		}
+		
+		public function setAirQueue(queue:Array) : void 
+		{
+			airQueue = setQueue(queue);
 		}		
+		
+		public function getLandQueue() : Array
+		{
+			return landQueue;
+		}
+		
+		public function getSeaQueue() : Array
+		{
+			return seaQueue;
+		}
+		
+		public function getAirQueue() : Array
+		{
+			return airQueue;
+		}			
+		
+		private static function setQueue(queue:Array) : Array
+		{
+			var unitQueueList:Array = new Array();
+			
+			for (var i = 0; i < queue.length; i++)
+			{
+				var unitQueue:UnitQueue = new UnitQueue();
+				unitQueue.unitId = queue[i].unitId;
+				unitQueue.unitAmount = queue[i].unitAmount;
+				unitQueue.startTime = queue[i].startTime;
+				unitQueue.buildTime = queue[i].buildTime;
+				
+				trace("City - unitQueue: " + unitQueue.unitId);
+				
+				unitQueueList.push(unitQueue);
+			}
+			
+			return unitQueueList;
+		}
 	}
 }
