@@ -12,8 +12,8 @@
 	{
 		public static var INSTANCE:Connection = new Connection();
 		
-		public static var HOST:String = "localhost";
-		//public static var HOST:String = "www.cowwit.com";		
+		//public static var HOST:String = "localhost";
+		public static var HOST:String = "www.cowwit.com";		
 		public static var PORT:int = 2345
 				
 		//Events 
@@ -33,6 +33,7 @@
 		public static var onSendMoveArmy:String = "onSendMoveArmy";
 		public static var onSendAttackTarget:String = "onSendAttackTarget";
 		public static var onSendRequestInfo:String = "onSendRequestInfo";
+		public static var onSendCityQueueUnit:String = "onSendCityQueueUnit";
 				
 		public var clockSyncStartTime:Number = 0;
 		public var clockSyncEndTime:Number = 0;
@@ -88,6 +89,7 @@
 			addEventListener(Connection.onSendMoveArmy, sendMoveArmy);
 			addEventListener(Connection.onSendAttackTarget, sendAttackTarget);
 			addEventListener(Connection.onSendRequestInfo, sendRequestInfo);
+			addEventListener(Connection.onSendCityQueueUnit, sendCityQueueUnit);
 		}
 		
 		private function closeHandler(event:Event):void {
@@ -195,6 +197,12 @@
 		{
 			trace("Connection - sendRequestInfo");
 			Packet.sendRequestInfo(socket, e.params.type, e.params.targetId);
+		}
+		
+		private function sendCityQueueUnit(e:ParamEvent) : void
+		{
+			trace("Connection - sendCityQueueUnit");
+			Packet.sendCityQueueUnit(socket, e.params.cityId, e.params.unitType, e.params.unitSize);
 		}
 	}
 }

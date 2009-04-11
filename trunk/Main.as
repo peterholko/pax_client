@@ -11,7 +11,7 @@
 	public class Main extends MovieClip
 	{
 		public static var DEBUG:Boolean = true;
-		public static var VERSION:String = "0.0219";
+		public static var VERSION:String = "0.025";
 		
 		private var account:String;
 		private var password:String;
@@ -19,19 +19,51 @@
 		private var connection:Connection;
 		private var game:Game;
 		
+		public var armyPanel:MovieClip;
+		public var cityPanel:MovieClip;		
+		
 		private var cityPanelController:CityPanelController;
 		private var armyPanelController:ArmyPanelController;
 		private var queueBuildingPanelController:QueueBuildingPanelController;
+		private var createUnitPanelController:CreateUnitPanelController;
+		
+		private var connectionMsg:String = "";
 		
 		public function Main() : void
 		{
-			setupLoginFrame();
+			this.gotoAndStop("Login");
 		}
 		
-		private function setupLoginFrame() : void
+		public function setupLoginFrame() : void
 		{
 			Version.text = "Version: " + VERSION;
+			ConnectionStatus.text = connectionMsg;	
 			Login.addEventListener(MouseEvent.CLICK, loginHandler);
+		}
+		
+		public function setupGameFrame() : void
+		{
+			trace("armyPanel: " + armyPanel);
+			armyPanelController = ArmyPanelController.INSTANCE;
+			armyPanelController.main = this;
+			armyPanelController.initialize();
+			
+			cityPanelController = CityPanelController.INSTANCE;
+			cityPanelController.main = this;
+			cityPanelController.initialize();
+			
+			queueBuildingPanelController = QueueBuildingPanelController.INSTANCE;
+			queueBuildingPanelController.main = this;
+			queueBuildingPanelController.initialize();
+			
+			createUnitPanelController = CreateUnitPanelController.INSTANCE;
+			createUnitPanelController.main = this;
+			createUnitPanelController.initialize();
+						
+			game = Game.INSTANCE;
+			game.main = this;
+			game.setLastLoopTime(connection.clockSyncStartTime);
+			game.player.id = connection.playerId;			
 		}
 						
 		private function loginHandler(event:MouseEvent) : void
@@ -78,34 +110,17 @@
 			connection.removeEventListener(Connection.onSecurityErrorEvent, connectionSecurityError);
 			connection.removeEventListener(Connection.onCloseEvent, connectionCloseError);
 			connection.removeEventListener(Connection.onClockSyncEvent, connectionClockSync);
-					
+			
+			connectionMsg = msg;
+			
 			gotoAndStop("Login");
-			setupLoginFrame();
-			ConnectionStatus.text = msg;	
 		}
 		
 		private function connectionLoggedIn(e:Event) : void
 		{
 			gotoAndStop("Game");
-			
-			armyPanelController = ArmyPanelController.INSTANCE;
-			armyPanelController.main = this;
-			armyPanelController.initialize();
-			
-			cityPanelController = CityPanelController.INSTANCE;
-			cityPanelController.main = this;
-			cityPanelController.initialize();
-			
-			queueBuildingPanelController = QueueBuildingPanelController.INSTANCE;
-			queueBuildingPanelController.main = this;
-			queueBuildingPanelController.initialize();
-			
-			game = Game.INSTANCE;
-			game.main = this;
-			game.setLastLoopTime(connection.clockSyncStartTime);
-			game.player.id = connection.playerId;
 		}
-		
+				
 		private function connectionClockSync(e:Event) : void
 		{
 			connection.doClientReady();

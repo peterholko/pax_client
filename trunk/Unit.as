@@ -1,14 +1,29 @@
 ﻿package
 {
 	import flash.display.Bitmap;
+	import flash.display.MovieClip;
 	
 	public class Unit
 	{
+		public static var LAND:int = 1;
+		public static var SEA:int = 2;
+		public static var AIR:int = 3;
+		
+		public static var FOOTSOLDIER:int = 1;
+		public static var ARCHER:int = 2;
+		
+		public var id:int;
+		public var type:int;
+		public var size:int;
+		public var startTime:int;
+		public var endTime:int;
+		public var remainingTime:int;		
+		
 		public function Unit() : void
 		{
 		}
 		
-		public static function getImage(unitType:int) : Bitmap
+		public static function getImage(unitType:int) : MovieClip
 		{
 			var imageData;
 			
@@ -16,10 +31,10 @@
 			
 			switch(unitType)
 			{
-				case 1:
-					return new Bitmap(new FootsoldierImage(0, 0));
-				case 2:
-					return new Bitmap(new ArcherImage(0, 0));
+				case FOOTSOLDIER:
+					return new Footsoldier();
+				case ARCHER:
+					return new Archer();
 			}
 			
 			throw new Error("Invalid Unit Type");
@@ -29,9 +44,9 @@
 		{
 			switch(unitType)
 			{
-				case 1:
+				case FOOTSOLDIER:
 					return "Footsoldier";
-				case 2:
+				case ARCHER:
 					return "Archer";
 			}
 			

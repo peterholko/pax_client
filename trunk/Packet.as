@@ -21,6 +21,7 @@
 		public static var INFO_ARMY:int = 52; 
 		public static var INFO_CITY:int = 53; 
 		public static var INFO_UNIT_QUEUE:int = 55;
+		public static var CITY_QUEUE_UNIT:int = 60;
 		public static var BAD:int = 255;
 		
 		//Errors
@@ -75,6 +76,16 @@
 			socket.writeByte(REQUEST_INFO);
 			socket.writeShort(type);
 			socket.writeInt(targetId);
+			socket.flush();
+		}
+		
+		public static function sendCityQueueUnit(socket:Socket, cityId:int, unitType:int, unitSize:int) : void
+		{
+			trace("Packet - sendCityQueueUnit");
+			socket.writeByte(CITY_QUEUE_UNIT);
+			socket.writeInt(cityId);
+			socket.writeShort(unitType);
+			socket.writeInt(unitSize);
 			socket.flush();
 		}
 		
@@ -143,7 +154,7 @@
 			for (var i:int = 0; i < numUnits; i++)
 			{
 				var unitInfo:Object = { id: byteArray.readInt(),
-										type: byteArray.readUTF(),
+										type: byteArray.readUnsignedShort(),
 										size: byteArray.readInt() };
 				
 				unitList.push(unitInfo);
@@ -157,51 +168,36 @@
 		public static function readInfoCity(byteArray:ByteArray) : Object
 		{
 			var cityId:int = byteArray.readInt();
-			var numBuildings:int = byteArray.readUnsignedShort();
 			var buildingList:Array = new Array();
-			var landQueue:Array = new Array();
-			var seaQueue:Array = new Array();
-			var airQueue:Array = new Array();
+			var unitList:Array = new Array();
+			var i:int;
 			
-			for (var i:int = 0; i < numBuildings; i++)
+			var numBuildings:int = byteArray.readUnsignedShort();
+			
+			for (i = 0; i < numBuildings; i++)
 			{	
 				buildingList.push(byteArray.readInt());
 			}
 			
-			landQueue = readUnitQueue(byteArray);
-			seaQueue = readUnitQueue(byteArray);
-			airQueue = readUnitQueue(byteArray);
-					
+			var numUnits:int = byteArray.readUnsignedShort();
+			
+			for (i = 0; i < numUnits; i++)
+			{
+				var unitInfo:Object = { id: byteArray.readInt(),
+										type: byteArray.readUnsignedShort(),
+										size: byteArray.readInt(),
+										startTime: byteArray.readInt(),
+										endTime: byteArray.readInt()};
+										
+				unitList.push(unitInfo);
+			}
+								
 			var infoCity:Object = { id: cityId, 
 									buildings: buildingList, 
-									landQueue: landQueue, 
-									seaQueue: seaQueue, 
-									airQueue: airQueue };			
+									units: unitList };			
 			return infoCity;
 		}	
-		
-		private static function readUnitQueue(byteArray:ByteArray) : Array
-		{	
-			var numQueue:int = byteArray.readByte();
-			trace("numQueue: " + numQueue);
-			var queue:Array = new Array();
-			
-			for (var i:int = 0; i < numQueue; i++)
-			{
-				var queueInfo:Object = { 	unitId: byteArray.readInt(),
-											unitAmount: byteArray.readInt(),
-											startTime: byteArray.readInt(),
-											buildTime: byteArray.readInt() };
-								
-				trace("queueInfo.id: " + queueInfo.unitId);
-				queue.push(queueInfo);
-			}
-			
-			
-			
-			return queue;
-		}
-		
+				
 		public static function getCmd(cmd:int) : String
 		{
 			var msg:String = "";

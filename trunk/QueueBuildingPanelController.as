@@ -1,33 +1,34 @@
 ﻿package
 {
 	import flash.display.Bitmap;
+	import flash.display.MovieClip;
 	import flash.events.MouseEvent;
 	import flash.events.TimerEvent;
 	import flash.utils.Timer;
 	
-	import FootsoldierImage;
+	import Footsoldier;
 	
 	public class QueueBuildingPanelController extends PanelController
 	{	
 		public static var INSTANCE:QueueBuildingPanelController = new QueueBuildingPanelController();
 		public static var TICK:int = 1000;
 		
-		private var buildingType:int;
-		private var queueList:Array;				
+		public var buildingType:int;
+		public var queue:Array;				
+		
 		private var unitIcons:Array;
 		private var buildTimer:Timer;
-		private var panel:QueueBuildingPanel;
 				
 		public function QueueBuildingPanelController() : void
 		{
 		}
 		
-		public function initialize() : void
+		override public function initialize() : void
 		{			
 			panel = main.queueBuildingPanel;
 			panel.visible = false;
 			
-			queueList = new Array();
+			queue = new Array();
 			unitIcons = new Array();
 			buildTimer = new Timer(TICK);
 			
@@ -38,103 +39,105 @@
 			panel.unitQueue5.visible = false;
 			
 			buildTimer.addEventListener(TimerEvent.TIMER, buildTimeHandler);
+			
+			panel.createUnitButton.addEventListener(MouseEvent.CLICK, createUnitClicked);
 			panel.panelClose.addEventListener(MouseEvent.CLICK, closePanel);
 		}		
 		
-		public function showPanel() : void
+		override public function showPanel() : void
 		{
+			buildTimer.start();
 			panel.visible = true;
 		}
+		
+		public function refresh() : void
+		{
+			setBuildingType();
+			setQueue();
+		}
+		
+		public function setBuildingType() : void
+		{
+			panel.panelTitle.htmlText = "Barrack Training Queue";
+		}		
 				
-		public function setQueueList(newQueueList:Array) : void
+		public function setQueue() : void
 		{	
 			clearUnitIcons();
-			queueList.length = 0;
 			unitIcons.length = 0;
-						
-			for (var i:int = 0; i < newQueueList.length; i++)
-			{
-				var unitQueue:UnitQueue = new UnitQueue();
-				unitQueue.unitId = newQueueList[i].unitId;
-				unitQueue.unitAmount = newQueueList[i].unitAmount;
-				unitQueue.startTime = newQueueList[i].startTime;
-				unitQueue.buildTime = newQueueList[i].buildTime;
-				unitQueue.setInitialRemainingTime();
-				
-				setUnitDisplay(unitQueue, i + 1);				
-				queueList.push(unitQueue);
+			
+			queue.sortOn("startTime", Array.NUMERIC);
+			
+			for (var i:int = 0; i < queue.length; i++)
+			{	
+				var unit:Unit = queue[i];
+				setUnitDisplay(unit, i + 1);				
 			}						
 		}
 		
-		public function setBuildingType(newBuildingType:int) : void
-		{
-			buildingType = newBuildingType;
-			panel.panelTitle.htmlText = "Barrack Training Queue";
-		}
-		
-		private function setUnitDisplay(unitQueue:UnitQueue, queuePosition:int) : void
+		private function setUnitDisplay(unit:Unit, queuePosition:int) : void
 		{	
-			var image:Bitmap = Unit.getImage(unitQueue.unitId);
-			var name:String = Unit.getName(unitQueue.unitId);
-			var amount:String = String(unitQueue.unitAmount);
+			var image:MovieClip = Unit.getImage(unit.type);
+			var name:String = Unit.getName(unit.type);
+			var size:String = String(unit.size);
+			var remainingTime:String = String(unit.remainingTime);
 			
 			switch(queuePosition)
 			{
 				case 1:
-					panel.unitQueue1.unitName.htmlText = name;
-					panel.unitQueue1.unitAmount.htmlText = amount;
-					panel.unitQueue1.unitIcon.addChild(image);
-					panel.unitQueue1.visible = true;
+					setUnitQueueView(panel.unitQueue1, name, size, remainingTime, image);
 					break;
 				case 2:
-					panel.unitQueue2.unitName.htmlText = name;
-					panel.unitQueue2.unitAmount.htmlText = amount;
-					panel.unitQueue2.unitIcon.addChild(image);
-					panel.unitQueue2.visible = true;
+					setUnitQueueView(panel.unitQueue2, name, size, remainingTime, image);
 					break;
 				case 3:
-					panel.unitQueue3.unitName.htmlText = name;
-					panel.unitQueue3.unitAmount.htmlText = amount;
-					panel.unitQueue3.unitIcon.addChild(image);
-					panel.unitQueue3.visible = true;
+					setUnitQueueView(panel.unitQueue3, name, size, remainingTime, image);
 					break;
 				case 4:
-					panel.unitQueue4.unitName.htmlText = name;
-					panel.unitQueue4.unitAmount.htmlText = amount;
-					panel.unitQueue4.unitIcon.addChild(image);
-					panel.unitQueue4.visible = true;
+					setUnitQueueView(panel.unitQueue4, name, size, remainingTime, image);
 					break;
 				case 5:
-					panel.unitQueue5.unitName.htmlText = name;
-					panel.unitQueue5.unitAmount.htmlText = amount;
-					panel.unitQueue5.unitIcon.addChild(image);
-					panel.unitQueue5.visible = true;
+					setUnitQueueView(panel.unitQueue5, name, size, remainingTime, image);
 					break;	
 				default:
 					throw new Error("Invalid Queue Position");
 			}
-			
-			if(image != null)
-				unitIcons.push(image);
+		}
+		
+		private function setUnitQueueView(unitQueue:MovieClip, name:String, size:String, remainingTime:String, image:MovieClip)
+		{
+			unitQueue.unitName.htmlText = name;
+			unitQueue.iconContainer.stackSize.stackSizeTextfield.text = size;
+			unitQueue.iconContainer.iconLayer.addChild(image);
+			unitQueue.unitRemainingTime.htmlText = remainingTime;
+			unitQueue.visible = true;
 		}
 		
 		private function clearUnitIcons() : void
+		{		
+			Util.removeChildren(panel.unitQueue1.iconContainer.iconLayer);
+			Util.removeChildren(panel.unitQueue2.iconContainer.iconLayer);
+			Util.removeChildren(panel.unitQueue3.iconContainer.iconLayer);
+			Util.removeChildren(panel.unitQueue4.iconContainer.iconLayer);
+			Util.removeChildren(panel.unitQueue5.iconContainer.iconLayer);
+			
+			panel.unitQueue1.visible = false;
+			panel.unitQueue2.visible = false;
+			panel.unitQueue3.visible = false;
+			panel.unitQueue4.visible = false;
+			panel.unitQueue5.visible = false;
+		}
+		
+		private function createUnitClicked(e:MouseEvent) : void
 		{
-			for (var i:int = 0; i < unitIcons.length; i++)
-			{
-				unitIcons[i].parent.parent.visible = false;
-				unitIcons[i].parent.removeChild(unitIcons[i]);
-			}
+			CreateUnitPanelController.INSTANCE.showPanel();
 		}
 		
 		private function buildTimeHandler(e:TimerEvent) : void
 		{
-			var unitQueue1:UnitQueue = queueList[0];
-			unitQueue1.remainingTime--;
-			panel.unitQueue1.unitRemainingTime.htmlText = String(unitQueue1.remainingTime);
-			
-		}	
-		
+			if(queue[0] != null)
+				panel.unitQueue1.unitRemainingTime.htmlText = queue[0].remainingTime;
+		}
 		
 	}
 }

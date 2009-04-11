@@ -184,20 +184,13 @@
 		
 		private function connectionInfoCity(e:ParamEvent) : void
 		{
-			trace("Game - infoCity");
-			var cityId:int = e.params.id;
-			var buildings:Array = e.params.buildings;
-			var landQueue:Array = e.params.landQueue;
-			var seaQueue:Array = e.params.seaQueue;
-			var airQueue:Array = e.params.airQueue;
-						
-			var city:City = City(entityManager.getEntity(cityId));
-			city.buildings = buildings;	
-			city.setLandQueue(landQueue);
-			city.setSeaQueue(seaQueue);
-			city.setAirQueue(airQueue);
+			trace("Game - infoCity");	
+			var city:City = City(entityManager.getEntity(e.params.id));
+			city.setCityInfo(e.params);
 			
 			CityPanelController.INSTANCE.city = city;
+			CityPanelController.INSTANCE.setBuildings();
+			CityPanelController.INSTANCE.setUnits();
 			CityPanelController.INSTANCE.showPanel();
 		}				
 		
