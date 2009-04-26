@@ -22,6 +22,7 @@
 		public static var INFO_CITY:int = 53; 
 		public static var INFO_UNIT_QUEUE:int = 55;
 		public static var CITY_QUEUE_UNIT:int = 60;
+		public static var TRANSFER_UNIT:int = 61;
 		public static var BAD:int = 255;
 		
 		//Errors
@@ -86,6 +87,18 @@
 			socket.writeInt(cityId);
 			socket.writeShort(unitType);
 			socket.writeInt(unitSize);
+			socket.flush();
+		}
+		
+		public static function sendTransferUnit(socket:Socket, unitId:int, sourceId:int, sourceType:int, targetId:int, targetType:int) : void
+		{
+			trace("Packet - sendTransferUnit");
+			socket.writeByte(TRANSFER_UNIT);
+			socket.writeInt(unitId);
+			socket.writeInt(sourceId);
+			socket.writeShort(sourceType);
+			socket.writeInt(targetId);
+			socket.writeShort(targetType);
 			socket.flush();
 		}
 		
@@ -170,6 +183,7 @@
 			var cityId:int = byteArray.readInt();
 			var buildingList:Array = new Array();
 			var unitList:Array = new Array();
+			var unitQueueList:Array = new Array();
 			var i:int;
 			
 			var numBuildings:int = byteArray.readUnsignedShort();
@@ -185,19 +199,31 @@
 			{
 				var unitInfo:Object = { id: byteArray.readInt(),
 										type: byteArray.readUnsignedShort(),
-										size: byteArray.readInt(),
-										startTime: byteArray.readInt(),
-										endTime: byteArray.readInt()};
+										size: byteArray.readInt()};
 										
 				unitList.push(unitInfo);
+			}
+			
+			var numUnitQueues:int = byteArray.readUnsignedShort();
+			
+			for (i = 0; i < numUnitQueues; i++)
+			{
+				var unitQueueInfo:Object = {id: byteArray.readInt(),
+											type: byteArray.readUnsignedShort(),
+											size: byteArray.readInt(),
+											startTime: byteArray.readInt(),
+											endTime: byteArray.readInt() };
+											
+				unitQueueList.push(unitQueueInfo);											
 			}
 								
 			var infoCity:Object = { id: cityId, 
 									buildings: buildingList, 
-									units: unitList };			
+									units: unitList,
+									unitsQueue: unitQueueList};			
 			return infoCity;
 		}	
-				
+		
 		public static function getCmd(cmd:int) : String
 		{
 			var msg:String = "";

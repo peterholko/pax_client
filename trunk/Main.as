@@ -1,7 +1,10 @@
 ﻿package
 {
+	import fl.controls.Button;
+	import fl.controls.TextInput;
 	import flash.display.MovieClip;
 	import flash.events.MouseEvent;	
+	import flash.text.TextField;
 	import flash.utils.getTimer;
 	import flash.utils.Timer;
 	import flash.events.Event;
@@ -11,16 +14,25 @@
 	public class Main extends MovieClip
 	{
 		public static var DEBUG:Boolean = true;
-		public static var VERSION:String = "0.025";
+		public static var VERSION:String = "0.026";
+		
+		//Stage objects
+		public var versionTextField:TextField;
+		public var accountTextInput:TextInput;
+		public var passwordTextInput:TextInput;
+		public var loginButton:Button;
+		public var connectionStatusTextField:TextField;
+		
+		public var armyPanel:ArmyPanel;
+		public var cityPanel:CityPanel;		
+		public var queueBuildingPanel:QueueBuildingPanel;
+		public var createUnitPanel:CreateUnitPanel;		
 		
 		private var account:String;
 		private var password:String;
 		
 		private var connection:Connection;
 		private var game:Game;
-		
-		public var armyPanel:MovieClip;
-		public var cityPanel:MovieClip;		
 		
 		private var cityPanelController:CityPanelController;
 		private var armyPanelController:ArmyPanelController;
@@ -36,9 +48,9 @@
 		
 		public function setupLoginFrame() : void
 		{
-			Version.text = "Version: " + VERSION;
-			ConnectionStatus.text = connectionMsg;	
-			Login.addEventListener(MouseEvent.CLICK, loginHandler);
+			versionTextField.text = "Version: " + VERSION;
+			connectionStatusTextField.text = connectionMsg;	
+			loginButton.addEventListener(MouseEvent.CLICK, loginHandler);
 		}
 		
 		public function setupGameFrame() : void
@@ -68,8 +80,8 @@
 						
 		private function loginHandler(event:MouseEvent) : void
 		{
-			account = Account.text;
-			password = Password.text;
+			account = accountTextInput.text;
+			password = passwordTextInput.text;
 			
 			connection = Connection.INSTANCE;
 			connection.initialize();

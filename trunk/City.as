@@ -18,7 +18,6 @@
 		
 		public var buildings:Array;
 		public var units:Array;
-		public var unitsInCity:Array;
 		public var landQueue:Array;
 		public var seaQueue:Array;
 		public var airQueue:Array;
@@ -29,7 +28,6 @@
 		{
 			buildings = new Array();
 			units = new Array();
-			unitsInCity = new Array();
 			landQueue = new Array();
 			seaQueue = new Array();
 			airQueue = new Array();
@@ -68,11 +66,15 @@
 		
 		public function setCityInfo(cityInfo:Object) : void
 		{
+			trace("City - setCityInfo");
+			
 			var buildingsInfo:Array = cityInfo.buildings;
 			var unitsInfo:Array = cityInfo.units;
+			var unitsQueueInfo:Array = cityInfo.unitsQueue;
 					
 			setBuildings(buildingsInfo);
 			setUnits(unitsInfo);
+			setUnitsQueue(unitsQueueInfo);
 		}
 		
 		private function setBuildings(buildingsInfo:Array) : void
@@ -88,10 +90,6 @@
 		private function setUnits(unitsInfo:Array ) : void
 		{
 			units.length = 0;
-			unitsInCity.length = 0;
-			landQueue.length = 0;
-			seaQueue.length = 0;
-			airQueue.length = 0;
 			
 			for (var i:int = 0; i < unitsInfo.length; i++)
 			{
@@ -100,24 +98,43 @@
 				unit.id = unitsInfo[i].id;
 				unit.type = unitsInfo[i].type;
 				unit.size = unitsInfo[i].size;
-				unit.startTime = unitsInfo[i].startTime;
-				unit.endTime = unitsInfo[i].endTime;
-				
-				setUnit(unit);
-				
+				unit.parentEntity = this;
+									
 				units.push(unit);
 			}
 			
 			trace("units; " + units.length);
-			trace("landQueue.length: " + landQueue.length);
-			trace("seaQueue.length: " + seaQueue.length);
-			trace("airQueue.length: " + airQueue.length);
 		}
 		
-		private function setUnit(unit:Unit) : void
+		private function setUnitsQueue(unitsQueueInfo:Array) : void
 		{
+			landQueue.length = 0;
+			seaQueue.length = 0;
+			airQueue.length = 0;			
+			
 			var currentDate:Date = new Date();
-			var currentTime:int = currentDate.getTime() / 1000;
+			var currentTime:int = currentDate.getTime() / 1000;				
+			
+			for (var i:int = 0; i < unitsQueueInfo.length; i++)
+			{
+				var unitQueue:UnitQueue = new UnitQueue();
+				
+				unitQueue.id = unitsQueueInfo[i].id;
+				unitQueue.type = unitsQueueInfo[i].type;
+				unitQueue.size = unitsQueueInfo[i].size;
+				unitQueue.startTime = unitsQueueInfo[i].startTime;
+				unitQueue.endTime = unitsQueueInfo[i].endTime;
+								
+				unitQueue.remainingTime = unitQueue.endTime - currentTime;
+
+				//TODO: Add other types of queues
+				landQueue.push(unitQueue);
+			}			
+		}
+		
+		/*private function setUnit(unit:Unit) : void
+		{
+
 			
 			trace("unit.size: " + unit.size + " unit.endTime: " + unit.endTime + " currentTime: " + currentTime);
 			if (unit.endTime > currentTime)
@@ -126,7 +143,7 @@
 				landQueue.push(unit);
 				
 				//TODO: Add other types of queues
-				/*switch(unit.type)
+				switch(unit.type)
 				{
 					case Unit.LAND:
 						landQueue.push(unit);
@@ -139,13 +156,9 @@
 						break;	
 					default:
 						throw new Error("Invalid Unit Type");
-				}*/
+				}
 			}
-			else
-			{
-				unitsInCity.push(unit);
-			}
-		}
+		}*/
 		
 		private function timerHandler(e:TimerEvent) : void
 		{

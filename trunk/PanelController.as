@@ -1,31 +1,64 @@
 ﻿package 
 {
 	import flash.display.MovieClip;
+	import flash.events.FocusEvent;
 	import flash.events.MouseEvent;	
 	
 	public class PanelController
 	{
 		public var main:Main;
 		
-		protected var panel:MovieClip;
-				
+		protected var panel:Panel;
+		
 		public function PanelController() : void
 		{
 		}
 		
 		public function initialize() : void
 		{
+			panel.visible = false;
+			
+			panel.addEventListener(MouseEvent.CLICK, mouseClick);
+			panel.addEventListener(MouseEvent.MOUSE_DOWN, mouseDown);
+			panel.addEventListener(MouseEvent.MOUSE_UP, mouseUp);	
+			
+			panel.closeButton.addEventListener(MouseEvent.CLICK, closePanel);
+		}
+		
+		public function isVisible() : Boolean
+		{
+			if(panel != null)
+				return panel.visible;
+			else
+				return false;
 		}
 		
 		public function showPanel() : void
-		{						
-			panel.visible = true;
+		{		
+			panel.visible = true;				
+			panel.parent.setChildIndex(panel, panel.parent.numChildren - 1);			
+		}
+				
+		protected function mouseClick(e:MouseEvent) : void
+		{	
+				
 		}
 		
+		protected function mouseDown(e:MouseEvent) : void 
+		{
+			panel.parent.setChildIndex(panel, panel.parent.numChildren - 1);
+			panel.startDrag();
+		}
+		
+		protected function mouseUp(e:MouseEvent) : void
+		{
+			panel.stopDrag();
+		}		
+				
 		protected function closePanel(e:MouseEvent) : void
 		{
 			//Hide Info Panel
-			e.target.parent.visible = false;
-		}	
+			panel.visible = false;
+		}		
 	}
 }

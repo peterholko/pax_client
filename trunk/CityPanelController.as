@@ -10,8 +10,8 @@
 		public static var SPACER_X:int = 54;
 		
 		public var city:City;
-		
-		private var unitIconContainer:MovieClip;
+
+		private var cityPanel:CityPanel;
 		
 		public function CityPanelController() : void
 		{			
@@ -19,27 +19,31 @@
 		
 		override public function initialize() : void
 		{		
+			//Must use two variables as Actionscript does not have generics
 			panel = main.cityPanel;
-			panel.visible = false;
-			panel.barrackButton.visible = false;
+			cityPanel = main.cityPanel;
 			
-			panel.panelTitle.htmlText = PANEL_TITLE;
-			panel.panelClose.addEventListener(MouseEvent.CLICK, closePanel);
-			panel.barrackButton.addEventListener(MouseEvent.CLICK, barrackClicked);
+			cityPanel.barrackButton.visible = false;
 			
-			unitIconContainer = new MovieClip();
-			panel.unitContainer.addChild(unitIconContainer);
+			cityPanel.panelTitle.htmlText = PANEL_TITLE;
+			cityPanel.barrackButton.addEventListener(MouseEvent.CLICK, barrackClicked, false, 1);
+			
+			super.initialize();
 		}	
 		
 		override public function showPanel() : void
-		{
-			panel.visible = true;
-			
+		{		
+			trace("City Panel showPanel()");
+			super.showPanel();
+						
 			QueueBuildingPanelController.INSTANCE.buildingType = Building.BARRACKS;
 			QueueBuildingPanelController.INSTANCE.queue = city.landQueue;
 			
 			QueueBuildingPanelController.INSTANCE.setBuildingType();
 			QueueBuildingPanelController.INSTANCE.setQueue();			
+			
+			if (QueueBuildingPanelController.INSTANCE.isVisible())
+				QueueBuildingPanelController.INSTANCE.showPanel();
 		}
 		
 		public function setBuildings() : void
@@ -48,32 +52,34 @@
 			{
 				if (city.buildings[i] == Building.BARRACKS)
 				{
-					panel.barrackButton.visible = true;
+					cityPanel.barrackButton.visible = true;
 				}
 			}	
 		}
 		
 		public function setUnits() : void
 		{
-			Util.removeChildren(unitIconContainer);			
+			trace("CityPanelController - setUnits() - city.units.length: " + city.units.length);
+			Unit.removeUnitChildren(cityPanel.cityUnitContainer);			
 			
-			for (var i:int = 0; i < city.unitsInCity.length; i++)
+			for (var i:int = 0; i < city.units.length; i++)
 			{
-				var unit:Unit = city.unitsInCity[i];				
-				var unitImage:MovieClip = Unit.getImage(unit.type);		
-				var unitSize:int = unit.size;
+				var unit:Unit = city.units[i];				
+				unit.initialize();
+				unit.setAnchorPosition(i * SPACER_X, 0);				
 				
-				var iconContainer:MovieClip = new IconContainer();
-				iconContainer.iconLayer.addChild(unitImage);
-				iconContainer.stackSize.stackSizeTextfield.text = unitSize;
-				iconContainer.x = i * SPACER_X;
-				
-				unitIconContainer.addChild(iconContainer);
+				cityPanel.cityUnitContainer.addChild(unit);
 			}
 		}
 		
+		public function getUnitContainer():CityUnitContainer
+		{
+			return cityPanel.cityUnitContainer;
+		}		
+		
 		private function barrackClicked(e:MouseEvent) : void
 		{
+			e.stopPropagation();
 			QueueBuildingPanelController.INSTANCE.showPanel();
 		}		
 	}

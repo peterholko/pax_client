@@ -6,7 +6,7 @@
 	import flash.events.Event;
 	import flash.events.MouseEvent;	
 		
-	public  class Entity extends Sprite
+	public class Entity extends Sprite
 	{
 		public static var ARMY:int = 1;
 		public static var CITY:int = 2;
@@ -15,7 +15,8 @@
 		public var playerId:int;
 		public var state:int;
 		public var xPos:int;
-		public var yPos:int;		
+		public var yPos:int;	
+		public var type:int;
 
 		protected var image:Bitmap = null;	
 	

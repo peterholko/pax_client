@@ -16,6 +16,7 @@
 		public var buildingType:int;
 		public var queue:Array;				
 		
+		private var queueBuildingPanel:QueueBuildingPanel;
 		private var unitIcons:Array;
 		private var buildTimer:Timer;
 				
@@ -24,41 +25,39 @@
 		}
 		
 		override public function initialize() : void
-		{			
+		{		
+			//Must use two variables as Actionscript does not have generics
 			panel = main.queueBuildingPanel;
-			panel.visible = false;
+			queueBuildingPanel = main.queueBuildingPanel;
 			
 			queue = new Array();
 			unitIcons = new Array();
 			buildTimer = new Timer(TICK);
 			
-			panel.unitQueue1.visible = false;
-			panel.unitQueue2.visible = false;
-			panel.unitQueue3.visible = false;
-			panel.unitQueue4.visible = false;
-			panel.unitQueue5.visible = false;
+			queueBuildingPanel.unitQueue1.visible = false;
+			queueBuildingPanel.unitQueue2.visible = false;
+			queueBuildingPanel.unitQueue3.visible = false;
+			queueBuildingPanel.unitQueue4.visible = false;
+			queueBuildingPanel.unitQueue5.visible = false;
 			
 			buildTimer.addEventListener(TimerEvent.TIMER, buildTimeHandler);
 			
-			panel.createUnitButton.addEventListener(MouseEvent.CLICK, createUnitClicked);
-			panel.panelClose.addEventListener(MouseEvent.CLICK, closePanel);
+			queueBuildingPanel.createUnitButton.addEventListener(MouseEvent.CLICK, createUnitClicked);
+			
+			super.initialize();
 		}		
 		
 		override public function showPanel() : void
 		{
+			trace("QueueBuildingPanel showPanel()");
+			super.showPanel();	
+			
 			buildTimer.start();
-			panel.visible = true;
-		}
-		
-		public function refresh() : void
-		{
-			setBuildingType();
-			setQueue();
 		}
 		
 		public function setBuildingType() : void
 		{
-			panel.panelTitle.htmlText = "Barrack Training Queue";
+			queueBuildingPanel.panelTitle.htmlText = "Barrack Training Queue";
 		}		
 				
 		public function setQueue() : void
@@ -70,73 +69,74 @@
 			
 			for (var i:int = 0; i < queue.length; i++)
 			{	
-				var unit:Unit = queue[i];
-				setUnitDisplay(unit, i + 1);				
+				var unitQueue:UnitQueue = queue[i];
+				setUnitDisplay(unitQueue, i + 1);				
 			}						
 		}
 		
-		private function setUnitDisplay(unit:Unit, queuePosition:int) : void
+		private function setUnitDisplay(unitQueue:UnitQueue, queuePosition:int) : void
 		{	
-			var image:MovieClip = Unit.getImage(unit.type);
-			var name:String = Unit.getName(unit.type);
-			var size:String = String(unit.size);
-			var remainingTime:String = String(unit.remainingTime);
+			var image:MovieClip = Unit.createImage(unitQueue.type);
+			var name:String = Unit.getName(unitQueue.type);
+			var size:String = String(unitQueue.size);
+			var remainingTime:String = String(unitQueue.remainingTime);
 			
 			switch(queuePosition)
 			{
 				case 1:
-					setUnitQueueView(panel.unitQueue1, name, size, remainingTime, image);
+					setUnitQueueView(queueBuildingPanel.unitQueue1, name, size, remainingTime, image);
 					break;
 				case 2:
-					setUnitQueueView(panel.unitQueue2, name, size, remainingTime, image);
+					setUnitQueueView(queueBuildingPanel.unitQueue2, name, size, remainingTime, image);
 					break;
 				case 3:
-					setUnitQueueView(panel.unitQueue3, name, size, remainingTime, image);
+					setUnitQueueView(queueBuildingPanel.unitQueue3, name, size, remainingTime, image);
 					break;
 				case 4:
-					setUnitQueueView(panel.unitQueue4, name, size, remainingTime, image);
+					setUnitQueueView(queueBuildingPanel.unitQueue4, name, size, remainingTime, image);
 					break;
 				case 5:
-					setUnitQueueView(panel.unitQueue5, name, size, remainingTime, image);
+					setUnitQueueView(queueBuildingPanel.unitQueue5, name, size, remainingTime, image);
 					break;	
 				default:
 					throw new Error("Invalid Queue Position");
 			}
 		}
 		
-		private function setUnitQueueView(unitQueue:MovieClip, name:String, size:String, remainingTime:String, image:MovieClip)
+		private function setUnitQueueView(unitQueueContainer:MovieClip, name:String, size:String, remainingTime:String, image:MovieClip)
 		{
-			unitQueue.unitName.htmlText = name;
-			unitQueue.iconContainer.stackSize.stackSizeTextfield.text = size;
-			unitQueue.iconContainer.iconLayer.addChild(image);
-			unitQueue.unitRemainingTime.htmlText = remainingTime;
-			unitQueue.visible = true;
+			unitQueueContainer.unitName.htmlText = name;
+			unitQueueContainer.iconContainer.stackSize.stackSizeTextfield.text = size;
+			unitQueueContainer.iconContainer.iconLayer.addChild(image);
+			unitQueueContainer.unitRemainingTime.htmlText = remainingTime;
+			unitQueueContainer.visible = true;
 		}
 		
 		private function clearUnitIcons() : void
 		{		
-			Util.removeChildren(panel.unitQueue1.iconContainer.iconLayer);
-			Util.removeChildren(panel.unitQueue2.iconContainer.iconLayer);
-			Util.removeChildren(panel.unitQueue3.iconContainer.iconLayer);
-			Util.removeChildren(panel.unitQueue4.iconContainer.iconLayer);
-			Util.removeChildren(panel.unitQueue5.iconContainer.iconLayer);
+			Util.removeChildren(queueBuildingPanel.unitQueue1.iconContainer.iconLayer);
+			Util.removeChildren(queueBuildingPanel.unitQueue2.iconContainer.iconLayer);
+			Util.removeChildren(queueBuildingPanel.unitQueue3.iconContainer.iconLayer);
+			Util.removeChildren(queueBuildingPanel.unitQueue4.iconContainer.iconLayer);
+			Util.removeChildren(queueBuildingPanel.unitQueue5.iconContainer.iconLayer);
 			
-			panel.unitQueue1.visible = false;
-			panel.unitQueue2.visible = false;
-			panel.unitQueue3.visible = false;
-			panel.unitQueue4.visible = false;
-			panel.unitQueue5.visible = false;
+			queueBuildingPanel.unitQueue1.visible = false;
+			queueBuildingPanel.unitQueue2.visible = false;
+			queueBuildingPanel.unitQueue3.visible = false;
+			queueBuildingPanel.unitQueue4.visible = false;
+			queueBuildingPanel.unitQueue5.visible = false;
 		}
 		
 		private function createUnitClicked(e:MouseEvent) : void
 		{
+			e.stopPropagation();
 			CreateUnitPanelController.INSTANCE.showPanel();
 		}
 		
 		private function buildTimeHandler(e:TimerEvent) : void
 		{
 			if(queue[0] != null)
-				panel.unitQueue1.unitRemainingTime.htmlText = queue[0].remainingTime;
+				queueBuildingPanel.unitQueue1.unitRemainingTime.htmlText = queue[0].remainingTime;
 		}
 		
 	}

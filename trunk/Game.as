@@ -169,17 +169,12 @@
 		private function connectionInfoArmy(e:ParamEvent) : void
 		{
 			trace("Game - infoArmy");
-			var entityPanelText:String;
-			var hero:int = e.params.hero;
-			var units:Array = e.params.units;
+			var army:Army = Army(entityManager.getEntity(e.params.id));
+			army.setArmyInfo(e.params);
 			
-			entityPanelText = "Hero: " + hero + "\n\n";
-			entityPanelText += "Units\n";
-						
-			for (var i = 0; i < units.length; i++)
-			{
-				entityPanelText += units[i].type + " " + units[i].size + "\n";
-			}			
+			ArmyPanelController.INSTANCE.army = army;
+			ArmyPanelController.INSTANCE.setUnits();
+			ArmyPanelController.INSTANCE.showPanel();
 		}
 		
 		private function connectionInfoCity(e:ParamEvent) : void

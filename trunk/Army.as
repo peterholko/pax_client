@@ -16,10 +16,14 @@
 		public static var onClick:String = "onArmyClick";
 		public static var onDoubleClick:String = "onArmyDoubleClick";
 				
+		public var units:Array;
+		
 		private var border:GlowFilter = null;
 
 		public function Army() : void
 		{
+			units = new Array();
+			
 			this.border = new GlowFilter(0x27F80B, 0);
 			this.border.alpha = 0;
 			this.filters = [this.border];
@@ -67,5 +71,33 @@
 						
 			Game.INSTANCE.dispatchEvent(pEvent);
 		}
+		
+		public function setArmyInfo(armyInfo:Object) : void
+		{
+			trace("Army - setArmyInfo");
+			
+			var heroInfo:int = armyInfo.hero;
+			var unitsInfo:Array = armyInfo.units;
+					
+			setUnits(unitsInfo);
+		}
+		
+		private function setUnits(unitsInfo:Array ) : void
+		{
+			units.length = 0;
+			
+			for (var i:int = 0; i < unitsInfo.length; i++)
+			{
+				var unit:Unit = new Unit();
+				
+				unit.id = unitsInfo[i].id;
+				unit.type = unitsInfo[i].type;
+				unit.size = unitsInfo[i].size;
+				unit.parentEntity = this;
+								
+				units.push(unit);
+			}
+			
+		}		
 	}
 }

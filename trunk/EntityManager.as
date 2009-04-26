@@ -43,8 +43,8 @@
 				}
 				
 				//If entity is player's entity add to Player instance
-				if (entity.playerId == Game.INSTANCE.player.id)
-						Game.INSTANCE.player.addEntity(entity);				
+				//if (entity.playerId == Game.INSTANCE.player.id)
+				//		Game.INSTANCE.player.addEntity(entity);				
 			}
 			
 			clearEntities();
@@ -70,6 +70,7 @@
 			entity.xPos = perceptionEntity.x;
 			entity.yPos = perceptionEntity.y;
 			entity.state = perceptionEntity.state;
+			entity.type = perceptionEntity.type;
 			entity.initialize();
 			
 			entity.x = entity.xPos * Tile.WIDTH;
