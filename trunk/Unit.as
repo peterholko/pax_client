@@ -77,6 +77,7 @@
 			x = anchorX;
 			y = anchorY;
 			
+			//TODO Move into a seperate function
 			if (ArmyPanelController.INSTANCE.getUnitContainer() == dropTarget ||
 				ArmyPanelController.INSTANCE.getUnitContainer().contains(dropTarget))
 			{

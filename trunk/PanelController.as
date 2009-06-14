@@ -6,22 +6,18 @@
 	
 	public class PanelController
 	{
-		public var main:Main;
-		
 		protected var panel:Panel;
 		
 		public function PanelController() : void
 		{
 		}
 		
-		public function initialize() : void
-		{
+		public function initialize(main:Main) : void
+		{			
 			panel.visible = false;
-			
 			panel.addEventListener(MouseEvent.CLICK, mouseClick);
 			panel.addEventListener(MouseEvent.MOUSE_DOWN, mouseDown);
 			panel.addEventListener(MouseEvent.MOUSE_UP, mouseUp);	
-			
 			panel.closeButton.addEventListener(MouseEvent.CLICK, closePanel);
 		}
 		

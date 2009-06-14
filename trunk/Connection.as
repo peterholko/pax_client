@@ -8,12 +8,14 @@
 	import flash.events.*
 	import flash.utils.getTimer;
 	
+	import packet.Packet;
+	
 	public class Connection extends EventDispatcher
 	{
 		public static var INSTANCE:Connection = new Connection();
 		
-		//public static var HOST:String = "localhost";
-		public static var HOST:String = "www.cowwit.com";		
+		public static var HOST:String = "localhost";
+		//public static var HOST:String = "www.cowwit.com";		
 		public static var PORT:int = 2345
 				
 		//Events 
@@ -29,6 +31,9 @@
 		public static var onInfoArmyEvent:String = "onInfoArmyEvent";
 		public static var onInfoCityEvent:String = "onInfoCityEvent";
 		public static var onInfoUnitQueueEvent:String = "onInfoUnitQueueEvent";
+		public static var onBattleJoinedEvent:String = "onBattleJoinedEvent";
+		public static var onBattleAddArmyEvent:String = "onBattleAddArmyEvent";
+		public static var onBattleDamageEvent:String = "onBattleDamageEvent";
 		
 		public static var onSendMoveArmy:String = "onSendMoveArmy";
 		public static var onSendAttackTarget:String = "onSendAttackTarget";
@@ -77,6 +82,7 @@
 		
 		public function doLogin(account:String, password:String) : void
 		{
+			trace("Connection - doLogin");
 			Packet.sendLogin(socket, account, password);
 		}
 		
@@ -141,6 +147,9 @@
 					else if(cmd == Packet.CLOCKSYNC)
 					{		
 						trace("Connection - clock sync");
+						//TODO Use the time sent by the server
+						var high:int = bArr.readInt();
+						var low:int = bArr.readInt();
 						clockSyncEndTime = getTimer();
 						dispatchEvent(new Event(Connection.onClockSyncEvent));
 					}
@@ -171,6 +180,27 @@
 						pEvent = new ParamEvent(Connection.onInfoCityEvent);
 						pEvent.params = Packet.readInfoCity(bArr);
 						dispatchEvent(pEvent);					
+					}
+					else if (cmd == Packet.BATTLE_JOINED)
+					{
+						trace("Connection - battle_joined");
+						pEvent = new ParamEvent(Connection.onBattleJoinedEvent);
+						pEvent.params = Packet.readBattleJoined(bArr);
+						dispatchEvent(pEvent);
+					}
+					else if (cmd == Packet.BATTLE_ADD_ARMY)
+					{
+						trace("Connection - battle_add_army");
+						pEvent = new ParamEvent(Connection.onBattleAddArmyEvent);
+						pEvent.params = Packet.readBattleAddArmy(bArr);
+						dispatchEvent(pEvent);
+					}
+					else if (cmd == Packet.BATTLE_DAMAGE)
+					{
+						trace("Connection - battle_damage");
+						pEvent = new ParamEvent(Connection.onBattleDamageEvent);
+						pEvent.params = Packet.readBattleDamage(bArr);
+						dispatchEvent(pEvent);
 					}
 					else if(cmd == Packet.BAD)
 					{

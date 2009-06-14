@@ -56,11 +56,12 @@
 		
 		override protected function mouseClick(e:Event) : void
 		{
-			trace("Army - mouseClick");			
-			var pEvent:ParamEvent = new ParamEvent(Army.onClick);
-			pEvent.params = this;
+			trace("Army - mouseClick")
+
+			var pEvent:ParamEvent = new ParamEvent(Tile.onClick);
+			pEvent.params = tile;
 						
-			Game.INSTANCE.dispatchEvent(pEvent);
+			Game.INSTANCE.dispatchEvent(pEvent);			
 		}
 		
 		override protected function mouseDoubleClick(e:Event) : void

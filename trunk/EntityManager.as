@@ -5,6 +5,8 @@
 	
 	public class EntityManager extends Sprite
 	{
+		public static var INSTANCE:EntityManager = new EntityManager();	
+		
 		private var entities:Array;
 		
 		public function EntityManager() : void
@@ -27,18 +29,31 @@
 				{
 					//Entity does not exist create one from perception data
 					entity = createEntityFromPerception(perceptionEntity);
+					
+					//Add entity to the map tile
+					Map.INSTANCE.addEntity(entity);
+					
 					newEntities.push(entity);
 					addChild(entity);
 				}
 				else 
 				{	
+					//Entity already exists
+					entity = entities[entityIndex];
+					
+					//Remove the entity from the previous map tile
+					Map.INSTANCE.removeEntity(entity);
+					
 					//Copy new perception data to entity
-					copyPerceptionToEntity(entities[entityIndex], perceptionEntity);
+					copyPerceptionToEntity(entity, perceptionEntity);
+					
+					//Add updated entity to the map tile
+					Map.INSTANCE.addEntity(entity);					
 					
 					//Update display position
-					entities[entityIndex].update();
+					entity.update();
 					
-					newEntities.push(entities[entityIndex]);
+					newEntities.push(entity);
 					entities.splice(entityIndex, 1);
 				}
 				
@@ -67,22 +82,22 @@
 			
 			entity.id = perceptionEntity.id;
 			entity.playerId = perceptionEntity.playerId;
-			entity.xPos = perceptionEntity.x;
-			entity.yPos = perceptionEntity.y;
+			entity.gameX = perceptionEntity.x;
+			entity.gameY = perceptionEntity.y;
 			entity.state = perceptionEntity.state;
 			entity.type = perceptionEntity.type;
 			entity.initialize();
 			
-			entity.x = entity.xPos * Tile.WIDTH;
-			entity.y = entity.yPos * Tile.HEIGHT;
-						
+			entity.x = entity.gameX * Tile.WIDTH;
+			entity.y = entity.gameY * Tile.HEIGHT;
+									
 			return entity;
 		}
 		
 		private function copyPerceptionToEntity(entity:Entity, perceptionEntity:Object) : void
 		{
-			entity.xPos = perceptionEntity.x;
-			entity.yPos = perceptionEntity.y;
+			entity.gameX = perceptionEntity.x;
+			entity.gameY = perceptionEntity.y;
 			entity.state = perceptionEntity.state;
 		}
 		

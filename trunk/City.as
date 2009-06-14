@@ -48,11 +48,16 @@
 		
 		override protected function mouseClick(e:Event) : void
 		{
-			trace("City - mouseClick");			
+			var pEvent:ParamEvent = new ParamEvent(Tile.onClick);
+			pEvent.params = tile;
+						
+			Game.INSTANCE.dispatchEvent(pEvent);				
+			
+			/*trace("City - mouseClick");			
 			var pEvent:ParamEvent = new ParamEvent(City.onClick);
 			pEvent.params = this;
 			
-			Game.INSTANCE.dispatchEvent(pEvent);
+			Game.INSTANCE.dispatchEvent(pEvent);*/
 		}
 		
 		override protected function mouseDoubleClick(e:Event) : void

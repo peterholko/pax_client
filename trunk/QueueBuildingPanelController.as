@@ -24,8 +24,8 @@
 		{
 		}
 		
-		override public function initialize() : void
-		{		
+		override public function initialize(main:Main) : void
+		{					
 			//Must use two variables as Actionscript does not have generics
 			panel = main.queueBuildingPanel;
 			queueBuildingPanel = main.queueBuildingPanel;
@@ -44,7 +44,7 @@
 			
 			queueBuildingPanel.createUnitButton.addEventListener(MouseEvent.CLICK, createUnitClicked);
 			
-			super.initialize();
+			super.initialize(main);
 		}		
 		
 		override public function showPanel() : void
@@ -135,6 +135,7 @@
 		
 		private function buildTimeHandler(e:TimerEvent) : void
 		{
+			//TODO Send request for updated city info when timer reachs 0
 			if(queue[0] != null)
 				queueBuildingPanel.unitQueue1.unitRemainingTime.htmlText = queue[0].remainingTime;
 		}

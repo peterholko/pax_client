@@ -10,6 +10,7 @@
 	import flash.events.Event;
 	import flash.geom.Rectangle;
 	import flash.events.KeyboardEvent;
+	import flash.system.Security;
 	
 	public class Main extends MovieClip
 	{
@@ -27,6 +28,8 @@
 		public var cityPanel:CityPanel;		
 		public var queueBuildingPanel:QueueBuildingPanel;
 		public var createUnitPanel:CreateUnitPanel;		
+		public var bottomPanel:BottomPanel;
+		public var commandPanel:CommandPanel;
 		
 		private var account:String;
 		private var password:String;
@@ -39,10 +42,14 @@
 		private var queueBuildingPanelController:QueueBuildingPanelController;
 		private var createUnitPanelController:CreateUnitPanelController;
 		
+		private var bottomPanelController:BottomPanelController;
+		private var commandPanelController:CommandPanelController;
+		
 		private var connectionMsg:String = "";
 		
 		public function Main() : void
 		{
+			Security.allowDomain("*");
 			this.gotoAndStop("Login");
 		}
 		
@@ -57,20 +64,22 @@
 		{
 			trace("armyPanel: " + armyPanel);
 			armyPanelController = ArmyPanelController.INSTANCE;
-			armyPanelController.main = this;
-			armyPanelController.initialize();
+			armyPanelController.initialize(this);
 			
 			cityPanelController = CityPanelController.INSTANCE;
-			cityPanelController.main = this;
-			cityPanelController.initialize();
+			cityPanelController.initialize(this);
 			
 			queueBuildingPanelController = QueueBuildingPanelController.INSTANCE;
-			queueBuildingPanelController.main = this;
-			queueBuildingPanelController.initialize();
+			queueBuildingPanelController.initialize(this);
 			
 			createUnitPanelController = CreateUnitPanelController.INSTANCE;
-			createUnitPanelController.main = this;
-			createUnitPanelController.initialize();
+			createUnitPanelController.initialize(this);
+			
+			bottomPanelController = BottomPanelController.INSTANCE;
+			bottomPanelController.initialize(this);
+			
+			commandPanelController = CommandPanelController.INSTANCE;
+			commandPanelController.initialize(this);
 						
 			game = Game.INSTANCE;
 			game.main = this;

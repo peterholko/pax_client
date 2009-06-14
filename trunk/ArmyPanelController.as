@@ -19,15 +19,15 @@
 		{		
 		}
 		
-		override public function initialize() : void
-		{
+		override public function initialize(main:Main) : void
+		{			
 			//Must use two variables as Actionscript does not have generics
 			panel = main.armyPanel;
 			armyPanel = main.armyPanel;
 			
 			armyPanel.panelTitle.htmlText = PANEL_TITLE;
 			
-			super.initialize();
+			super.initialize(main);
 		}
 		
 		public function getUnitContainer():ArmyUnitContainer

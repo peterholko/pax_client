@@ -17,8 +17,8 @@
 		{
 		}
 		
-		override public function initialize() : void
-		{			
+		override public function initialize(main:Main) : void
+		{					
 			//Must use two variables as Actionscript does not have generics
 			panel = main.createUnitPanel;
 			createUnitPanel = main.createUnitPanel;
@@ -31,7 +31,7 @@
 			createUnitPanel.unitSize.addEventListener(MouseEvent.MOUSE_DOWN, unitSizeDown);
 			createUnitPanel.createUnit.addEventListener(MouseEvent.CLICK, createUnitClicked);	
 			
-			super.initialize();
+			super.initialize(main);	
 		}			
 		
 		private function footsoldierClicked(e:MouseEvent) : void

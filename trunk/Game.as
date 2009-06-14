@@ -1,5 +1,6 @@
 ﻿package
 {
+	import flash.display.DisplayObject;
 	import flash.display.Sprite;
 	import flash.events.MouseEvent;	
 	import flash.events.KeyboardEvent;
@@ -7,16 +8,22 @@
 	import flash.utils.Timer;
 	import flash.events.Event;
 	import flash.geom.Rectangle;
+	import packet.BattleAddArmy;
+	import packet.BattleDamage;
+	import packet.BattleJoined;
 	
 	public class Game extends Sprite
 	{				
 		public static var INSTANCE:Game = new Game();	
 		public static var SCROLL_SPEED:int = 8;
 		public static var GAME_LOOP_TIME:int = 50;	
-		
+				
 		public var main:Main;
-		public var selectedTarget:Army;
 		public var player:Player;
+		
+		public var selectedEntity:Entity;
+		public var targetedEntity:Entity;
+		public var action:int = 0;
 		
 		private var lastLoopTime:Number;
 		private var entityManager:EntityManager;
@@ -24,19 +31,23 @@
 		
 		public function Game() : void
 		{
-			selectedTarget = null;							
-			
+			selectedEntity = null;							
+			targetedEntity = null;
 			player = new Player();
-			map = new Map();
-			entityManager = new EntityManager();
 			
+			map = Map.INSTANCE;
+			entityManager = EntityManager.INSTANCE;
+						
 			addChild(map);
 			addChild(entityManager);				
-			
+						
 			Connection.INSTANCE.addEventListener(Connection.onMapEvent, connectionMap);
 			Connection.INSTANCE.addEventListener(Connection.onPerceptionEvent, connectionPerception);		
 			Connection.INSTANCE.addEventListener(Connection.onInfoArmyEvent, connectionInfoArmy);
 			Connection.INSTANCE.addEventListener(Connection.onInfoCityEvent, connectionInfoCity);
+			Connection.INSTANCE.addEventListener(Connection.onBattleJoinedEvent, connectionBattleJoined);
+			Connection.INSTANCE.addEventListener(Connection.onBattleDamageEvent, connectionBattleDamage);
+			
 			addEventListener(Tile.onClick, tileClicked);
 			addEventListener(Army.onClick, armyClicked);
 			addEventListener(Army.onDoubleClick, armyDoubleClicked);
@@ -98,39 +109,47 @@
 			}			
 			
 			Game.INSTANCE.scrollRect = rect;
-		}		
+		}	
+		
+		public function sendAttack(targetId:int)
+		{
+			if (selectedEntity != null)
+			{
+				trace("Game - sendAttack");
+				var parameters:Object = {id: selectedEntity.id, targetId: targetId};
+				var attackEvent:ParamEvent = new ParamEvent(Connection.onSendAttackTarget);
+				attackEvent.params = parameters;				
+				Connection.INSTANCE.dispatchEvent(attackEvent);		
+			}
+		}
 				
 		private function tileClicked(e:ParamEvent) : void
 		{
 			trace("Game - tileClicked");
-			if(selectedTarget != null)
+			
+			var tile:Tile = e.params;
+			
+			if (tile != null)
 			{
-				var parameters:Object = {id: selectedTarget.id, x: e.params.x, y: e.params.y};
-				var pEvent = new ParamEvent(Connection.onSendMoveArmy);
-				pEvent.params = parameters;
-				Connection.INSTANCE.dispatchEvent(pEvent);
+				BottomPanelController.INSTANCE.tile = tile;
+				BottomPanelController.INSTANCE.setIcons();
+				CommandPanelController.INSTANCE.hidePanel();
+			}
+							
+			if(selectedEntity != null)
+			{
+				if (action == CommandPanelController.COMMAND_MOVE)
+				{
+					var parameters:Object = {id: selectedEntity.id, x: tile.gameX, y: tile.gameY};
+					var pEvent = new ParamEvent(Connection.onSendMoveArmy);
+					pEvent.params = parameters;
+					Connection.INSTANCE.dispatchEvent(pEvent);	
+				}
 			}
 		}
 		
 		private function armyClicked(e:ParamEvent) : void
 		{
-			var parameters:Object
-			
-			if(selectedTarget != null)
-			{
-				selectedTarget.hideBorder();
-				
-				if(e.params.playerId != player.id)
-				{					
-					parameters = {id: selectedTarget.id, targetId: e.params.id};
-					var attackEvent = new ParamEvent(Connection.onSendAttackTarget);
-					attackEvent.params = parameters;				
-					Connection.INSTANCE.dispatchEvent(attackEvent);
-				}				
-			}
-			
-			selectedTarget = e.params;
-			selectedTarget.showBorder();
 		}
 		
 		private function armyDoubleClicked(e:ParamEvent) : void
@@ -187,7 +206,25 @@
 			CityPanelController.INSTANCE.setBuildings();
 			CityPanelController.INSTANCE.setUnits();
 			CityPanelController.INSTANCE.showPanel();
-		}				
+		}		
+		
+		private function connectionBattleJoined(e:ParamEvent) : void
+		{
+			trace("Game - battleJoined");
+			var battleJoined:BattleJoined = e.params as BattleJoined;			
+		}
+		
+		private function connnectionBattleAddArmy(e:ParamEvent) : void
+		{
+			trace("Game - battleAddArmy");
+			var battleAddArmy:BattleAddArmy = e.params as BattleAddArmy;
+		}
+		
+		private function connectionBattleDamage(e:ParamEvent) : void
+		{
+			trace("Game - battleDamage");
+			var battleDamage:BattleDamage = e.params as BattleDamage;
+		}
 		
 	}
 }

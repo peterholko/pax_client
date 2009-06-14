@@ -17,8 +17,8 @@
 		{			
 		}
 		
-		override public function initialize() : void
-		{		
+		override public function initialize(main:Main) : void
+		{					
 			//Must use two variables as Actionscript does not have generics
 			panel = main.cityPanel;
 			cityPanel = main.cityPanel;
@@ -28,7 +28,7 @@
 			cityPanel.panelTitle.htmlText = PANEL_TITLE;
 			cityPanel.barrackButton.addEventListener(MouseEvent.CLICK, barrackClicked, false, 1);
 			
-			super.initialize();
+			super.initialize(main);
 		}	
 		
 		override public function showPanel() : void

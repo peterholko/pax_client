@@ -14,9 +14,10 @@
 		public var id:int;
 		public var playerId:int;
 		public var state:int;
-		public var xPos:int;
-		public var yPos:int;	
+		public var gameX:int;
+		public var gameY:int;	
 		public var type:int;
+		public var tile:Tile;
 
 		protected var image:Bitmap = null;	
 	
@@ -33,8 +34,18 @@
 		
 		public function update() : void
 		{
-			x = xPos * Tile.WIDTH;
-			y = yPos * Tile.HEIGHT;				
+			x = gameX * Tile.WIDTH;
+			y = gameY * Tile.HEIGHT;				
+		}
+		
+		public function getImage() : Bitmap
+		{
+			return image;
+		}
+		
+		public function isPlayers() : Boolean
+		{
+			return playerId == Game.INSTANCE.player.id;
 		}
 		
 		protected function mouseClick(e:Event) : void

@@ -9,6 +9,7 @@
 			while (displayContainer.numChildren)
 				displayContainer.removeChildAt(0); 
 		}
+		
 	}
 	
 }

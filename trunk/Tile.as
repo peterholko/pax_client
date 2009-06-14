@@ -16,16 +16,18 @@
 		public static const HEIGHT:int = 32;		
 		
 		private static var imageTiles:BitmapData = new TestTiles(0,0);	
-
-		private var image:Bitmap;
 		
 		public var gameX:int;
 		public var gameY:int;
 		public var index:int;
-		public var type:int;		
+		public var type:int;	
+		
+		private var image:Bitmap;
+		public var entities/*Entity*/:Array;		
 		
 		public function Tile() : void
 		{
+			entities = new Array();
 		}
 		
 		public function initialize() : void
@@ -70,15 +72,50 @@
 			addChild(image);
 			addEventListener(MouseEvent.CLICK, mouseClick);
 		}
+		
+		public function addEntity(entity:Entity) : void
+		{
+			var foundEntity:Boolean = false;
+			
+			for (var i:int = 0; i < entities.length; i++)
+			{
+				if (entities[i].id == entity.id)
+				{
+					foundEntity = true;
+					break;
+				}
+			}
+			
+			if (!foundEntity)
+			{
+				entities.push(entity);
+			}
+		}
+		
+		public function removeEntity(entity:Entity) : void
+		{
+			for (var i:int = 0; i < entities.length; i++)
+			{
+				if (entities[i].id == entity.id)
+				{
+					entities.splice(i, 1);
+					break;
+				}
+			}			
+		}
+		
+		public function getImage() : Bitmap
+		{
+			return image;
+		}
 				
 		private function mouseClick(e:Event) : void
 		{
 			trace("Tile - mouseClick");
-			var coords:Object =  {x: this.gameX, y: this.gameY};
 			
 			var pEvent:ParamEvent = new ParamEvent(Tile.onClick);
-			pEvent.params = coords
-			
+			pEvent.params = this;
+						
 			Game.INSTANCE.dispatchEvent(pEvent);
 		}
 	}

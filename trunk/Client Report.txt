@@ -1,0 +1,218 @@
+Client.swf Movie Report
+------------------------
+
+Metadata
+--------
+Bytes    Value
+-----    -----
+  694    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2009-06-13T18:26:16-06:00</xmp:MetadataDate> <xmp:ModifyDate>2009-06-13T18:26:16-06:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:234A9A1EB7DADD11B7A9AB32E7409597</stRef:instanceID> <stRef:documentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:C5C9C6DB7958DE11A94ABF378146229E</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:C5C9C6DB7958DE11A94ABF378146229E</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+
+Frame #    Frame Bytes    Total Bytes    Scene
+-------    -----------    -----------    ----------------
+      1          67131          67131    Scene 1 (AS 3.0 Classes Export Frame)
+      2              1          67132    
+      3              1          67133    
+      4              1          67134    
+      5            162          67296    
+      6              1          67297    
+      7              1          67298    
+      8              1          67299    
+      9              1          67300    
+     10              1          67301    
+     11              1          67302    
+     12              1          67303    
+     13              1          67304    
+     14              1          67305    
+     15              1          67306    
+     16              1          67307    
+     17              1          67308    
+     18              1          67309    
+     19              1          67310    
+     20              1          67311    
+     21              1          67312    
+     22             13          67325    
+     23              1          67326    
+     24              1          67327    
+     25              1          67328    
+     26              1          67329    
+     27              1          67330    
+     28              1          67331    
+     29              1          67332    
+     30              1          67333    
+     31              1          67334    
+     32              1          67335    
+     33              1          67336    
+     34              1          67337    
+     35              1          67338    
+     36              1          67339    
+     37              1          67340    
+     38              1          67341    
+     39              1          67342    
+     40              1          67343    
+     41              1          67344    
+     42              1          67345    
+     43              1          67346    
+     44              1          67347    
+     45              1          67348    
+     46              1          67349    
+     47              1          67350    
+     48              1          67351    
+     49              1          67352    
+     50              1          67353    
+     51              1          67354    
+     52              1          67355    
+     53              1          67356    
+     54              1          67357    
+     55              1          67358    
+     56              1          67359    
+     57              1          67360    
+     58              1          67361    
+     59              1          67362    
+     60              1          67363    
+     61              1          67364    
+     62              1          67365    
+     63              1          67366    
+     64              1          67367    
+     65              1          67368    
+     66              1          67369    
+     67              1          67370    
+     68              1          67371    
+     69              1          67372    
+     70              1          67373    
+     71              1          67374    
+     72              1          67375    
+     73              1          67376    
+     74              1          67377    
+     75              1          67378    
+     76              1          67379    
+     77              1          67380    
+     78              1          67381    
+     79              1          67382    
+     80              1          67383    
+     81              1          67384    
+     82              1          67385    
+     83              1          67386    
+     84              1          67387    
+     85              1          67388    
+     86              1          67389    
+     87              1          67390    
+     88              1          67391    
+     89              1          67392    
+
+Scene                        Shape Bytes    Text Bytes    ActionScript Bytes
+-------------------------    -----------    ----------    ------------------
+Scene 1                               32           109                 48258
+
+Symbol                       Shape Bytes    Text Bytes    ActionScript Bytes
+-------------------------    -----------    ----------    ------------------
+CommandPanel                          34             0                     0
+BottomPanel                           32             0                     0
+ArmyUnitContainer                     32             0                     0
+IconLayer                             19             0                     0
+StackSize                             29            40                     0
+IconContainer                         26             0                     0
+CityUnitContainer                     32             0                     0
+Archer                                 0             0                     0
+Footsoldier                            0             0                     0
+CreateUnitPanel                       32             0                     0
+UnitQueueDisplay                       0             0                     0
+UnitIcon                               0             0                     0
+QueueBuildingPanel                    32             0                     0
+BarrackButton                          0             0                     0
+CityPanel                             32             0                     0
+ArmyPanel                             32             0                     0
+TextInput_disabledSkin                69             0                     0
+TextInput_upSkin                      67             0                     0
+TextInput                              0             0                     0
+Button_disabledSkin                  163             0                     0
+Button_downSkin                      192             0                     0
+Button_emphasizedSkin                 99             0                     0
+Button_overSkin                      178             0                     0
+Button_selectedDisabledSkin          147             0                     0
+Button_selectedDownSkin              145             0                     0
+Button_selectedOverSkin              146             0                     0
+Button_selectedUpSkin                146             0                     0
+Button_upSkin                        198             0                     0
+Button                                 0             0                     0
+Component_avatar                      22             0                     0
+TextArea_disabledSkin                  0             0                     0
+TextArea_upSkin                        0             0                     0
+focusRectSkin                         68             0                     0
+ScrollTrack_skin                       0             0                     0
+arrowIcon                              0             0                     0
+ScrollArrowUp_icon                     0             0                     0
+ScrollArrowUp_downSkin                 0             0                     0
+ScrollArrowDown_icon                   0             0                     0
+ScrollArrowDown_downSkin               0             0                     0
+ScrollThumb_downSkin                   0             0                     0
+ScrollArrowDown_overSkin               0             0                     0
+ScrollThumb_overSkin                   0             0                     0
+ScrollArrowUp_overSkin                 0             0                     0
+ScrollArrowUp_upSkin                   0             0                     0
+ScrollThumb_upSkin                     0             0                     0
+ScrollArrowDown_upSkin                 0             0                     0
+ScrollArrowDown_disabledSkin           0             0                     0
+ScrollArrowUp_disabledSkin             0             0                     0
+ScrollBar_thumbIcon                    0             0                     0
+ProgressBar_trackSkin                  0             0                     0
+ProgressBar_barSkin                    0             0                     0
+ProgressBar_indeterminateSkin          0             0                     0
+HeaderRenderer_upSkin                  0             0                     0
+HeaderRenderer_disabledSkin            0             0                     0
+HeaderRenderer_downSkin                0             0                     0
+HeaderRenderer_overSkin                0             0                     0
+HeaderRenderer_selectedDisabledSkin     0             0                     0
+HeaderRenderer_selectedDownSkin        0             0                     0
+HeaderRenderer_selectedOverSkin        0             0                     0
+HeaderRenderer_selectedUpSkin          0             0                     0
+HeaderRenderer                         0             0                     0
+HeaderSortArrow_ascIcon                0             0                     0
+HeaderSortArrow_descIcon               0             0                     0
+CellRenderer_upSkin                    0             0                     0
+CellRenderer_disabledSkin              0             0                     0
+CellRenderer_downSkin                  0             0                     0
+CellRenderer_overSkin                  0             0                     0
+CellRenderer_selectedDisabledSkin      0             0                     0
+CellRenderer_selectedDownSkin          0             0                     0
+CellRenderer_selectedOverSkin          0             0                     0
+CellRenderer_selectedUpSkin            0             0                     0
+CellRenderer                           0             0                     0
+ColumnStretch_cursor                   0             0                     0
+DataGrid_skin                          0             0                     0
+ScrollBar                              0             0                     0
+DataGridCellEditor_skin                0             0                     0
+List_skin                              0             0                     0
+Label                                  0             0                     0
+CheckBox_upIcon                        0             0                     0
+CheckBox_overIcon                      0             0                     0
+CheckBox_downIcon                      0             0                     0
+CheckBox_disabledIcon                  0             0                     0
+CheckBox_selectedIcon                  0             0                     0
+CheckBox_selectedUpIcon                0             0                     0
+CheckBox_selectedOverIcon              0             0                     0
+CheckBox_selectedDownIcon              0             0                     0
+CheckBox_selectedDisabledIcon          0             0                     0
+
+Font Name                 Bytes        Characters    
+----------------------    ---------    --------------
+ArialMT                        2956    
+_sans                          2956    
+
+ActionScript Bytes    Location
+------------------    --------
+             48258    Scene 1:Frame 1
+
+Bitmap                     Compressed    Compression
+-----------------------    ----------  --------  -----------
+TestTiles                       6331       16384   Lossless
+placeholder_enemy.png             44        4096   Lossless
+placeholder_city.png             131        4096   Lossless
+placeholder_army.png             142        4096   Lossless
+CharacterImage                  1072        3712   Lossless
+placeholder_archer.png           227       10000   Lossless
+placeholder_footsoldier.png       258       10000   Lossless
+placeholder_barrack.png          277        6400   Lossless
+
+
+
+
