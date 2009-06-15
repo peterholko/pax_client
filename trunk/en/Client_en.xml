@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xliff version="1.0" xml:lang="en">
+
+  <file datatype="plaintext" original="Client.fla" source-language="EN">
+    <header></header>
+    <body>
+      <trans-unit id="001" resname="IDS_ATTACK">
+        <source>Attack</source>
+      </trans-unit>
+      <trans-unit id="002" resname="IDS_DETAILS">
+        <source>Details</source>
+      </trans-unit>
+      <trans-unit id="003" resname="IDS_MOVE">
+        <source>Move</source>
+      </trans-unit>
+    </body>
+  </file>
+
+</xliff>

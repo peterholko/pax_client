@@ -5,103 +5,103 @@ Metadata
 --------
 Bytes    Value
 -----    -----
-  694    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2009-06-13T18:26:16-06:00</xmp:MetadataDate> <xmp:ModifyDate>2009-06-13T18:26:16-06:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:234A9A1EB7DADD11B7A9AB32E7409597</stRef:instanceID> <stRef:documentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:C5C9C6DB7958DE11A94ABF378146229E</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:C5C9C6DB7958DE11A94ABF378146229E</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+  693    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2009-06-15T00:24:28-06:00</xmp:MetadataDate> <xmp:ModifyDate>2009-06-15T00:24:28-06:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:234A9A1EB7DADD11B7A9AB32E7409597</stRef:instanceID> <stRef:documentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:E93DB62E7359DE1189E2E98896AF9927</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:E93DB62E7359DE1189E2E98896AF9927</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
 
 Frame #    Frame Bytes    Total Bytes    Scene
 -------    -----------    -----------    ----------------
-      1          67131          67131    Scene 1 (AS 3.0 Classes Export Frame)
-      2              1          67132    
-      3              1          67133    
-      4              1          67134    
-      5            162          67296    
-      6              1          67297    
-      7              1          67298    
-      8              1          67299    
-      9              1          67300    
-     10              1          67301    
-     11              1          67302    
-     12              1          67303    
-     13              1          67304    
-     14              1          67305    
-     15              1          67306    
-     16              1          67307    
-     17              1          67308    
-     18              1          67309    
-     19              1          67310    
-     20              1          67311    
-     21              1          67312    
-     22             13          67325    
-     23              1          67326    
-     24              1          67327    
-     25              1          67328    
-     26              1          67329    
-     27              1          67330    
-     28              1          67331    
-     29              1          67332    
-     30              1          67333    
-     31              1          67334    
-     32              1          67335    
-     33              1          67336    
-     34              1          67337    
-     35              1          67338    
-     36              1          67339    
-     37              1          67340    
-     38              1          67341    
-     39              1          67342    
-     40              1          67343    
-     41              1          67344    
-     42              1          67345    
-     43              1          67346    
-     44              1          67347    
-     45              1          67348    
-     46              1          67349    
-     47              1          67350    
-     48              1          67351    
-     49              1          67352    
-     50              1          67353    
-     51              1          67354    
-     52              1          67355    
-     53              1          67356    
-     54              1          67357    
-     55              1          67358    
-     56              1          67359    
-     57              1          67360    
-     58              1          67361    
-     59              1          67362    
-     60              1          67363    
-     61              1          67364    
-     62              1          67365    
-     63              1          67366    
-     64              1          67367    
-     65              1          67368    
-     66              1          67369    
-     67              1          67370    
-     68              1          67371    
-     69              1          67372    
-     70              1          67373    
-     71              1          67374    
-     72              1          67375    
-     73              1          67376    
-     74              1          67377    
-     75              1          67378    
-     76              1          67379    
-     77              1          67380    
-     78              1          67381    
-     79              1          67382    
-     80              1          67383    
-     81              1          67384    
-     82              1          67385    
-     83              1          67386    
-     84              1          67387    
-     85              1          67388    
-     86              1          67389    
-     87              1          67390    
-     88              1          67391    
-     89              1          67392    
+      1          67885          67885    Scene 1 (AS 3.0 Classes Export Frame)
+      2              1          67886    
+      3              1          67887    
+      4              1          67888    
+      5            162          68050    
+      6              1          68051    
+      7              1          68052    
+      8              1          68053    
+      9              1          68054    
+     10              1          68055    
+     11              1          68056    
+     12              1          68057    
+     13              1          68058    
+     14              1          68059    
+     15              1          68060    
+     16              1          68061    
+     17              1          68062    
+     18              1          68063    
+     19              1          68064    
+     20              1          68065    
+     21              1          68066    
+     22             13          68079    
+     23              1          68080    
+     24              1          68081    
+     25              1          68082    
+     26              1          68083    
+     27              1          68084    
+     28              1          68085    
+     29              1          68086    
+     30              1          68087    
+     31              1          68088    
+     32              1          68089    
+     33              1          68090    
+     34              1          68091    
+     35              1          68092    
+     36              1          68093    
+     37              1          68094    
+     38              1          68095    
+     39              1          68096    
+     40              1          68097    
+     41              1          68098    
+     42              1          68099    
+     43              1          68100    
+     44              1          68101    
+     45              1          68102    
+     46              1          68103    
+     47              1          68104    
+     48              1          68105    
+     49              1          68106    
+     50              1          68107    
+     51              1          68108    
+     52              1          68109    
+     53              1          68110    
+     54              1          68111    
+     55              1          68112    
+     56              1          68113    
+     57              1          68114    
+     58              1          68115    
+     59              1          68116    
+     60              1          68117    
+     61              1          68118    
+     62              1          68119    
+     63              1          68120    
+     64              1          68121    
+     65              1          68122    
+     66              1          68123    
+     67              1          68124    
+     68              1          68125    
+     69              1          68126    
+     70              1          68127    
+     71              1          68128    
+     72              1          68129    
+     73              1          68130    
+     74              1          68131    
+     75              1          68132    
+     76              1          68133    
+     77              1          68134    
+     78              1          68135    
+     79              1          68136    
+     80              1          68137    
+     81              1          68138    
+     82              1          68139    
+     83              1          68140    
+     84              1          68141    
+     85              1          68142    
+     86              1          68143    
+     87              1          68144    
+     88              1          68145    
+     89              1          68146    
 
 Scene                        Shape Bytes    Text Bytes    ActionScript Bytes
 -------------------------    -----------    ----------    ------------------
-Scene 1                               32           109                 48258
+Scene 1                               32           109                 49036
 
 Symbol                       Shape Bytes    Text Bytes    ActionScript Bytes
 -------------------------    -----------    ----------    ------------------
@@ -125,14 +125,14 @@ TextInput_disabledSkin                69             0                     0
 TextInput_upSkin                      67             0                     0
 TextInput                              0             0                     0
 Button_disabledSkin                  163             0                     0
-Button_downSkin                      192             0                     0
-Button_emphasizedSkin                 99             0                     0
+Button_downSkin                      191             0                     0
+Button_emphasizedSkin                 98             0                     0
 Button_overSkin                      178             0                     0
 Button_selectedDisabledSkin          147             0                     0
 Button_selectedDownSkin              145             0                     0
 Button_selectedOverSkin              146             0                     0
 Button_selectedUpSkin                146             0                     0
-Button_upSkin                        198             0                     0
+Button_upSkin                        197             0                     0
 Button                                 0             0                     0
 Component_avatar                      22             0                     0
 TextArea_disabledSkin                  0             0                     0
@@ -195,23 +195,23 @@ CheckBox_selectedDisabledIcon          0             0                     0
 
 Font Name                 Bytes        Characters    
 ----------------------    ---------    --------------
-ArialMT                        2956    
-_sans                          2956    
+ArialMT                        2952    
+_sans                          2952    
 
 ActionScript Bytes    Location
 ------------------    --------
-             48258    Scene 1:Frame 1
+             49036    Scene 1:Frame 1
 
 Bitmap                     Compressed    Compression
 -----------------------    ----------  --------  -----------
-TestTiles                       6331       16384   Lossless
+TestTiles                       6323       16384   Lossless
 placeholder_enemy.png             44        4096   Lossless
 placeholder_city.png             131        4096   Lossless
-placeholder_army.png             142        4096   Lossless
-CharacterImage                  1072        3712   Lossless
-placeholder_archer.png           227       10000   Lossless
+placeholder_army.png             141        4096   Lossless
+CharacterImage                  1070        3712   Lossless
+placeholder_archer.png           226       10000   Lossless
 placeholder_footsoldier.png       258       10000   Lossless
-placeholder_barrack.png          277        6400   Lossless
+placeholder_barrack.png          276        6400   Lossless
 
 
 

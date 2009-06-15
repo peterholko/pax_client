@@ -7,6 +7,8 @@
 	import flash.events.MouseEvent;	
 	import flash.filters.GlowFilter;
 	
+	import packet.Army;
+	
 	import ArmyImage;
 	import EnemyImage;	
 	
@@ -16,7 +18,7 @@
 		public static var onClick:String = "onArmyClick";
 		public static var onDoubleClick:String = "onArmyDoubleClick";
 				
-		public var units:Array;
+		public var units/*Unit*/:Array;
 		
 		private var border:GlowFilter = null;
 
@@ -73,17 +75,13 @@
 			Game.INSTANCE.dispatchEvent(pEvent);
 		}
 		
-		public function setArmyInfo(armyInfo:Object) : void
+		public function setArmyInfo(armyInfo:packet.Army) : void
 		{
-			trace("Army - setArmyInfo");
-			
-			var heroInfo:int = armyInfo.hero;
-			var unitsInfo:Array = armyInfo.units;
-					
-			setUnits(unitsInfo);
+			trace("Army - setArmyInfo");					
+			setUnits(armyInfo.units);
 		}
 		
-		private function setUnits(unitsInfo:Array ) : void
+		private function setUnits(unitsInfo/*packet.Unit*/:Array ) : void
 		{
 			units.length = 0;
 			

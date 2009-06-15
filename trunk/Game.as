@@ -211,13 +211,21 @@
 		private function connectionBattleJoined(e:ParamEvent) : void
 		{
 			trace("Game - battleJoined");
-			var battleJoined:BattleJoined = e.params as BattleJoined;			
+			var battleJoined:BattleJoined = BattleJoined(e.params);			
+			var battle:Battle = new Battle();		
+			
+			battle.id = battleJoined.battleId;
+			battle.createArmies(battleJoined.armies);
+			
+			BattleManager.INSTANCE.addBattle(battle);
 		}
 		
 		private function connnectionBattleAddArmy(e:ParamEvent) : void
 		{
 			trace("Game - battleAddArmy");
-			var battleAddArmy:BattleAddArmy = e.params as BattleAddArmy;
+			var battleAddArmy:BattleAddArmy = BattleAddArmy(e.params);
+			var battle:Battle = BattleManager.INSTANCE.getBattle(battleAddArmy.battleId);
+			
 		}
 		
 		private function connectionBattleDamage(e:ParamEvent) : void
