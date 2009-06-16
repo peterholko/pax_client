@@ -1,4 +1,4 @@
-﻿package packet
+﻿package net.packet
 {
 	import flash.net.Socket;
 	import flash.system.*;
