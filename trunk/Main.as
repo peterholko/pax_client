@@ -12,6 +12,12 @@
 	import flash.events.KeyboardEvent;
 	import flash.system.Security;
 	
+	import net.Connection;
+	import game.Game;
+	
+	import ui.panel.controller.*;
+	import ui.panel.view.*;
+	
 	public class Main extends MovieClip
 	{
 		public static var DEBUG:Boolean = true;
@@ -35,7 +41,6 @@
 		private var password:String;
 		
 		private var connection:Connection;
-		private var game:Game;
 		
 		private var cityPanelController:CityPanelController;
 		private var armyPanelController:ArmyPanelController;
@@ -81,10 +86,9 @@
 			commandPanelController = CommandPanelController.INSTANCE;
 			commandPanelController.initialize(this);
 						
-			game = Game.INSTANCE;
-			game.main = this;
-			game.setLastLoopTime(connection.clockSyncStartTime);
-			game.player.id = connection.playerId;			
+			Game.INSTANCE.main = this;
+			Game.INSTANCE.setLastLoopTime(connection.clockSyncStartTime);
+			Game.INSTANCE.player.id = connection.playerId;			
 		}
 						
 		private function loginHandler(event:MouseEvent) : void
@@ -145,13 +149,13 @@
 		private function connectionClockSync(e:Event) : void
 		{
 			connection.doClientReady();
-			game.startLoop();
-			game.x = 100;
-			game.y = 0;
-			game.scrollRect = new Rectangle(0, 0, 920, 538);
+			Game.INSTANCE.startLoop();
+			Game.INSTANCE.x = 100;
+			Game.INSTANCE.y = 0;
+			Game.INSTANCE.scrollRect = new Rectangle(0, 0, 920, 538);
 						
-			stage.addEventListener(KeyboardEvent.KEY_DOWN,game.keyDownEvent);
-			addChildAt(game, 0);
+			stage.addEventListener(KeyboardEvent.KEY_DOWN,Game.INSTANCE.keyDownEvent);
+			addChildAt(Game.INSTANCE, 0);
 		}		
 	}
 }

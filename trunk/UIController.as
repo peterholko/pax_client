@@ -1,8 +1,0 @@
-﻿package 
-{
-	public class UIController
-	{
-		
-	}
-	
-}

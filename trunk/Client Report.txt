@@ -5,113 +5,114 @@ Metadata
 --------
 Bytes    Value
 -----    -----
-  693    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2009-06-15T00:24:28-06:00</xmp:MetadataDate> <xmp:ModifyDate>2009-06-15T00:24:28-06:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:234A9A1EB7DADD11B7A9AB32E7409597</stRef:instanceID> <stRef:documentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:E93DB62E7359DE1189E2E98896AF9927</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:E93DB62E7359DE1189E2E98896AF9927</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+  676    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2009-06-15T21:33-06:00</xmp:MetadataDate> <xmp:ModifyDate>2009-06-15T21:33-06:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:234A9A1EB7DADD11B7A9AB32E7409597</stRef:instanceID> <stRef:documentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:3C4EB40C265ADE11BD36F1377AB027E5</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:3C4EB40C265ADE11BD36F1377AB027E5</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
 
 Frame #    Frame Bytes    Total Bytes    Scene
 -------    -----------    -----------    ----------------
-      1          67885          67885    Scene 1 (AS 3.0 Classes Export Frame)
-      2              1          67886    
-      3              1          67887    
-      4              1          67888    
-      5            162          68050    
-      6              1          68051    
-      7              1          68052    
-      8              1          68053    
-      9              1          68054    
-     10              1          68055    
-     11              1          68056    
-     12              1          68057    
-     13              1          68058    
-     14              1          68059    
-     15              1          68060    
-     16              1          68061    
-     17              1          68062    
-     18              1          68063    
-     19              1          68064    
-     20              1          68065    
-     21              1          68066    
-     22             13          68079    
-     23              1          68080    
-     24              1          68081    
-     25              1          68082    
-     26              1          68083    
-     27              1          68084    
-     28              1          68085    
-     29              1          68086    
-     30              1          68087    
-     31              1          68088    
-     32              1          68089    
-     33              1          68090    
-     34              1          68091    
-     35              1          68092    
-     36              1          68093    
-     37              1          68094    
-     38              1          68095    
-     39              1          68096    
-     40              1          68097    
-     41              1          68098    
-     42              1          68099    
-     43              1          68100    
-     44              1          68101    
-     45              1          68102    
-     46              1          68103    
-     47              1          68104    
-     48              1          68105    
-     49              1          68106    
-     50              1          68107    
-     51              1          68108    
-     52              1          68109    
-     53              1          68110    
-     54              1          68111    
-     55              1          68112    
-     56              1          68113    
-     57              1          68114    
-     58              1          68115    
-     59              1          68116    
-     60              1          68117    
-     61              1          68118    
-     62              1          68119    
-     63              1          68120    
-     64              1          68121    
-     65              1          68122    
-     66              1          68123    
-     67              1          68124    
-     68              1          68125    
-     69              1          68126    
-     70              1          68127    
-     71              1          68128    
-     72              1          68129    
-     73              1          68130    
-     74              1          68131    
-     75              1          68132    
-     76              1          68133    
-     77              1          68134    
-     78              1          68135    
-     79              1          68136    
-     80              1          68137    
-     81              1          68138    
-     82              1          68139    
-     83              1          68140    
-     84              1          68141    
-     85              1          68142    
-     86              1          68143    
-     87              1          68144    
-     88              1          68145    
-     89              1          68146    
+      1          68452          68452    Scene 1 (AS 3.0 Classes Export Frame)
+      2              1          68453    
+      3              1          68454    
+      4              1          68455    
+      5            159          68614    
+      6              1          68615    
+      7              1          68616    
+      8              1          68617    
+      9              1          68618    
+     10              1          68619    
+     11              1          68620    
+     12              1          68621    
+     13              1          68622    
+     14              1          68623    
+     15              1          68624    
+     16              1          68625    
+     17              1          68626    
+     18              1          68627    
+     19              1          68628    
+     20              1          68629    
+     21              1          68630    
+     22              1          68631    
+     23             13          68644    
+     24              1          68645    
+     25              1          68646    
+     26              1          68647    
+     27              1          68648    
+     28              1          68649    
+     29              1          68650    
+     30              1          68651    
+     31              1          68652    
+     32              1          68653    
+     33              1          68654    
+     34              1          68655    
+     35              1          68656    
+     36              1          68657    
+     37              1          68658    
+     38              1          68659    
+     39              1          68660    
+     40              1          68661    
+     41              1          68662    
+     42              1          68663    
+     43              1          68664    
+     44              1          68665    
+     45              1          68666    
+     46              1          68667    
+     47              1          68668    
+     48              1          68669    
+     49              1          68670    
+     50              1          68671    
+     51              1          68672    
+     52              1          68673    
+     53              1          68674    
+     54              1          68675    
+     55              1          68676    
+     56              1          68677    
+     57              1          68678    
+     58              1          68679    
+     59              1          68680    
+     60              1          68681    
+     61              1          68682    
+     62              1          68683    
+     63              1          68684    
+     64              1          68685    
+     65              1          68686    
+     66              1          68687    
+     67              1          68688    
+     68              1          68689    
+     69              1          68690    
+     70              1          68691    
+     71              1          68692    
+     72              1          68693    
+     73              1          68694    
+     74              1          68695    
+     75              1          68696    
+     76              1          68697    
+     77              1          68698    
+     78              1          68699    
+     79              1          68700    
+     80              1          68701    
+     81              1          68702    
+     82              1          68703    
+     83              1          68704    
+     84              1          68705    
+     85              1          68706    
+     86              1          68707    
+     87              1          68708    
+     88              1          68709    
+     89              1          68710    
+     90              1          68711    
 
 Scene                        Shape Bytes    Text Bytes    ActionScript Bytes
 -------------------------    -----------    ----------    ------------------
-Scene 1                               32           109                 49036
+Scene 1                               31           108                 49995
 
 Symbol                       Shape Bytes    Text Bytes    ActionScript Bytes
 -------------------------    -----------    ----------    ------------------
 CommandPanel                          34             0                     0
 BottomPanel                           32             0                     0
-ArmyUnitContainer                     32             0                     0
+ArmyUnitContainer                     31             0                     0
 IconLayer                             19             0                     0
-StackSize                             29            40                     0
+StackSize                             28            39                     0
 IconContainer                         26             0                     0
-CityUnitContainer                     32             0                     0
+CityUnitContainer                     31             0                     0
 Archer                                 0             0                     0
 Footsoldier                            0             0                     0
 CreateUnitPanel                       32             0                     0
@@ -121,23 +122,23 @@ QueueBuildingPanel                    32             0                     0
 BarrackButton                          0             0                     0
 CityPanel                             32             0                     0
 ArmyPanel                             32             0                     0
-TextInput_disabledSkin                69             0                     0
-TextInput_upSkin                      67             0                     0
+TextInput_disabledSkin                67             0                     0
+TextInput_upSkin                      66             0                     0
 TextInput                              0             0                     0
-Button_disabledSkin                  163             0                     0
-Button_downSkin                      191             0                     0
-Button_emphasizedSkin                 98             0                     0
-Button_overSkin                      178             0                     0
-Button_selectedDisabledSkin          147             0                     0
-Button_selectedDownSkin              145             0                     0
-Button_selectedOverSkin              146             0                     0
-Button_selectedUpSkin                146             0                     0
-Button_upSkin                        197             0                     0
+Button_disabledSkin                  160             0                     0
+Button_downSkin                      187             0                     0
+Button_emphasizedSkin                 96             0                     0
+Button_overSkin                      174             0                     0
+Button_selectedDisabledSkin          144             0                     0
+Button_selectedDownSkin              142             0                     0
+Button_selectedOverSkin              143             0                     0
+Button_selectedUpSkin                143             0                     0
+Button_upSkin                        193             0                     0
 Button                                 0             0                     0
 Component_avatar                      22             0                     0
 TextArea_disabledSkin                  0             0                     0
 TextArea_upSkin                        0             0                     0
-focusRectSkin                         68             0                     0
+focusRectSkin                         67             0                     0
 ScrollTrack_skin                       0             0                     0
 arrowIcon                              0             0                     0
 ScrollArrowUp_icon                     0             0                     0
@@ -195,23 +196,23 @@ CheckBox_selectedDisabledIcon          0             0                     0
 
 Font Name                 Bytes        Characters    
 ----------------------    ---------    --------------
-ArialMT                        2952    
-_sans                          2952    
+ArialMT                        2891    
+_sans                          2891    
 
 ActionScript Bytes    Location
 ------------------    --------
-             49036    Scene 1:Frame 1
+             49995    Scene 1:Frame 1
 
 Bitmap                     Compressed    Compression
 -----------------------    ----------  --------  -----------
-TestTiles                       6323       16384   Lossless
-placeholder_enemy.png             44        4096   Lossless
-placeholder_city.png             131        4096   Lossless
-placeholder_army.png             141        4096   Lossless
-CharacterImage                  1070        3712   Lossless
-placeholder_archer.png           226       10000   Lossless
-placeholder_footsoldier.png       258       10000   Lossless
-placeholder_barrack.png          276        6400   Lossless
+TestTiles                       6193       16384   Lossless
+placeholder_enemy.png             43        4096   Lossless
+placeholder_city.png             128        4096   Lossless
+placeholder_army.png             139        4096   Lossless
+CharacterImage                  1048        3712   Lossless
+placeholder_archer.png           222       10000   Lossless
+placeholder_footsoldier.png       253       10000   Lossless
+placeholder_barrack.png          271        6400   Lossless
 
 
 
