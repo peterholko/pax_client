@@ -8,6 +8,7 @@
 	
 	import ui.IconEntity;
 	import ui.IconTile;
+	import ui.panel.view.BottomPanel;
 	
 	public class BottomPanelController 
 	{
@@ -91,10 +92,10 @@
 			
 			trace("BottomPanelController -- Game.INSTANCE.action: " + Game.INSTANCE.action);
 			
-			if (Game.INSTANCE.action == CommandPanelController.COMMAND_ATTACK)
+			if (CommandPanelController.INSTANCE.isAttackCommand())
 			{
+				CommandPanelController.INSTANCE.resetCommand();
 				Game.INSTANCE.sendAttack(iconEntity.entity.id);
-				Game.INSTANCE.action = CommandPanelController.COMMAND_NONE;
 			}
 			else 
 			{						

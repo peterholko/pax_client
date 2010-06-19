@@ -9,8 +9,8 @@
 	import flash.utils.Timer;
 	
 	import game.Game;
-	import game.Unit;
-	import game.UnitQueue;
+	import game.unit.Unit;
+	import game.unit.UnitQueue;
 	import game.map.Tile;
 	
 	import CityImage;

@@ -5,7 +5,7 @@
 	import flash.display.MovieClip;
 	import flash.events.MouseEvent;
 	
-	import game.Unit;
+	import game.unit.Unit;
 	import game.entity.Army;
 	
 	import ui.panel.view.Panel;
@@ -44,15 +44,18 @@
 		public function setUnits() : void
 		{
 			trace("ArmyPanelController - setUnits()");
+			var i:int = 0; 
 			Unit.removeUnitChildren(armyPanel.armyUnitContainer);			
 			
-			for (var i:int = 0; i < army.units.length; i++)
-			{				
-				var unit:Unit = army.units[i];				
+			for each (var unit:Unit in army.units)
+			{							
 				unit.initialize();
+				unit.addDragDrop();
 				unit.setAnchorPosition(i * SPACER_X, 0);				
 				
 				armyPanel.armyUnitContainer.addChild(unit);
+				
+				i++;
 			}
 		}
 	}

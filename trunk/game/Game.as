@@ -6,8 +6,11 @@
 	import flash.events.KeyboardEvent;
 	import flash.utils.getTimer;
 	import flash.utils.Timer;
+	import flash.events.EventPhase;
 	import flash.events.Event;
 	import flash.geom.Rectangle;
+	import net.packet.BattleTarget;
+	import net.packet.Perception;
 	
 	import Main;
 	
@@ -16,12 +19,14 @@
 	import game.entity.City;
 	import game.entity.Army;
 	import game.entity.Entity;
-	import game.entity.EntityManager;
+	import game.perception.PerceptionManager
 	import game.map.Map;
+	import game.map.MapObjectType;
+	import game.map.MapBattle;
 	import game.map.Tile;
 	
 	import net.Connection;
-	import net.packet.BattleJoined;
+	import net.packet.BattleInfo;
 	import net.packet.BattleAddArmy;
 	import net.packet.BattleDamage;	
 	
@@ -31,6 +36,7 @@
 	import ui.panel.controller.CommandPanelController;
 	import ui.panel.controller.CreateUnitPanelController;
 	import ui.panel.controller.QueueBuildingPanelController;
+	import ui.panel.controller.BattlePanelController;
 	
 	public class Game extends Sprite
 	{				
@@ -46,7 +52,7 @@
 		public var action:int = 0;
 		
 		private var lastLoopTime:Number;
-		private var entityManager:EntityManager;
+		private var perceptionManager:PerceptionManager;
 		private var map:Map;
 		
 		public function Game() : void
@@ -56,16 +62,15 @@
 			player = new Player();
 			
 			map = Map.INSTANCE;
-			entityManager = EntityManager.INSTANCE;
+			perceptionManager = PerceptionManager.INSTANCE;
 						
-			addChild(map);
-			addChild(entityManager);				
+			addChild(map);	
 						
 			Connection.INSTANCE.addEventListener(Connection.onMapEvent, connectionMap);
 			Connection.INSTANCE.addEventListener(Connection.onPerceptionEvent, connectionPerception);		
 			Connection.INSTANCE.addEventListener(Connection.onInfoArmyEvent, connectionInfoArmy);
 			Connection.INSTANCE.addEventListener(Connection.onInfoCityEvent, connectionInfoCity);
-			Connection.INSTANCE.addEventListener(Connection.onBattleJoinedEvent, connectionBattleJoined);
+			Connection.INSTANCE.addEventListener(Connection.onBattleInfoEvent, connectionBattleInfo);
 			Connection.INSTANCE.addEventListener(Connection.onBattleDamageEvent, connectionBattleDamage);
 			
 			addEventListener(Tile.onClick, tileClicked);
@@ -73,18 +78,19 @@
 			addEventListener(Army.onDoubleClick, armyDoubleClicked);
 			addEventListener(City.onClick, cityClicked);
 			addEventListener(City.onDoubleClick, cityDoubleClicked);
+			addEventListener(MapBattle.onDoubleClick, battleDoubleClicked);
 		}
 				
-		public function addPerceptionData(perception:Object) : void
+		public function addPerceptionData(perception:Perception) : void
 		{	
 			//Clear player's entities
 			player.clearEntities();
 			
 			//Set entities from perception
-			entityManager.setEntities(perception.entities);
+			perceptionManager.setMapObjects(perception.mapObjects);
 			
 			//Set map tiles from perception
-			map.setTiles(perception.tiles);
+			map.setTiles(perception.mapTiles);
 		}
 		
 		public function setLastLoopTime(time:Number) : void
@@ -131,6 +137,27 @@
 			Game.INSTANCE.scrollRect = rect;
 		}	
 		
+		public function stageClick(e:MouseEvent) : void
+		{			
+			if (e.eventPhase == EventPhase.AT_TARGET)
+			{
+				var mapX:int = e.stageX - 100;
+				var mapY:int = e.stageY;
+				
+				var rect:Rectangle = Game.INSTANCE.scrollRect;
+				var offsetX:int = rect.x;
+				var offsetY:int = rect.y;
+				
+				var gameX:int = (mapX + offsetX) / Tile.WIDTH;
+				var gameY:int = (mapY + offsetY) / Tile.HEIGHT
+				
+				trace("Stage Click - mapX: " + mapX + " mapY: " + mapY);
+				trace("Stage Click - gameX: " + gameX + " gameY: " + gameY + " action: " + action);
+				
+				sendMove(gameX, gameY);
+			}
+		}
+		
 		public function sendAttack(targetId:int)
 		{
 			if (selectedEntity != null)
@@ -142,6 +169,22 @@
 				Connection.INSTANCE.dispatchEvent(attackEvent);		
 			}
 		}
+		
+		public function sendTarget(battleId:int, sourceArmyId:int, sourceUnitId:int, targetArmyId:int, targetUnitId:int) : void
+		{
+			var battleTarget:BattleTarget = new BattleTarget();
+			
+			battleTarget.battleId = battleId;
+			battleTarget.sourceArmyId = sourceArmyId;
+			battleTarget.sourceUnitId = sourceUnitId;
+			battleTarget.targetArmyId = targetArmyId;
+			battleTarget.targetUnitId = targetUnitId;
+			
+			var battleTargetEvent:ParamEvent = new ParamEvent(Connection.onSendBattleTarget);
+			battleTargetEvent.params = battleTarget;
+			
+			Connection.INSTANCE.dispatchEvent(battleTargetEvent);
+		}		
 				
 		private function tileClicked(e:ParamEvent) : void
 		{
@@ -154,13 +197,20 @@
 				BottomPanelController.INSTANCE.tile = tile;
 				BottomPanelController.INSTANCE.setIcons();
 				CommandPanelController.INSTANCE.hidePanel();
+				
+				sendMove(tile.gameX, tile.gameY);
 			}
-							
+		}
+		
+		private function sendMove(gameX:int, gameY:int) : void
+		{
 			if(selectedEntity != null)
 			{
-				if (action == CommandPanelController.COMMAND_MOVE)
-				{
-					var parameters:Object = {id: selectedEntity.id, x: tile.gameX, y: tile.gameY};
+				if (CommandPanelController.INSTANCE.isMoveCommand())
+				{					
+					CommandPanelController.INSTANCE.resetCommand();
+					
+					var parameters:Object = {id: selectedEntity.id, x: gameX, y: gameY};
 					var pEvent = new ParamEvent(Connection.onSendMoveArmy);
 					pEvent.params = parameters;
 					Connection.INSTANCE.dispatchEvent(pEvent);	
@@ -174,7 +224,7 @@
 		
 		private function armyDoubleClicked(e:ParamEvent) : void
 		{
-			var parameters:Object = { type: Army.TYPE, targetId: e.params.id };
+			var parameters:Object = { type: MapObjectType.ARMY, targetId: e.params.id };
 			var requestInfoEvent:ParamEvent = new ParamEvent(Connection.onSendRequestInfo);
 			requestInfoEvent.params = parameters;
 			Connection.INSTANCE.dispatchEvent(requestInfoEvent);
@@ -182,9 +232,18 @@
 		
 		private function cityDoubleClicked(e:ParamEvent) : void
 		{
-			var parameters:Object = { type: City.TYPE, targetId: e.params.id };
+			var parameters:Object = { type: MapObjectType.CITY, targetId: e.params.id };
 			var requestInfoEvent:ParamEvent = new ParamEvent(Connection.onSendRequestInfo);
 			requestInfoEvent.params = parameters;
+			Connection.INSTANCE.dispatchEvent(requestInfoEvent);
+		}
+		
+		private function battleDoubleClicked(e:ParamEvent) : void
+		{
+			var parameters:Object = { type: MapObjectType.BATTLE, targetId: e.params.battleId };
+			var requestInfoEvent:ParamEvent = new ParamEvent(Connection.onSendRequestInfo);
+			requestInfoEvent.params = parameters;
+			
 			Connection.INSTANCE.dispatchEvent(requestInfoEvent);
 		}
 						
@@ -208,7 +267,7 @@
 		private function connectionInfoArmy(e:ParamEvent) : void
 		{
 			trace("Game - infoArmy");
-			var army:Army = Army(entityManager.getEntity(e.params.id));
+			var army:Army = Army(perceptionManager.getEntity(e.params.id));
 			army.setArmyInfo(e.params);
 			
 			ArmyPanelController.INSTANCE.army = army;
@@ -219,7 +278,7 @@
 		private function connectionInfoCity(e:ParamEvent) : void
 		{
 			trace("Game - infoCity");	
-			var city:City = City(entityManager.getEntity(e.params.id));
+			var city:City = City(perceptionManager.getEntity(e.params.id));
 			city.setCityInfo(e.params);
 			
 			CityPanelController.INSTANCE.city = city;
@@ -228,16 +287,20 @@
 			CityPanelController.INSTANCE.showPanel();
 		}		
 		
-		private function connectionBattleJoined(e:ParamEvent) : void
+		private function connectionBattleInfo(e:ParamEvent) : void
 		{
-			trace("Game - battleJoined");
-			var battleJoined:BattleJoined = BattleJoined(e.params);			
+			trace("Game - battleInfo");
+			var battleInfo:BattleInfo = BattleInfo(e.params);			
 			var battle:Battle = new Battle();		
 			
-			battle.id = battleJoined.battleId;
-			battle.createArmies(battleJoined.armies);
+			battle.id = battleInfo.battleId;
+			battle.createArmies(battleInfo.armies);
 			
 			BattleManager.INSTANCE.addBattle(battle);
+			
+			BattlePanelController.INSTANCE.battle = battle;
+			BattlePanelController.INSTANCE.setArmies();
+			BattlePanelController.INSTANCE.showPanel();
 		}
 		
 		private function connnectionBattleAddArmy(e:ParamEvent) : void
@@ -252,7 +315,9 @@
 		{
 			trace("Game - battleDamage");
 			var battleDamage:BattleDamage = e.params as BattleDamage;
-		}
-		
+			var battle:Battle = BattleManager.INSTANCE.getBattle(battleDamage.battleId);
+			
+			battle.addDamage(battleDamage);			
+		}		
 	}
 }

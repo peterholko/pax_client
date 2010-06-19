@@ -4,7 +4,7 @@
 	{
 		public static var INSTANCE:BattleManager = new BattleManager();	
 		
-		public var battles/*Battle*/:Array;
+		public var battles/*Battle*/:Array = new Array();
 		
 		public function BattleManager()
 		{
@@ -19,7 +19,7 @@
 		{
 			for (var i:int = 0; i < battles.length; i++)
 			{
-				if (battles[i].battleId == battleId)
+				if (battles[i].id == battleId)
 					return battles[i];
 			}
 			

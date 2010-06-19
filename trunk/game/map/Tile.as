@@ -15,8 +15,8 @@
 	{
 		public static var onClick:String = "onTileClick";
 		
-		public static const WIDTH:int = 32;
-		public static const HEIGHT:int = 32;		
+		public static const WIDTH:int = 48;
+		public static const HEIGHT:int = 48;		
 		
 		private static var imageTiles:BitmapData = new TestTiles(0,0);	
 		
@@ -45,16 +45,16 @@
 					tileImageY = 0;
 					break;
 				case 1:
-					tileImageX = 32;
+					tileImageX = WIDTH;
 					tileImageY = 0;					
 					break;
 				case 2:
 					tileImageX = 0;
-					tileImageY = 32;						
+					tileImageY = HEIGHT;						
 					break;
 				case 3:
-					tileImageX = 32;
-					tileImageY = 32;					
+					tileImageX = WIDTH;
+					tileImageY = HEIGHT;					
 					break;					
 				default:
 					tileImageX = 0;

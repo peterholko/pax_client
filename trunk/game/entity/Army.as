@@ -6,11 +6,15 @@
 	import flash.events.Event;
 	import flash.events.MouseEvent;	
 	import flash.filters.GlowFilter;
+	import flash.utils.Dictionary;
+	import game.unit.events.UnitEvent;
 	
 	import net.packet.Army;
+	import net.packet.Unit;
 	
 	import game.Game;
-	import game.Unit;
+	import game.unit.Unit;
+	import game.unit.UnitEventDispatcher;
 	import game.map.Tile;
 	
 	import ArmyImage;
@@ -22,14 +26,13 @@
 		public static var onClick:String = "onArmyClick";
 		public static var onDoubleClick:String = "onArmyDoubleClick";
 				
-		public var units/*Unit*/:Array;
+		public var units:Dictionary = new Dictionary();
 		
+		private var numUnits:int = 0;
 		private var border:GlowFilter = null;
 
 		public function Army() : void
-		{
-			units = new Array();
-			
+		{			
 			this.border = new GlowFilter(0x27F80B, 0);
 			this.border.alpha = 0;
 			this.filters = [this.border];
@@ -85,22 +88,64 @@
 			setUnits(armyInfo.units);
 		}
 		
+		public function getUnit(unitId:int) : game.unit.Unit
+		{
+			return units[unitId];
+		}
+		
+		public function getNumUnits() : int
+		{
+			return numUnits;
+		}
+		
 		private function setUnits(unitsInfo/*packet.Unit*/:Array ) : void
 		{
-			units.length = 0;
+			var previousUnits:Dictionary = new Dictionary();
+			previousUnits = units;
+			units = new Dictionary();
+			numUnits = 0;
 			
 			for (var i:int = 0; i < unitsInfo.length; i++)
 			{
-				var unit:Unit = new Unit();
+				var unitInfo:net.packet.Unit = unitsInfo[i];
+				var unit:game.unit.Unit;
+				
+				if (previousUnits[unitInfo.id] != null)
+				{
+					unit = previousUnits[unitInfo.id];
+					delete previousUnits[unitInfo.id];
+				}
+				else
+				{
+					unit = new game.unit.Unit();
+				}
 				
 				unit.id = unitsInfo[i].id;
 				unit.type = unitsInfo[i].type;
 				unit.size = unitsInfo[i].size;
 				unit.parentEntity = this;
 								
-				units.push(unit);
+				units[unit.id] = unit;
+				numUnits++;
 			}
 			
-		}		
+			clearPreviousUnits(previousUnits);			
+		}	
+		
+		private function clearPreviousUnits(previousUnits:Dictionary) : void
+		{
+			for each (var unit:game.unit.Unit in previousUnits)
+			{
+				trace("unit: " + unit);
+				
+				if (unit != null)
+				{
+					var unitRemovedEvent:UnitEvent = new UnitEvent(UnitEvent.REMOVED);
+					unitRemovedEvent.unitId = unit.id;
+					
+					UnitEventDispatcher.INSTANCE.dispatchEvent(unitRemovedEvent);
+				}
+			}
+		}
 	}
 }

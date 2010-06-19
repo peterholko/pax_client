@@ -6,8 +6,8 @@
 	import flash.events.TimerEvent;
 	import flash.utils.Timer;
 	
-	import game.Unit;
-	import game.UnitQueue;
+	import game.unit.Unit;
+	import game.unit.UnitQueue;
 	
 	import ui.panel.view.Panel;
 	import ui.panel.view.QueueBuildingPanel;

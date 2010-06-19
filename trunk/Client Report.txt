@@ -5,156 +5,81 @@ Metadata
 --------
 Bytes    Value
 -----    -----
-  676    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2009-06-15T21:33-06:00</xmp:MetadataDate> <xmp:ModifyDate>2009-06-15T21:33-06:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:234A9A1EB7DADD11B7A9AB32E7409597</stRef:instanceID> <stRef:documentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:3C4EB40C265ADE11BD36F1377AB027E5</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:3C4EB40C265ADE11BD36F1377AB027E5</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+  669    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2010-06-18T18:26:50-06:00</xmp:MetadataDate> <xmp:ModifyDate>2010-06-18T18:26:50-06:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:234A9A1EB7DADD11B7A9AB32E7409597</stRef:instanceID> <stRef:documentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:D1961A36397BDF11B7DDD860DACF1D5C</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:D1961A36397BDF11B7DDD860DACF1D5C</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
 
 Frame #    Frame Bytes    Total Bytes    Scene
 -------    -----------    -----------    ----------------
-      1          68452          68452    Scene 1 (AS 3.0 Classes Export Frame)
-      2              1          68453    
-      3              1          68454    
-      4              1          68455    
-      5            159          68614    
-      6              1          68615    
-      7              1          68616    
-      8              1          68617    
-      9              1          68618    
-     10              1          68619    
-     11              1          68620    
-     12              1          68621    
-     13              1          68622    
-     14              1          68623    
-     15              1          68624    
-     16              1          68625    
-     17              1          68626    
-     18              1          68627    
-     19              1          68628    
-     20              1          68629    
-     21              1          68630    
-     22              1          68631    
-     23             13          68644    
-     24              1          68645    
-     25              1          68646    
-     26              1          68647    
-     27              1          68648    
-     28              1          68649    
-     29              1          68650    
-     30              1          68651    
-     31              1          68652    
-     32              1          68653    
-     33              1          68654    
-     34              1          68655    
-     35              1          68656    
-     36              1          68657    
-     37              1          68658    
-     38              1          68659    
-     39              1          68660    
-     40              1          68661    
-     41              1          68662    
-     42              1          68663    
-     43              1          68664    
-     44              1          68665    
-     45              1          68666    
-     46              1          68667    
-     47              1          68668    
-     48              1          68669    
-     49              1          68670    
-     50              1          68671    
-     51              1          68672    
-     52              1          68673    
-     53              1          68674    
-     54              1          68675    
-     55              1          68676    
-     56              1          68677    
-     57              1          68678    
-     58              1          68679    
-     59              1          68680    
-     60              1          68681    
-     61              1          68682    
-     62              1          68683    
-     63              1          68684    
-     64              1          68685    
-     65              1          68686    
-     66              1          68687    
-     67              1          68688    
-     68              1          68689    
-     69              1          68690    
-     70              1          68691    
-     71              1          68692    
-     72              1          68693    
-     73              1          68694    
-     74              1          68695    
-     75              1          68696    
-     76              1          68697    
-     77              1          68698    
-     78              1          68699    
-     79              1          68700    
-     80              1          68701    
-     81              1          68702    
-     82              1          68703    
-     83              1          68704    
-     84              1          68705    
-     85              1          68706    
-     86              1          68707    
-     87              1          68708    
-     88              1          68709    
-     89              1          68710    
-     90              1          68711    
+      1          97214          97214    Scene 1 (AS 3.0 Classes Export Frame)
+      2              1          97215    
+      3              1          97216    
+      4              1          97217    
+      5              1          97218    
+      6              1          97219    
+      7              1          97220    
+      8            152          97372    
+      9              1          97373    
+     10              1          97374    
+     11              1          97375    
+     12             21          97396    
+     13              1          97397    
+     14              1          97398    
+     15              1          97399    
+     16              1          97400    
+     17              1          97401    
+     18              1          97402    
+     19              1          97403    
+     20              1          97404    
+     21              1          97405    
+     22              1          97406    
+     23              1          97407    
+     24              1          97408    
+     25             15          97423    
+     26              3          97426    
+     27              1          97427    
+     28              1          97428    
+     29              1          97429    
 
 Scene                        Shape Bytes    Text Bytes    ActionScript Bytes
 -------------------------    -----------    ----------    ------------------
-Scene 1                               31           108                 49995
+Scene 1                               31           105                 64769
 
 Symbol                       Shape Bytes    Text Bytes    ActionScript Bytes
 -------------------------    -----------    ----------    ------------------
-CommandPanel                          34             0                     0
-BottomPanel                           32             0                     0
+TextBackground                         0             0                     0
+Symbol 277                             0             0                     0
+Background                             0             0                     0
+BattlePanel                            0             0                     0
+CommandPanel                          33             0                     0
+BottomPanel                           31             0                     0
 ArmyUnitContainer                     31             0                     0
 IconLayer                             19             0                     0
-StackSize                             28            39                     0
-IconContainer                         26             0                     0
+StackSize                             28            38                     0
+IconContainer                         25             0                     0
 CityUnitContainer                     31             0                     0
 Archer                                 0             0                     0
 Footsoldier                            0             0                     0
-CreateUnitPanel                       32             0                     0
+CreateUnitPanel                       31             0                     0
 UnitQueueDisplay                       0             0                     0
 UnitIcon                               0             0                     0
-QueueBuildingPanel                    32             0                     0
+QueueBuildingPanel                    31             0                     0
 BarrackButton                          0             0                     0
-CityPanel                             32             0                     0
-ArmyPanel                             32             0                     0
-TextInput_disabledSkin                67             0                     0
-TextInput_upSkin                      66             0                     0
+CityPanel                             31             0                     0
+ArmyPanel                             31             0                     0
+TextInput_disabledSkin                 0             0                     0
+TextInput_upSkin                       0             0                     0
 TextInput                              0             0                     0
-Button_disabledSkin                  160             0                     0
-Button_downSkin                      187             0                     0
-Button_emphasizedSkin                 96             0                     0
-Button_overSkin                      174             0                     0
-Button_selectedDisabledSkin          144             0                     0
-Button_selectedDownSkin              142             0                     0
-Button_selectedOverSkin              143             0                     0
-Button_selectedUpSkin                143             0                     0
-Button_upSkin                        193             0                     0
+Button_disabledSkin                  157             0                     0
+Button_downSkin                      185             0                     0
+Button_emphasizedSkin                 95             0                     0
+Button_overSkin                      172             0                     0
+Button_selectedDisabledSkin          142             0                     0
+Button_selectedDownSkin              140             0                     0
+Button_selectedOverSkin              141             0                     0
+Button_selectedUpSkin                141             0                     0
+Button_upSkin                        191             0                     0
 Button                                 0             0                     0
-Component_avatar                      22             0                     0
-TextArea_disabledSkin                  0             0                     0
-TextArea_upSkin                        0             0                     0
-focusRectSkin                         67             0                     0
-ScrollTrack_skin                       0             0                     0
-arrowIcon                              0             0                     0
-ScrollArrowUp_icon                     0             0                     0
-ScrollArrowUp_downSkin                 0             0                     0
-ScrollArrowDown_icon                   0             0                     0
-ScrollArrowDown_downSkin               0             0                     0
-ScrollThumb_downSkin                   0             0                     0
-ScrollArrowDown_overSkin               0             0                     0
-ScrollThumb_overSkin                   0             0                     0
-ScrollArrowUp_overSkin                 0             0                     0
-ScrollArrowUp_upSkin                   0             0                     0
-ScrollThumb_upSkin                     0             0                     0
-ScrollArrowDown_upSkin                 0             0                     0
-ScrollArrowDown_disabledSkin           0             0                     0
-ScrollArrowUp_disabledSkin             0             0                     0
-ScrollBar_thumbIcon                    0             0                     0
+TextArea_disabledSkin                 72             0                     0
+TextArea_upSkin                       65             0                     0
 ProgressBar_trackSkin                  0             0                     0
 ProgressBar_barSkin                    0             0                     0
 ProgressBar_indeterminateSkin          0             0                     0
@@ -193,26 +118,51 @@ CheckBox_selectedUpIcon                0             0                     0
 CheckBox_selectedOverIcon              0             0                     0
 CheckBox_selectedDownIcon              0             0                     0
 CheckBox_selectedDisabledIcon          0             0                     0
+Component_avatar                      21             0                     0
+focusRectSkin                         66             0                     0
+ScrollTrack_skin                      74             0                     0
+arrowIcon                             22             0                     0
+ScrollArrowUp_icon                     0             0                     0
+ScrollArrowUp_downSkin                70             0                     0
+ScrollArrowDown_icon                   0             0                     0
+ScrollArrowDown_downSkin              72             0                     0
+ScrollThumb_downSkin                 106             0                     0
+ScrollArrowDown_overSkin              71             0                     0
+ScrollThumb_overSkin                  95             0                     0
+ScrollArrowUp_overSkin                71             0                     0
+ScrollArrowUp_upSkin                   0             0                     0
+ScrollThumb_upSkin                   106             0                     0
+ScrollArrowDown_upSkin                34             0                     0
+ScrollArrowDown_disabledSkin          71             0                     0
+ScrollArrowUp_disabledSkin            71             0                     0
+ScrollBar_thumbIcon                   48             0                     0
+UIScrollBar                            0             0                     0
+TextArea                               0             0                     0
 
 Font Name                 Bytes        Characters    
 ----------------------    ---------    --------------
-ArialMT                        2891    
-_sans                          2891    
+ArialMT                        2852    
+_sans                          2852    
 
 ActionScript Bytes    Location
 ------------------    --------
-             49995    Scene 1:Frame 1
+             64769    Scene 1:Frame 1
 
 Bitmap                     Compressed    Compression
 -----------------------    ----------  --------  -----------
-TestTiles                       6193       16384   Lossless
-placeholder_enemy.png             43        4096   Lossless
-placeholder_city.png             128        4096   Lossless
-placeholder_army.png             139        4096   Lossless
-CharacterImage                  1048        3712   Lossless
-placeholder_archer.png           222       10000   Lossless
-placeholder_footsoldier.png       253       10000   Lossless
-placeholder_barrack.png          271        6400   Lossless
+TestTiles                       8323       36864   Lossless
+placeholder_enemy.png           1098        9216   Lossless
+placeholder_city.png            1296        9216   Lossless
+placeholder_battle.png           356        4096   JPEG Quality=80
+placeholder_army.png            1041        9216   Lossless
+CharacterImage                  1034        3712   Lossless
+text_background                 2372      577728   JPEG Quality=80
+background                      3496     1371232   JPEG Quality=80
+bottom_spacer                    246         480   JPEG Quality=80
+top_spacer                       336        3680   JPEG Quality=80
+placeholder_archer.png           219       10000   Lossless
+placeholder_footsoldier.png       249       10000   Lossless
+placeholder_barrack.png          267        6400   Lossless
 
 
 

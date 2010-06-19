@@ -6,7 +6,7 @@
 	
 	import net.Connection;
 	
-	import game.Unit;
+	import game.unit.Unit;
 	
 	import ui.panel.view.Panel;
 	import ui.panel.view.CreateUnitPanel;

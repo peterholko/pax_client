@@ -14,8 +14,8 @@
 	{
 		public static var INSTANCE:Connection = new Connection();
 		
-		public static var HOST:String = "localhost";
-		//public static var HOST:String = "www.cowwit.com";		
+		//public static var HOST:String = "localhost";
+		public static var HOST:String = "www.peterholko.com";		
 		public static var PORT:int = 2345
 				
 		//Events 
@@ -31,7 +31,7 @@
 		public static var onInfoArmyEvent:String = "onInfoArmyEvent";
 		public static var onInfoCityEvent:String = "onInfoCityEvent";
 		public static var onInfoUnitQueueEvent:String = "onInfoUnitQueueEvent";
-		public static var onBattleJoinedEvent:String = "onBattleJoinedEvent";
+		public static var onBattleInfoEvent:String = "onBattleInfoEvent";
 		public static var onBattleAddArmyEvent:String = "onBattleAddArmyEvent";
 		public static var onBattleDamageEvent:String = "onBattleDamageEvent";
 		
@@ -40,6 +40,7 @@
 		public static var onSendRequestInfo:String = "onSendRequestInfo";
 		public static var onSendCityQueueUnit:String = "onSendCityQueueUnit";
 		public static var onSendTransferUnit:String = "onSendTransferUnit";
+		public static var onSendBattleTarget:String = "onSendBattleTarget";
 				
 		public var clockSyncStartTime:Number = 0;
 		public var clockSyncEndTime:Number = 0;
@@ -98,6 +99,7 @@
 			addEventListener(Connection.onSendRequestInfo, sendRequestInfo);
 			addEventListener(Connection.onSendCityQueueUnit, sendCityQueueUnit);
 			addEventListener(Connection.onSendTransferUnit, sendTransferUnit);
+			addEventListener(Connection.onSendBattleTarget, sendBattleTarget);
 		}
 		
 		private function closeHandler(event:Event):void {
@@ -116,6 +118,7 @@
 		}
 	
 		private function securityErrorHandler(event:SecurityErrorEvent):void {
+			trace("securityErrorEvent.txt: " + event.text);
 			trace("securityErrorHandler: " + event);
 			dispatchEvent(new Event(Connection.onSecurityErrorEvent));	
 		}
@@ -181,11 +184,11 @@
 						pEvent.params = Packet.readInfoCity(bArr);
 						dispatchEvent(pEvent);					
 					}
-					else if (cmd == Packet.BATTLE_JOINED)
+					else if (cmd == Packet.BATTLE_INFO)
 					{
-						trace("Connection - battle_joined");
-						pEvent = new ParamEvent(Connection.onBattleJoinedEvent);
-						pEvent.params = Packet.readBattleJoined(bArr);
+						trace("Connection - battle_info");
+						pEvent = new ParamEvent(Connection.onBattleInfoEvent);
+						pEvent.params = Packet.readBattleInfo(bArr);
 						dispatchEvent(pEvent);
 					}
 					else if (cmd == Packet.BATTLE_ADD_ARMY)
@@ -211,10 +214,12 @@
 			} 
 			catch(error:IOError)
 			{
+				trace(error.getStackTrace());
 				trace("Connection - connect - IOError exception.");
 			}
 			catch(error:EOFError)
 			{
+				trace(error.getStackTrace());
 				trace("Connection - connect - EOFError exception.");
 			}
 		}
@@ -247,7 +252,14 @@
 		{
 			trace("Connection - sendTransferUnit");
 			Packet.sendTransferUnit(socket, e.params.unitId, e.params.sourceId, e.params.sourceType, e.params.targetId, e.params.targetType);
-		}		
+		}	
+		
+		private function sendBattleTarget(e:ParamEvent) : void
+		{
+			trace("Connection - sendBattleTarget");
+			var battleTarget:BattleTarget = e.params;			
+			Packet.sendBattleTarget(socket, battleTarget);
+		}
 	}
 }
 		

@@ -21,7 +21,7 @@
 	public class Main extends MovieClip
 	{
 		public static var DEBUG:Boolean = true;
-		public static var VERSION:String = "0.026";
+		public static var VERSION:String = "0.029";
 		
 		//Stage objects
 		public var versionTextField:TextField;
@@ -36,6 +36,7 @@
 		public var createUnitPanel:CreateUnitPanel;		
 		public var bottomPanel:BottomPanel;
 		public var commandPanel:CommandPanel;
+		public var battlePanel:BattlePanel;
 		
 		private var account:String;
 		private var password:String;
@@ -46,7 +47,7 @@
 		private var armyPanelController:ArmyPanelController;
 		private var queueBuildingPanelController:QueueBuildingPanelController;
 		private var createUnitPanelController:CreateUnitPanelController;
-		
+		private var battlePanelController:BattlePanelController;
 		private var bottomPanelController:BottomPanelController;
 		private var commandPanelController:CommandPanelController;
 		
@@ -85,6 +86,9 @@
 			
 			commandPanelController = CommandPanelController.INSTANCE;
 			commandPanelController.initialize(this);
+			
+			battlePanelController = BattlePanelController.INSTANCE;
+			battlePanelController.initialize(this);
 						
 			Game.INSTANCE.main = this;
 			Game.INSTANCE.setLastLoopTime(connection.clockSyncStartTime);
@@ -154,7 +158,8 @@
 			Game.INSTANCE.y = 0;
 			Game.INSTANCE.scrollRect = new Rectangle(0, 0, 920, 538);
 						
-			stage.addEventListener(KeyboardEvent.KEY_DOWN,Game.INSTANCE.keyDownEvent);
+			stage.addEventListener(KeyboardEvent.KEY_DOWN, Game.INSTANCE.keyDownEvent);
+			stage.addEventListener(MouseEvent.CLICK, Game.INSTANCE.stageClick);
 			addChildAt(Game.INSTANCE, 0);
 		}		
 	}

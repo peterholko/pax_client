@@ -1,6 +1,7 @@
 ﻿package ui.panel.controller
 {
 	import flash.display.MovieClip;
+	import flash.events.EventDispatcher;
 	import flash.events.FocusEvent;
 	import flash.events.MouseEvent;	
 	

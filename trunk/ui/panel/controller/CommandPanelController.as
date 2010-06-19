@@ -11,6 +11,8 @@
 	import game.entity.Army;
 	import game.entity.City;
 	
+	import ui.panel.view.CommandPanel;
+	
 	public class CommandPanelController 
 	{
 		public static var INSTANCE:CommandPanelController  = new CommandPanelController();
@@ -33,7 +35,8 @@
 		public static var COMMAND_NONE:int = 1;
 		public static var COMMAND_MOVE:int = 2;
 		public static var COMMAND_ATTACK:int = 3;		
-					
+		
+		private var command:int = COMMAND_NONE;					
 		private var commandPanel:CommandPanel;
 		private var buttons/*Button*/:Array;	
 		
@@ -124,6 +127,21 @@
 			setCommandPanelPosition();
 			setButtonPositions();				
 		}
+		
+		public function isMoveCommand() : Boolean
+		{
+			return command == COMMAND_MOVE;
+		}
+		
+		public function isAttackCommand() : Boolean
+		{
+			return command == COMMAND_ATTACK;
+		}
+		
+		public function resetCommand() : void
+		{
+			command = COMMAND_NONE;
+		}
 				
 		private function createMoveButton() : void
 		{
@@ -197,15 +215,15 @@
 		private function moveClick(e:MouseEvent) : void
 		{			
 			trace("CommandPanelController - moveClick");
+			command = COMMAND_MOVE;			
 			Game.INSTANCE.selectedEntity = entity;
-			Game.INSTANCE.action = COMMAND_MOVE;
 		}
 		
 		private function attackClick(e:MouseEvent) : void
 		{
 			trace("CommandPanelController - attackClick");
+			command = COMMAND_ATTACK;
 			Game.INSTANCE.selectedEntity = entity;
-			Game.INSTANCE.action = COMMAND_ATTACK;
 		}
 		
 		private function detailsClick(e:MouseEvent) : void

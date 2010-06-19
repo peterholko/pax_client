@@ -3,7 +3,7 @@
 	import flash.display.MovieClip;
 	import flash.events.MouseEvent;
 	
-	import game.Unit;
+	import game.unit.Unit;
 	import game.Building;
 	import game.entity.City;
 	
@@ -74,6 +74,7 @@
 			{
 				var unit:Unit = city.units[i];				
 				unit.initialize();
+				unit.addDragDrop();
 				unit.setAnchorPosition(i * SPACER_X, 0);				
 				
 				cityPanel.cityUnitContainer.addChild(unit);

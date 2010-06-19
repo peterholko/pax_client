@@ -23,11 +23,10 @@
 		public static var INFO_UNIT_QUEUE:int = 55;
 		public static var CITY_QUEUE_UNIT:int = 60;
 		public static var TRANSFER_UNIT:int = 61;
-		public static var ADD_TARGET:int = 85;
-		public static var BATTLE_JOINED:int = 70;
+		public static var BATTLE_INFO:int = 70;
 		public static var BATTLE_ADD_ARMY:int = 71;
 		public static var BATTLE_DAMAGE:int = 72;
-		public static var BATTLE_TARGET:int = 72;
+		public static var BATTLE_TARGET:int = 73;
 		public static var BAD:int = 255;
 		
 		//Errors
@@ -107,15 +106,15 @@
 			socket.flush();
 		}
 		
-		public static function sendBattleTarget(socket:Socket, battleId:int, sourceArmyId:int, sourceUnitId:int, targetArmyId:int, targetUnitId:int) : void
+		public static function sendBattleTarget(socket:Socket, battleTarget:BattleTarget) : void
 		{
 			trace("Packet - sendBattleTarget");
-			socket.writeByte(ADD_TARGET);
-			socket.writeInt(battleId);
-			socket.writeInt(sourceArmyId);
-			socket.writeInt(sourceUnitId);
-			socket.writeInt(targetArmyId);
-			socket.writeInt(targetUnitId);
+			socket.writeByte(BATTLE_TARGET);
+			socket.writeInt(battleTarget.battleId);
+			socket.writeInt(battleTarget.sourceArmyId);
+			socket.writeInt(battleTarget.sourceUnitId);
+			socket.writeInt(battleTarget.targetArmyId);
+			socket.writeInt(battleTarget.targetUnitId);
 			socket.flush();
 		}
 		
@@ -131,54 +130,65 @@
 		public static function readExploredMap(byteArray:ByteArray) : Array
 		{
 			var numTiles:int = byteArray.readInt();
-			var exploredMap:Array = new Array();
+			var exploredMap/*MapTiles*/:Array = new Array();
 						
 			for(var i:int = 0; i < numTiles; i++)
 			{			
-				var tileInfo:Object = {tileIndex: byteArray.readInt(), tile: byteArray.readUnsignedByte()};
-				exploredMap.push(tileInfo);
+				var mapTile:MapTile = new MapTile();
+				
+				mapTile.index = byteArray.readInt();
+				mapTile.tile = byteArray.readUnsignedByte();				
+
+				exploredMap.push(mapTile);
 			}
 			
 			return exploredMap;
 		}
 		
-		public static function readPerception(byteArray:ByteArray) : Object
+		public static function readPerception(byteArray:ByteArray) : Perception
 		{
+			var perception:Perception = new Perception();
+			perception.mapObjects = new Array();
+			perception.mapTiles = new Array();
+			
 			var numEntities:int = byteArray.readUnsignedShort();
-			var entityList:Array = new Array();
-			var i:int;
 							
-			for(i = 0; i < numEntities; i++)
+			for(var i = 0; i < numEntities; i++)
 			{
-				var entityInfo:Object = {id: byteArray.readInt(), 
-										playerId: byteArray.readInt(),
-										type: byteArray.readUnsignedShort(),
-										state: byteArray.readUnsignedShort(),
-										x: byteArray.readUnsignedShort(),
-										y: byteArray.readUnsignedShort()};
+				var mapObject:MapObject = new MapObject();
+				
+				mapObject.id = byteArray.readInt();
+				mapObject.playerId = byteArray.readInt();
+				mapObject.type = byteArray.readUnsignedShort();
+				mapObject.state = byteArray.readUnsignedShort();
+				mapObject.x = byteArray.readUnsignedShort();
+				mapObject.y = byteArray.readUnsignedShort();
 							
-				entityList.push(entityInfo);
+				perception.mapObjects.push(mapObject);
 			}			
 			
 			var numTiles:int = byteArray.readInt();
-			var tileList:Array = new Array();
 			
-			for(i = 0; i < numTiles; i++)
+			for(var i = 0; i < numTiles; i++)
 			{
-				var tileInfo:Object = {tileIndex: byteArray.readInt(), tile: byteArray.readUnsignedByte()};
-				tileList.push(tileInfo);
-			}
+				var mapTile:MapTile = new MapTile();
+				
+				mapTile.index = byteArray.readInt();
+				mapTile.tile = byteArray.readUnsignedByte();
 			
-			var perception:Object = {entities: entityList, tiles: tileList};
+				trace("mapTile: " + mapTile.index);
+				
+				perception.mapTiles.push(mapTile);
+			}
 			
 			return perception;
 		}
 		
-		public static function readInfoArmy(byteArray:ByteArray) : InfoArmy
+		public static function readInfoArmy(byteArray:ByteArray) : Army
 		{
-			var infoArmy:InfoArmy = new InfoArmy();
-			infoArmy.id = byteArray.readInt();
-			infoArmy.units = new Array();
+			var army:Army = new Army();
+			army.id = byteArray.readInt();
+			army.units = new Array();
 			
 			var numUnits:int = byteArray.readUnsignedShort();
 			
@@ -189,16 +199,17 @@
 				unit.type = byteArray.readUnsignedShort();
 				unit.size = byteArray.readInt();
 				
-				infoArmy.units.push(unit);
+				army.units.push(unit);
 			}
 			
-			return infoArmy;
+			return army;
 		}
 		
 		public static function readInfoCity(byteArray:ByteArray) : Object
 		{
 			var cityId:int = byteArray.readInt();
 			var buildingList:Array = new Array();
+			var buildingQueueList:Array = new Array();
 			var unitList:Array = new Array();
 			var unitQueueList:Array = new Array();
 			var i:int;
@@ -207,7 +218,22 @@
 			
 			for (i = 0; i < numBuildings; i++)
 			{	
-				buildingList.push(byteArray.readInt());
+				var buildingInfo:Object = { id: byteArray.readInt(),
+											type: byteArray.readUnsignedShort() };
+				
+				buildingList.push(buildingInfo);
+			}
+			
+			var numBuildingQueues:int = byteArray.readUnsignedShort();
+			
+			for (i = 0; i < numBuildingQueues; i++)
+			{
+				var buildingQueueInfo:Object = {id: byteArray.readInt(),
+												type: byteArray.readUnsignedShort(),
+												startTime: byteArray.readInt(),
+												endTime: byteArray.readInt() };
+												
+				buildingQueueList.push(buildingQueueInfo);
 			}
 			
 			var numUnits:int = byteArray.readUnsignedShort();
@@ -234,18 +260,19 @@
 				unitQueueList.push(unitQueueInfo);											
 			}
 								
-			var infoCity:Object = { id: cityId, 
+			var infoCity:Object = { id: cityId, 									
 									buildings: buildingList, 
+									buildingsQueue: buildingQueueList,
 									units: unitList,
 									unitsQueue: unitQueueList};			
 			return infoCity;
 		}	
 		
-		public static function readBattleJoined(byteArray:ByteArray) : BattleJoined
+		public static function readBattleInfo(byteArray:ByteArray) : BattleInfo
 		{
-			var battleJoined:BattleJoined = new BattleJoined();
-			battleJoined.battleId = byteArray.readInt();
-			battleJoined.armies = new Array();
+			var battleInfo:BattleInfo = new BattleInfo();
+			battleInfo.battleId = byteArray.readInt();
+			battleInfo.armies = new Array();
 			
 			var numArmies:int = byteArray.readUnsignedShort();
 			for (var i:int = 0 ; i < numArmies; i++)
@@ -268,10 +295,10 @@
 					army.units.push(unit);
 				}
 				
-				battleJoined.armies.push(army);
+				battleInfo.armies.push(army);
 			}
 			
-			return battleJoined;
+			return battleInfo;
 		}
 		
 		public static function readBattleAddArmy(byteArray:ByteArray) : BattleAddArmy
