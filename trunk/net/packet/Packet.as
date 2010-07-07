@@ -16,17 +16,22 @@
 		public static var EXPLORED_MAP:int = 39;
 		public static var PERCEPTION:int = 40;
 		public static var MOVE:int = 42;
-		public static var ATTACK:int = 43;	
+		public static var ATTACK:int = 43;
+		public static var ADD_WAYPOINT:int = 44;
 		public static var REQUEST_INFO:int = 50;
 		public static var INFO_ARMY:int = 52; 
 		public static var INFO_CITY:int = 53; 
 		public static var INFO_UNIT_QUEUE:int = 55;
+        public static var CITY_QUEUE_BUILDING:int = 59;
 		public static var CITY_QUEUE_UNIT:int = 60;
 		public static var TRANSFER_UNIT:int = 61;
 		public static var BATTLE_INFO:int = 70;
 		public static var BATTLE_ADD_ARMY:int = 71;
 		public static var BATTLE_DAMAGE:int = 72;
 		public static var BATTLE_TARGET:int = 73;
+        public static var BUILD_IMPROVEMENT:int = 100;
+        public static var ADD_CLAIM:int = 125;
+        public static var ASSIGN_TASK:int = 130;
 		public static var BAD:int = 255;
 		
 		//Errors
@@ -73,7 +78,17 @@
 			socket.writeInt(id);
 			socket.writeInt(targetId);
 			socket.flush();
-		}	
+		}
+
+        public static function sendAddWaypoint(socket:Socket, id:int, xPos:int, yPos:int) : void
+        {
+            trace("Packet - sendAddWaypoint");
+            socket.writeByte(ADD_WAYPOINT);
+            socket.writeInt(id);
+            socket.writeShort(xPos);
+            socket.writeShort(yPos);
+            socket.flush();
+        }	
 		
 		public static function sendRequestInfo(socket:Socket, type:int, targetId:int) : void
 		{
@@ -84,6 +99,15 @@
 			socket.flush();
 		}
 		
+        public static function sendCityQueueBuilding(socket:Socket, cityId:int, buildingType:int) : void
+        {
+            trace("Packet - sendCityQueueBuilding");
+            socket.writeByte(CITY_QUEUE_BUILDING);
+            socket.writeInt(cityId);    
+            socket.writeShort(buildingType);
+            socket.flush();
+        }
+
 		public static function sendCityQueueUnit(socket:Socket, cityId:int, unitType:int, unitSize:int) : void
 		{
 			trace("Packet - sendCityQueueUnit");
@@ -117,6 +141,39 @@
 			socket.writeInt(battleTarget.targetUnitId);
 			socket.flush();
 		}
+
+        public static function sendBuildImprovement(socket:Socket, buildImprovement:BuildImprovement) : void
+        {
+            trace("Packet - sendBuildImprovement");
+            socket.writeByte(BUILD_IMPROVEMENT);
+            socket.writeInt(buildImprovement.cityId);
+            socket.writeShort(buildImprovement.x);
+            socket.writeShort(buildImprovement.y);
+            socket.writeByte(buildImprovement.improvementType);
+            socket.flush();
+        }
+
+        public static function sendAddClaim(socket:Socket, addClaim:AddClaim) : void
+        {
+            trace("Packet - sendAddClaim");
+            socket.writeByte(ADD_CLAIM);
+            socket.writeInt(addClaim.cityId);
+            socket.writeShort(addClaim.x);
+            socket.writeShort(addClaim.y);
+            socket.flush();
+        }
+
+        public static function sendAssignTask(socket:Socket, assignTask:AssignTask) : void
+        {
+            trace("Packet - sendAssignTask");
+            socket.writeByte(ASSIGN_TASK);
+            socket.writeInt(assignTask.cityId);
+            socket.writeInt(assignTask.populationId);
+            socket.writeInt(assignTask.amount);
+            socket.writeInt(assignTask.taskId);
+            socket.writeShort(assignTask.taskType);
+            socket.flush();
+        }
 		
 		public static function readBad(byteArray:ByteArray) : String
 		{
@@ -336,7 +393,7 @@
 			
 			return battleDamage;
 		}
-		
+
 		public static function getCmd(cmd:int) : String
 		{
 			var msg:String = "";
