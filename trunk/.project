@@ -6,24 +6,30 @@
 	</projects>
 	<buildSpec>
 		<buildCommand>
+			<name>com.adobe.flexbuilder.project.flexbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
 			<name>com.powerflasher.fdt.core.FlashBuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
 		<nature>com.powerflasher.fdt.core.FlashNature</nature>
 	</natures>
 	<linkedResources>
 		<link>
+			<name>[source path] fl</name>
+			<type>2</type>
+			<location>C:/Program Files/Adobe/Adobe Flash CS4/Common/Configuration/Component Source/ActionScript 3.0/User Interface/fl</location>
+		</link>
+		<link>
 			<name>core</name>
 			<type>2</type>
 			<locationURI>Flex_3_SDK_0</locationURI>
-		</link>
-		<link>
-			<name>playerglobal.swc</name>
-			<type>1</type>
-			<locationURI>Flex_3_SDK_0/frameworks/libs/player/9/playerglobal.swc</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
