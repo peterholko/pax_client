@@ -28,9 +28,11 @@
 		public static var onBadEvent:String = "onBadEvent";
 		public static var onMapEvent:String = "onMapEvent";
 		public static var onPerceptionEvent:String = "onPerceptionEvent";
+		public static var onInfoKingdomEvent:String = "onInfoKingdomEvent";
 		public static var onInfoArmyEvent:String = "onInfoArmyEvent";
 		public static var onInfoCityEvent:String = "onInfoCityEvent";
 		public static var onInfoUnitQueueEvent:String = "onInfoUnitQueueEvent";
+		public static var onInfoGenericArmy:String = "onInfoGenericArmyEvent";
 		public static var onBattleInfoEvent:String = "onBattleInfoEvent";
 		public static var onBattleAddArmyEvent:String = "onBattleAddArmyEvent";
 		public static var onBattleDamageEvent:String = "onBattleDamageEvent";
@@ -170,6 +172,13 @@
 						pEvent.params = Packet.readPerception(bArr);
 						dispatchEvent(pEvent);
 					}
+					else if(cmd == Packet.INFO_KINGDOM)
+					{
+						trace("Connection - info_kingdom");
+						pEvent = new ParamEvent(Connection.onInfoKingdomEvent);
+						pEvent.params = Packet.readInfoKingdom(bArr);
+						dispatchEvent(pEvent);
+					}			
 					else if(cmd == Packet.INFO_ARMY)
 					{
 						trace("Connection - info_army");
@@ -183,6 +192,13 @@
 						pEvent = new ParamEvent(Connection.onInfoCityEvent);
 						pEvent.params = Packet.readInfoCity(bArr);
 						dispatchEvent(pEvent);					
+					}
+					else if (cmd == Packet.INFO_GENERIC_ARMY)
+					{
+						trace("Connection - info_generic_army");
+						pEvent = new ParamEvent(Connection.onInfoGenericArmy);
+						pEvent.params = Packet.readInfoGenericArmy(bArr);
+						dispatchEvent(pEvent);							
 					}
 					else if (cmd == Packet.BATTLE_INFO)
 					{

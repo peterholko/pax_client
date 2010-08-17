@@ -13,6 +13,7 @@
 		public static var CLOCKSYNC:int = 3;
 		public static var CLIENTREADY:int = 4;
 		public static var PLAYER_ID:int = 5;
+		public static var INFO_KINGDOM:int = 6;
 		public static var EXPLORED_MAP:int = 39;
 		public static var PERCEPTION:int = 40;
 		public static var MOVE:int = 42;
@@ -21,6 +22,8 @@
 		public static var INFO_ARMY:int = 52; 
 		public static var INFO_CITY:int = 53; 
 		public static var INFO_UNIT_QUEUE:int = 55;
+		public static var INFO_GENERIC_ARMY:int = 56;
+		public static var INFO_GENERIC_CITY:int = 57;
 		public static var CITY_QUEUE_UNIT:int = 60;
 		public static var TRANSFER_UNIT:int = 61;
 		public static var BATTLE_INFO:int = 70;
@@ -127,6 +130,16 @@
 			return msg;
 		}
 		
+		public static function readInfoKingdom(byteArray:ByteArray) : InfoKingdom
+		{
+			var infoKingdom:InfoKingdom = new InfoKingdom();
+			infoKingdom.id = byteArray.readInt();
+			infoKingdom.name = byteArray.readUTF();
+			infoKingdom.gold = byteArray.readInt();
+			
+			return infoKingdom;
+		}
+		
 		public static function readExploredMap(byteArray:ByteArray) : Array
 		{
 			var numTiles:int = byteArray.readInt();
@@ -184,10 +197,12 @@
 			return perception;
 		}
 		
-		public static function readInfoArmy(byteArray:ByteArray) : Army
+		public static function readInfoArmy(byteArray:ByteArray) : InfoArmy
 		{
-			var army:Army = new Army();
+			var army:InfoArmy = new InfoArmy();
 			army.id = byteArray.readInt();
+			army.name = byteArray.readUTF();
+			army.kingdomName = byteArray.readUTF();
 			army.units = new Array();
 			
 			var numUnits:int = byteArray.readUnsignedShort();
@@ -205,14 +220,17 @@
 			return army;
 		}
 		
-		public static function readInfoCity(byteArray:ByteArray) : Object
+		public static function readInfoCity(byteArray:ByteArray) : InfoCity
 		{
-			var cityId:int = byteArray.readInt();
+			var infoCity:InfoCity = new InfoCity();			
 			var buildingList:Array = new Array();
 			var buildingQueueList:Array = new Array();
 			var unitList:Array = new Array();
 			var unitQueueList:Array = new Array();
 			var i:int;
+			
+			infoCity.id = byteArray.readInt();
+			infoCity.name = byteArray.readUTF();
 			
 			var numBuildings:int = byteArray.readUnsignedShort();
 			
@@ -260,13 +278,35 @@
 				unitQueueList.push(unitQueueInfo);											
 			}
 								
-			var infoCity:Object = { id: cityId, 									
-									buildings: buildingList, 
-									buildingsQueue: buildingQueueList,
-									units: unitList,
-									unitsQueue: unitQueueList};			
+			infoCity.buildings = buildingList;
+			infoCity.buildingsQueue = buildingQueueList;
+			infoCity.units = unitList;
+			infoCity.unitsQueue = unitQueueList;
+								
 			return infoCity;
-		}	
+		}
+		
+		public static function readInfoGenericArmy(byteArray:ByteArray) : InfoGenericArmy
+		{
+			var army:InfoGenericArmy = new InfoGenericArmy();
+			army.id = byteArray.readInt();
+			army.playerId = byteArray.readInt();
+			army.name = byteArray.readUTF();
+			army.kingdomName = byteArray.readUTF();
+		
+			return army;
+		}
+		
+		public static function readInfoGenericCity(byteArray:ByteArray) : InfoGenericCity
+		{
+			var city:InfoGenericCity = new InfoGenericCity();
+			city.id = byteArray.readInt();
+			city.playerId = byteArray.readInt();
+			city.name = byteArray.readUTF();
+			city.kingdomName = byteArray.readUTF();
+		
+			return city;
+		}		
 		
 		public static function readBattleInfo(byteArray:ByteArray) : BattleInfo
 		{

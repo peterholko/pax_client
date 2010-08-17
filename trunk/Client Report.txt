@@ -1,169 +1,230 @@
 ﻿Client.swf Movie Report
 ------------------------
 
+Preloader SWF Wrapping Content SWF
+----------------------------------
+
 Metadata
 --------
 Bytes         Value
 ----------    -----
-       678    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2010-07-07T23:18:35-06:00</xmp:MetadataDate> <xmp:ModifyDate>2010-07-07T23:18:35-06:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:234A9A1EB7DADD11B7A9AB32E7409597</stRef:instanceID> <stRef:documentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:BBB70D42508ADF11B136C0C4F3F0EF07</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:BBB70D42508ADF11B136C0C4F3F0EF07</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+      1271    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2010-08-16T20:02:36-06:00</xmp:MetadataDate> <xmp:ModifyDate>2010-08-16T20:02:36-06:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:CC8B277DA3A9DF11A618EB806DF29136</stRef:instanceID> <stRef:documentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:CE8B277DA3A9DF11A618EB806DF29136</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:CE8B277DA3A9DF11A618EB806DF29136</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
 
 Frame #    Frame Bytes    Total Bytes    Scene
 -------    -----------    -----------    -----
-      1          99175          99175    Scene 1 (AS 3.0 Classes Export Frame)
-      2              1          99176    
-      3              1          99177    
-      4              1          99178    
-      5              1          99179    
-      6              1          99180    
-      7              1          99181    
-      8            154          99335    
-      9              1          99336    
-     10              1          99337    
-     11              1          99338    
-     12             21          99359    
-     13              1          99360    
-     14              1          99361    
-     15              1          99362    
-     16              1          99363    
-     17              1          99364    
-     18              1          99365    
-     19              1          99366    
-     20              1          99367    
-     21              1          99368    
-     22              1          99369    
-     23              1          99370    
-     24              1          99371    
-     25             15          99386    
-     26              3          99389    
-     27              1          99390    
-     28              1          99391    
-     29              1          99392    
+      1           9671           9671    Scene 1
+      2         200550         210221    Scene 1 (AS 3.0 Classes Export Frame)
 
 Scene      Shape Bytes    Text Bytes    ActionScript Bytes
 -------    -----------    ----------    ------------------
-Scene 1             31           108                 65337
+Scene 1             48             0                  8592
+
+ActionScript Bytes    Location
+------------------    --------
+              8313    Scene 1:Frame 1
+               279    Scene 1:Frame 2
+
+Binary Data              Bytes         Location
+---------------------    ----------    --------
+Loading Animation SWF          1246    Scene 1:Frame 1
+Content SWF                  200243    Scene 1:Frame 2
+
+
+Content SWF
+-----------
+
+Metadata
+--------
+Bytes         Value
+----------    -----
+       607    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2010-08-16T20:02:28-06:00</xmp:MetadataDate> <xmp:ModifyDate>2010-08-16T20:02:28-06:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:CC8B277DA3A9DF11A618EB806DF29136</stRef:instanceID> <stRef:documentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:CD8B277DA3A9DF11A618EB806DF29136</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:CD8B277DA3A9DF11A618EB806DF29136</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+
+Frame #    Frame Bytes    Total Bytes    Scene
+-------    -----------    -----------    -----
+      1         203095         203095    Scene 1 (AS 3.0 Classes Export Frame)
+      2              0         203095    
+      3              0         203095    
+      4              0         203095    
+      5              0         203095    
+      6              0         203095    
+      7              0         203095    
+      8             85         203180    
+      9              0         203180    
+     10              0         203180    
+     11              0         203180    
+     12              8         203188    
+     13              0         203188    
+     14              0         203188    
+     15              0         203188    
+     16              0         203188    
+     17              0         203188    
+     18              0         203188    
+     19              0         203188    
+     20              0         203188    
+     21              0         203188    
+     22              0         203188    
+     23              0         203188    
+     24              0         203188    
+     25              8         203196    
+     26              2         203198    
+     27              0         203198    
+     28              0         203198    
+     29              0         203198    
+
+Scene      Shape Bytes    Text Bytes    ActionScript Bytes
+-------    -----------    ----------    ------------------
+Scene 1              0             0                152095
 
 Symbol                                 Shape Bytes    Text Bytes    ActionScript Bytes
 -----------------------------------    -----------    ----------    ------------------
-TextBackground                                   0             0                     0
-Symbol 277                                       0             0                     0
-Background                                       0             0                     0
-BattlePanel                                      0             0                     0
-CommandPanel                                    34             0                     0
-BottomPanel                                     32             0                     0
-ArmyUnitContainer                               31             0                     0
-IconLayer                                       19             0                     0
-StackSize                                       28            39                     0
-IconContainer                                   26             0                     0
-CityUnitContainer                               31             0                     0
+actionButton                                     0             0                     0
 Archer                                           0             0                     0
-Footsoldier                                      0             0                     0
-CreateUnitPanel                                 32             0                     0
-UnitQueueDisplay                                 0             0                     0
-UnitIcon                                         0             0                     0
-QueueBuildingPanel                              32             0                     0
+ArmyUnitContainer                               28             0                     0
 BarrackButton                                    0             0                     0
-CityPanel                                       32             0                     0
-ArmyPanel                                       32             0                     0
-TextInput_disabledSkin                           0             0                     0
-TextInput_upSkin                                 0             0                     0
-TextInput                                        0             0                     0
-Button_disabledSkin                            159             0                     0
-Button_downSkin                                187             0                     0
-Button_emphasizedSkin                           96             0                     0
-Button_overSkin                                174             0                     0
-Button_selectedDisabledSkin                    144             0                     0
-Button_selectedDownSkin                        142             0                     0
-Button_selectedOverSkin                        143             0                     0
-Button_selectedUpSkin                          143             0                     0
-Button_upSkin                                  193             0                     0
 Button                                           0             0                     0
-TextArea_disabledSkin                           73             0                     0
-TextArea_upSkin                                 66             0                     0
-ProgressBar_trackSkin                            0             0                     0
-ProgressBar_barSkin                              0             0                     0
-ProgressBar_indeterminateSkin                    0             0                     0
-HeaderRenderer_upSkin                            0             0                     0
-HeaderRenderer_disabledSkin                      0             0                     0
-HeaderRenderer_downSkin                          0             0                     0
-HeaderRenderer_overSkin                          0             0                     0
-HeaderRenderer_selectedDisabledSkin              0             0                     0
-HeaderRenderer_selectedDownSkin                  0             0                     0
-HeaderRenderer_selectedOverSkin                  0             0                     0
-HeaderRenderer_selectedUpSkin                    0             0                     0
-HeaderRenderer                                   0             0                     0
-HeaderSortArrow_ascIcon                          0             0                     0
-HeaderSortArrow_descIcon                         0             0                     0
-CellRenderer_upSkin                              0             0                     0
+Button_disabledSkin                            143             0                     0
+Button_downSkin                                168             0                     0
+Button_emphasizedSkin                           86             0                     0
+Button_overSkin                                156             0                     0
+Button_selectedDisabledSkin                    128             0                     0
+Button_selectedDownSkin                        127             0                     0
+Button_selectedOverSkin                        127             0                     0
+Button_selectedUpSkin                          128             0                     0
+Button_upSkin                                  173             0                     0
+focusRectSkin                                   60             0                     0
+Component_avatar                                19             0                     0
+CityUnitContainer                               28             0                     0
+CellRenderer                                     0             0                     0
 CellRenderer_disabledSkin                        0             0                     0
 CellRenderer_downSkin                            0             0                     0
 CellRenderer_overSkin                            0             0                     0
+CellRenderer_upSkin                              0             0                     0
 CellRenderer_selectedDisabledSkin                0             0                     0
 CellRenderer_selectedDownSkin                    0             0                     0
 CellRenderer_selectedOverSkin                    0             0                     0
 CellRenderer_selectedUpSkin                      0             0                     0
-CellRenderer                                     0             0                     0
+CheckBox_disabledIcon                            0             0                     0
+CheckBox_downIcon                                0             0                     0
+CheckBox_overIcon                                0             0                     0
+CheckBox_selectedDisabledIcon                    0             0                     0
+CheckBox_selectedIcon                            0             0                     0
+CheckBox_selectedDownIcon                        0             0                     0
+CheckBox_selectedOverIcon                        0             0                     0
+CheckBox_selectedUpIcon                          0             0                     0
+CheckBox_upIcon                                  0             0                     0
 ColumnStretch_cursor                             0             0                     0
 DataGrid_skin                                    0             0                     0
-ScrollBar                                        0             0                     0
 DataGridCellEditor_skin                          0             0                     0
+HeaderRenderer                                   0             0                     0
+HeaderRenderer_disabledSkin                      0             0                     0
+HeaderRenderer_downSkin                          0             0                     0
+HeaderRenderer_overSkin                          0             0                     0
+HeaderRenderer_upSkin                            0             0                     0
+HeaderRenderer_selectedDisabledSkin              0             0                     0
+HeaderRenderer_selectedDownSkin                  0             0                     0
+HeaderRenderer_selectedOverSkin                  0             0                     0
+HeaderRenderer_selectedUpSkin                    0             0                     0
+HeaderSortArrow_ascIcon                          0             0                     0
+HeaderSortArrow_descIcon                         0             0                     0
 List_skin                                        0             0                     0
-Label                                            0             0                     0
-CheckBox_upIcon                                  0             0                     0
-CheckBox_overIcon                                0             0                     0
-CheckBox_downIcon                                0             0                     0
-CheckBox_disabledIcon                            0             0                     0
-CheckBox_selectedIcon                            0             0                     0
-CheckBox_selectedUpIcon                          0             0                     0
-CheckBox_selectedOverIcon                        0             0                     0
-CheckBox_selectedDownIcon                        0             0                     0
-CheckBox_selectedDisabledIcon                    0             0                     0
-Component_avatar                                22             0                     0
-focusRectSkin                                   67             0                     0
-ScrollTrack_skin                                75             0                     0
-arrowIcon                                       22             0                     0
-ScrollArrowUp_icon                               0             0                     0
-ScrollArrowUp_downSkin                          71             0                     0
-ScrollArrowDown_icon                             0             0                     0
-ScrollArrowDown_downSkin                        73             0                     0
-ScrollThumb_downSkin                           107             0                     0
-ScrollArrowDown_overSkin                        72             0                     0
-ScrollThumb_overSkin                            96             0                     0
-ScrollArrowUp_overSkin                          72             0                     0
+ProgressBar_barSkin                              0             0                     0
+ProgressBar_indeterminateSkin                    0             0                     0
+ProgressBar_trackSkin                            0             0                     0
+ScrollBar                                        0             0                     0
+ScrollTrack_skin                                67             0                     0
+ScrollArrowUp_downSkin                          65             0                     0
+ScrollArrowDown_downSkin                        64             0                     0
+ScrollThumb_downSkin                            96             0                     0
+ScrollArrowDown_overSkin                        65             0                     0
+ScrollThumb_overSkin                            95             0                     0
+ScrollArrowUp_overSkin                          65             0                     0
 ScrollArrowUp_upSkin                             0             0                     0
-ScrollThumb_upSkin                             107             0                     0
-ScrollArrowDown_upSkin                          35             0                     0
-ScrollArrowDown_disabledSkin                    72             0                     0
-ScrollArrowUp_disabledSkin                      72             0                     0
-ScrollBar_thumbIcon                             49             0                     0
-UIScrollBar                                      0             0                     0
+ScrollThumb_upSkin                              96             0                     0
+ScrollArrowDown_upSkin                          32             0                     0
+ScrollArrowDown_disabledSkin                     0             0                     0
+ScrollArrowUp_disabledSkin                      65             0                     0
+ScrollBar_thumbIcon                             44             0                     0
+ScrollArrowDown_icon                             0             0                     0
+arrowIcon                                       20             0                     0
+ScrollArrowUp_icon                               0             0                     0
+TextArea_disabledSkin                           63             0                     0
+TextArea_upSkin                                 58             0                     0
+TextInput_disabledSkin                           0             0                     0
+TextInput_upSkin                                 0             0                     0
+Footsoldier                                      0             0                     0
+IconContainer                                   23             0                     0
+StackSize                                       25            35                     0
+IconLayer                                       17             0                     0
+IconTile                                         0             0                     0
+Label                                            0             0                     0
+LoginScreen                                      0             0                     0
+TextInput                                        0             0                     0
+mainui                                           0             0                     0
+ArmyPanel                                       28             0                     0
+Background                                       0             0                     0
+BattlePanel                                      0             0                     0
+TextBackground                                   0             0                     0
+BottomPanel                                     28             0                     0
+CityPanel                                       28             0                     0
+CommandPanel                                    30             0                     0
+CreateUnitPanel                                 28             0                     0
+QueueBuildingPanel                              28             0                     0
+UnitQueueDisplay                                 0             0                     0
+Symbol 277                                       0             0                     0
 TextArea                                         0             0                     0
+UIScrollBar                                      0             0                     0
+UnitIcon                                         0             0                     0
 fl.core.ComponentShim                            0             0                     0
 
 Font Name    Bytes         Characters
 ---------    ----------    ----------
-ArialMT            2890    
-_sans              3849    APacdnorstuw
+Verdana            3746    Acount PaswrdSigplyCveWfKmEM9,G0/ONID:h.’BJ(L)T2YbﾠH!k_xRVU
+ArialMT            2585    
 
 ActionScript Bytes    Location
 ------------------    --------
-             65337    Scene 1:Frame 1
+            152095    Scene 1:Frame 1
 
-Bitmap                         Compressed    Original      Compression
----------------------------    ----------    ----------    -----------
-TestTiles                            8434         36864    Lossless
-placeholder_enemy.png                1113          9216    Lossless
-placeholder_city.png                 1314          9216    Lossless
-placeholder_battle.png                361          4096    JPEG Quality=80
-placeholder_army.png                 1055          9216    Lossless
-CharacterImage                       1048          3712    Lossless
-text_background                      2404        577728    JPEG Quality=80
-background                           3542       1371232    JPEG Quality=80
-bottom_spacer                         249           480    JPEG Quality=80
-top_spacer                            341          3680    JPEG Quality=80
-placeholder_archer.png                222         10000    Lossless
-placeholder_footsoldier.png           253         10000    Lossless
-placeholder_barrack.png               271          6400    Lossless
+Bitmap                          Compressed    Original      Compression
+----------------------------    ----------    ----------    -----------
+TestTiles                             7545         36864    Lossless
+placeholder_enemy.png                  995          9216    Lossless
+placeholder_city.png                  1175          9216    Lossless
+placeholder_battle.png                 639          4096    JPEG Quality=100
+placeholder_army.png                   944          9216    Lossless
+CharacterImage                         937          3712    Lossless
+text_background                       2674        577728    JPEG Quality=100
+background                            3899       1371232    JPEG Quality=100
+bottom_spacer                          277           480    JPEG Quality=100
+top_spacer                             397          3680    JPEG Quality=100
+placeholder_archer.png                 198         10000    Lossless
+placeholder_footsoldier.png            226         10000    Lossless
+Action Tile.png                         41          6400    Lossless
+Land_Tile (always first).png            32          5184    Lossless
+Minimize                               408          1444    JPEG Quality=100
+Header_Footer                          209         64800    JPEG Quality=100
+Back_Pane                              520        454400    JPEG Quality=100
+Overlay Dropdown Backing               538         16720    JPEG Quality=100
+Zoom Control                           697          2304    JPEG Quality=100
+Zoom Backing                           352          5476    JPEG Quality=100
+Chat                                   530          1728    JPEG Quality=100
+Minimized Window Example               352          5476    JPEG Quality=100
+Overlay Enabled                        371          1156    JPEG Quality=100
+Overlay Disabled                       368          1156    JPEG Quality=100
+Overlay Control                        603          2304    JPEG Quality=100
+Overlay Backing                        352          5476    JPEG Quality=100
+Left_Arrow  (always visible)           745          2916    JPEG Quality=100
+Entry Bar                              151         19840    JPEG Quality=100
+Chat_Pane                              297        168640    JPEG Quality=100
+Right_Arrow (always visible)           749          2916    JPEG Quality=100
+Sample_Flag                           1180          6000    JPEG Quality=100
+Mini_Flag                              302          6000    JPEG Quality=100
+Avatar                                 323         10000    JPEG Quality=100
+Target_Pane                            327         89300    JPEG Quality=100
+Seperator copy 2                       140           200    JPEG Quality=100
+Actions_Pane                           253         89300    JPEG Quality=100
+Layer 1                               6212        320000    JPEG Quality=100
+Layer 3                               1567         12032    JPEG Quality=100
 
 
 

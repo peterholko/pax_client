@@ -22,13 +22,15 @@
 	{
 		public static var DEBUG:Boolean = true;
 		public static var VERSION:String = "0.029";
+		public static var STATUS_WAITING:int = 0;
+		public static var STATUS_LOADING:int = 1;
+		public static var STATUS_CONNECTING:int = 2;
+		public static var STATUS_PLAYING:int = 3;
 		
 		//Stage objects
-		public var versionTextField:TextField;
-		public var accountTextInput:TextInput;
-		public var passwordTextInput:TextInput;
-		public var loginButton:Button;
-		public var connectionStatusTextField:TextField;
+		
+		public var mainUI:MainUI;
+		public var loginScreen:LoginScreen;
 		
 		public var armyPanel:ArmyPanel;
 		public var cityPanel:CityPanel;		
@@ -52,6 +54,7 @@
 		private var commandPanelController:CommandPanelController;
 		
 		private var connectionMsg:String = "";
+		private var clientStatus:int = STATUS_LOADING;
 		
 		public function Main() : void
 		{
@@ -61,14 +64,15 @@
 		
 		public function setupLoginFrame() : void
 		{
-			versionTextField.text = "Version: " + VERSION;
-			connectionStatusTextField.text = connectionMsg;	
-			loginButton.addEventListener(MouseEvent.CLICK, loginHandler);
+			loginScreen.loginButton.addEventListener(MouseEvent.CLICK, loginHandler);			
+			
+			clientStatus = STATUS_WAITING;
 		}
 		
 		public function setupGameFrame() : void
 		{
-			trace("armyPanel: " + armyPanel);
+			mainUI.initialize();
+			
 			armyPanelController = ArmyPanelController.INSTANCE;
 			armyPanelController.initialize(this);
 			
@@ -80,13 +84,7 @@
 			
 			createUnitPanelController = CreateUnitPanelController.INSTANCE;
 			createUnitPanelController.initialize(this);
-			
-			bottomPanelController = BottomPanelController.INSTANCE;
-			bottomPanelController.initialize(this);
-			
-			commandPanelController = CommandPanelController.INSTANCE;
-			commandPanelController.initialize(this);
-			
+						
 			battlePanelController = BattlePanelController.INSTANCE;
 			battlePanelController.initialize(this);
 						
@@ -97,19 +95,24 @@
 						
 		private function loginHandler(event:MouseEvent) : void
 		{
-			account = accountTextInput.text;
-			password = passwordTextInput.text;
+			if(clientStatus == STATUS_WAITING)
+			{
+				clientStatus = STATUS_CONNECTING;
+				account = loginScreen.accountTextInput.text;
+				password = loginScreen.passwordTextInput.text;
+				loginScreen.loginButton.enabled = false;
 			
-			connection = Connection.INSTANCE;
-			connection.initialize();
-			connection.addEventListener(Connection.onConnectEvent, connectionComplete);
-			connection.addEventListener(Connection.onIOErrorEvent, connectionIOError);
-			connection.addEventListener(Connection.onSecurityErrorEvent, connectionSecurityError);
-			connection.addEventListener(Connection.onCloseEvent, connectionCloseError);
-			connection.addEventListener(Connection.onLoggedInEvent, connectionLoggedIn);
-			connection.addEventListener(Connection.onClockSyncEvent, connectionClockSync);
+				connection = Connection.INSTANCE;
+				connection.initialize();
+				connection.addEventListener(Connection.onConnectEvent, connectionComplete);
+				connection.addEventListener(Connection.onIOErrorEvent, connectionIOError);
+				connection.addEventListener(Connection.onSecurityErrorEvent, connectionSecurityError);
+				connection.addEventListener(Connection.onCloseEvent, connectionCloseError);
+				connection.addEventListener(Connection.onLoggedInEvent, connectionLoggedIn);
+				connection.addEventListener(Connection.onClockSyncEvent, connectionClockSync);
 			
-			connection.connect();
+				connection.connect();
+			}
 		}		
 		
 		private function connectionComplete(e:Event) : void
@@ -140,8 +143,6 @@
 			connection.removeEventListener(Connection.onCloseEvent, connectionCloseError);
 			connection.removeEventListener(Connection.onClockSyncEvent, connectionClockSync);
 			
-			connectionMsg = msg;
-			
 			gotoAndStop("Login");
 		}
 		
@@ -154,7 +155,7 @@
 		{
 			connection.doClientReady();
 			Game.INSTANCE.startLoop();
-			Game.INSTANCE.x = 100;
+			Game.INSTANCE.x = 0;
 			Game.INSTANCE.y = 0;
 			Game.INSTANCE.scrollRect = new Rectangle(0, 0, 920, 538);
 						

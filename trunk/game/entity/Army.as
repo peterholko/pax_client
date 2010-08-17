@@ -9,7 +9,7 @@
 	import flash.utils.Dictionary;
 	import game.unit.events.UnitEvent;
 	
-	import net.packet.Army;
+	import net.packet.InfoArmy;
 	import net.packet.Unit;
 	
 	import game.Game;
@@ -82,7 +82,7 @@
 			Game.INSTANCE.dispatchEvent(pEvent);
 		}
 		
-		public function setArmyInfo(armyInfo:net.packet.Army) : void
+		public function setArmyInfo(armyInfo:InfoArmy) : void
 		{
 			trace("Army - setArmyInfo");					
 			setUnits(armyInfo.units);

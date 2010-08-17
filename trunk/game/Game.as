@@ -26,14 +26,13 @@
 	import game.map.Tile;
 	
 	import net.Connection;
+	import net.packet.InfoKingdom;
 	import net.packet.BattleInfo;
 	import net.packet.BattleAddArmy;
 	import net.packet.BattleDamage;	
 	
 	import ui.panel.controller.ArmyPanelController;
-	import ui.panel.controller.BottomPanelController;
 	import ui.panel.controller.CityPanelController;
-	import ui.panel.controller.CommandPanelController;
 	import ui.panel.controller.CreateUnitPanelController;
 	import ui.panel.controller.QueueBuildingPanelController;
 	import ui.panel.controller.BattlePanelController;
@@ -43,9 +42,11 @@
 		public static var INSTANCE:Game = new Game();	
 		public static var SCROLL_SPEED:int = 8;
 		public static var GAME_LOOP_TIME:int = 50;	
+		public static var onInfoArmy:String = "onInfoArmy";
 				
 		public var main:Main;
 		public var player:Player;
+		public var kingdom:Kingdom;
 		
 		public var selectedEntity:Entity;
 		public var targetedEntity:Entity;
@@ -60,14 +61,16 @@
 			selectedEntity = null;							
 			targetedEntity = null;
 			player = new Player();
+			kingdom = new Kingdom();
 			
 			map = Map.INSTANCE;
 			perceptionManager = PerceptionManager.INSTANCE;
 						
 			addChild(map);	
-						
+															
 			Connection.INSTANCE.addEventListener(Connection.onMapEvent, connectionMap);
-			Connection.INSTANCE.addEventListener(Connection.onPerceptionEvent, connectionPerception);		
+			Connection.INSTANCE.addEventListener(Connection.onPerceptionEvent, connectionPerception);	
+			Connection.INSTANCE.addEventListener(Connection.onInfoKingdomEvent, connectionInfoKingdom);
 			Connection.INSTANCE.addEventListener(Connection.onInfoArmyEvent, connectionInfoArmy);
 			Connection.INSTANCE.addEventListener(Connection.onInfoCityEvent, connectionInfoCity);
 			Connection.INSTANCE.addEventListener(Connection.onBattleInfoEvent, connectionBattleInfo);
@@ -194,10 +197,7 @@
 			
 			if (tile != null)
 			{
-				BottomPanelController.INSTANCE.tile = tile;
-				BottomPanelController.INSTANCE.setIcons();
-				CommandPanelController.INSTANCE.hidePanel();
-				
+				main.mainUI.setSelectedTile(tile);				
 				sendMove(tile.gameX, tile.gameY);
 			}
 		}
@@ -206,9 +206,9 @@
 		{
 			if(selectedEntity != null)
 			{
-				if (CommandPanelController.INSTANCE.isMoveCommand())
+				if (main.mainUI.isMoveCommand())
 				{					
-					CommandPanelController.INSTANCE.resetCommand();
+					main.mainUI.resetCommand();
 					
 					var parameters:Object = {id: selectedEntity.id, x: gameX, y: gameY};
 					var pEvent = new ParamEvent(Connection.onSendMoveArmy);
@@ -263,6 +263,17 @@
 			trace("Game - perception");
 			addPerceptionData(e.params);
 		}
+		
+		private function connectionInfoKingdom(e:ParamEvent) : void
+		{
+			trace("Game - infoKingdom");
+			var infoKingdom:InfoKingdom = InfoKingdom(e.params);
+			
+			kingdom.id = infoKingdom.id;
+			kingdom.playerId = player.id;
+			kingdom.name = infoKingdom.name;
+			kingdom.gold = infoKingdom.gold;			
+		}		
 		
 		private function connectionInfoArmy(e:ParamEvent) : void
 		{
