@@ -31,6 +31,7 @@
 		public static var onInfoKingdomEvent:String = "onInfoKingdomEvent";
 		public static var onInfoArmyEvent:String = "onInfoArmyEvent";
 		public static var onInfoCityEvent:String = "onInfoCityEvent";
+		public static var onInfoTileEvent:String = "onInfoTileEvent";
 		public static var onInfoUnitQueueEvent:String = "onInfoUnitQueueEvent";
 		public static var onInfoGenericArmy:String = "onInfoGenericArmyEvent";
 		public static var onBattleInfoEvent:String = "onBattleInfoEvent";
@@ -43,6 +44,7 @@
 		public static var onSendCityQueueUnit:String = "onSendCityQueueUnit";
 		public static var onSendTransferUnit:String = "onSendTransferUnit";
 		public static var onSendBattleTarget:String = "onSendBattleTarget";
+		public static var onSendAddClaim:String = "onSendAddClaim";
 				
 		public var clockSyncStartTime:Number = 0;
 		public var clockSyncEndTime:Number = 0;
@@ -102,6 +104,7 @@
 			addEventListener(Connection.onSendCityQueueUnit, sendCityQueueUnit);
 			addEventListener(Connection.onSendTransferUnit, sendTransferUnit);
 			addEventListener(Connection.onSendBattleTarget, sendBattleTarget);
+			addEventListener(Connection.onSendAddClaim, sendAddClaim);
 		}
 		
 		private function closeHandler(event:Event):void {
@@ -193,6 +196,13 @@
 						pEvent.params = Packet.readInfoCity(bArr);
 						dispatchEvent(pEvent);					
 					}
+					else if (cmd == Packet.INFO_TILE)
+					{
+						trace("Connection - info_tile");
+						pEvent = new ParamEvent(Connection.onInfoTileEvent);
+						pEvent.params = Packet.readInfoTile(bArr);
+						dispatchEvent(pEvent);							
+					}
 					else if (cmd == Packet.INFO_GENERIC_ARMY)
 					{
 						trace("Connection - info_generic_army");
@@ -275,6 +285,13 @@
 			trace("Connection - sendBattleTarget");
 			var battleTarget:BattleTarget = e.params;			
 			Packet.sendBattleTarget(socket, battleTarget);
+		}
+		
+		private function sendAddClaim(e:ParamEvent) : void
+		{
+			trace("Connection - sendAddClaim");
+			var addClaim:AddClaim = e.params;
+			Packet.sendAddClaim(socket, addClaim);
 		}
 	}
 }

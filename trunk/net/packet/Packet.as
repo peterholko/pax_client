@@ -19,8 +19,9 @@
 		public static var MOVE:int = 42;
 		public static var ATTACK:int = 43;	
 		public static var REQUEST_INFO:int = 50;
-		public static var INFO_ARMY:int = 52; 
-		public static var INFO_CITY:int = 53; 
+		public static var INFO_TILE:int = 52;		
+		public static var INFO_ARMY:int = 53; 
+		public static var INFO_CITY:int = 54; 
 		public static var INFO_UNIT_QUEUE:int = 55;
 		public static var INFO_GENERIC_ARMY:int = 56;
 		public static var INFO_GENERIC_CITY:int = 57;
@@ -30,6 +31,7 @@
 		public static var BATTLE_ADD_ARMY:int = 71;
 		public static var BATTLE_DAMAGE:int = 72;
 		public static var BATTLE_TARGET:int = 73;
+		public static var ADD_CLAIM:int = 125;
 		public static var BAD:int = 255;
 		
 		//Errors
@@ -121,6 +123,16 @@
 			socket.flush();
 		}
 		
+		public static function sendAddClaim(socket:Socket, addClaim:AddClaim) : void
+		{
+			trace("Packet - sendAddClaim");
+			socket.writeByte(ADD_CLAIM);
+			socket.writeInt(addClaim.cityId);
+			socket.writeShort(addClaim.x);
+			socket.writeShort(addClaim.y);
+			socket.flush();
+		}
+		
 		public static function readBad(byteArray:ByteArray) : String
 		{
 			var cmd:int = byteArray.readUnsignedByte();
@@ -196,6 +208,32 @@
 			
 			return perception;
 		}
+		
+		public static function readInfoTile(byteArray:ByteArray) : InfoTile
+		{		
+			var infoTile:InfoTile = new InfoTile();
+			var resourceList/*Resource*/:Array = new Array();
+			
+			infoTile.tileIndex = byteArray.readInt();
+			infoTile.tileType = byteArray.readUnsignedShort();
+			
+			var numResources:int = byteArray.readUnsignedShort();
+			
+			for (var i:int = 0; i < numResources; i++)
+			{	
+				var resource:Resource = new Resource();
+				resource.id = byteArray.readInt();
+				resource.type = byteArray.readUnsignedShort();
+				resource.total = byteArray.readInt();
+				resource.regen_rate = byteArray.readInt();
+				
+				resourceList.push(resource);
+			}
+			
+			infoTile.resources = resourceList;
+			
+			return infoTile;
+		}		
 		
 		public static function readInfoArmy(byteArray:ByteArray) : InfoArmy
 		{

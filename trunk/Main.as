@@ -15,8 +15,12 @@
 	import net.Connection;
 	import game.Game;
 	
+	import ui.MainUI;
 	import ui.panel.controller.*;
 	import ui.panel.view.*;
+	import ui.CityUI;
+	import ui.MoveReticule;
+	import ui.AttackReticule;
 	
 	public class Main extends MovieClip
 	{
@@ -30,7 +34,11 @@
 		//Stage objects
 		
 		public var mainUI:MainUI;
+		public var cityUI:CityUI;
 		public var loginScreen:LoginScreen;
+		
+		public var moveReticule:MoveReticule;
+		public var attackReticule:AttackReticule;
 		
 		public var armyPanel:ArmyPanel;
 		public var cityPanel:CityPanel;		
@@ -71,7 +79,8 @@
 		
 		public function setupGameFrame() : void
 		{
-			mainUI.initialize();
+			mainUI.init(this);
+			cityUI.init();
 			
 			armyPanelController = ArmyPanelController.INSTANCE;
 			armyPanelController.initialize(this);

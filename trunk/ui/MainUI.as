@@ -1,10 +1,14 @@
 ﻿package ui
 {
+	import flash.ui.Mouse;
 	import flash.display.MovieClip;
+	import flash.text.TextField;
 	import fl.text.TLFTextField;
 	import flash.display.DisplayObjectContainer;
 	import flash.events.MouseEvent;
 	import flash.display.DisplayObject;
+
+	import Main;
 
 	import game.Game;
 	import game.map.Tile;
@@ -17,7 +21,8 @@
 	import net.packet.InfoGenericArmy;
 	import net.packet.InfoCity;
 	import net.packet.InfoKingdom;
-
+	import net.packet.InfoTile;
+	
 	public class MainUI extends MovieClip
 	{
 		private static var ICON_X_SPACER:int = 5;
@@ -30,15 +35,20 @@
 		private static var SELECTED_TILE:int = 1;
 		private static var SELECTED_ENTITY:int = 2;
 
-		public var menuText:TLFTextField;
-		public var empireText:TLFTextField;
-		public var kingdomText:TLFTextField;
+		public var main:Main;
+
+		public var menuText:TextField;
+		public var empireText:TextField;
+		public var kingdomText:TextField;
+		public var warfareText:TextField;
+		public var arcaneText:TextField;
+		public var civicsText:TextField;
 		public var infoButton:ActionButton;
 		public var moveButton:ActionButton;
 		public var attackButton:ActionButton;
+		public var claimButton:ActionButton;
 		public var buildButton:ActionButton;
-		public var tradeButton:ActionButton;
-		public var iconTile:IconTile;
+		public var tradeButton:ActionButton;	
 
 		public var targetName:TLFTextField;
 		public var empireKingdomName:TLFTextField;
@@ -65,28 +75,38 @@
 		public var mtLabel:TLFTextField;
 		public var mtValue:TLFTextField;
 		
-		public var goldText:TLFTextField;
+		public var goldText:TextField;
+		
+		public var iconTile:IconTile;
 
 		private var selectedType:int;
 		private var selectedTile:Tile;
 		private var selectedEntity:Entity;
 		private var iconEntities/*Entity*/:Array;
 		private var command:int;
+		
+		
 
 		public function MainUI()
 		{
 			selectedType = SELECTED_NONE;
 			command = COMMAND_NONE;
-		}
+		}	
 		
-		public function initialize()
-		{
+		public function init(_main:Main)
+		{			
+			main = _main;
+		
 			hideTargetBar();
 			hideActionButtons();
 
 			infoButton.actionText.text = "Info";
 			moveButton.actionText.text = "Move";
 			attackButton.actionText.text = "Attack";
+			claimButton.actionText.text = "Claim";
+			
+			//goldText.text = "123456789,9999";
+			//trace(goldText.textFlow.computedFormat.fontFamily);
 
 			infoButton.addEventListener(MouseEvent.CLICK, infoButtonClick);
 			moveButton.addEventListener(MouseEvent.CLICK, moveButtonClick);
@@ -95,17 +115,19 @@
 			iconTile.visible = false;
 			iconTile.addEventListener(MouseEvent.CLICK, iconTileClick);
 
-			iconEntities = new Array();			
+			iconEntities = new Array();					
 			
 			Connection.INSTANCE.addEventListener(Connection.onInfoKingdomEvent, infoKingdomEvent);
 			Connection.INSTANCE.addEventListener(Connection.onInfoArmyEvent, infoArmyEvent);
 			Connection.INSTANCE.addEventListener(Connection.onInfoCityEvent, infoCityEvent);
+			Connection.INSTANCE.addEventListener(Connection.onInfoTileEvent, infoTileEvent);
 			Connection.INSTANCE.addEventListener(Connection.onInfoGenericArmy, infoGenericArmyEvent);
 			Connection.INSTANCE.addEventListener(Connection.onInfoGenericArmy, infoGenericCityEvent);
 		}
 
 		public function isMoveCommand():Boolean
 		{
+			trace("command: " + command);
 			return command == COMMAND_MOVE;
 		}
 
@@ -122,6 +144,7 @@
 		public function setSelectedTile(tile:Tile):void
 		{
 			selectedTile = tile;
+			removeReticules();
 			removeIcons();
 			setTileIcon();
 			setEntityIcons();
@@ -158,7 +181,13 @@
 				}
 			}
 		}
-
+		
+		private function removeReticules() : void
+		{
+			main.moveReticule.hide();
+			main.attackReticule.hide();
+		}
+		
 		private function removeIcons():void
 		{
 			if(iconEntities != null)
@@ -176,6 +205,11 @@
 		private function iconTileClick(e:MouseEvent):void
 		{
 			var iconTile:IconTile = e.target as IconTile;
+			
+			hideActivateEntities();	
+			
+			iconTile.showActivate();
+			
 			selectedType = SELECTED_TILE;
 
 			setActionBar();
@@ -184,10 +218,27 @@
 		private function iconEntityClick(e:MouseEvent):void
 		{
 			var iconEntity:IconEntity = e.target as IconEntity;
+			
+			hideActivateEntities()			
+			iconTile.hideActivate();
+			
+			iconEntity.showActivate();
+						
 			selectedType = SELECTED_ENTITY;
 			selectedEntity = iconEntity.entity;
 
 			setActionBar();
+		}
+		
+		private function hideActivateEntities() : void
+		{
+			if(iconEntities != null)
+			{
+				for (var i:int = 0; i < iconEntities.length; i++)
+				{
+					iconEntities[i].hideActivate();										
+				}			
+			}			
 		}
 
 		private function setActionBar():void
@@ -212,7 +263,10 @@
 				}
 				else if (selectedEntity.type == Entity.CITY)
 				{
-
+					if (selectedEntity.isPlayers())
+					{
+						claimButton.visible = true;
+					}
 				}
 			}
 
@@ -223,6 +277,7 @@
 			infoButton.visible = false;
 			moveButton.visible = false;
 			attackButton.visible = false;
+			claimButton.visible = false;
 		}
 
 		private function hideTargetBar():void
@@ -255,8 +310,15 @@
 
 		private function infoButtonClick(e:MouseEvent):void
 		{
+			hideActivateActionButtons();
+			infoButton.showActivate();
+			
 			if (selectedType == SELECTED_TILE)
 			{
+				var pEvent:ParamEvent = new ParamEvent(Tile.onDoubleClick);
+				pEvent.params = selectedTile;
+
+				Game.INSTANCE.dispatchEvent(pEvent);				
 			}
 			else if (selectedType == SELECTED_ENTITY)
 			{
@@ -279,22 +341,46 @@
 
 		private function moveButtonClick(e:MouseEvent):void
 		{
+			hideActivateActionButtons();
+			moveButton.showActivate();
+			
 			Game.INSTANCE.selectedEntity = selectedEntity;
 			command = COMMAND_MOVE;
+			
+			main.moveReticule.show();
 		}
 
 		private function attackButtonClick(e:MouseEvent):void
 		{
+			hideActivateActionButtons();
+			attackButton.showActivate();
+			
 			Game.INSTANCE.selectedEntity = selectedEntity;
 			command = COMMAND_ATTACK;
+			
+			//main.attackReticule.show();
+		}
+		
+		private function claimButtonClick(e:MouseEvent) : void
+		{
+			hideActivateActionButtons();
+			claimButton.showActivate();
+			
+			/*var pEvent:ParamEvent = new ParamEvent(City.onAddClaim);
+			pEvent.params = City(selectedEntity);
+
+			Game.INSTANCE.dispatchEvent(pEvent);*/
 		}
 		
 		private function infoKingdomEvent(e:ParamEvent) : void
 		{
 			trace("MainUI - infoKingdomEvent");
 			var infoKingdom:InfoKingdom = InfoKingdom(e.params);
+			trace(infoKingdom.gold);			
 			
-			goldText.text = infoKingdom.gold.toString();
+			goldText.htmlText = infoKingdom.gold.toString();
+			
+			trace("goldText.htmlText: " + goldText.htmlText);
 		}
 		
 		private function infoArmyEvent(e:ParamEvent) : void
@@ -326,6 +412,18 @@
 			pwrWeaInfValue.text = "0\n0\n0";
 			
 			showCityTarget();
+		}
+		
+		private function infoTileEvent(e:ParamEvent) : void
+		{
+			trace("MainUI - infoTile");
+			var infoTile:InfoTile = InfoTile(e.params);
+			
+			hideTargetBar();
+			
+			targetName.text = Tile.GetTileName(infoTile.tileType);
+			
+			showTileTarget();
 		}
 		
 		private function infoGenericArmyEvent(e:ParamEvent) : void
@@ -372,6 +470,19 @@
 			pwrWeaInfLabel.visible = true;
 			pwrWeaInfValue.visible = true;
 			loyHeaSecLabel.visible = true;
+		}
+		
+		private function showTileTarget() : void
+		{
+			targetName.visible = true;
+		}
+		
+		private function hideActivateActionButtons() : void
+		{
+			infoButton.hideActivate();
+			moveButton.hideActivate();
+			attackButton.hideActivate();
+			claimButton.hideActivate();
 		}
 
 	}

@@ -36,6 +36,7 @@
 	import ui.panel.controller.CreateUnitPanelController;
 	import ui.panel.controller.QueueBuildingPanelController;
 	import ui.panel.controller.BattlePanelController;
+	import net.packet.AddClaim;
 	
 	public class Game extends Sprite
 	{				
@@ -43,6 +44,7 @@
 		public static var SCROLL_SPEED:int = 8;
 		public static var GAME_LOOP_TIME:int = 50;	
 		public static var onInfoArmy:String = "onInfoArmy";
+		public static var onAddClaim:String = "onAddClaim";
 				
 		public var main:Main;
 		public var player:Player;
@@ -77,12 +79,14 @@
 			Connection.INSTANCE.addEventListener(Connection.onBattleDamageEvent, connectionBattleDamage);
 			
 			addEventListener(Tile.onClick, tileClicked);
+			addEventListener(Tile.onDoubleClick, tileDoubleClicked);
 			addEventListener(Army.onClick, armyClicked);
 			addEventListener(Army.onDoubleClick, armyDoubleClicked);
 			addEventListener(City.onClick, cityClicked);
 			addEventListener(City.onDoubleClick, cityDoubleClicked);
 			addEventListener(MapBattle.onDoubleClick, battleDoubleClicked);
-		}
+			
+		}						
 				
 		public function addPerceptionData(perception:Perception) : void
 		{	
@@ -188,6 +192,20 @@
 			
 			Connection.INSTANCE.dispatchEvent(battleTargetEvent);
 		}		
+		
+		private function sendAddClaim(cityId:int, tileX:int, tileY:int) : void
+		{
+			var addClaim:AddClaim = new AddClaim();
+			
+			addClaim.cityId = cityId;
+			addClaim.x = tileX;
+			addClaim.y = tileY;
+			
+			var addClaimEvent:ParamEvent = new ParamEvent(Connection.onSendAddClaim);
+			addClaimEvent.params = addClaim;
+			
+			Connection.INSTANCE.dispatchEvent(addClaimEvent);
+		}		
 				
 		private function tileClicked(e:ParamEvent) : void
 		{
@@ -196,11 +214,34 @@
 			var tile:Tile = e.params;
 			
 			if (tile != null)
-			{
-				main.mainUI.setSelectedTile(tile);				
-				sendMove(tile.gameX, tile.gameY);
+			{				
+				main.mainUI.setSelectedTile(tile);		
+				trace("isMoveCommand: " + main.mainUI.isMoveCommand());
+				if(main.mainUI.isAttackCommand())
+				{
+					main.mainUI.resetCommand();
+					if(tile.hasOneEntityOnly())
+					{
+						var entity:Entity = tile.getSoloEntity();
+						sendAttack(entity.id);
+					}
+				}
+				else if(main.mainUI.isMoveCommand())
+				{
+					sendMove(tile.gameX, tile.gameY);
+				}
 			}
 		}
+		
+		private function tileDoubleClicked(e:ParamEvent) : void
+		{
+			trace("Game - tileDoubleClicked");	
+			trace("e.params:" + e.params);
+			var parameters:Object = { type: MapObjectType.TILE, targetId: e.params.index };
+			var requestInfoEvent:ParamEvent = new ParamEvent(Connection.onSendRequestInfo);
+			requestInfoEvent.params = parameters;
+			Connection.INSTANCE.dispatchEvent(requestInfoEvent);
+		}		
 		
 		private function sendMove(gameX:int, gameY:int) : void
 		{
@@ -250,7 +291,12 @@
 		private function cityClicked(e:ParamEvent) : void
 		{
 			trace("Game - cityClicked");
-		}	
+		}		
+		
+		private function onAddClaim(e:ParamEvent) : void
+		{
+			
+		}
 		
 		private function connectionMap(e:ParamEvent) : void
 		{
@@ -292,10 +338,7 @@
 			var city:City = City(perceptionManager.getEntity(e.params.id));
 			city.setCityInfo(e.params);
 			
-			CityPanelController.INSTANCE.city = city;
-			CityPanelController.INSTANCE.setBuildings();
-			CityPanelController.INSTANCE.setUnits();
-			CityPanelController.INSTANCE.showPanel();
+			main.cityUI.showPanel();
 		}		
 		
 		private function connectionBattleInfo(e:ParamEvent) : void

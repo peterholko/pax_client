@@ -14,6 +14,7 @@
 	public class Tile extends Sprite
 	{
 		public static var onClick:String = "onTileClick";
+		public static var onDoubleClick:String = "onTileDoubleClick";
 		
 		public static const WIDTH:int = 48;
 		public static const HEIGHT:int = 48;		
@@ -27,6 +28,31 @@
 		
 		private var image:Bitmap;
 		public var entities/*Entity*/:Array;		
+		
+		public static function GetTileName(type:int) : String
+		{
+			var tileName:String;
+			
+			switch(type)
+			{
+				case 0: 
+					tileName = "Mountain";
+					break;
+				case 1:
+					tileName = "Forest";
+					break;
+				case 2:
+					tileName = "Plains";
+					break;
+				case 3:
+					tileName = "Swamp";
+					break;
+				default:
+					tileName = "Unknown";
+			}
+			
+			return tileName;
+		}
 		
 		public function Tile() : void
 		{
@@ -74,6 +100,7 @@
 			
 			addChild(image);
 			addEventListener(MouseEvent.CLICK, mouseClick);
+			addEventListener(MouseEvent.DOUBLE_CLICK, mouseDoubleClick);
 		}
 		
 		public function addEntity(entity:Entity) : void
@@ -111,6 +138,16 @@
 		{
 			return image;
 		}
+		
+		public function hasOneEntityOnly() : Boolean
+		{
+			return (entities.length == 1);
+		}
+		
+		public function getSoloEntity() : Entity
+		{
+			return Entity(entities[0]);
+		}
 				
 		private function mouseClick(e:Event) : void
 		{
@@ -121,5 +158,14 @@
 						
 			Game.INSTANCE.dispatchEvent(pEvent);
 		}
+		
+		private function mouseDoubleClick(e:Event) : void
+		{
+			trace("Tile - mouseDoubleClick");
+			var pEvent:ParamEvent = new ParamEvent(Tile.onDoubleClick);
+			pEvent.params = this;
+						
+			Game.INSTANCE.dispatchEvent(pEvent);
+		}		
 	}
 }
