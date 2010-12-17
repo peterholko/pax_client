@@ -310,6 +310,7 @@
 
 		private function infoButtonClick(e:MouseEvent):void
 		{
+			removeReticules();
 			hideActivateActionButtons();
 			infoButton.showActivate();
 			
@@ -341,6 +342,7 @@
 
 		private function moveButtonClick(e:MouseEvent):void
 		{
+			removeReticules();
 			hideActivateActionButtons();
 			moveButton.showActivate();
 			
@@ -352,17 +354,19 @@
 
 		private function attackButtonClick(e:MouseEvent):void
 		{
+			removeReticules();
 			hideActivateActionButtons();
 			attackButton.showActivate();
 			
 			Game.INSTANCE.selectedEntity = selectedEntity;
 			command = COMMAND_ATTACK;
 			
-			//main.attackReticule.show();
+			main.attackReticule.show();
 		}
 		
 		private function claimButtonClick(e:MouseEvent) : void
 		{
+			removeReticules();
 			hideActivateActionButtons();
 			claimButton.showActivate();
 			
