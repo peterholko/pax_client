@@ -15,6 +15,7 @@
 	import game.entity.Entity;
 	import game.entity.Army;
 	import game.entity.City;
+	import game.Improvement;
 	
 	import net.Connection;
 	import net.packet.InfoArmy;	
@@ -30,10 +31,11 @@
 		private static var COMMAND_NONE:int = 1;
 		private static var COMMAND_MOVE:int = 2;
 		private static var COMMAND_ATTACK:int = 3;
+		private static var COMMAND_CLAIM:int = 4;
 
 		private static var SELECTED_NONE:int = 0;
 		private static var SELECTED_TILE:int = 1;
-		private static var SELECTED_ENTITY:int = 2;
+		private static var SELECTED_ENTITY:int = 2;			
 
 		public var main:Main;
 
@@ -47,7 +49,7 @@
 		public var moveButton:ActionButton;
 		public var attackButton:ActionButton;
 		public var claimButton:ActionButton;
-		public var buildButton:ActionButton;
+		public var buildFarmButton:ActionButton;
 		public var tradeButton:ActionButton;	
 
 		public var targetName:TLFTextField;
@@ -104,6 +106,7 @@
 			moveButton.actionText.text = "Move";
 			attackButton.actionText.text = "Attack";
 			claimButton.actionText.text = "Claim";
+			buildFarmButton.actionText.text = "Build";
 			
 			//goldText.text = "123456789,9999";
 			//trace(goldText.textFlow.computedFormat.fontFamily);
@@ -111,6 +114,8 @@
 			infoButton.addEventListener(MouseEvent.CLICK, infoButtonClick);
 			moveButton.addEventListener(MouseEvent.CLICK, moveButtonClick);
 			attackButton.addEventListener(MouseEvent.CLICK, attackButtonClick);
+			claimButton.addEventListener(MouseEvent.CLICK, claimButtonClick);
+			buildFarmButton.addEventListener(MouseEvent.CLICK, buildFarmButtonClick);											 
 
 			iconTile.visible = false;
 			iconTile.addEventListener(MouseEvent.CLICK, iconTileClick);
@@ -127,13 +132,17 @@
 
 		public function isMoveCommand():Boolean
 		{
-			trace("command: " + command);
 			return command == COMMAND_MOVE;
 		}
 
 		public function isAttackCommand():Boolean
 		{
 			return command == COMMAND_ATTACK;
+		}
+		
+		public function isClaimCommand():Boolean
+		{
+			return command == COMMAND_CLAIM;
 		}
 
 		public function resetCommand():void
@@ -248,6 +257,11 @@
 			if (selectedType == SELECTED_TILE)
 			{
 				infoButton.visible = true;
+				
+				if(Game.INSTANCE.tileStatus == Game.TileClaimed)
+				{
+					buildFarmButton.visible = true;
+				}				   
 			}
 			else if (selectedType == SELECTED_ENTITY)
 			{
@@ -278,6 +292,7 @@
 			moveButton.visible = false;
 			attackButton.visible = false;
 			claimButton.visible = false;
+			buildFarmButton.visible = false;
 		}
 
 		private function hideTargetBar():void
@@ -366,14 +381,28 @@
 		
 		private function claimButtonClick(e:MouseEvent) : void
 		{
+			trace("MainUI - claimButtonClick");
 			removeReticules();
 			hideActivateActionButtons();
 			claimButton.showActivate();
 			
-			/*var pEvent:ParamEvent = new ParamEvent(City.onAddClaim);
-			pEvent.params = City(selectedEntity);
+			Game.INSTANCE.selectedEntity = selectedEntity;
+			command = COMMAND_CLAIM;
+			
+			main.moveReticule.show();			
+		}
+		
+		private function buildFarmButtonClick(e:MouseEvent) : void
+		{
+			trace("MainUI - buildFarmButtonClick");			
+			removeReticules();
+			hideActivateActionButtons();
+			buildFarmButton.showActivate();
+					
+			var pEvent:ParamEvent = new ParamEvent(Game.buildImprovementEvent);
+			pEvent.params = Improvement.FARM;
 
-			Game.INSTANCE.dispatchEvent(pEvent);*/
+			Game.INSTANCE.dispatchEvent(pEvent);							
 		}
 		
 		private function infoKingdomEvent(e:ParamEvent) : void
@@ -487,7 +516,7 @@
 			moveButton.hideActivate();
 			attackButton.hideActivate();
 			claimButton.hideActivate();
-		}
+		}		
 
 	}
 

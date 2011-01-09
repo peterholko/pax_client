@@ -10,7 +10,7 @@
 	import game.unit.events.UnitEvent;
 	
 	import net.packet.InfoArmy;
-	import net.packet.Unit;
+	import net.packet.UnitPacket;
 	
 	import game.Game;
 	import game.unit.Unit;
@@ -88,7 +88,7 @@
 			setUnits(armyInfo.units);
 		}
 		
-		public function getUnit(unitId:int) : game.unit.Unit
+		public function getUnit(unitId:int) : Unit
 		{
 			return units[unitId];
 		}
@@ -98,7 +98,7 @@
 			return numUnits;
 		}
 		
-		private function setUnits(unitsInfo/*packet.Unit*/:Array ) : void
+		private function setUnits(unitsInfo/*packet.UnitPacket*/:Array ) : void
 		{
 			var previousUnits:Dictionary = new Dictionary();
 			previousUnits = units;
@@ -107,8 +107,8 @@
 			
 			for (var i:int = 0; i < unitsInfo.length; i++)
 			{
-				var unitInfo:net.packet.Unit = unitsInfo[i];
-				var unit:game.unit.Unit;
+				var unitInfo:UnitPacket = unitsInfo[i];
+				var unit:Unit;
 				
 				if (previousUnits[unitInfo.id] != null)
 				{
@@ -117,7 +117,7 @@
 				}
 				else
 				{
-					unit = new game.unit.Unit();
+					unit = new Unit();
 				}
 				
 				unit.id = unitsInfo[i].id;
@@ -134,7 +134,7 @@
 		
 		private function clearPreviousUnits(previousUnits:Dictionary) : void
 		{
-			for each (var unit:game.unit.Unit in previousUnits)
+			for each (var unit:Unit in previousUnits)
 			{
 				trace("unit: " + unit);
 				

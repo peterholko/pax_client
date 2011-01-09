@@ -6,8 +6,11 @@
 		
 	public class CityUI extends MovieClip 
 	{		
+		public var closeButton:MovieClip;
+	
 		public function CityUI() 
-		{					
+		{
+			closeButton.addEventListener(MouseEvent.CLICK, closeButtonClick);
 		}
 		
 		public function init() : void

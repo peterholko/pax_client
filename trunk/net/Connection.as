@@ -15,7 +15,7 @@
 		public static var INSTANCE:Connection = new Connection();
 		
 		//public static var HOST:String = "localhost";
-		public static var HOST:String = "www.peterholko.com";		
+		public static var HOST:String = "www.mlvoyages.com";		
 		public static var PORT:int = 2345
 				
 		//Events 
@@ -45,6 +45,7 @@
 		public static var onSendTransferUnit:String = "onSendTransferUnit";
 		public static var onSendBattleTarget:String = "onSendBattleTarget";
 		public static var onSendAddClaim:String = "onSendAddClaim";
+		public static var onSendBuildImprovement:String = "onSendBuildImprovement";
 				
 		public var clockSyncStartTime:Number = 0;
 		public var clockSyncEndTime:Number = 0;
@@ -105,6 +106,8 @@
 			addEventListener(Connection.onSendTransferUnit, sendTransferUnit);
 			addEventListener(Connection.onSendBattleTarget, sendBattleTarget);
 			addEventListener(Connection.onSendAddClaim, sendAddClaim);
+			addEventListener(Connection.onSendBuildImprovement, sendBuildImprovement);
+			
 		}
 		
 		private function closeHandler(event:Event):void {
@@ -292,6 +295,13 @@
 			trace("Connection - sendAddClaim");
 			var addClaim:AddClaim = e.params;
 			Packet.sendAddClaim(socket, addClaim);
+		}
+		
+		private function sendBuildImprovement(e:ParamEvent) : void
+		{
+			trace("Connection - sendBuildImprovement");
+			var buildImprovement:BuildImprovement = e.params;
+			Packet.sendBuildImprovement(socket, buildImprovement);										
 		}
 	}
 }

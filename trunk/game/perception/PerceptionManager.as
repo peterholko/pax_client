@@ -9,6 +9,7 @@
 	import game.map.Tile;
 	import game.entity.EntityFactory;
 	import game.entity.Entity;
+	import game.entity.City;	
 	
 	import net.packet.MapObject;
 	import net.packet.Perception;
@@ -23,6 +24,9 @@
 		private var battles:Dictionary = new Dictionary();
 		private var previousBattles:Dictionary = new Dictionary();
 		
+		private var improvements:Dictionary = new Dictionary();
+		private var previousImprovements:Dictionary = new Dictionary();
+		
 		public function PerceptionManager() : void
 		{
 		}
@@ -34,6 +38,9 @@
 			
 			previousBattles = battles;
 			battles = new Dictionary();
+			
+			previousImprovements = improvements;
+			improvements = new Dictionary();
 			
 			for (var i:int = 0; i < mapObjects.length; i++)
 			{
@@ -48,6 +55,9 @@
 					case MapObjectType.BATTLE:
 						setBattle(mapObject);
 						break;
+					case MapObjectType.IMPROVEMENT:
+						setImprovement(mapObject);
+						break;
 					default:
 						throw new Error("Invalid MapObject type.");
 				}
@@ -55,6 +65,12 @@
 						
 			clearPreviousEntities();
 			clearPreviousBattles();
+			clearPreviousImprovements();
+		}
+						
+		public function getEntities() : Dictionary
+		{
+			return entities;
 		}
 				
 		public function getEntity(id:int) : Entity
@@ -110,6 +126,13 @@
 			Map.INSTANCE.addBattle(mapObject);
 		}
 		
+		private function setImprovement(mapObject:MapObject) : void
+		{
+			improvements[mapObject.id] = mapObject;
+			
+			Map.INSTANCE.addImprovement(mapObject);
+		}
+		
 		private function createEntityFromPerception(mapObject:MapObject) : Entity
 		{
 			var entity:Entity = EntityFactory.getEntity(mapObject.type);		
@@ -156,6 +179,17 @@
 				
 				if(mapObject != null)
 					Map.INSTANCE.removeBattle(mapObject);
+			}
+		}
+		
+		private function clearPreviousImprovements() : void
+		{
+			for (var mapObjectId:Object in previousImprovements)
+			{							
+				var mapObject:MapObject = previousImprovements[mapObjectId];
+				
+				if(mapObject != null)
+					Map.INSTANCE.removeImprovement(mapObject);
 			}
 		}
 	}

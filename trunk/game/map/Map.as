@@ -19,17 +19,20 @@
 		private var tiles/*Tile*/:Array;
 		private var entities:Dictionary;
 		private var battles:Dictionary;
+		private var improvements:Dictionary;
 		
 		private var unexploredLayer:Sprite;
 		private var tileLayer:Sprite;
-		private var entityLayer:Sprite;
+		private var entityLayer:Sprite;	
 		private var battleLayer:Sprite;
+		private var improvementLayer:Sprite;		
 		
 		public function Map() : void
 		{			
 			tiles = new Array();
 			entities = new Dictionary();
 			battles = new Dictionary();
+			improvements = new Dictionary();
 			
 			unexploredLayer = new Sprite();
 			//unexploredLayer.addEventListener(MouseEvent.CLICK, unexploredClick);
@@ -37,11 +40,13 @@
 			tileLayer = new Sprite();			
 			entityLayer = new Sprite();
 			battleLayer = new Sprite();
+			improvementLayer = new Sprite();
 			
 			addChild(unexploredLayer);
 			addChild(tileLayer);
 			addChild(entityLayer);
 			addChild(battleLayer);
+			addChild(improvementLayer);
 		}
 		
 		public function setTiles(mapTiles/*MapTiles*/:Array) : void
@@ -49,7 +54,7 @@
 			for(var i = 0; i < mapTiles.length; i++)
 			{				
 				var mapTile:MapTile = mapTiles[i];
-				
+
 				if (tiles[mapTile.index] == null)
 				{
 					var tile:Tile = new Tile();
@@ -113,7 +118,7 @@
 			mapBattle.gameX = mapObject.x;
 			mapBattle.gameY = mapObject.y;
 			mapBattle.initialize();
-			mapBattle.update()
+			mapBattle.update();
 			mapBattle.tile = tile;
 						
 			battleLayer.addChild(mapBattle);
@@ -130,6 +135,34 @@
 					battleLayer.removeChild(mapBattle);
 			}
 		}
+		
+		public function addImprovement(mapObject:MapObject) : void
+		{
+			var tileIndex:int = convertCoords(mapObject.x, mapObject.y);
+			var tile:Tile = tiles[tileIndex];
+			var mapImprovement:MapImprovement = new MapImprovement();
+			
+			mapImprovement.improvementId = mapObject.id;
+			mapImprovement.gameX = mapObject.x;
+			mapImprovement.gameY = mapObject.y;
+			mapImprovement.initialize();
+			mapImprovement.update(); 
+			mapImprovement.tile = tile;
+			
+			improvementLayer.addChild(mapImprovement);
+			improvements[mapImprovement.improvementId] = mapImprovement;
+		}
+		
+		public function removeImprovement(mapObject:MapObject) : void
+		{
+			if (improvements[mapObject.id] != null)
+			{
+				var mapImprovement:MapImprovement = improvements[mapObject.id];
+				
+				if (improvementLayer.contains(mapImprovement))
+					improvementLayer.removeChild(mapImprovement);
+			}
+		}		
 		
 		public static function convertCoords(xCoord:int, yCoord:int) : int
 		{

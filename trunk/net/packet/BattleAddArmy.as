@@ -3,7 +3,7 @@
 	public class BattleAddArmy implements IPacket
 	{
 		public var battleId:int;
-		public var army:Army;
+		public var army:ArmyPacket;
 		
 		public function BattleAddArmy() : void
 		{

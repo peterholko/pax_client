@@ -37,19 +37,33 @@
 	import ui.panel.controller.QueueBuildingPanelController;
 	import ui.panel.controller.BattlePanelController;
 	import net.packet.AddClaim;
+	import net.packet.BuildImprovement;
 	
 	public class Game extends Sprite
 	{				
 		public static var INSTANCE:Game = new Game();	
 		public static var SCROLL_SPEED:int = 8;
 		public static var GAME_LOOP_TIME:int = 50;	
+		
+		//Incoming events
 		public static var onInfoArmy:String = "onInfoArmy";
 		public static var onAddClaim:String = "onAddClaim";
+		
+		//Outgoing events
+		public static var buildImprovementEvent:String = "buildImprovementEvent";		
+		
+		//States
+		public static var TileNone:int = 0;
+		public static var TileClaimed:int = 1;
+		public static var TileImproved:int = 2;
 				
 		public var main:Main;
 		public var player:Player;
 		public var kingdom:Kingdom;
 		
+		public var tileStatus:int;
+		
+		public var selectedTile:Tile;
 		public var selectedEntity:Entity;
 		public var targetedEntity:Entity;
 		public var action:int = 0;
@@ -78,6 +92,7 @@
 			Connection.INSTANCE.addEventListener(Connection.onBattleInfoEvent, connectionBattleInfo);
 			Connection.INSTANCE.addEventListener(Connection.onBattleDamageEvent, connectionBattleDamage);
 			
+			
 			addEventListener(Tile.onClick, tileClicked);
 			addEventListener(Tile.onDoubleClick, tileDoubleClicked);
 			addEventListener(Army.onClick, armyClicked);
@@ -86,13 +101,13 @@
 			addEventListener(City.onDoubleClick, cityDoubleClicked);
 			addEventListener(MapBattle.onDoubleClick, battleDoubleClicked);
 			
+			addEventListener(buildImprovementEvent, processBuildImprovement);
+			
+			
 		}						
 				
 		public function addPerceptionData(perception:Perception) : void
-		{	
-			//Clear player's entities
-			player.clearEntities();
-			
+		{				
 			//Set entities from perception
 			perceptionManager.setMapObjects(perception.mapObjects);
 			
@@ -161,15 +176,15 @@
 				trace("Stage Click - mapX: " + mapX + " mapY: " + mapY);
 				trace("Stage Click - gameX: " + gameX + " gameY: " + gameY + " action: " + action);
 				
-				sendMove(gameX, gameY);
+				processMove(gameX, gameY);
 			}
 		}
 		
-		public function sendAttack(targetId:int)
+		public function processAttack(targetId:int)
 		{
 			if (selectedEntity != null)
 			{
-				trace("Game - sendAttack");
+				trace("Game - processAttack");
 				var parameters:Object = {id: selectedEntity.id, targetId: targetId};
 				var attackEvent:ParamEvent = new ParamEvent(Connection.onSendAttackTarget);
 				attackEvent.params = parameters;				
@@ -177,7 +192,7 @@
 			}
 		}
 		
-		public function sendTarget(battleId:int, sourceArmyId:int, sourceUnitId:int, targetArmyId:int, targetUnitId:int) : void
+		public function processBattleTarget(battleId:int, sourceArmyId:int, sourceUnitId:int, targetArmyId:int, targetUnitId:int) : void
 		{
 			var battleTarget:BattleTarget = new BattleTarget();
 			
@@ -193,7 +208,7 @@
 			Connection.INSTANCE.dispatchEvent(battleTargetEvent);
 		}		
 		
-		private function sendAddClaim(cityId:int, tileX:int, tileY:int) : void
+		private function processAddClaim(cityId:int, tileX:int, tileY:int) : void
 		{
 			var addClaim:AddClaim = new AddClaim();
 			
@@ -206,6 +221,31 @@
 			
 			Connection.INSTANCE.dispatchEvent(addClaimEvent);
 		}		
+		
+		private function processBuildImprovement(e:ParamEvent) : void
+		{
+			trace("Game - processBuildImprovement");
+			
+			var buildImprovement:BuildImprovement = new BuildImprovement();
+			var claim:Claim = kingdom.getClaim(selectedTile.index);	
+			
+			if(claim != null)
+			{
+				buildImprovement.cityId = claim.cityId;
+				buildImprovement.type = e.params;
+				buildImprovement.x = selectedTile.gameX;
+				buildImprovement.y = selectedTile.gameY;
+				
+				var sendBuildImprovementEvent:ParamEvent = new ParamEvent(Connection.onSendBuildImprovement)
+				sendBuildImprovementEvent.params = buildImprovement;
+				
+				Connection.INSTANCE.dispatchEvent(sendBuildImprovementEvent);
+			}
+			else	
+			{
+				trace("Game - processBuildImprovement failed: No claim found.");
+			}
+		}
 				
 		private function tileClicked(e:ParamEvent) : void
 		{
@@ -215,20 +255,29 @@
 			
 			if (tile != null)
 			{				
-				main.mainUI.setSelectedTile(tile);		
-				trace("isMoveCommand: " + main.mainUI.isMoveCommand());
+				selectedTile = tile;
+				main.mainUI.setSelectedTile(tile);						
+				setTileStatus(tile);						
+
 				if(main.mainUI.isAttackCommand())
 				{
 					main.mainUI.resetCommand();
 					if(tile.hasOneEntityOnly())
 					{
 						var entity:Entity = tile.getSoloEntity();
-						sendAttack(entity.id);
+						processAttack(entity.id);
 					}
 				}
+				else if(main.mainUI.isClaimCommand())
+				{
+					trace("isClaimCommand");
+					main.mainUI.resetCommand();
+					
+					processAddClaim(selectedEntity.id, tile.gameX, tile.gameY);
+				}				
 				else if(main.mainUI.isMoveCommand())
 				{
-					sendMove(tile.gameX, tile.gameY);
+					processMove(tile.gameX, tile.gameY);
 				}
 			}
 		}
@@ -243,7 +292,7 @@
 			Connection.INSTANCE.dispatchEvent(requestInfoEvent);
 		}		
 		
-		private function sendMove(gameX:int, gameY:int) : void
+		private function processMove(gameX:int, gameY:int) : void
 		{
 			if(selectedEntity != null)
 			{
@@ -372,6 +421,22 @@
 			var battle:Battle = BattleManager.INSTANCE.getBattle(battleDamage.battleId);
 			
 			battle.addDamage(battleDamage);			
-		}		
+		}	
+		
+		private function setTileStatus(tile:Tile) : void
+		{
+			var claim:Claim = kingdom.getClaim(selectedTile.index);	
+			
+			trace("Game - claim: " + claim);
+			
+			if(claim != null)
+			{
+				tileStatus = TileClaimed;								
+			}
+			else
+			{
+				tileStatus = TileNone;
+			}
+		}
 	}
 }

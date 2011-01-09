@@ -9,6 +9,7 @@
 		public static const CITY:int = 2;
 		public static const BUILDING:int = 3;
 		public static const BATTLE:int = 4;
+		public static const IMPROVEMENT:int = 5;
 		
 		public function MapObjectType() : void
 		{

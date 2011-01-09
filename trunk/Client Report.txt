@@ -8,26 +8,26 @@ Metadata
 --------
 Bytes         Value
 ----------    -----
-      1271    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2010-09-01T01:31:40-06:00</xmp:MetadataDate> <xmp:ModifyDate>2010-09-01T01:31:40-06:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:24596EC971B5DF118572B308EBEBE899</stRef:instanceID> <stRef:documentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:3E74C7279AB5DF118572B308EBEBE899</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:3E74C7279AB5DF118572B308EBEBE899</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+      1269    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2011-01-09T14:05:41-07:00</xmp:MetadataDate> <xmp:ModifyDate>2011-01-09T14:05:41-07:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:52860DC62A1CE011B7C4E0BF0AB845CB</stRef:instanceID> <stRef:documentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:0D55DFEC321CE011B7C4E0BF0AB845CB</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:0D55DFEC321CE011B7C4E0BF0AB845CB</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
 
 Frame #    Frame Bytes    Total Bytes    Scene
 -------    -----------    -----------    -----
-      1           9676           9676    Scene 1
-      2         543165         552841    Scene 1 (AS 3.0 Classes Export Frame)
+      1           9656           9656    Scene 1
+      2         544062         553718    Scene 1 (AS 3.0 Classes Export Frame)
 
 Scene      Shape Bytes    Text Bytes    ActionScript Bytes
 -------    -----------    ----------    ------------------
-Scene 1             48             0                  8596
+Scene 1             48             0                  8580
 
 ActionScript Bytes    Location
 ------------------    --------
-              8317    Scene 1:Frame 1
+              8301    Scene 1:Frame 1
                279    Scene 1:Frame 2
 
 Binary Data              Bytes         Location
 ---------------------    ----------    --------
-Loading Animation SWF          1246    Scene 1:Frame 1
-Content SWF                  542858    Scene 1:Frame 2
+Loading Animation SWF          1244    Scene 1:Frame 1
+Content SWF                  543755    Scene 1:Frame 2
 
 
 Content SWF
@@ -37,43 +37,43 @@ Metadata
 --------
 Bytes         Value
 ----------    -----
-       642    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2010-09-01T01:31:31-06:00</xmp:MetadataDate> <xmp:ModifyDate>2010-09-01T01:31:31-06:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:24596EC971B5DF118572B308EBEBE899</stRef:instanceID> <stRef:documentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:3D74C7279AB5DF118572B308EBEBE899</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:3D74C7279AB5DF118572B308EBEBE899</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+       641    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2011-01-09T14:05:20-07:00</xmp:MetadataDate> <xmp:ModifyDate>2011-01-09T14:05:20-07:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:52860DC62A1CE011B7C4E0BF0AB845CB</stRef:instanceID> <stRef:documentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:0C55DFEC321CE011B7C4E0BF0AB845CB</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:0C55DFEC321CE011B7C4E0BF0AB845CB</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
 
 Frame #    Frame Bytes    Total Bytes    Scene
 -------    -----------    -----------    -----
-      1         550520         550520    Scene 1 (AS 3.0 Classes Export Frame)
-      2              0         550520    
-      3              0         550520    
-      4              0         550520    
-      5              0         550520    
-      6              0         550520    
-      7              0         550520    
-      8            134         550654    
-      9              0         550654    
-     10              0         550654    
-     11              0         550654    
-     12              8         550662    
-     13              0         550662    
-     14              0         550662    
-     15              0         550662    
-     16              0         550662    
-     17              0         550662    
-     18              0         550662    
-     19              0         550662    
-     20              0         550662    
-     21              0         550662    
-     22              0         550662    
-     23              0         550662    
-     24              0         550662    
-     25              8         550670    
-     26              2         550672    
-     27              0         550672    
-     28              0         550672    
-     29              0         550672    
+      1         552526         552526    Scene 1 (AS 3.0 Classes Export Frame)
+      2              0         552526    
+      3              0         552526    
+      4              0         552526    
+      5              0         552526    
+      6              0         552526    
+      7              0         552526    
+      8            134         552660    
+      9              0         552660    
+     10              0         552660    
+     11              0         552660    
+     12              8         552668    
+     13              0         552668    
+     14              0         552668    
+     15              0         552668    
+     16              0         552668    
+     17              0         552668    
+     18              0         552668    
+     19              0         552668    
+     20              0         552668    
+     21              0         552668    
+     22              0         552668    
+     23              0         552668    
+     24              0         552668    
+     25              8         552676    
+     26              2         552678    
+     27              0         552678    
+     28              0         552678    
+     29              0         552678    
 
 Scene      Shape Bytes    Text Bytes    ActionScript Bytes
 -------    -----------    ----------    ------------------
-Scene 1              0             0                267941
+Scene 1              0             0                270698
 
 Symbol                                 Shape Bytes    Text Bytes    ActionScript Bytes
 -----------------------------------    -----------    ----------    ------------------
@@ -87,16 +87,16 @@ Button_disabledSkin                            151             0                
 Button_downSkin                                177             0                     0
 Button_emphasizedSkin                           91             0                     0
 Button_overSkin                                165             0                     0
-Button_selectedDisabledSkin                    135             0                     0
+Button_selectedDisabledSkin                    136             0                     0
 Button_selectedDownSkin                        134             0                     0
-Button_selectedOverSkin                        134             0                     0
+Button_selectedOverSkin                        135             0                     0
 Button_selectedUpSkin                          135             0                     0
-Button_upSkin                                  183             0                     0
+Button_upSkin                                  182             0                     0
 focusRectSkin                                   63             0                     0
 Component_avatar                                20             0                     0
 CityUI                                           0             0                     0
-CityUnitContainer                               29             0                     0
 CloseButton                                      0             0                     0
+CityUnitContainer                               29             0                     0
 CellRenderer                                     0             0                     0
 CellRenderer_disabledSkin                        0             0                     0
 CellRenderer_downSkin                            0             0                     0
@@ -135,22 +135,22 @@ ProgressBar_indeterminateSkin                    0             0                
 ProgressBar_trackSkin                            0             0                     0
 ScrollBar                                        0             0                     0
 ScrollTrack_skin                                71             0                     0
-ScrollArrowUp_downSkin                          69             0                     0
-ScrollArrowDown_downSkin                        68             0                     0
-ScrollThumb_downSkin                           102             0                     0
-ScrollArrowDown_overSkin                        69             0                     0
-ScrollThumb_overSkin                           101             0                     0
-ScrollArrowUp_overSkin                          69             0                     0
+ScrollArrowUp_downSkin                          66             0                     0
+ScrollArrowDown_downSkin                        69             0                     0
+ScrollThumb_downSkin                           101             0                     0
+ScrollArrowDown_overSkin                        68             0                     0
+ScrollThumb_overSkin                           100             0                     0
+ScrollArrowUp_overSkin                          68             0                     0
 ScrollArrowUp_upSkin                             0             0                     0
-ScrollThumb_upSkin                             102             0                     0
-ScrollArrowDown_upSkin                          34             0                     0
+ScrollThumb_upSkin                             101             0                     0
+ScrollArrowDown_upSkin                          33             0                     0
 ScrollArrowDown_disabledSkin                     0             0                     0
 ScrollArrowUp_disabledSkin                      69             0                     0
 ScrollBar_thumbIcon                             46             0                     0
 ScrollArrowDown_icon                             0             0                     0
 arrowIcon                                       21             0                     0
 ScrollArrowUp_icon                               0             0                     0
-TextArea_disabledSkin                           67             0                     0
+TextArea_disabledSkin                           69             0                     0
 TextArea_upSkin                                 61             0                     0
 TextInput_disabledSkin                           0             0                     0
 TextInput_upSkin                                 0             0                     0
@@ -183,151 +183,150 @@ fl.core.ComponentShim                            0             0                
 
 Font Name    Bytes         Characters
 ---------    ----------    ----------
-Verdana           26633     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƏƒƠơƯưǺǻǼǽǾǿȘșȚțˆˇˉ˘˙˚˛˜˝;΄΅Ά·ΈΉΊΌΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяёђѓєѕіїјљњћќѝўџѸѹѼѽ҇ҐґҒғҖҗҚқҜҝҢңҨҩҮүҰұҲҳҸҹҺһҼҽҾҿդր฿ẀẁẂẃẄẅẞẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹ‒–—―‗‘’‚‛“”„‟†‡•… ‰′″‴‹›‼‾⁄⁴ⁿ₠₡₢₣₤₥₦₧₨₩₪₫€₭₮₯₰₱₲₳₴₵℅ℓ№℠™Ω℮⅛⅜⅝⅞∂∏∑∕√∞∫≠≡≤≥─│┌┐└┘□●♪ꜛꜜꜝꜞꜟꞈ꞉꞊Ꞌꞌ￥￦ﾠ
-ArialMT            2734    
-Verdana           57678     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƏƒƠơƯưǺǻǼǽǾǿȘșȚțˆˇˉ˘˙˚˛˜˝;΄΅Ά·ΈΉΊΌΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяёђѓєѕіїјљњћќѝўџѸѹѼѽ҇ҐґҒғҖҗҚқҜҝҢңҨҩҮүҰұҲҳҸҹҺһҼҽҾҿդր฿ẀẁẂẃẄẅẞẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹ‒–—―‗‘’‚‛“”„‟†‡•… ‰′″‴‹›‼‾⁄⁴ⁿ₠₡₢₣₤₥₦₧₨₩₪₫€₭₮₯₰₱₲₳₴₵℅ℓ№℠™Ω℮⅛⅜⅝⅞∂∏∑∕√∞∫≠≡≤≥─│┌┐└┘□●♪ꜛꜜꜝꜞꜟꞈ꞉꞊Ꞌꞌ￥￦
+Verdana           26598     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƏƒƠơƯưǺǻǼǽǾǿȘșȚțˆˇˉ˘˙˚˛˜˝;΄΅Ά·ΈΉΊΌΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяёђѓєѕіїјљњћќѝўџѸѹѼѽ҇ҐґҒғҖҗҚқҜҝҢңҨҩҮүҰұҲҳҸҹҺһҼҽҾҿդր฿ẀẁẂẃẄẅẞẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹ‒–—―‗‘’‚‛“”„‟†‡•… ‰′″‴‹›‼‾⁄⁴ⁿ₠₡₢₣₤₥₦₧₨₩₪₫€₭₮₯₰₱₲₳₴₵℅ℓ№℠™Ω℮⅛⅜⅝⅞∂∏∑∕√∞∫≠≡≤≥─│┌┐└┘□●♪ꜛꜜꜝꜞꜟꞈ꞉꞊Ꞌꞌ￥￦ﾠ
+ArialMT            2730    
+Verdana           57603     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƏƒƠơƯưǺǻǼǽǾǿȘșȚțˆˇˉ˘˙˚˛˜˝;΄΅Ά·ΈΉΊΌΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяёђѓєѕіїјљњћќѝўџѸѹѼѽ҇ҐґҒғҖҗҚқҜҝҢңҨҩҮүҰұҲҳҸҹҺһҼҽҾҿդր฿ẀẁẂẃẄẅẞẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹ‒–—―‗‘’‚‛“”„‟†‡•… ‰′″‴‹›‼‾⁄⁴ⁿ₠₡₢₣₤₥₦₧₨₩₪₫€₭₮₯₰₱₲₳₴₵℅ℓ№℠™Ω℮⅛⅜⅝⅞∂∏∑∕√∞∫≠≡≤≥─│┌┐└┘□●♪ꜛꜜꜝꜞꜟꞈ꞉꞊Ꞌꞌ￥￦
 
 ActionScript Bytes    Location
 ------------------    --------
-            267941    Scene 1:Frame 1
+            270698    Scene 1:Frame 1
 
 Bitmap                           Compressed    Original      Compression
 -----------------------------    ----------    ----------    -----------
-TestTiles                              7979         36864    Lossless
-placeholder_enemy.png                  1053          9216    Lossless
-placeholder_city.png                   1243          9216    Lossless
-placeholder_battle.png                  676          4096    JPEG Quality=100
-placeholder_army.png                    998          9216    Lossless
-CharacterImage                          991          3712    Lossless
+TestTiles                              7968         36864    Lossless
+placeholder_enemy.png                  1051          9216    Lossless
+placeholder_city.png                   1241          9216    Lossless
+placeholder_battle.png                  675          4096    JPEG Quality=100
+placeholder_army.png                    996          9216    Lossless
+CharacterImage                          990          3712    Lossless
 rest                                    167          5184    JPEG Quality=100
-roll                                    403          5184    JPEG Quality=100
+roll                                    402          5184    JPEG Quality=100
 click                                   619          5184    JPEG Quality=100
 disabled                                167          5184    JPEG Quality=100
-Close_Rest                              485          1444    JPEG Quality=100
-Close_Roll                              393          1156    JPEG Quality=100
-Close_Click                             236           324    JPEG Quality=100
-text_background                        2827        577728    JPEG Quality=100
-background                             4122       1371232    JPEG Quality=100
-bottom_spacer                           293           480    JPEG Quality=100
-top_spacer                              420          3680    JPEG Quality=100
-placeholder_archer.png                  210         10000    Lossless
+text_background                        2823        577728    JPEG Quality=100
+background                             4117       1371232    JPEG Quality=100
+bottom_spacer                           292           480    JPEG Quality=100
+top_spacer                              419          3680    JPEG Quality=100
+placeholder_archer.png                  209         10000    Lossless
 placeholder_footsoldier.png             239         10000    Lossless
-Left_Arrow_Click copy                   964         13688    JPEG Quality=100
-Shape 1                                2621         18768    JPEG Quality=100
-Left_Arrow_Click copy                   975         13688    JPEG Quality=100
-Shape 1                                2654         18768    JPEG Quality=100
-rest copy 7                             367          7056    JPEG Quality=100
+Left_Arrow_Click copy                   963         13688    JPEG Quality=100
+Shape 1                                2617         18768    JPEG Quality=100
+Left_Arrow_Click copy                   974         13688    JPEG Quality=100
+Shape 1                                2651         18768    JPEG Quality=100
+rest copy 7                             366          7056    JPEG Quality=100
 roll copy 7                             438          7056    JPEG Quality=100
-click copy 7                            651          7056    JPEG Quality=100
-disabled copy 7                         367          7056    JPEG Quality=100
+click copy 7                            650          7056    JPEG Quality=100
+disabled copy 7                         366          7056    JPEG Quality=100
 active                                  619          5184    JPEG Quality=100
 Minimize                                431          1444    JPEG Quality=100
 Header_Footer                           221         64800    JPEG Quality=100
-Back_Pane                               550        454400    JPEG Quality=100
-Overlay Dropdown Backing                569         16720    JPEG Quality=100
-Zoom Control                            737          2304    JPEG Quality=100
-Zoom Backing                            372          5476    JPEG Quality=100
-Chat                                    561          1728    JPEG Quality=100
-Minimized Window Example                372          5476    JPEG Quality=100
-Overlay Enabled                         393          1156    JPEG Quality=100
+Back_Pane                               549        454400    JPEG Quality=100
+Overlay Dropdown Backing                568         16720    JPEG Quality=100
+Zoom Control                            736          2304    JPEG Quality=100
+Zoom Backing                            371          5476    JPEG Quality=100
+Chat                                    560          1728    JPEG Quality=100
+Minimized Window Example                371          5476    JPEG Quality=100
+Overlay Enabled                         392          1156    JPEG Quality=100
 Overlay Disabled                        389          1156    JPEG Quality=100
-Overlay Control                         637          2304    JPEG Quality=100
-Overlay Backing                         372          5476    JPEG Quality=100
+Overlay Control                         636          2304    JPEG Quality=100
+Overlay Backing                         371          5476    JPEG Quality=100
 Entry Bar                               160         19840    JPEG Quality=100
-Chat_Pane                               314        168640    JPEG Quality=100
-Right_Arrow (always visible)            792          2916    JPEG Quality=100
-Left_Arrow  (always visible)            788          2916    JPEG Quality=100
-Sample_Flag                            1248          6000    JPEG Quality=100
-Mini_Flag                               320          6000    JPEG Quality=100
-Avatar                                  342         10000    JPEG Quality=100
-Target_Pane                             346         89300    JPEG Quality=100
+Chat_Pane                               313        168640    JPEG Quality=100
+Right_Arrow (always visible)            791          2916    JPEG Quality=100
+Left_Arrow  (always visible)            787          2916    JPEG Quality=100
+Sample_Flag                            1246          6000    JPEG Quality=100
+Mini_Flag                               319          6000    JPEG Quality=100
+Avatar                                  341         10000    JPEG Quality=100
+Target_Pane                             345         89300    JPEG Quality=100
 Seperator copy 2                        148           200    JPEG Quality=100
 Actions_Pane                            267         89300    JPEG Quality=100
+Close_Rest                              485          1444    JPEG Quality=100
+Close_Roll                              392          1156    JPEG Quality=100
+Close_Click                             236           324    JPEG Quality=100
+pane_background                        2097        888528    JPEG Quality=100
+Main_Controls                           993         51984    JPEG Quality=100
+Header_Footer_Bars                     2194        963240    JPEG Quality=100
 Minimize                                357          1156    JPEG Quality=100
-Close                                   397          1224    JPEG Quality=100
-pane_background                        2100        888528    JPEG Quality=100
-Main_Controls                           995         51984    JPEG Quality=100
-Header_Footer_Bars                     2197        963240    JPEG Quality=100
 Fortification Tile                      148          4096    JPEG Quality=100
 Background_Bar                          250         41356    JPEG Quality=100
 Main Pane bg                            500        455840    JPEG Quality=100
 Unit Tile                               148          4096    JPEG Quality=100
-Background_Bar                          204         44732    JPEG Quality=100
+Background_Bar                          203         44732    JPEG Quality=100
 Right Arrow                             196           120    JPEG Quality=100
 Left Arrow                              195           120    JPEG Quality=100
 Layer 5                                 148          4096    JPEG Quality=100
-Layer 4 copy                            227         31920    JPEG Quality=100
+Layer 4 copy                            226         31920    JPEG Quality=100
 Unit Tile                               148          4096    JPEG Quality=100
-Left_Arrow_Click copy 3                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 4                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 2                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 5                 194           196    JPEG Quality=100
+Left_Arrow_Click copy 3                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 4                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 2                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 5                 193           196    JPEG Quality=100
 Layer 5                                 148          4096    JPEG Quality=100
 Layer 4 copy                            176         31920    JPEG Quality=100
 Layer 5                                 148          4096    JPEG Quality=100
-Left_Arrow_Click copy 3                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 4                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 2                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 5                 194           196    JPEG Quality=100
+Left_Arrow_Click copy 3                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 4                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 2                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 5                 193           196    JPEG Quality=100
 Layer 5                                 148          4096    JPEG Quality=100
-Header Bar                              213         12600    JPEG Quality=100
+Header Bar                              212         12600    JPEG Quality=100
 Right Arrow                             197           120    JPEG Quality=100
 Left Arrow                              195           120    JPEG Quality=100
-Control_Bar_Open                        187         33440    JPEG Quality=100
+Control_Bar_Open                        186         33440    JPEG Quality=100
 Layer 5                                 148          4096    JPEG Quality=100
 Layer 4 copy 2                          232         32760    JPEG Quality=100
 Main Pane bg                            500        455840    JPEG Quality=100
-Left_Arrow_Click copy 3                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 4                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 2                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 5                 194           196    JPEG Quality=100
+Left_Arrow_Click copy 3                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 4                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 2                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 5                 193           196    JPEG Quality=100
 Layer 5                                 148          4096    JPEG Quality=100
-Left_Arrow_Click copy 3                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 4                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 2                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 5                 194           196    JPEG Quality=100
-Header Bar                              213         12600    JPEG Quality=100
+Left_Arrow_Click copy 3                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 4                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 2                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 5                 193           196    JPEG Quality=100
+Header Bar                              212         12600    JPEG Quality=100
 Right Arrow                             197           120    JPEG Quality=100
 Left Arrow                              195           120    JPEG Quality=100
 Improvement Tile_1                      148          4096    JPEG Quality=100
-Background_Bar                          304         81868    JPEG Quality=100
+Background_Bar                          303         81868    JPEG Quality=100
 Improvement Tile                        148          4096    JPEG Quality=100
-Background_Bar                          297         29540    JPEG Quality=100
-Control_Bar_Open                        187         33440    JPEG Quality=100
+Background_Bar                          296         29540    JPEG Quality=100
+Control_Bar_Open                        186         33440    JPEG Quality=100
 Layer 5                                 148          4096    JPEG Quality=100
 Layer 4 copy 2                          232         32760    JPEG Quality=100
 Main Pane bg                            500        455840    JPEG Quality=100
-Left_Arrow_Click copy 3                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 4                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 2                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 5                 194           196    JPEG Quality=100
+Left_Arrow_Click copy 3                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 4                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 2                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 5                 193           196    JPEG Quality=100
 Layer 5                                 148          4096    JPEG Quality=100
-Left_Arrow_Click copy 3                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 4                 194           196    JPEG Quality=100
+Left_Arrow_Click copy 3                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 4                 193           196    JPEG Quality=100
 Left_Arrow_Click copy 2                 241           196    JPEG Quality=100
-Left_Arrow_Click copy 5                 194           196    JPEG Quality=100
-Header Bar                              213         12600    JPEG Quality=100
+Left_Arrow_Click copy 5                 193           196    JPEG Quality=100
+Header Bar                              212         12600    JPEG Quality=100
 Right Arrow                             197           120    JPEG Quality=100
 Left Arrow                              195           120    JPEG Quality=100
 Building Tile                           148          4096    JPEG Quality=100
 Right Arrow                             196           120    JPEG Quality=100
 Left Arrow                              195           120    JPEG Quality=100
-Control_Bar_Open                        187         33440    JPEG Quality=100
-Background_Bar                          297         29540    JPEG Quality=100
+Control_Bar_Open                        186         33440    JPEG Quality=100
+Background_Bar                          296         29540    JPEG Quality=100
 Land_Tile (always first) copy           148          4096    JPEG Quality=100
 Layer 5                                 148          4096    JPEG Quality=100
 Layer 4 copy 2                          232         32760    JPEG Quality=100
 Main Pane bg                            500        455840    JPEG Quality=100
-Left_Arrow_Click copy 3                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 4                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 2                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 5                 194           196    JPEG Quality=100
+Left_Arrow_Click copy 3                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 4                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 2                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 5                 193           196    JPEG Quality=100
 Layer 5                                 148          4096    JPEG Quality=100
-Left_Arrow_Click copy 3                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 4                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 2                 194           196    JPEG Quality=100
-Left_Arrow_Click copy 5                 194           196    JPEG Quality=100
-Header Bar                              213         12600    JPEG Quality=100
+Left_Arrow_Click copy 3                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 4                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 2                 193           196    JPEG Quality=100
+Left_Arrow_Click copy 5                 193           196    JPEG Quality=100
+Header Bar                              212         12600    JPEG Quality=100
 Right Arrow                             197           120    JPEG Quality=100
 Left Arrow                              195           120    JPEG Quality=100
 Slider                                  145            72    JPEG Quality=100
@@ -338,47 +337,47 @@ Unit_Supply_Good tile                   148          4096    JPEG Quality=100
 Background_Bar                          432        144324    JPEG Quality=100
 Right Arrow                             197           120    JPEG Quality=100
 Left Arrow                              195           120    JPEG Quality=100
-Background_Bar                          297         29540    JPEG Quality=100
-Control_Bar_Open                        187         33440    JPEG Quality=100
-Header Bar                              282         25800    JPEG Quality=100
+Background_Bar                          296         29540    JPEG Quality=100
+Control_Bar_Open                        186         33440    JPEG Quality=100
+Header Bar                              281         25800    JPEG Quality=100
 Inventory Tile                          148          4096    JPEG Quality=100
 Main Pane bg                            500        455840    JPEG Quality=100
 Right Arrow                             197           120    JPEG Quality=100
 Left Arrow                              195           120    JPEG Quality=100
-Control_Bar_Open                        187         33440    JPEG Quality=100
+Control_Bar_Open                        186         33440    JPEG Quality=100
 Main Pane bg                            500        455840    JPEG Quality=100
 Header Bar copy                         268         41280    JPEG Quality=100
-Header Bar                              282         25800    JPEG Quality=100
+Header Bar                              281         25800    JPEG Quality=100
 Right Arrow                             197           120    JPEG Quality=100
 Left Arrow                              195           120    JPEG Quality=100
-Control_Bar_Open                        187         33440    JPEG Quality=100
-Control_Bar_Closed                      187         33440    JPEG Quality=100
-City_View                             69480        538768    JPEG Quality=100
-message_bg                            17196        188616    JPEG Quality=100
-Header_Footer                           603        213248    JPEG Quality=100
-Sample_Flag                            1225          6000    JPEG Quality=100
+Control_Bar_Open                        186         33440    JPEG Quality=100
+Control_Bar_Closed                      186         33440    JPEG Quality=100
+City_View                             69388        538768    JPEG Quality=100
+message_bg                            17173        188616    JPEG Quality=100
+Header_Footer                           602        213248    JPEG Quality=100
+Sample_Flag                            1223          6000    JPEG Quality=100
 Mini_Flag                               323          6000    JPEG Quality=100
-Avatar                                  349         10000    JPEG Quality=100
-Target_Pane                             329         89300    JPEG Quality=100
-Right Arrow                             544          1848    JPEG Quality=100
-Left Arrow                              547          1848    JPEG Quality=100
+Avatar                                  348         10000    JPEG Quality=100
+Target_Pane                             328         89300    JPEG Quality=100
+Right Arrow                             543          1848    JPEG Quality=100
+Left Arrow                              546          1848    JPEG Quality=100
 Status_Effect_Icon                      148          4096    JPEG Quality=100
 Message_Control                         243           400    JPEG Quality=100
-Background_Bar                          190         44100    JPEG Quality=100
-Population_bg                           302        205860    JPEG Quality=100
-Vector Smart Object copy 14             808          2640    JPEG Quality=100
-Vector Smart Object copy 13             786          2640    JPEG Quality=100
-Vector Smart Object copy 12             810          2640    JPEG Quality=100
+Background_Bar                          189         44100    JPEG Quality=100
+Population_bg                           301        205860    JPEG Quality=100
+Vector Smart Object copy 14             807          2640    JPEG Quality=100
+Vector Smart Object copy 13             785          2640    JPEG Quality=100
+Vector Smart Object copy 12             808          2640    JPEG Quality=100
 Seperator                               148           200    JPEG Quality=100
-goblin_pop_icon                         839          3968    JPEG Quality=100
-Background_Bar                          190         44100    JPEG Quality=100
-human_pop_icon                          815          3968    JPEG Quality=100
-dwarf_pop_icon                          830          3968    JPEG Quality=100
+goblin_pop_icon                         838          3968    JPEG Quality=100
+Background_Bar                          189         44100    JPEG Quality=100
+human_pop_icon                          814          3968    JPEG Quality=100
+dwarf_pop_icon                          829          3968    JPEG Quality=100
 Header Bar                              167         16200    JPEG Quality=100
-Elf_pop_icon                            823          3968    JPEG Quality=100
-Pop_up Box                              886         27468    JPEG Quality=100
-Layer 1                                6569        320000    JPEG Quality=100
-Layer 3                                1656         12032    JPEG Quality=100
+Elf_pop_icon                            821          3968    JPEG Quality=100
+Pop_up Box                              885         27468    JPEG Quality=100
+Layer 1                                6560        320000    JPEG Quality=100
+Layer 3                                1654         12032    JPEG Quality=100
 
 
 

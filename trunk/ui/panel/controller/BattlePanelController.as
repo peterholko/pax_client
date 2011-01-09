@@ -137,7 +137,7 @@
 		
 		private function sendTarget(source:Unit, target:Unit) : void
 		{
-			Game.INSTANCE.sendTarget(battle.id, source.parentEntity.id, source.id, target.parentEntity.id, target.id);
+			Game.INSTANCE.processBattleTarget(battle.id, source.parentEntity.id, source.id, target.parentEntity.id, target.id);
 		}
 		
 	}

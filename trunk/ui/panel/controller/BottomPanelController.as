@@ -95,7 +95,7 @@
 			if (CommandPanelController.INSTANCE.isAttackCommand())
 			{
 				CommandPanelController.INSTANCE.resetCommand();
-				Game.INSTANCE.sendAttack(iconEntity.entity.id);
+				Game.INSTANCE.processAttack(iconEntity.entity.id);
 			}
 			else 
 			{						

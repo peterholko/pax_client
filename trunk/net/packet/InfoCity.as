@@ -8,6 +8,7 @@
 		public var buildingsQueue:Array
 		public var units/*Unit*/:Array;
 		public var unitsQueue:Array;
+		public var claims:Array;
 		
 		public function InfoCity() : void
 		{		

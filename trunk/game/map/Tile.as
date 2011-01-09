@@ -14,7 +14,7 @@
 	public class Tile extends Sprite
 	{
 		public static var onClick:String = "onTileClick";
-		public static var onDoubleClick:String = "onTileDoubleClick";
+		public static var onDoubleClick:String = "onTileDoubleClick";		
 		
 		public static const WIDTH:int = 48;
 		public static const HEIGHT:int = 48;		

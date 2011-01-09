@@ -3,7 +3,8 @@
 	import game.entity.Army;
 	import game.perception.PerceptionManager;	
 	import game.unit.Unit;
-	import net.packet.Army;
+	
+	import net.packet.ArmyPacket;
 	import net.packet.BattleDamage;
 	
 	import game.unit.events.UnitEvent;
@@ -20,14 +21,14 @@
 		{
 		}		
 		
-		public function createArmies(armiesPacket/*packet.Army*/:Array) : void
+		public function createArmies(armiesPacket/*packet.ArmyPacket*/:Array) : void
 		{
 			armies = new Array();
 			
 			for (var i:int = 0; i < armiesPacket.length; i++)
 			{
 				var armyId:int = armiesPacket[i].id;
-				var army:game.entity.Army = game.entity.Army(PerceptionManager.INSTANCE.getEntity(armyId));
+				var army:Army = Army(PerceptionManager.INSTANCE.getEntity(armyId));
 				
 				trace("armiesPacket[i]: " + armiesPacket[i]);
 				army.setArmyInfo(armiesPacket[i]);			
@@ -71,7 +72,7 @@
 		{
 			for (var i:int = 0; i < armies.length; i++)
 			{
-				var army:game.entity.Army = armies[i];
+				var army:Army = armies[i];
 				var unit:Unit = army.getUnit(unitId);
 				
 				if (unit != null)
