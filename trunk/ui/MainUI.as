@@ -15,7 +15,7 @@
 	import game.entity.Entity;
 	import game.entity.Army;
 	import game.entity.City;
-	import game.Improvement;
+	import game.entity.Improvement;
 	
 	import net.Connection;
 	import net.packet.InfoArmy;	
@@ -351,7 +351,7 @@
 					pEvent.params = City(selectedEntity);
 
 					Game.INSTANCE.dispatchEvent(pEvent);
-				}
+				}				
 			}
 		}
 

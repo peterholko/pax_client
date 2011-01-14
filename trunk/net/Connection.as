@@ -36,7 +36,7 @@
 		public static var onInfoGenericArmy:String = "onInfoGenericArmyEvent";
 		public static var onBattleInfoEvent:String = "onBattleInfoEvent";
 		public static var onBattleAddArmyEvent:String = "onBattleAddArmyEvent";
-		public static var onBattleDamageEvent:String = "onBattleDamageEvent";
+		public static var onBattleDamageEvent:String = "onBattleDamageEvent";				
 		
 		public static var onSendMoveArmy:String = "onSendMoveArmy";
 		public static var onSendAttackTarget:String = "onSendAttackTarget";
@@ -46,6 +46,8 @@
 		public static var onSendBattleTarget:String = "onSendBattleTarget";
 		public static var onSendAddClaim:String = "onSendAddClaim";
 		public static var onSendBuildImprovement:String = "onSendBuildImprovement";
+		
+		public static var onSuccessAddClaim:String = "onSuccessAddClaim";
 				
 		public var clockSyncStartTime:Number = 0;
 		public var clockSyncEndTime:Number = 0;
@@ -233,6 +235,19 @@
 						pEvent = new ParamEvent(Connection.onBattleDamageEvent);
 						pEvent.params = Packet.readBattleDamage(bArr);
 						dispatchEvent(pEvent);
+					}
+					else if(cmd == Packet.SUCCESS)
+					{
+						trace("Connection - success");
+						var success:Success = Packet.readSuccess(bArr);
+						
+						if(success.type == Packet.ADD_CLAIM)
+						{
+							pEvent = new ParamEvent(onSuccessAddClaim);
+							pEvent.params = success.id;
+						}									
+						
+						dispatchEvent(pEvent);												
 					}
 					else if(cmd == Packet.BAD)
 					{

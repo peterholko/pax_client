@@ -30,15 +30,16 @@
 	import net.packet.BattleInfo;
 	import net.packet.BattleAddArmy;
 	import net.packet.BattleDamage;	
+	import net.packet.AddClaim;
+	import net.packet.BuildImprovement;
+	import net.packet.Success;	
 	
 	import ui.panel.controller.ArmyPanelController;
 	import ui.panel.controller.CityPanelController;
 	import ui.panel.controller.CreateUnitPanelController;
 	import ui.panel.controller.QueueBuildingPanelController;
 	import ui.panel.controller.BattlePanelController;
-	import net.packet.AddClaim;
-	import net.packet.BuildImprovement;
-	
+		
 	public class Game extends Sprite
 	{				
 		public static var INSTANCE:Game = new Game();	
@@ -47,7 +48,6 @@
 		
 		//Incoming events
 		public static var onInfoArmy:String = "onInfoArmy";
-		public static var onAddClaim:String = "onAddClaim";
 		
 		//Outgoing events
 		public static var buildImprovementEvent:String = "buildImprovementEvent";		
@@ -72,6 +72,10 @@
 		private var perceptionManager:PerceptionManager;
 		private var map:Map;
 		
+		private var initialPerception:Boolean = true;
+		
+		private var lastPacket:Object;
+		
 		public function Game() : void
 		{
 			selectedEntity = null;							
@@ -92,6 +96,7 @@
 			Connection.INSTANCE.addEventListener(Connection.onBattleInfoEvent, connectionBattleInfo);
 			Connection.INSTANCE.addEventListener(Connection.onBattleDamageEvent, connectionBattleDamage);
 			
+			Connection.INSTANCE.addEventListener(Connection.onSuccessAddClaim, successAddClaim);			
 			
 			addEventListener(Tile.onClick, tileClicked);
 			addEventListener(Tile.onDoubleClick, tileDoubleClicked);
@@ -101,9 +106,7 @@
 			addEventListener(City.onDoubleClick, cityDoubleClicked);
 			addEventListener(MapBattle.onDoubleClick, battleDoubleClicked);
 			
-			addEventListener(buildImprovementEvent, processBuildImprovement);
-			
-			
+			addEventListener(buildImprovementEvent, processBuildImprovement);						
 		}						
 				
 		public function addPerceptionData(perception:Perception) : void
@@ -215,6 +218,7 @@
 			addClaim.cityId = cityId;
 			addClaim.x = tileX;
 			addClaim.y = tileY;
+			lastPacket = addClaim;
 			
 			var addClaimEvent:ParamEvent = new ParamEvent(Connection.onSendAddClaim);
 			addClaimEvent.params = addClaim;
@@ -332,20 +336,22 @@
 		{
 			var parameters:Object = { type: MapObjectType.BATTLE, targetId: e.params.battleId };
 			var requestInfoEvent:ParamEvent = new ParamEvent(Connection.onSendRequestInfo);
-			requestInfoEvent.params = parameters;
-			
+			requestInfoEvent.params = parameters;			
 			Connection.INSTANCE.dispatchEvent(requestInfoEvent);
 		}
+		
+		private function improvementDoubleClicked(e:ParamEvent) : void
+		{
+			var parameters:Object = { type: MapObjectType.IMPROVEMENT, targetId: e.params.id };
+			var requestInfoEvent:ParamEvent = new ParamEvent(Connection.onSendRequestInfo);
+			requestInfoEvent.params = parameters;
+			Connection.INSTANCE.dispatchEvent(requestInfoEvent);
+		}		
 						
 		private function cityClicked(e:ParamEvent) : void
 		{
 			trace("Game - cityClicked");
 		}		
-		
-		private function onAddClaim(e:ParamEvent) : void
-		{
-			
-		}
 		
 		private function connectionMap(e:ParamEvent) : void
 		{
@@ -383,11 +389,20 @@
 		
 		private function connectionInfoCity(e:ParamEvent) : void
 		{
+			
 			trace("Game - infoCity");	
 			var city:City = City(perceptionManager.getEntity(e.params.id));
 			city.setCityInfo(e.params);
 			
-			main.cityUI.showPanel();
+			if(!initialPerception)
+			{
+				main.cityUI.setCity(city);
+				main.cityUI.showPanel();
+			}
+			else
+			{
+				initialPerception = false;
+			}
 		}		
 		
 		private function connectionBattleInfo(e:ParamEvent) : void
@@ -422,6 +437,33 @@
 			
 			battle.addDamage(battleDamage);			
 		}	
+		
+		private function successAddClaim(e:ParamEvent) : void
+		{
+			trace("Game - successAddClaim");						
+			if(lastPacket != null)
+			{
+				var claimId:int = e.params;				
+				var addClaim:AddClaim = AddClaim(lastPacket);
+				var claim:Claim = new Claim();
+				var city:City = City(perceptionManager.getEntity(addClaim.cityId));
+				
+				if(city != null)
+				{
+					claim.id = claimId;
+					claim.cityId = addClaim.cityId;
+					claim.tileIndex = Map.convertCoords(addClaim.x, addClaim.y);
+					
+					city.addClaim(claim);
+				}
+				else
+				{
+					trace("Could not find cityId: " + addClaim.cityId);
+				}									
+				
+			}
+			
+		}
 		
 		private function setTileStatus(tile:Tile) : void
 		{

@@ -28,7 +28,7 @@
 		{
 			var imageData:BitmapData = null;
 			
-			imageData = new BattleImage(0,0);
+			imageData = new FarmImage(0,0);
 			
 			image = new Bitmap(imageData);
 			addChild(image);	

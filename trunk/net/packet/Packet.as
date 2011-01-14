@@ -14,6 +14,7 @@
 		public static var CLIENTREADY:int = 4;
 		public static var PLAYER_ID:int = 5;
 		public static var INFO_KINGDOM:int = 6;
+		public static var SUCCESS:int = 20;
 		public static var EXPLORED_MAP:int = 39;
 		public static var PERCEPTION:int = 40;
 		public static var MOVE:int = 42;
@@ -145,6 +146,15 @@
 			socket.flush();
 		}
 		
+		public static function readSuccess(byteArray:ByteArray) : Success
+		{
+			var success:Success = new Success();
+			success.type = byteArray.readUnsignedShort();
+			success.id = byteArray.readInt()
+			
+			return success;
+		}
+		
 		public static function readBad(byteArray:ByteArray) : String
 		{
 			var cmd:int = byteArray.readUnsignedByte();
@@ -197,6 +207,7 @@
 				mapObject.id = byteArray.readInt();
 				mapObject.playerId = byteArray.readInt();
 				mapObject.type = byteArray.readUnsignedShort();
+				mapObject.subType = byteArray.readUnsignedShort();
 				mapObject.state = byteArray.readUnsignedShort();
 				mapObject.x = byteArray.readUnsignedShort();
 				mapObject.y = byteArray.readUnsignedShort();
@@ -278,6 +289,7 @@
 			var unitList:Array = new Array();
 			var unitQueueList:Array = new Array();
 			var claimList:Array = new Array();
+			var improvementList:Array = new Array();
 			var i:int;
 			
 			infoCity.id = byteArray.readInt();
@@ -340,12 +352,23 @@
 				
 				claimList.push(claim);
 			}
+			
+			var numImprovements:int = byteArray.readUnsignedShort();
+			
+			for(i = 0; i < numImprovements; i++)
+			{
+				var improvement:Object = {id: byteArray.readInt(),
+										  type: byteArray.readShort()};
+										  
+				improvementList.push(improvement);										  
+			}
 								
 			infoCity.buildings = buildingList;
 			infoCity.buildingsQueue = buildingQueueList;
 			infoCity.units = unitList;
 			infoCity.unitsQueue = unitQueueList;
 			infoCity.claims = claimList;
+			infoCity.improvements = improvementList;
 								
 			return infoCity;
 		}

@@ -50,13 +50,11 @@
 				{
 					case MapObjectType.ARMY:
 					case MapObjectType.CITY:
+					case MapObjectType.IMPROVEMENT:
 						setEntity(mapObject);
 						break;
 					case MapObjectType.BATTLE:
 						setBattle(mapObject);
-						break;
-					case MapObjectType.IMPROVEMENT:
-						setImprovement(mapObject);
 						break;
 					default:
 						throw new Error("Invalid MapObject type.");
@@ -64,8 +62,7 @@
 			}
 						
 			clearPreviousEntities();
-			clearPreviousBattles();
-			clearPreviousImprovements();
+			clearPreviousBattles();			
 		}
 						
 		public function getEntities() : Dictionary
@@ -85,9 +82,11 @@
 		private function setEntity(mapObject:MapObject) : void
 		{						
 			var entity:Entity;
-			
+						
+			trace("mapObject.id: " + mapObject.id);
 			if(Util.hasId(previousEntities, mapObject.id))
 			{
+				trace("Entity already exists");
 				//Entity already exists
 				entity = previousEntities[mapObject.id];
 				
@@ -109,6 +108,7 @@
 			}
 			else 
 			{	
+				trace("Entity does not exist");
 				//Entity does not exist create one from perception data
 				entity = createEntityFromPerception(mapObject);
 				
@@ -126,15 +126,16 @@
 			Map.INSTANCE.addBattle(mapObject);
 		}
 		
-		private function setImprovement(mapObject:MapObject) : void
+		/*private function setImprovement(mapObject:MapObject) : void
 		{
 			improvements[mapObject.id] = mapObject;
 			
 			Map.INSTANCE.addImprovement(mapObject);
-		}
+		}*/
 		
 		private function createEntityFromPerception(mapObject:MapObject) : Entity
 		{
+			trace("mapObject.type: " + mapObject.type);
 			var entity:Entity = EntityFactory.getEntity(mapObject.type);		
 			
 			entity.id = mapObject.id;
@@ -142,6 +143,7 @@
 			entity.gameX = mapObject.x;
 			entity.gameY = mapObject.y;
 			entity.state = mapObject.state;
+			entity.subType = mapObject.subType;
 			entity.type = mapObject.type;
 			entity.initialize();
 			
@@ -153,6 +155,7 @@
 		
 		private function copyPerceptionToEntity(entity:Entity, mapObject:MapObject) : void
 		{
+			trace("mapObject.type: " + mapObject.type);
 			entity.gameX = mapObject.x;
 			entity.gameY = mapObject.y;
 			entity.state = mapObject.state;
@@ -182,7 +185,7 @@
 			}
 		}
 		
-		private function clearPreviousImprovements() : void
+		/*private function clearPreviousImprovements() : void
 		{
 			for (var mapObjectId:Object in previousImprovements)
 			{							
@@ -191,7 +194,7 @@
 				if(mapObject != null)
 					Map.INSTANCE.removeImprovement(mapObject);
 			}
-		}
+		}*/
 	}
 }
 		

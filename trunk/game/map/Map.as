@@ -136,7 +136,7 @@
 			}
 		}
 		
-		public function addImprovement(mapObject:MapObject) : void
+		/*public function addImprovement(mapObject:MapObject) : void
 		{
 			var tileIndex:int = convertCoords(mapObject.x, mapObject.y);
 			var tile:Tile = tiles[tileIndex];
@@ -162,7 +162,7 @@
 				if (improvementLayer.contains(mapImprovement))
 					improvementLayer.removeChild(mapImprovement);
 			}
-		}		
+		}*/		
 		
 		public static function convertCoords(xCoord:int, yCoord:int) : int
 		{

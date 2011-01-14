@@ -13,6 +13,9 @@
 	{
 		public static var ARMY:int = 1;
 		public static var CITY:int = 2;
+		public static var BUILDING:int = 3;
+		public static var BATTLE:int = 4;
+		public static var IMPROVEMENT:int = 5;
 		
 		public var id:int;
 		public var playerId:int;
@@ -20,6 +23,7 @@
 		public var gameX:int;
 		public var gameY:int;	
 		public var type:int;
+		public var subType:int;
 		public var tile:Tile;
 
 		protected var image:Bitmap = null;	

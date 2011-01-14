@@ -12,9 +12,11 @@
 	import game.unit.Unit;
 	import game.unit.UnitQueue;
 	import game.map.Tile;
-
-	import CityImage;
 	import game.Claim;
+	import game.entity.Improvement;
+	
+	import CityImage;
+	import game.perception.PerceptionManager;
 
 	public class City extends Entity
 	{
@@ -25,6 +27,7 @@
 		public var buildings:Array;
 		public var units:Array;
 		public var claims:Array;
+		public var improvements:Array;
 
 		public var landQueue:Array;
 		public var seaQueue:Array;
@@ -37,6 +40,8 @@
 			buildings = new Array();
 			units = new Array();
 			claims = new Array();
+			improvements = new Array();
+			
 			landQueue = new Array();
 			seaQueue = new Array();
 			airQueue = new Array();
@@ -77,6 +82,11 @@
 
 			Game.INSTANCE.dispatchEvent(pEvent);
 		}
+		
+		public function addClaim(claim:Claim) : void
+		{
+			claims.push(claim);
+		}
 
 		public function setCityInfo(cityInfo:Object):void
 		{
@@ -86,11 +96,13 @@
 			var unitsInfo:Array = cityInfo.units;
 			var unitsQueueInfo:Array = cityInfo.unitsQueue;
 			var claimsInfo:Array = cityInfo.claims;
+			var improvementsInfo:Array = cityInfo.improvements;
 
 			setBuildings(buildingsInfo);
 			setUnits(unitsInfo);
 			setUnitsQueue(unitsQueueInfo);
 			setClaims(claimsInfo);
+			setImprovements(improvementsInfo);
 		}
 
 		private function setBuildings(buildingsInfo:Array):void
@@ -164,6 +176,17 @@
 				claim.cityId = claimsInfo[i].cityId;
 
 				claims.push(claim);
+			}
+		}
+		
+		private function setImprovements(improvementsInfo:Array) : void
+		{
+			improvements.length = 0;
+			
+			for(var i = 0; i < improvementsInfo.length; i++)
+			{
+				var entity:Entity = PerceptionManager.INSTANCE.getEntity(improvementsInfo[i].id);								
+				improvements.push(Improvement(entity));				
 			}
 		}
 

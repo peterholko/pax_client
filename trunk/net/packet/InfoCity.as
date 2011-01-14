@@ -9,6 +9,7 @@
 		public var units/*Unit*/:Array;
 		public var unitsQueue:Array;
 		public var claims:Array;
+		public var improvements:Array;
 		
 		public function InfoCity() : void
 		{		
