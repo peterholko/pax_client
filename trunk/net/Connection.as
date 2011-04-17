@@ -15,7 +15,7 @@
 		public static var INSTANCE:Connection = new Connection();
 		
 		//public static var HOST:String = "localhost";
-		public static var HOST:String = "www.mlvoyages.com";		
+		public static var HOST:String = "www.empiresrising.com";		
 		public static var PORT:int = 2345
 				
 		//Events 
@@ -46,8 +46,10 @@
 		public static var onSendBattleTarget:String = "onSendBattleTarget";
 		public static var onSendAddClaim:String = "onSendAddClaim";
 		public static var onSendBuildImprovement:String = "onSendBuildImprovement";
+		public static var onSendAssignTask:String = "onSendAssignTask";
 		
 		public static var onSuccessAddClaim:String = "onSuccessAddClaim";
+		public static var onSuccessAssignTask:String = "onSuccessAssignTask";
 				
 		public var clockSyncStartTime:Number = 0;
 		public var clockSyncEndTime:Number = 0;
@@ -109,6 +111,7 @@
 			addEventListener(Connection.onSendBattleTarget, sendBattleTarget);
 			addEventListener(Connection.onSendAddClaim, sendAddClaim);
 			addEventListener(Connection.onSendBuildImprovement, sendBuildImprovement);
+			addEventListener(Connection.onSendAssignTask, sendAssignTask);
 			
 		}
 		
@@ -148,6 +151,7 @@
 				while (bArr.position != socketByteAvailable)
 				{
 					var cmd:int = bArr.readUnsignedByte();
+					trace("Connection - cmd: " + cmd);
 					
 					if(cmd == Packet.PLAYER_ID)
 					{
@@ -245,7 +249,12 @@
 						{
 							pEvent = new ParamEvent(onSuccessAddClaim);
 							pEvent.params = success.id;
-						}									
+						}	
+						else if(success.type == Packet.ASSIGN_TASK)
+						{
+							pEvent = new ParamEvent(onSuccessAssignTask);
+							pEvent.params = success.id;
+						}
 						
 						dispatchEvent(pEvent);												
 					}
@@ -253,6 +262,10 @@
 					{
 						serverErrorMsg = Packet.readBad(bArr);
 						dispatchEvent(new Event(Connection.onBadEvent));
+					}
+					else
+					{
+						trace("Connection - Packet not recognized!");
 					}
 				}
 			} 
@@ -317,6 +330,13 @@
 			trace("Connection - sendBuildImprovement");
 			var buildImprovement:BuildImprovement = e.params;
 			Packet.sendBuildImprovement(socket, buildImprovement);										
+		}
+		
+		private function sendAssignTask(e:ParamEvent) : void
+		{
+			trace("Connection - sendAssignTask");
+			var assignTask:AssignTask = e.params;
+			Packet.sendAssignTask(socket, assignTask);
 		}
 	}
 }

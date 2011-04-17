@@ -30,10 +30,14 @@
 		public static var TRANSFER_UNIT:int = 61;
 		public static var BATTLE_INFO:int = 70;
 		public static var BATTLE_ADD_ARMY:int = 71;
-		public static var BATTLE_DAMAGE:int = 72;
-		public static var BATTLE_TARGET:int = 73;
+		public static var BATTLE_REMOVE_ARMY:int = 72;
+		public static var BATTLE_DAMAGE:int = 74;
+		public static var BATTLE_TARGET:int = 75;
+		public static var BATTLE_RETREAT:int = 76;
+		public static var BATTLE_LEAVE:int = 77;
 		public static var BUILD_IMPROVEMENT:int = 100;		
 		public static var ADD_CLAIM:int = 125;		
+		public static var ASSIGN_TASK:int = 130;
 		public static var BAD:int = 255;
 		
 		//Errors
@@ -143,6 +147,18 @@
 			socket.writeShort(buildImprovement.x);
 			socket.writeShort(buildImprovement.y);
 			socket.writeShort(buildImprovement.type);
+			socket.flush();
+		}
+		
+		public static function sendAssignTask(socket:Socket, assignTask:AssignTask) : void
+		{
+			trace("Packet - sendAssignTask");
+			socket.writeByte(ASSIGN_TASK);
+			socket.writeInt(assignTask.cityId);
+			socket.writeInt(assignTask.populationId);
+			socket.writeInt(assignTask.amount);
+			socket.writeInt(assignTask.taskId);
+			socket.writeShort(assignTask.taskType);
 			socket.flush();
 		}
 		
@@ -260,15 +276,17 @@
 		
 		public static function readInfoArmy(byteArray:ByteArray) : InfoArmy
 		{
+			var i:int = 0;
 			var army:InfoArmy = new InfoArmy();
 			army.id = byteArray.readInt();
 			army.name = byteArray.readUTF();
 			army.kingdomName = byteArray.readUTF();
 			army.units = new Array();
+			army.items = new Array();
 			
 			var numUnits:int = byteArray.readUnsignedShort();
 			
-			for (var i:int = 0; i < numUnits; i++)
+			for (i = 0; i < numUnits; i++)
 			{
 				var unit:UnitPacket = new UnitPacket();
 				unit.id = byteArray.readInt();
@@ -276,6 +294,19 @@
 				unit.size = byteArray.readInt();
 				
 				army.units.push(unit);
+			}
+			
+			var numItems:int = byteArray.readUnsignedShort();
+			
+			for(i = 0; i < numItems; i++)
+			{
+				var item:ItemPacket = new ItemPacket();
+				item.id = byteArray.readInt();
+				item.entityId = byteArray.readInt();
+				item.type = byteArray.readShort();
+				item.value = byteArray.readInt();
+				
+				army.items.push(item);
 			}
 			
 			return army;
@@ -290,6 +321,10 @@
 			var unitQueueList:Array = new Array();
 			var claimList:Array = new Array();
 			var improvementList:Array = new Array();
+			var assignmentList:Array = new Array();
+			var itemList:Array = new Array();
+			var populationList:Array = new Array();
+			
 			var i:int;
 			
 			infoCity.id = byteArray.readInt();
@@ -362,6 +397,46 @@
 										  
 				improvementList.push(improvement);										  
 			}
+			
+			var numAssignments:int = byteArray.readUnsignedShort();
+
+			for(i = 0; i < numAssignments; i++)
+			{
+				var assignment:AssignmentPacket = new AssignmentPacket();
+				assignment.id = byteArray.readInt();
+				assignment.caste = byteArray.readByte();
+				assignment.amount = byteArray.readInt();
+				assignment.taskId = byteArray.readInt();
+				assignment.taskType = byteArray.readShort();										
+										  
+				assignmentList.push(assignment);										  
+			}					
+			
+			var numItems:int = byteArray.readUnsignedShort();
+			
+			for(i = 0; i < numItems; i++)
+			{
+				var item:ItemPacket = new ItemPacket();
+				item.id = byteArray.readInt();
+				item.entityId = byteArray.readInt();
+				item.playerId = byteArray.readInt();
+				item.type = byteArray.readShort();
+				item.value = byteArray.readInt();
+				
+				itemList.push(item);
+			}
+			
+			var numPopulations:int = byteArray.readUnsignedShort();
+			
+			for(i = 0; i < numPopulations; i++)
+			{
+				var population:PopulationPacket = new PopulationPacket();
+				population.cityId = byteArray.readInt();
+				population.caste = byteArray.readShort();
+				population.value = byteArray.readInt();
+				
+				populationList.push(population);
+			}
 								
 			infoCity.buildings = buildingList;
 			infoCity.buildingsQueue = buildingQueueList;
@@ -369,6 +444,9 @@
 			infoCity.unitsQueue = unitQueueList;
 			infoCity.claims = claimList;
 			infoCity.improvements = improvementList;
+			infoCity.assignments = assignmentList;
+			infoCity.items = itemList;
+			infoCity.populations = populationList;
 								
 			return infoCity;
 		}
@@ -397,6 +475,7 @@
 		
 		public static function readBattleInfo(byteArray:ByteArray) : BattleInfo
 		{
+			trace("readBattleInfo");
 			var battleInfo:BattleInfo = new BattleInfo();
 			battleInfo.battleId = byteArray.readInt();
 			battleInfo.armies = new Array();
@@ -407,7 +486,9 @@
 				var army:ArmyPacket = new ArmyPacket();
 
 				army.id = byteArray.readInt();
-				army.playerId = byteArray.readInt();
+				army.playerId = byteArray.readInt();				
+				army.name = byteArray.readUTF();
+				army.kingdomName = byteArray.readUTF();				
 				army.units = new Array();
 				
 				var numUnits:int = byteArray.readUnsignedShort();
@@ -430,12 +511,15 @@
 		
 		public static function readBattleAddArmy(byteArray:ByteArray) : BattleAddArmy
 		{
+			trace("readBattleAddArmy");
 			var battleAddArmy:BattleAddArmy = new BattleAddArmy();
 			battleAddArmy.army = new ArmyPacket();			
 			
 			battleAddArmy.battleId = byteArray.readInt();
 			battleAddArmy.army.id = byteArray.readInt();
 			battleAddArmy.army.playerId = byteArray.readInt();
+			battleAddArmy.army.name = byteArray.readUTF();
+			battleAddArmy.army.kingdomName = byteArray.readUTF();							
 			battleAddArmy.army.units = new Array();
 			
 			var numUnits:int = byteArray.readUnsignedShort();				
@@ -454,6 +538,7 @@
 		
 		public static function readBattleDamage(byteArray:ByteArray) : BattleDamage
 		{
+			trace("readBattleDamage");
 			var battleDamage:BattleDamage = new BattleDamage();
 			
 			battleDamage.battleId = byteArray.readInt();

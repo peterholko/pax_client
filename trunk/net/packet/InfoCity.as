@@ -10,6 +10,9 @@
 		public var unitsQueue:Array;
 		public var claims:Array;
 		public var improvements:Array;
+		public var assignments:Array;
+		public var items:Array;
+		public var populations:Array;
 		
 		public function InfoCity() : void
 		{		

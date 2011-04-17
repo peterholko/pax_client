@@ -180,6 +180,7 @@
 				{
 					var iconEntity:IconEntity = new IconEntity();
 					iconEntity.setEntity(selectedTile.entities[i]);
+					iconEntity.copyImage(32, 32);
 					iconEntity.x = iconTileEdgeX + ICON_X_SPACER + i * (iconEntity.width + ICON_X_SPACER);
 					iconEntity.y = iconTile.y;
 					iconEntity.addEventListener(MouseEvent.CLICK, iconEntityClick);

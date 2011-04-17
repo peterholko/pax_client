@@ -10,7 +10,7 @@
 	import game.unit.events.UnitEvent;
 	import game.unit.events.UnitDestroyEvent;
 	import game.unit.events.UnitDamageEvent;
-	import game.unit.UnitEventDispatcher;
+	import game.battle.BattleEventDispatcher;
 		
 	public class Battle 
 	{
@@ -31,7 +31,7 @@
 				var army:Army = Army(PerceptionManager.INSTANCE.getEntity(armyId));
 				
 				trace("armiesPacket[i]: " + armiesPacket[i]);
-				army.setArmyInfo(armiesPacket[i]);			
+				army.setArmyPacket(armiesPacket[i]);			
 				
 				armies.push(army);
 			}
@@ -52,14 +52,14 @@
 				unitDamageEvent.unitId = battleDamage.targetId;
 				unitDamageEvent.sourceId = battleDamage.sourceId;
 				
-				UnitEventDispatcher.INSTANCE.dispatchEvent(unitDamageEvent);
+				BattleEventDispatcher.INSTANCE.dispatchEvent(unitDamageEvent);
 				
 				if (targetUnit.size <= 0)
 				{
 					var unitDestroyEvent:UnitDestroyEvent = new UnitDestroyEvent(UnitEvent.DESTROYED);
 					unitDestroyEvent.unitId = battleDamage.targetId;
 					
-					UnitEventDispatcher.INSTANCE.dispatchEvent(unitDestroyEvent);
+					BattleEventDispatcher.INSTANCE.dispatchEvent(unitDestroyEvent);
 				}				
 			}
 			else

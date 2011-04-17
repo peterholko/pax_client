@@ -15,6 +15,7 @@
 		public static var INSTANCE:Map = new Map();	
 		public static const WIDTH:int = 50;
 		public static const HEIGHT:int = 50;	
+		public static const GAME_RANGE_VISION:int = 50;
 				
 		private var tiles/*Tile*/:Array;
 		private var entities:Dictionary;
@@ -26,6 +27,8 @@
 		private var entityLayer:Sprite;	
 		private var battleLayer:Sprite;
 		private var improvementLayer:Sprite;		
+		
+		private var visionSqrt:Number = Math.ceil(Math.sqrt(GAME_RANGE_VISION));
 		
 		public function Map() : void
 		{			
@@ -78,6 +81,43 @@
 				}
 			}
 		}
+		
+		public function setFogOfWar(entities:Array) : void
+		{	
+			var tile:Tile;			
+		
+			for(var index:Object in tiles)
+			{
+				tile = Tile(tiles[index]);
+				tile.toggleFogOfWar(true);
+			}
+			
+			for(var i:int = 0; i < entities.length; i++)
+			{
+				var entity:Entity = Entity(entities[i]);
+				
+				for(var xCoord = -1 * visionSqrt; xCoord <= visionSqrt; xCoord++)
+				{
+					for(var yCoord = -1 * visionSqrt; yCoord <= visionSqrt; yCoord++)
+					{
+						var distance:int = xCoord * xCoord + yCoord * yCoord;
+						var tileX:int = entity.gameX + xCoord;
+						var tileY:int = entity.gameY + yCoord;						
+						var tileIndex:int = convertCoords(tileX, tileY);
+						
+						if(distance <= GAME_RANGE_VISION)
+						{							
+							tile = Tile(tiles[tileIndex]);
+							
+							if(tile != null)							
+							{
+								tile.toggleFogOfWar(false);
+							}
+						}												
+					}
+				}				
+			}			
+		}		
 		
 		public function addEntity(entity:Entity) : void
 		{

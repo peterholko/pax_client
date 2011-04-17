@@ -27,18 +27,16 @@
 	
 	import net.Connection;
 	import net.packet.InfoKingdom;
+	import net.packet.InfoTile;
 	import net.packet.BattleInfo;
 	import net.packet.BattleAddArmy;
 	import net.packet.BattleDamage;	
 	import net.packet.AddClaim;
 	import net.packet.BuildImprovement;
 	import net.packet.Success;	
-	
-	import ui.panel.controller.ArmyPanelController;
-	import ui.panel.controller.CityPanelController;
-	import ui.panel.controller.CreateUnitPanelController;
-	import ui.panel.controller.QueueBuildingPanelController;
-	import ui.panel.controller.BattlePanelController;
+	import net.packet.AssignTask;
+
+	import ui.ArmyUI;
 		
 	public class Game extends Sprite
 	{				
@@ -51,6 +49,7 @@
 		
 		//Outgoing events
 		public static var buildImprovementEvent:String = "buildImprovementEvent";		
+		public static var assignTaskEvent:String = "assignTaskEvent";
 		
 		//States
 		public static var TileNone:int = 0;
@@ -74,7 +73,9 @@
 		
 		private var initialPerception:Boolean = true;
 		
-		private var lastPacket:Object;
+		private var lastPacket:Object;		
+		
+		private var armyUIList:Array;
 		
 		public function Game() : void
 		{
@@ -82,6 +83,8 @@
 			targetedEntity = null;
 			player = new Player();
 			kingdom = new Kingdom();
+			
+			armyUIList = new Array();
 			
 			map = Map.INSTANCE;
 			perceptionManager = PerceptionManager.INSTANCE;
@@ -97,6 +100,7 @@
 			Connection.INSTANCE.addEventListener(Connection.onBattleDamageEvent, connectionBattleDamage);
 			
 			Connection.INSTANCE.addEventListener(Connection.onSuccessAddClaim, successAddClaim);			
+			Connection.INSTANCE.addEventListener(Connection.onSuccessAssignTask, successAssignTask);
 			
 			addEventListener(Tile.onClick, tileClicked);
 			addEventListener(Tile.onDoubleClick, tileDoubleClicked);
@@ -106,7 +110,8 @@
 			addEventListener(City.onDoubleClick, cityDoubleClicked);
 			addEventListener(MapBattle.onDoubleClick, battleDoubleClicked);
 			
-			addEventListener(buildImprovementEvent, processBuildImprovement);						
+			addEventListener(buildImprovementEvent, processBuildImprovement);
+			addEventListener(assignTaskEvent, processAssignTask);
 		}						
 				
 		public function addPerceptionData(perception:Perception) : void
@@ -116,7 +121,18 @@
 			
 			//Set map tiles from perception
 			map.setTiles(perception.mapTiles);
+			
+			//Set map fog of war
+			map.setFogOfWar(kingdom.getEntities());
 		}
+		
+		public function requestInfo(typeId:int, cityId:int) : void
+		{
+			var parameters:Object = { type: typeId, targetId: cityId };
+			var requestInfoEvent:ParamEvent = new ParamEvent(Connection.onSendRequestInfo);
+			requestInfoEvent.params = parameters;
+			Connection.INSTANCE.dispatchEvent(requestInfoEvent);
+		}		
 		
 		public function setLastLoopTime(time:Number) : void
 		{
@@ -240,7 +256,7 @@
 				buildImprovement.x = selectedTile.gameX;
 				buildImprovement.y = selectedTile.gameY;
 				
-				var sendBuildImprovementEvent:ParamEvent = new ParamEvent(Connection.onSendBuildImprovement)
+				var sendBuildImprovementEvent:ParamEvent = new ParamEvent(Connection.onSendBuildImprovement);
 				sendBuildImprovementEvent.params = buildImprovement;
 				
 				Connection.INSTANCE.dispatchEvent(sendBuildImprovementEvent);
@@ -249,6 +265,27 @@
 			{
 				trace("Game - processBuildImprovement failed: No claim found.");
 			}
+		}
+		
+		private function processAssignTask(e:ParamEvent) : void
+		{
+			trace("Game - processAssignTask");
+			
+			var assignTask:AssignTask = new AssignTask();
+			var assignment:Assignment = Assignment(e.params);
+			
+			assignTask.cityId = assignment.cityId;
+			assignTask.populationId = assignment.caste;
+			assignTask.amount = assignment.amount;
+			assignTask.taskId = assignment.taskId;
+			assignTask.taskType = assignment.taskType;
+			
+			lastPacket = assignTask;
+			
+			var sendAssignTask:ParamEvent = new ParamEvent(Connection.onSendAssignTask);
+			sendAssignTask.params = assignTask;
+			
+			Connection.INSTANCE.dispatchEvent(sendAssignTask);
 		}
 				
 		private function tileClicked(e:ParamEvent) : void
@@ -318,34 +355,24 @@
 		
 		private function armyDoubleClicked(e:ParamEvent) : void
 		{
-			var parameters:Object = { type: MapObjectType.ARMY, targetId: e.params.id };
-			var requestInfoEvent:ParamEvent = new ParamEvent(Connection.onSendRequestInfo);
-			requestInfoEvent.params = parameters;
-			Connection.INSTANCE.dispatchEvent(requestInfoEvent);
+			requestInfo(MapObjectType.ARMY, e.params.id);
 		}
 		
 		private function cityDoubleClicked(e:ParamEvent) : void
 		{
-			var parameters:Object = { type: MapObjectType.CITY, targetId: e.params.id };
-			var requestInfoEvent:ParamEvent = new ParamEvent(Connection.onSendRequestInfo);
-			requestInfoEvent.params = parameters;
-			Connection.INSTANCE.dispatchEvent(requestInfoEvent);
+			requestInfo(MapObjectType.CITY, e.params.id);
 		}
 		
 		private function battleDoubleClicked(e:ParamEvent) : void
 		{
-			var parameters:Object = { type: MapObjectType.BATTLE, targetId: e.params.battleId };
-			var requestInfoEvent:ParamEvent = new ParamEvent(Connection.onSendRequestInfo);
-			requestInfoEvent.params = parameters;			
-			Connection.INSTANCE.dispatchEvent(requestInfoEvent);
+			var mapBattle:MapBattle = MapBattle(e.params);
+			
+			requestInfo(MapObjectType.BATTLE, mapBattle.battleId);
 		}
 		
 		private function improvementDoubleClicked(e:ParamEvent) : void
 		{
-			var parameters:Object = { type: MapObjectType.IMPROVEMENT, targetId: e.params.id };
-			var requestInfoEvent:ParamEvent = new ParamEvent(Connection.onSendRequestInfo);
-			requestInfoEvent.params = parameters;
-			Connection.INSTANCE.dispatchEvent(requestInfoEvent);
+			requestInfo(MapObjectType.IMPROVEMENT, e.params.id);
 		}		
 						
 		private function cityClicked(e:ParamEvent) : void
@@ -380,11 +407,17 @@
 		{
 			trace("Game - infoArmy");
 			var army:Army = Army(perceptionManager.getEntity(e.params.id));
-			army.setArmyInfo(e.params);
+			army.setArmyInfo(e.params);	
 			
-			ArmyPanelController.INSTANCE.army = army;
-			ArmyPanelController.INSTANCE.setUnits();
-			ArmyPanelController.INSTANCE.showPanel();
+			var armyUI:ArmyUI = new ArmyUI();
+			
+			armyUI.setArmy(army);			
+			armyUI.showPanel();			
+			armyUI.closeButton.addEventListener(MouseEvent.CLICK, armyUICloseClick);
+			
+			main.addChild(armyUI);			
+			
+			armyUIList.push(armyUI);
 		}
 		
 		private function connectionInfoCity(e:ParamEvent) : void
@@ -404,7 +437,7 @@
 				initialPerception = false;
 			}
 		}		
-		
+				
 		private function connectionBattleInfo(e:ParamEvent) : void
 		{
 			trace("Game - battleInfo");
@@ -414,19 +447,18 @@
 			battle.id = battleInfo.battleId;
 			battle.createArmies(battleInfo.armies);
 			
-			BattleManager.INSTANCE.addBattle(battle);
+			BattleManager.INSTANCE.addBattle(battle);		
 			
-			BattlePanelController.INSTANCE.battle = battle;
-			BattlePanelController.INSTANCE.setArmies();
-			BattlePanelController.INSTANCE.showPanel();
+			main.battleUI.setBattle(battle);
+			main.battleUI.showPanel();
 		}
-		
+
 		private function connnectionBattleAddArmy(e:ParamEvent) : void
 		{
 			trace("Game - battleAddArmy");
 			var battleAddArmy:BattleAddArmy = BattleAddArmy(e.params);
 			var battle:Battle = BattleManager.INSTANCE.getBattle(battleAddArmy.battleId);
-			
+					
 		}
 		
 		private function connectionBattleDamage(e:ParamEvent) : void
@@ -460,9 +492,17 @@
 				{
 					trace("Could not find cityId: " + addClaim.cityId);
 				}									
-				
 			}
-			
+		}
+		
+		private function successAssignTask(e:ParamEvent) : void
+		{
+			trace("Game - successAssignTask");
+			if(lastPacket != null)
+			{
+				var assignTask:AssignTask = AssignTask(lastPacket);				
+				requestInfo(MapObjectType.CITY, assignTask.cityId);
+			}
 		}
 		
 		private function setTileStatus(tile:Tile) : void
@@ -478,6 +518,26 @@
 			else
 			{
 				tileStatus = TileNone;
+			}
+		}
+				
+		private function armyUICloseClick(e:MouseEvent) : void
+		{
+			var armyUI:ArmyUI = ArmyUI(e.target.parent);
+			
+			if(main.contains(armyUI))
+			{
+				armyUI.closeButton.removeEventListener(MouseEvent.CLICK, armyUICloseClick);								
+				main.removeChild(armyUI);
+				
+				for(var i:int = 0; i < armyUIList.length; i++)
+				{
+					if(armyUI == armyUIList[i])
+					{
+						armyUIList.splice(i, 1);					
+						break;
+					}
+				}				
 			}
 		}
 	}

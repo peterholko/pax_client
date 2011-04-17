@@ -7,6 +7,7 @@
 		public static const REMOVED:String = "removed";
 		public static const DESTROYED:String = "destroyed";	
 		public static const DAMAGED:String = "damaged";
+		public static const MODIFIED:String = "modified";
 		
 		public var unitId:int;
 		

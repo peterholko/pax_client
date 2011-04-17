@@ -121,6 +121,7 @@
 		
 		private function setBattle(mapObject:MapObject) : void
 		{
+			trace("PerceptionManager - setBattle");
 			battles[mapObject.id] = mapObject;
 			
 			Map.INSTANCE.addBattle(mapObject);

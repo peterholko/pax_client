@@ -27,6 +27,7 @@
 		public var type:int;	
 		
 		private var image:Bitmap;
+		private var fogOfWar:Sprite;
 		public var entities/*Entity*/:Array;		
 		
 		public static function GetTileName(type:int) : String
@@ -96,11 +97,25 @@
 			
 			image = new Bitmap(imageData);		
 			image.x = 0;
-			image.y = 0;
+			image.y = 0;				
+			
+			fogOfWar = new Sprite();	
+			fogOfWar.x = 0;
+			fogOfWar.y = 0;
+			fogOfWar.graphics.beginFill(0x000000, 0.50);
+			fogOfWar.graphics.drawRect(0,0, Tile.WIDTH, Tile.HEIGHT);
+			fogOfWar.graphics.endFill();			
 			
 			addChild(image);
+			addChild(fogOfWar);
+			
 			addEventListener(MouseEvent.CLICK, mouseClick);
 			addEventListener(MouseEvent.DOUBLE_CLICK, mouseDoubleClick);
+		}
+		
+		public function toggleFogOfWar(toggle:Boolean) : void
+		{
+			fogOfWar.visible = toggle;
 		}
 		
 		public function addEntity(entity:Entity) : void

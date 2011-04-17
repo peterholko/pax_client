@@ -17,17 +17,32 @@
 	
 	import CityImage;
 	import game.perception.PerceptionManager;
+	import game.Assignment;
+	import net.packet.InfoCity;
+	import game.Item;
+	import game.Population;
 
 	public class City extends Entity
 	{
 		public static var TYPE:int = Entity.CITY;
 		public static var onClick:String = "onCityClick";
 		public static var onDoubleClick:String = "onCityDoubleClick";
+		public static var TASK_IMPROVEMENT:int = 1;		
+		
+		public static var CASTE_SLAVES:int = 0;		
+		public static var CASTE_SOLDIERS:int = 1;
+		public static var CASTE_COMMONERS:int = 2;
+		public static var CASTE_NOBLES:int = 3;
+
+		public var cityName:String;
 
 		public var buildings:Array;
 		public var units:Array;
 		public var claims:Array;
 		public var improvements:Array;
+		public var assignments:Array;
+		public var items:Array;
+		public var populations:Array;
 
 		public var landQueue:Array;
 		public var seaQueue:Array;
@@ -41,6 +56,9 @@
 			units = new Array();
 			claims = new Array();
 			improvements = new Array();
+			assignments = new Array();
+			items = new Array();
+			populations = new Array();
 			
 			landQueue = new Array();
 			seaQueue = new Array();
@@ -83,26 +101,109 @@
 			Game.INSTANCE.dispatchEvent(pEvent);
 		}
 		
+		public static function getCasteName(casteType:int) : String
+		{
+			switch(casteType)
+			{
+				case CASTE_SLAVES:
+					return "Slaves";
+				case CASTE_SOLDIERS:
+					return "Soldiers";
+				case CASTE_COMMONERS:
+					return "Commoners";
+				case CASTE_NOBLES:
+					return "Nobles";
+			}
+			
+			return "Unknown";
+		}
+		
+		public static function getCasteId(casteName:String) : int
+		{
+			switch(casteName)
+			{
+				case "Slaves":
+					return CASTE_SLAVES;
+				case "Soldiers":
+					return CASTE_SOLDIERS;
+				case "Commoners":
+					return CASTE_COMMONERS;
+				case "Nobles":
+					return CASTE_NOBLES;
+			}
+			
+			return -1;			
+		}
+		
+		public function getCasteValue(casteType:int) : int
+		{
+			for(var i = 0; i < populations.length; i++)
+			{
+				var population:Population = Population(populations[i]);
+				trace("Population.caste: " + population.caste + " value: " + population.value);
+				if(population.caste == casteType)
+				{
+					return population.value;
+				}
+			}
+			
+			return 0;
+		}
+		
+		public function getTotalPop() : int
+		{
+			var total:int = 0;
+			
+			for(var i = 0; i < populations.length; i++)
+			{
+				var population:Population = Population(populations[i]);
+				total += population.value;				
+			}
+			
+			return total;
+		}	
+		
 		public function addClaim(claim:Claim) : void
 		{
 			claims.push(claim);
 		}
+		
+		public function getImprovement(improvementId:int) : Improvement
+		{
+			for(var i:int = 0; i < improvements.length; i++)
+			{
+				var improvement:Improvement = Improvement(improvements[i]);
+				
+				if(improvement.id == improvementId)
+					return improvement;
+			}
+			
+			return null;
+		}
 
-		public function setCityInfo(cityInfo:Object):void
+		public function setCityInfo(cityInfo:InfoCity):void
 		{
 			trace("City - setCityInfo");
+
+			cityName = cityInfo.name;
 
 			var buildingsInfo:Array = cityInfo.buildings;
 			var unitsInfo:Array = cityInfo.units;
 			var unitsQueueInfo:Array = cityInfo.unitsQueue;
 			var claimsInfo:Array = cityInfo.claims;
 			var improvementsInfo:Array = cityInfo.improvements;
+			var assignmentsInfo:Array = cityInfo.assignments;
+			var itemsInfo:Array = cityInfo.items;
+			var populationsInfo:Array = cityInfo.populations;
 
 			setBuildings(buildingsInfo);
 			setUnits(unitsInfo);
 			setUnitsQueue(unitsQueueInfo);
 			setClaims(claimsInfo);
 			setImprovements(improvementsInfo);
+			setAssignments(assignmentsInfo);
+			setItems(itemsInfo);
+			setPopulations(populationsInfo);
 		}
 
 		private function setBuildings(buildingsInfo:Array):void
@@ -187,6 +288,56 @@
 			{
 				var entity:Entity = PerceptionManager.INSTANCE.getEntity(improvementsInfo[i].id);								
 				improvements.push(Improvement(entity));				
+			}
+		}
+		
+		private function setAssignments(assignmentsInfo:Array) : void
+		{
+			assignments.length = 0;
+			
+			for(var i = 0; i < assignmentsInfo.length; i++)
+			{
+				var assignment:Assignment = new Assignment();
+				
+				assignment.id = assignmentsInfo[i].id;
+				assignment.caste = assignmentsInfo[i].caste;
+				assignment.amount = assignmentsInfo[i].amount;
+				assignment.taskId = assignmentsInfo[i].taskId;
+				assignment.taskType = assignmentsInfo[i].taskType;
+				
+				assignments.push(assignment);
+			}
+		}
+		
+		private function setItems(itemsInfo:Array) : void
+		{
+			items.length = 0;
+			
+			for(var i = 0; i < itemsInfo.length; i++)
+			{
+				var item:Item = new Item();
+				
+				item.id = itemsInfo[i].id;
+				item.entityId = itemsInfo[i].entityId;
+				item.type = itemsInfo[i].type;
+				item.value = itemsInfo[i].value;
+				
+				items.push(item);
+			}
+		}
+		
+		private function setPopulations(populationsInfo:Array) : void
+		{
+			populations.length = 0;
+			
+			for(var i = 0; i < populationsInfo.length; i++)
+			{
+				var population:Population = new Population();
+				population.cityId = populationsInfo[i].cityId;
+				population.caste = populationsInfo[i].caste;
+				population.value = populationsInfo[i].value;
+				
+				populations.push(population);
 			}
 		}
 

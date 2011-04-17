@@ -16,6 +16,24 @@
 		{
 		}
 
+		public function getEntities() : Array
+		{
+			var entities:Dictionary = PerceptionManager.INSTANCE.getEntities();
+			var playerEntities:Array = new Array();
+						
+			for (var entityId:Object in entities)
+			{		
+				var entity:Entity = entities[entityId];
+				
+				if(entity.playerId == playerId)
+				{
+					playerEntities.push(entity);					
+				}
+			}		
+			
+			return playerEntities;			
+		}
+
 		public function getClaim(claimTileIndex:int) : Claim
 		{
 			var cities:Array = getCities();

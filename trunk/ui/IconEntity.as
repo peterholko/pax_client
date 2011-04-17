@@ -12,6 +12,9 @@
 		private static var ACTIVATE:int = 1;		
 		
 		public var entity:Entity;
+		public var anchorX:int;
+		public var anchorY:int;
+		
 		protected var image:Bitmap = null;
 		
 		private var iconState:int = REST;		
@@ -56,18 +59,16 @@
 		public function setEntity(entity:Entity) : void
 		{
 			this.entity = entity;
-			
-			copyImage();
 		}
 		
-		private function copyImage() : void
+		public function copyImage(iconWidth:int, iconHeight:int) : void
 		{
 			var entityImage:Bitmap = entity.getImage();
 			var iconBitmapData:BitmapData = entityImage.bitmapData;	
 			
 			image = new Bitmap(iconBitmapData);
-			image.width = 34;
-			image.height = 34;
+			image.width = iconWidth + 2;
+			image.height = iconHeight + 2;
 			image.smoothing = true;
 			image.x = 1;
 			image.y = 1;

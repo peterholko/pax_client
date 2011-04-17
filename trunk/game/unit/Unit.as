@@ -1,21 +1,18 @@
 ﻿package game.unit
 {
 	import flash.display.Bitmap;
+	import flash.display.BitmapData;
 	import flash.display.MovieClip;
-	import flash.display.Sprite;
 	import flash.events.MouseEvent;
 	import flash.display.DisplayObjectContainer;
-	
-	import net.Connection;
-	
+		
 	import game.entity.Army;
 	import game.entity.City;
 	import game.entity.Entity;
+	import game.unit.events.UnitDamageEvent;
+	import game.unit.events.UnitEvent;
 	
-	import ui.panel.controller.ArmyPanelController;
-	import ui.panel.controller.CityPanelController;
-	
-	public class Unit extends Sprite
+	public class Unit
 	{
 		public static var LAND:int = 1;
 		public static var SEA:int = 2;
@@ -28,34 +25,14 @@
 		public var type:int;
 		public var size:int;
 		public var parentEntity:Entity;
-		public var image:MovieClip;
-				
-		private var iconContainer:MovieClip;
-		private var anchorX:int;
-		private var anchorY:int;
+		public var unitEventDispatcher:UnitEventDispatcher;
 		
 		public function Unit() : void
 		{
-		}
-		
-		public function initialize() : void
-		{
-			image = createImage(type);
-		
-			iconContainer = new IconContainer();
-			iconContainer.iconLayer.addChild(image);
-			iconContainer.stackSize.stackSizeTextfield.text = size;
-		
-			addChild(iconContainer);
-		}
-		
-		public function addDragDrop() : void
-		{
-			addEventListener(MouseEvent.MOUSE_DOWN, mouseDown);
-			addEventListener(MouseEvent.MOUSE_UP, mouseUp);			
+			unitEventDispatcher = new UnitEventDispatcher();
 		}
 				
-		public function setAnchorPosition(initialX:int, initialY:int) : void
+		/*public function setAnchorPosition(initialX:int, initialY:int) : void
 		{
 			anchorX = initialX;
 			anchorY = initialY;
@@ -71,13 +48,12 @@
 			
 			if (parentEntity.type == Entity.ARMY)
 			{
-				ArmyPanelController.INSTANCE.showPanel();
+				//ArmyPanelController.INSTANCE.showPanel();
 			}
 			else if (parentEntity.type == Entity.CITY)
 			{
-				CityPanelController.INSTANCE.showPanel();
+				//CityPanelController.INSTANCE.showPanel();
 			}
-			
 			
 			startDrag();
 		}
@@ -91,7 +67,7 @@
 			y = anchorY;
 			
 			//TODO Move into a seperate function
-			if (ArmyPanelController.INSTANCE.getUnitContainer() == dropTarget ||
+			/*if (ArmyPanelController.INSTANCE.getUnitContainer() == dropTarget ||
 				ArmyPanelController.INSTANCE.getUnitContainer().contains(dropTarget))
 			{
 				if (parentEntity.id != ArmyPanelController.INSTANCE.army.id)
@@ -124,22 +100,25 @@
 					
 					Connection.INSTANCE.dispatchEvent(transferUnitEvent);			
 				}				
-			}
-			
-		}	
+			}		
+		}*/	
 		
 		public function addDamage(damage:int) : void
 		{
 			var unitHp:int = UnitType.INSTANCE.getHp(type);		
 			var numKilled:int = damage / unitHp;
 			size -= numKilled;
-			iconContainer.stackSize.stackSizeTextfield.text = size;
+			
+			var unitDamageEvent:UnitDamageEvent = new UnitDamageEvent(UnitEvent.DAMAGED);			
+			unitDamageEvent.damage = damage;
+			unitDamageEvent.unitId = id;
+			unitDamageEvent.sourceId = -1;	
+			
+			unitEventDispatcher.dispatchEvent(unitDamageEvent);
 		}
 		
-		public static function createImage(unitType:int) : MovieClip
-		{
-			var imageData;
-			
+		public static function getImage(unitType:int) : BitmapData
+		{								
 			trace("Unit - getImage - unitType: " + unitType);
 			
 			switch(unitType)
