@@ -38,6 +38,7 @@
 		public static var BUILD_IMPROVEMENT:int = 100;		
 		public static var ADD_CLAIM:int = 125;		
 		public static var ASSIGN_TASK:int = 130;
+		public static var TRANSFER_ITEM:int = 150;
 		public static var BAD:int = 255;
 		
 		//Errors
@@ -105,15 +106,15 @@
 			socket.flush();
 		}
 		
-		public static function sendTransferUnit(socket:Socket, unitId:int, sourceId:int, sourceType:int, targetId:int, targetType:int) : void
+		public static function sendTransferUnit(socket:Socket, transferUnit:TransferUnit) : void
 		{
 			trace("Packet - sendTransferUnit");
 			socket.writeByte(TRANSFER_UNIT);
-			socket.writeInt(unitId);
-			socket.writeInt(sourceId);
-			socket.writeShort(sourceType);
-			socket.writeInt(targetId);
-			socket.writeShort(targetType);
+			socket.writeInt(transferUnit.unitId);
+			socket.writeInt(transferUnit.sourceId);
+			socket.writeShort(transferUnit.sourceType);
+			socket.writeInt(transferUnit.targetId);
+			socket.writeShort(transferUnit.targetType);
 			socket.flush();
 		}
 		
@@ -159,6 +160,18 @@
 			socket.writeInt(assignTask.amount);
 			socket.writeInt(assignTask.taskId);
 			socket.writeShort(assignTask.taskType);
+			socket.flush();
+		}
+		
+		public static function sendTransferItem(socket:Socket, transferItem:TransferItem) : void
+		{
+			trace("Packet - sendTransferItem");
+			socket.writeByte(TRANSFER_ITEM);
+			socket.writeInt(transferItem.itemId);
+			socket.writeInt(transferItem.sourceId);
+			socket.writeShort(transferItem.sourceType);
+			socket.writeInt(transferItem.targetId);
+			socket.writeShort(transferItem.targetType);
 			socket.flush();
 		}
 		
@@ -303,8 +316,9 @@
 				var item:ItemPacket = new ItemPacket();
 				item.id = byteArray.readInt();
 				item.entityId = byteArray.readInt();
+				item.playerId = byteArray.readInt();
 				item.type = byteArray.readShort();
-				item.value = byteArray.readInt();
+				item.value = byteArray.readInt();						
 				
 				army.items.push(item);
 			}
@@ -411,9 +425,9 @@
 										  
 				assignmentList.push(assignment);										  
 			}					
-			
+						
 			var numItems:int = byteArray.readUnsignedShort();
-			
+			trace("Packet - numItems: " + numItems);
 			for(i = 0; i < numItems; i++)
 			{
 				var item:ItemPacket = new ItemPacket();

@@ -313,6 +313,8 @@
 		{
 			items.length = 0;
 			
+			trace("City - itemsInfo.length: " + itemsInfo.length);
+			
 			for(var i = 0; i < itemsInfo.length; i++)
 			{
 				var item:Item = new Item();

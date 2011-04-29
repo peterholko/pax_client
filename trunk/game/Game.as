@@ -24,7 +24,10 @@
 	import game.map.MapObjectType;
 	import game.map.MapBattle;
 	import game.map.Tile;
-	
+
+	import ui.ArmyUI;
+	import ui.CityUI;
+
 	import net.Connection;
 	import net.packet.InfoKingdom;
 	import net.packet.InfoTile;
@@ -34,9 +37,9 @@
 	import net.packet.AddClaim;
 	import net.packet.BuildImprovement;
 	import net.packet.Success;	
-	import net.packet.AssignTask;
-
-	import ui.ArmyUI;
+	import net.packet.AssignTask;	
+	import net.packet.TransferUnit;
+	import net.packet.TransferItem;
 		
 	public class Game extends Sprite
 	{				
@@ -50,6 +53,8 @@
 		//Outgoing events
 		public static var buildImprovementEvent:String = "buildImprovementEvent";		
 		public static var assignTaskEvent:String = "assignTaskEvent";
+		public static var transferUnitEvent:String = "transferUnitEvent";
+		public static var transferItemEvent:String = "transferItemEvent";
 		
 		//States
 		public static var TileNone:int = 0;
@@ -112,6 +117,8 @@
 			
 			addEventListener(buildImprovementEvent, processBuildImprovement);
 			addEventListener(assignTaskEvent, processAssignTask);
+			addEventListener(transferUnitEvent, processTransferUnit);
+			addEventListener(transferItemEvent, processTransferItem);
 		}						
 				
 		public function addPerceptionData(perception:Perception) : void
@@ -196,6 +203,20 @@
 				trace("Stage Click - gameX: " + gameX + " gameY: " + gameY + " action: " + action);
 				
 				processMove(gameX, gameY);
+			}
+		}
+						
+		public function setArmyUIDisplayOrder(obj:DisplayObject) : void
+		{
+			for(var i:int = 0; i < armyUIList.length; i++)
+			{
+				var armyUI:ArmyUI = ArmyUI(armyUIList[i]);
+				
+				if(armyUI.contains(obj))
+				{
+					armyUI.setTopDisplayOrder();
+					break;
+				}
 			}
 		}
 		
@@ -286,6 +307,118 @@
 			sendAssignTask.params = assignTask;
 			
 			Connection.INSTANCE.dispatchEvent(sendAssignTask);
+		}
+		
+		private function processTransferUnit(e:ParamEvent) : void
+		{
+			trace("Game - processTransferUnit");		
+			var sourceUnitId:int = e.params.sourceUnitId;
+			var sourceType:int = e.params.sourceType;
+			var targetUI:DisplayObject = e.params.targetUI;
+			var transferUnit:TransferUnit = new TransferUnit();
+			var sendTransferUnit:ParamEvent = new ParamEvent(Connection.onSendTransferUnit);
+			
+			if(sourceType == Army.TYPE)
+			{
+				var sourceArmyUI:ArmyUI = e.params.sourceUI;
+						
+				if(armyUIUnitLayerContainsDropTarget(sourceArmyUI, targetUI))
+				{
+					var targetArmyId:int = getArmyUIArmyId(targetUI);
+										
+					transferUnit.unitId = sourceUnitId;
+					transferUnit.sourceId = sourceArmyUI.army.id;
+					transferUnit.sourceType = Army.TYPE;
+					transferUnit.targetId = targetArmyId;
+					transferUnit.targetType = Army.TYPE;
+										
+					sendTransferUnit.params = transferUnit;					
+					Connection.INSTANCE.dispatchEvent(sendTransferUnit);
+				}
+				else if(main.cityUI.contains(targetUI))
+				{					
+					transferUnit.unitId = sourceUnitId;
+					transferUnit.sourceId = sourceArmyUI.army.id;
+					transferUnit.sourceType = Army.TYPE;
+					transferUnit.targetId = main.cityUI.getCityId();
+					transferUnit.targetType = City.TYPE;				
+					
+					sendTransferUnit.params = transferUnit;					
+					Connection.INSTANCE.dispatchEvent(sendTransferUnit);					
+				}
+			}			
+			else if(sourceType == City.TYPE)
+			{
+				if(armyUIUnitLayerContainsDropTarget(main.cityUI, targetUI))
+				{
+					var armyUI:ArmyUI = ArmyUI(targetUI);
+					
+					transferUnit.unitId = sourceUnitId;
+					transferUnit.sourceId = main.cityUI.getCityId();
+					transferUnit.sourceType = City.TYPE;
+					transferUnit.targetId = armyUI.army.id;
+					transferUnit.targetType = Army.TYPE;	
+					
+					sendTransferUnit.params = transferUnit;					
+					Connection.INSTANCE.dispatchEvent(sendTransferUnit);									
+				}
+			}			
+		}
+		
+		private function processTransferItem(e:ParamEvent) : void
+		{
+			trace("Game - processTransferUnit");		
+			var itemId:int = e.params.itemId;
+			var sourceType:int = e.params.sourceType;
+			var targetUI:DisplayObject = e.params.targetUI;
+			var transferItem:TransferItem = new TransferItem;
+			var sendTransferItem:ParamEvent = new ParamEvent(Connection.onSendTransferItem);			
+			
+			if(sourceType == Army.TYPE)
+			{
+				var sourceArmyUI:ArmyUI = e.params.sourceUI;
+				
+				if(armyUIItemContainsDropTarget(sourceArmyUI, targetUI))
+				{
+					var targetArmyId:int = getArmyUIArmyId(targetUI);
+
+					transferItem.itemId = itemId;
+					transferItem.sourceId = sourceArmyUI.army.id;
+					transferItem.sourceType = Army.TYPE;
+					transferItem.targetId = targetArmyId;
+					transferItem.targetType = Army.TYPE;
+										
+					sendTransferItem.params = transferItem;					
+					Connection.INSTANCE.dispatchEvent(sendTransferItem);
+				}
+				else if(main.cityUI.contains(targetUI))				
+				{
+					transferItem.itemId = itemId;
+					transferItem.sourceId = sourceArmyUI.army.id;
+					transferItem.sourceType = Army.TYPE;
+					transferItem.targetId = main.cityUI.getCityId();
+					transferItem.targetType = City.TYPE;
+										
+					sendTransferItem.params = transferItem;					
+					Connection.INSTANCE.dispatchEvent(sendTransferItem);					
+				}
+			}
+			else if(sourceType == City.TYPE) 
+			{
+				if(armyUIItemContainsDropTarget(main.cityUI, targetUI))
+				{
+					var targetArmyId:int = getArmyUIArmyId(targetUI);
+					
+					transferItem.itemId = itemId;
+					transferItem.sourceId = main.cityUI.getCityId();
+					transferItem.sourceType = City.TYPE;
+					transferItem.targetId = targetArmyId;
+					transferItem.targetType = Army.TYPE;					
+				
+					sendTransferItem.params = transferItem;					
+					Connection.INSTANCE.dispatchEvent(sendTransferItem);									
+				}				
+			}
 		}
 				
 		private function tileClicked(e:ParamEvent) : void
@@ -409,15 +542,24 @@
 			var army:Army = Army(perceptionManager.getEntity(e.params.id));
 			army.setArmyInfo(e.params);	
 			
-			var armyUI:ArmyUI = new ArmyUI();
+			//Check if armyUI is already open due to transfer of unit or item
+			var armyUI:ArmyUI = getArmyUIById(army.id);
 			
-			armyUI.setArmy(army);			
-			armyUI.showPanel();			
-			armyUI.closeButton.addEventListener(MouseEvent.CLICK, armyUICloseClick);
+			if(armyUI != null)
+			{			
+				armyUI.setArmy(army);								
+			}
+			else
+			{
+				armyUI = new ArmyUI();
+				main.addChild(armyUI);		
 			
-			main.addChild(armyUI);			
+				armyUI.setArmy(army);			
+				armyUI.showPanel();			
+				armyUI.closeButton.addEventListener(MouseEvent.CLICK, armyUICloseClick);	
 			
-			armyUIList.push(armyUI);
+				armyUIList.push(armyUI);
+			}
 		}
 		
 		private function connectionInfoCity(e:ParamEvent) : void
@@ -520,6 +662,76 @@
 				tileStatus = TileNone;
 			}
 		}
+		
+		private function armyUIUnitLayerContainsDropTarget(obj:DisplayObject, dropTargetObj:DisplayObject) : Boolean
+		{
+			if(obj != null && dropTargetObj != null)
+			{
+				for(var i:int = 0; i < armyUIList.length; i++)
+				{
+					var armyUI:ArmyUI = ArmyUI(armyUIList[i]);
+					
+					//ArmyUI does not already contain dragging object
+					if(!armyUI.contains(obj))
+					{						
+						if(armyUI.unitLayer.contains(dropTargetObj))
+						{		
+							return true;
+						}
+					}
+				}			
+			}
+			return false;
+		}
+		
+		//TODO ArmyUI functions shouldn't be in Game...
+		public function armyUIItemContainsDropTarget(obj:DisplayObject, dropTargetObj:DisplayObject) : Boolean
+		{
+			if(obj != null && dropTargetObj != null)
+			{			
+				for(var i:int = 0; i < armyUIList.length; i++)
+				{
+					var armyUI:ArmyUI = ArmyUI(armyUIList[i]);
+					
+					//ArmyUI does not already contain dragging object
+					if(!armyUI.contains(obj))
+					{							
+						if(armyUI.inventoryTab.contains(dropTargetObj))
+						{
+							return true;
+						}
+					}							
+				}
+			}
+			
+			return false;
+		}		
+		
+		private function getArmyUIById(id:int) : ArmyUI
+		{
+			for(var i:int = 0; i < armyUIList.length; i++)
+			{
+				var armyUI:ArmyUI = ArmyUI(armyUIList[i]);
+				
+				if(armyUI.army.id == id)
+					return armyUI;
+			}
+			
+			return null;
+		}
+		
+		private function getArmyUIArmyId(obj:DisplayObject) : int
+		{
+			for(var i:int = 0; i < armyUIList.length; i++)
+			{
+				var armyUI:ArmyUI = ArmyUI(armyUIList[i]);
+				
+				if(armyUI.contains(obj))
+					return armyUI.army.id;
+			}
+			
+			return -1;
+		}		
 				
 		private function armyUICloseClick(e:MouseEvent) : void
 		{

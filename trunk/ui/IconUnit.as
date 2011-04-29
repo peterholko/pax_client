@@ -5,8 +5,10 @@
 	import flash.display.BitmapData;		
 	import flash.events.MouseEvent;
 	
+	import game.Game;
 	import game.unit.Unit;
 	import game.unit.events.UnitEvent;
+	import game.entity.Army;
 		
 	public class IconUnit extends MovieClip 
 	{
@@ -23,6 +25,9 @@
 		
 		public function IconUnit()
 		{	
+			this.mouseChildren = false;
+			stackSize.mouseChildren = false;
+			stackSize.mouseEnabled = false;
 		}
 				
 		public function setUnit(unit:Unit) : void
@@ -42,8 +47,9 @@
 		
 		public function updateStackSize() : void
 		{
-			stackSize.stackSizeNumber.text = unit.size.toString();
+			stackSize.sizeText.text = UtilUI.FormatNum(unit.size);
 		}
+				
 		
 		/*				var fullSizeImage:BitmapData = createImage(type);
 				var croppedImage:BitmapData = new BitmapData(34,34);

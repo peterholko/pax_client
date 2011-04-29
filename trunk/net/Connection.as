@@ -47,6 +47,7 @@
 		public static var onSendAddClaim:String = "onSendAddClaim";
 		public static var onSendBuildImprovement:String = "onSendBuildImprovement";
 		public static var onSendAssignTask:String = "onSendAssignTask";
+		public static var onSendTransferItem:String = "onSendTransferItem";
 		
 		public static var onSuccessAddClaim:String = "onSuccessAddClaim";
 		public static var onSuccessAssignTask:String = "onSuccessAssignTask";
@@ -112,6 +113,7 @@
 			addEventListener(Connection.onSendAddClaim, sendAddClaim);
 			addEventListener(Connection.onSendBuildImprovement, sendBuildImprovement);
 			addEventListener(Connection.onSendAssignTask, sendAssignTask);
+			addEventListener(onSendTransferItem, sendTransferItem);
 			
 		}
 		
@@ -308,7 +310,8 @@
 		private function sendTransferUnit(e:ParamEvent) : void
 		{
 			trace("Connection - sendTransferUnit");
-			Packet.sendTransferUnit(socket, e.params.unitId, e.params.sourceId, e.params.sourceType, e.params.targetId, e.params.targetType);
+			var transferUnit:TransferUnit = e.params;
+			Packet.sendTransferUnit(socket, transferUnit);
 		}	
 		
 		private function sendBattleTarget(e:ParamEvent) : void
@@ -337,6 +340,13 @@
 			trace("Connection - sendAssignTask");
 			var assignTask:AssignTask = e.params;
 			Packet.sendAssignTask(socket, assignTask);
+		}
+		
+		private function sendTransferItem(e:ParamEvent) : void
+		{
+			trace("Connection - sendTransferItem");
+			var transferItem:TransferItem = e.params;
+			Packet.sendTransferItem(socket, transferItem);			
 		}
 	}
 }

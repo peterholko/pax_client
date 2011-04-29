@@ -61,6 +61,10 @@
 		{
 			improvementIcons = new Array();
 			
+			this.addEventListener(MouseEvent.CLICK, mouseClick);
+			this.addEventListener(MouseEvent.MOUSE_DOWN, mouseDown);
+			this.addEventListener(MouseEvent.MOUSE_UP, mouseUp);	
+			
 			closeButton.addEventListener(MouseEvent.CLICK, closeButtonClick);			
 		}
 		
@@ -90,6 +94,8 @@
 						
 		public function showPanel() : void
 		{			
+			this.parent.setChildIndex(this, this.parent.numChildren - 1);	
+		
 			if(this.visible)
 			{
 				previousPanel.hidePanel();
@@ -108,6 +114,11 @@
 			cityNameText.text = city.cityName;
 			empireKingdomNameText.text = Game.INSTANCE.kingdom.name;			
 		}		
+		
+		public function getCityId() : int
+		{
+			return city.id;
+		}
 		
 		private function throneTextClick(e:MouseEvent) : void
 		{			
@@ -254,6 +265,26 @@
 			populationUI.hidePanel();
 			throneUI.hidePanel();
 		}
+		
+		private function mouseClick(e:MouseEvent) : void
+		{
+			this.parent.setChildIndex(this, this.parent.numChildren - 1);	
+			e.stopImmediatePropagation();
+		}
+		
+		private function mouseDown(e:MouseEvent) : void
+		{	
+			this.parent.setChildIndex(this, this.parent.numChildren - 1);	
+			startDrag();			
+			e.stopImmediatePropagation();
+		}		
+		
+		private function mouseUp(e:MouseEvent) : void
+		{
+			trace("MouseUp: " + parent);			
+			stopDrag();
+			e.stopImmediatePropagation();
+		}				
 	}
 	
 }
