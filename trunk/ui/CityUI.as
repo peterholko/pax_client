@@ -12,6 +12,9 @@
 	import game.entity.Improvement;
 	import game.Game;
 	import game.map.MapObjectType;
+	import game.Building;
+	import game.QueueEntry;
+	import game.Assignment;
 		
 	public class CityUI extends MovieClip 
 	{		
@@ -22,10 +25,17 @@
 		public var INFRASTRUCTURE_INFO_Y_TOP:int = 160;
 		public var INFRASTRUCTURE_INFO_Y_BOTTOM:int = 351;	
 		
-		public var IMPROVEMENTS_START_X:int = 3;
-		public var IMPROVEMENTS_START_Y:int = 163;			
+		public var BUILDINGS_START_X:int = 3;
+		public var BUILDINGS_START_Y:int = 145;
 		
-		public var closeButton:MovieClip;					
+		public var IMPROVEMENTS_START_X:int = 3;
+		public var IMPROVEMENTS_START_Y:int = 163;		
+		
+		public var BUILDINGS_INFO:String = "buildings";
+		public var IMPROVEMENTS_INFO:String = "improvements";
+		public var INFRASTRUCTURE_INFO:String = "infrastructure";
+				
+		public var closeButton:MovieClip;				
 			
 		public var inventoryUI:InventoryUI;
 		public var productionUI:ProductionUI;
@@ -45,7 +55,7 @@
 		public var improvementsInfo:MovieClip;
 		public var infrastructureInfo:MovieClip;
 		
-		public var queueColumn:QueueColumn;
+		public var queueMarketUI:QueueMarketUI;
 	
 		public var totalPopText:TLFTextField;
 		public var cityNameText:TLFTextField;
@@ -54,12 +64,16 @@
 		private var city:City;
 		
 		private var improvementIcons:Array;
+		private var buildingsIcons:Array;
+		
 		private var previousPanel:Panel = null;
-		private var activatedPanel:Panel = null;
+		private var activatedPanel:Panel = null;		
+		private var activatedInfoColumn:String = null;		
 	
 		public function CityUI() 
-		{
+		{			
 			improvementIcons = new Array();
+			buildingsIcons = new Array();			
 			
 			this.addEventListener(MouseEvent.CLICK, mouseClick);
 			this.addEventListener(MouseEvent.MOUSE_DOWN, mouseDown);
@@ -87,9 +101,18 @@
 		public function setCity(city:City) : void
 		{
 			this.city = city;
+			
 			inventoryUI.city = city;
 			inventoryUI.cityUI = this;
+			
+			trace(populationUI);
 			populationUI.city = city;
+			populationUI.cityUI = this;
+						
+			productionUI.city = city;
+			productionUI.cityUI = this;
+			
+			queueMarketUI.city = city;
 		}
 						
 		public function showPanel() : void
@@ -100,6 +123,7 @@
 			{
 				previousPanel.hidePanel();
 				activatedPanel.showPanel();
+				showActivatedInfoPanel();								
 			}
 			else
 			{
@@ -108,6 +132,8 @@
 				previousPanel = throneUI;
 				activatedPanel = throneUI;
 				throneUI.showPanel();
+				activatedInfoColumn = BUILDINGS_INFO;
+				showActivatedInfoPanel();
 			}																					
 		
 			totalPopText.text = UtilUI.FormatNum(city.getTotalPop());
@@ -118,6 +144,53 @@
 		public function getCityId() : int
 		{
 			return city.id;
+		}
+		
+		public function checkPopulationDropTarget(popDropTarget:DisplayObject, caste:int) : void
+		{
+			for(var i:int = 0; i < buildingsIcons.length; i++)
+			{
+				var iconBuilding:IconBuilding = IconBuilding(buildingsIcons[i]);
+				
+				if(iconBuilding.contains(popDropTarget))
+				{
+					//showAssignPopulation(iconBuilding.building, caste);					
+					break;
+				}
+			}
+			
+			for(var i:int = 0; i < improvementIcons.length; i++)
+			{
+				var iconEntity:IconEntity = IconEntity(improvementIcons[i]);
+				
+				trace("popDropTarget: " + popDropTarget);
+				if(iconEntity.contains(popDropTarget))
+				{
+					//assignTaskImprovement(Improvement(iconEntity.entity), caste);
+					break;
+				}
+			}
+		}
+				
+		private function assignTaskBuilding(building:Building, caste:int): void
+		{
+			var assignment:Assignment = new Assignment()
+			
+			assignment.cityId = city.id;
+			assignment.caste = caste;
+			//assignment.amount = amount;
+			assignment.taskId = building.id;
+			assignment.taskType = Assignment.TASK_CONSTRUCTION;
+		
+			var pEvent:ParamEvent = new ParamEvent(Game.assignTaskEvent);
+			pEvent.params = assignment;
+				
+			Game.INSTANCE.dispatchEvent(pEvent);						
+		}
+		
+		private function assignTaskImprovement(improvement:Improvement, caste:int, amount:int) : void
+		{
+			
 		}
 		
 		private function throneTextClick(e:MouseEvent) : void
@@ -150,8 +223,10 @@
 		
 		private function productionTextClick(e:MouseEvent) : void
 		{
-			activatedPanel.hidePanel();		
-			productionUI.showPanel();
+			previousPanel = activatedPanel;										
+			activatedPanel = productionUI;
+						
+			Game.INSTANCE.requestInfo(MapObjectType.CITY, city.id);
 		}
 		
 		private function inventoryTextClick(e:MouseEvent) : void
@@ -167,6 +242,10 @@
 			clearInfoColumn();
 			bottomImprovementsInfo();
 			bottomInfrastructureInfo();
+			
+			//Setup building icons
+			setBuildingIcons();
+			activatedInfoColumn = BUILDINGS_INFO;
 		}
 		
 		private function improvementsInfoClick(e:MouseEvent) : void
@@ -178,6 +257,7 @@
 			
 			//Setup improvement icons
 			setImprovementIcons();
+			activatedInfoColumn = IMPROVEMENTS_INFO;
 		}
 		
 		private function infrastructureInfoClick(e:MouseEvent) : void
@@ -185,6 +265,8 @@
 			clearInfoColumn();
 			topImprovementsInfo();
 			topInfrastructureInfo();
+			
+			activatedInfoColumn = INFRASTRUCTURE_INFO;
 		}		
 		
 		private function setImprovementIcons() : void
@@ -194,9 +276,7 @@
 				var improvement:Improvement = Improvement(city.improvements[i]);								
 				var iconEntity:IconEntity = new IconEntity();
 				iconEntity.setEntity(improvement);
-				iconEntity.copyImage(32, 32);
-				//iconEntity.width = 48;
-				//iconEntity.height = 48;
+				iconEntity.copyImage(36, 36);
 				iconEntity.x = IMPROVEMENTS_START_X + ICON_SPACER + i * (iconEntity.width + ICON_SPACER);
 				iconEntity.y = IMPROVEMENTS_START_Y;
 				iconEntity.anchorX = iconEntity.x;
@@ -207,10 +287,28 @@
 				improvement.icon = iconEntity;
 				improvementIcons.push(iconEntity);
 				
-				this.addChild(iconEntity);
+				addChild(iconEntity);
 			}			
 		}	
 		
+		private function setBuildingIcons() : void
+		{
+			for(var i:int = 0; i < city.buildings.length; i++)
+			{
+				var building:Building = Building(city.buildings[i]);
+				var iconBuilding:IconBuilding = new IconBuilding();
+				iconBuilding.setBuilding(building)
+				iconBuilding.x = BUILDINGS_START_X + ICON_SPACER + i * (iconBuilding.width + ICON_SPACER);
+				iconBuilding.y = BUILDINGS_START_Y;
+				iconBuilding.anchorX = iconBuilding.x;
+				iconBuilding.anchorY = iconBuilding.y;		
+				
+				buildingsIcons.push(iconBuilding);
+				
+				addChild(iconBuilding);
+			}
+		}
+						
 		private function removeImprovementIcons():void
 		{
 			if(improvementIcons != null)
@@ -225,10 +323,24 @@
 			}
 		}			
 		
+		private function removeBuildingIcons() : void
+		{
+			if(buildingsIcons != null)
+			{
+				for (var i:int = 0; i < buildingsIcons.length; i++)
+				{					
+					if(this.contains(buildingsIcons[i]))
+						this.removeChild(buildingsIcons[i]);
+				}
+	
+				buildingsIcons.length = 0;
+			}
+		}				
 		
 		private function clearInfoColumn() : void
 		{
 			removeImprovementIcons();
+			removeBuildingIcons();
 		}
 		
 		private function topImprovementsInfo() : void
@@ -250,6 +362,32 @@
 		{
 			infrastructureInfo.y = INFRASTRUCTURE_INFO_Y_BOTTOM;
 		}			
+		
+		private function showActivatedInfoPanel() : void
+		{
+			switch(activatedInfoColumn)
+			{
+				case BUILDINGS_INFO:
+					clearInfoColumn();
+					bottomImprovementsInfo();
+					bottomInfrastructureInfo();
+					
+					//Setup building icons
+					setBuildingIcons();
+					activatedInfoColumn = BUILDINGS_INFO;
+					break;
+				case INFRASTRUCTURE_INFO:
+					//Handle UI navigation
+					clearInfoColumn();
+					topImprovementsInfo();
+					bottomInfrastructureInfo();
+					
+					//Setup improvement icons
+					setImprovementIcons();
+					activatedInfoColumn = IMPROVEMENTS_INFO;		
+					break;
+			}
+		}
 		
 		private function closeButtonClick(e:MouseEvent) : void
 		{

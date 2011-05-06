@@ -40,6 +40,7 @@
 	import net.packet.AssignTask;	
 	import net.packet.TransferUnit;
 	import net.packet.TransferItem;
+	import net.packet.CityQueueBuilding;
 		
 	public class Game extends Sprite
 	{				
@@ -55,6 +56,7 @@
 		public static var assignTaskEvent:String = "assignTaskEvent";
 		public static var transferUnitEvent:String = "transferUnitEvent";
 		public static var transferItemEvent:String = "transferItemEvent";
+		public static var cityQueueBuildingEvent:String = "cityQueueBuildingEvent";
 		
 		//States
 		public static var TileNone:int = 0;
@@ -119,6 +121,7 @@
 			addEventListener(assignTaskEvent, processAssignTask);
 			addEventListener(transferUnitEvent, processTransferUnit);
 			addEventListener(transferItemEvent, processTransferItem);
+			addEventListener(cityQueueBuildingEvent, processCityQueueBuilding);
 		}						
 				
 		public function addPerceptionData(perception:Perception) : void
@@ -296,7 +299,8 @@
 			var assignment:Assignment = Assignment(e.params);
 			
 			assignTask.cityId = assignment.cityId;
-			assignTask.populationId = assignment.caste;
+			assignTask.caste = assignment.caste;
+			assignTask.race = assignment.race;
 			assignTask.amount = assignment.amount;
 			assignTask.taskId = assignment.taskId;
 			assignTask.taskType = assignment.taskType;
@@ -419,6 +423,19 @@
 					Connection.INSTANCE.dispatchEvent(sendTransferItem);									
 				}				
 			}
+		}
+		
+		private function processCityQueueBuilding(e:ParamEvent) : void
+		{
+			var cityQueueBuilding:CityQueueBuilding = new CityQueueBuilding();
+			cityQueueBuilding.buildingId = e.params.buildingId;
+			cityQueueBuilding.cityId = e.params.cityId; 
+			cityQueueBuilding.buildingType = e.params.buildingType; 
+			
+			var sendCityQueueBuilding:ParamEvent = new ParamEvent(Connection.onSendCityQueueBuilding);			
+			sendCityQueueBuilding.params = cityQueueBuilding;
+			
+			Connection.INSTANCE.dispatchEvent(sendCityQueueBuilding);
 		}
 				
 		private function tileClicked(e:ParamEvent) : void

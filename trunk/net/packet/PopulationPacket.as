@@ -6,6 +6,7 @@
 	{
 		public var cityId:int;
 		public var caste:int;
+		public var race:int;
 		public var value:Number;
 		
 		public function PopulationPacket() 

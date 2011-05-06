@@ -23,7 +23,7 @@
 			
 			switch(type)
 			{
-				case Item.PLANTS:
+				case PLANTS:
 					return new PlantImage;
 			}
 			

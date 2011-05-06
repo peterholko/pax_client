@@ -53,7 +53,7 @@
 				var item:Item = Item(city.items[i]);
 				var iconItem:IconItem = new IconItem();
 				iconItem.setItem(item);
-				iconItem.x = ICON_X_START + ICON_X_SPACER + i * (iconItem.width + ICON_X_SPACER);
+				iconItem.x = ICON_X_START + i * (iconItem.width + ICON_X_SPACER);
 				iconItem.y = ICON_Y_START;
 				iconItem.anchorX = iconItem.x;
 				iconItem.anchorY = iconItem.y;					
@@ -87,7 +87,7 @@
 			
 			trace("iconItem.dropTarget: " + iconItem.dropTarget);
 			
-			if(cityUI.queueColumn.contains(iconItem.dropTarget))
+			if(cityUI.queueMarketUI.contains(iconItem.dropTarget))
 			{
 				trace("Create market order");
 			}

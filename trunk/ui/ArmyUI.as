@@ -24,7 +24,7 @@
 		public static var COMMAND_TAB:int = 0;
 		public static var INVENTORY_TAB:int = 1;
 		
-		public static var UNIT_SPACER_X:int = 3;
+		public static var UNIT_SPACER_X:int = 4;
 		
 		public var army:Army;
 		
@@ -89,9 +89,7 @@
 			for each (var unit:Unit in army.units)
 			{				
 				var iconUnit:IconUnit = new IconUnit();
-				iconUnit.setUnit(unit);
-				iconUnit.width = 36;
-				iconUnit.height = 36;				
+				iconUnit.setUnit(unit);		
 				iconUnit.x = numUnits * (iconUnit.width + UNIT_SPACER_X);
 				iconUnit.y = 0				
 				//iconUnit.addEventListener(MouseEvent.CLICK, unitClick);

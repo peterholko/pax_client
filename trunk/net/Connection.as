@@ -42,6 +42,7 @@
 		public static var onSendAttackTarget:String = "onSendAttackTarget";
 		public static var onSendRequestInfo:String = "onSendRequestInfo";
 		public static var onSendCityQueueUnit:String = "onSendCityQueueUnit";
+		public static var onSendCityQueueBuilding:String = "onSendCityQueueBuilding";
 		public static var onSendTransferUnit:String = "onSendTransferUnit";
 		public static var onSendBattleTarget:String = "onSendBattleTarget";
 		public static var onSendAddClaim:String = "onSendAddClaim";
@@ -104,15 +105,16 @@
 				
 		private function addEventListeners() : void
 		{
-			addEventListener(Connection.onSendMoveArmy, sendMoveArmy);
-			addEventListener(Connection.onSendAttackTarget, sendAttackTarget);
-			addEventListener(Connection.onSendRequestInfo, sendRequestInfo);
-			addEventListener(Connection.onSendCityQueueUnit, sendCityQueueUnit);
-			addEventListener(Connection.onSendTransferUnit, sendTransferUnit);
-			addEventListener(Connection.onSendBattleTarget, sendBattleTarget);
-			addEventListener(Connection.onSendAddClaim, sendAddClaim);
-			addEventListener(Connection.onSendBuildImprovement, sendBuildImprovement);
-			addEventListener(Connection.onSendAssignTask, sendAssignTask);
+			addEventListener(onSendMoveArmy, sendMoveArmy);
+			addEventListener(onSendAttackTarget, sendAttackTarget);
+			addEventListener(onSendRequestInfo, sendRequestInfo);
+			addEventListener(onSendCityQueueUnit, sendCityQueueUnit);
+			addEventListener(onSendCityQueueBuilding, sendCityQueueBuilding);
+			addEventListener(onSendTransferUnit, sendTransferUnit);
+			addEventListener(onSendBattleTarget, sendBattleTarget);
+			addEventListener(onSendAddClaim, sendAddClaim);
+			addEventListener(onSendBuildImprovement, sendBuildImprovement);
+			addEventListener(onSendAssignTask, sendAssignTask);
 			addEventListener(onSendTransferItem, sendTransferItem);
 			
 		}
@@ -306,6 +308,13 @@
 			trace("Connection - sendCityQueueUnit");
 			Packet.sendCityQueueUnit(socket, e.params.cityId, e.params.unitType, e.params.unitSize);
 		}
+		
+		private function sendCityQueueBuilding(e:ParamEvent) : void
+		{
+			trace("Connection - sendCityQueueUnit");
+			var cityQueueBuilding:CityQueueBuilding = e.params;
+			Packet.sendCityQueueBuilding(socket, cityQueueBuilding);
+		}		
 		
 		private function sendTransferUnit(e:ParamEvent) : void
 		{

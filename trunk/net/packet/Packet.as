@@ -26,6 +26,7 @@
 		public static var INFO_UNIT_QUEUE:int = 55;
 		public static var INFO_GENERIC_ARMY:int = 56;
 		public static var INFO_GENERIC_CITY:int = 57;
+		public static var CITY_QUEUE_BUILDING:int = 59;
 		public static var CITY_QUEUE_UNIT:int = 60;
 		public static var TRANSFER_UNIT:int = 61;
 		public static var BATTLE_INFO:int = 70;
@@ -106,6 +107,16 @@
 			socket.flush();
 		}
 		
+		public static function sendCityQueueBuilding(socket:Socket, cityQueueBuilding:CityQueueBuilding) : void
+		{
+			trace("Packet - sendCityQueueBuilding");
+			socket.writeByte(CITY_QUEUE_BUILDING);
+			socket.writeInt(cityQueueBuilding.buildingId);
+			socket.writeInt(cityQueueBuilding.cityId);
+			socket.writeShort(cityQueueBuilding.buildingType);
+			socket.flush();
+		}
+		
 		public static function sendTransferUnit(socket:Socket, transferUnit:TransferUnit) : void
 		{
 			trace("Packet - sendTransferUnit");
@@ -156,7 +167,8 @@
 			trace("Packet - sendAssignTask");
 			socket.writeByte(ASSIGN_TASK);
 			socket.writeInt(assignTask.cityId);
-			socket.writeInt(assignTask.populationId);
+			socket.writeByte(assignTask.caste);
+			socket.writeByte(assignTask.race);
 			socket.writeInt(assignTask.amount);
 			socket.writeInt(assignTask.taskId);
 			socket.writeShort(assignTask.taskType);
@@ -349,6 +361,7 @@
 			for (i = 0; i < numBuildings; i++)
 			{	
 				var buildingInfo:Object = { id: byteArray.readInt(),
+											hp: byteArray.readInt(),
 											type: byteArray.readUnsignedShort() };
 				
 				buildingList.push(buildingInfo);
@@ -359,9 +372,9 @@
 			for (i = 0; i < numBuildingQueues; i++)
 			{
 				var buildingQueueInfo:Object = {id: byteArray.readInt(),
-												type: byteArray.readUnsignedShort(),
-												startTime: byteArray.readInt(),
-												endTime: byteArray.readInt() };
+												building_id: byteArray.readInt(),
+												production: byteArray.readInt(),
+												start_time: byteArray.readInt() };
 												
 				buildingQueueList.push(buildingQueueInfo);
 			}
@@ -419,6 +432,7 @@
 				var assignment:AssignmentPacket = new AssignmentPacket();
 				assignment.id = byteArray.readInt();
 				assignment.caste = byteArray.readByte();
+				assignment.race = byteArray.readByte();
 				assignment.amount = byteArray.readInt();
 				assignment.taskId = byteArray.readInt();
 				assignment.taskType = byteArray.readShort();										
@@ -446,8 +460,9 @@
 			{
 				var population:PopulationPacket = new PopulationPacket();
 				population.cityId = byteArray.readInt();
-				population.caste = byteArray.readShort();
-				population.value = byteArray.readInt();
+				population.caste = byteArray.readByte();
+				population.race = byteArray.readByte();
+				population.value = byteArray.readInt();				
 				
 				populationList.push(population);
 			}

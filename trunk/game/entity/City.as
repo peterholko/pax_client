@@ -21,18 +21,14 @@
 	import net.packet.InfoCity;
 	import game.Item;
 	import game.Population;
+	import game.Building;
+	import game.QueueEntry;
 
 	public class City extends Entity
 	{
 		public static var TYPE:int = Entity.CITY;
 		public static var onClick:String = "onCityClick";
 		public static var onDoubleClick:String = "onCityDoubleClick";
-		public static var TASK_IMPROVEMENT:int = 1;		
-		
-		public static var CASTE_SLAVES:int = 0;		
-		public static var CASTE_SOLDIERS:int = 1;
-		public static var CASTE_COMMONERS:int = 2;
-		public static var CASTE_NOBLES:int = 3;
 
 		public var cityName:String;
 
@@ -43,6 +39,8 @@
 		public var assignments:Array;
 		public var items:Array;
 		public var populations:Array;
+		
+		public var queueEntries:Array;
 
 		public var landQueue:Array;
 		public var seaQueue:Array;
@@ -53,6 +51,7 @@
 		public function City():void
 		{
 			buildings = new Array();
+			queueEntries = new Array();
 			units = new Array();
 			claims = new Array();
 			improvements = new Array();
@@ -60,9 +59,6 @@
 			items = new Array();
 			populations = new Array();
 			
-			landQueue = new Array();
-			seaQueue = new Array();
-			airQueue = new Array();
 		}
 
 		override public function initialize():void
@@ -99,41 +95,7 @@
 			pEvent.params = this;
 
 			Game.INSTANCE.dispatchEvent(pEvent);
-		}
-		
-		public static function getCasteName(casteType:int) : String
-		{
-			switch(casteType)
-			{
-				case CASTE_SLAVES:
-					return "Slaves";
-				case CASTE_SOLDIERS:
-					return "Soldiers";
-				case CASTE_COMMONERS:
-					return "Commoners";
-				case CASTE_NOBLES:
-					return "Nobles";
-			}
-			
-			return "Unknown";
-		}
-		
-		public static function getCasteId(casteName:String) : int
-		{
-			switch(casteName)
-			{
-				case "Slaves":
-					return CASTE_SLAVES;
-				case "Soldiers":
-					return CASTE_SOLDIERS;
-				case "Commoners":
-					return CASTE_COMMONERS;
-				case "Nobles":
-					return CASTE_NOBLES;
-			}
-			
-			return -1;			
-		}
+		}		
 		
 		public function getCasteValue(casteType:int) : int
 		{
@@ -148,6 +110,23 @@
 			}
 			
 			return 0;
+		}
+		
+		public function getPopulation(caste:int) : Array
+		{
+			var populationList:Array = new Array();
+			
+			for(var i = 0; i < populations.length; i++)
+			{
+				var population:Population = Population(populations[i]);
+
+				if(population.caste == caste)
+				{
+					populationList.push(population);
+				}
+			}
+			
+			return populationList;
 		}
 		
 		public function getTotalPop() : int
@@ -180,14 +159,48 @@
 			
 			return null;
 		}
+		
+		public function getBuilding(buildingId:int) : Building
+		{
+			for(var i:int = 0; i < buildings.length; i++)
+			{
+				var building:Building = Building(buildings[i]);
+				
+				if(building.id == buildingId)
+					return building;
+			}
+			
+			return null;
+		}
+		
+		public function getAvailableBuildings() : Array
+		{	
+			var buildings:Array = new Array();
+			
+			var barracks:Building = new Building();
+			var market:Building = new Building();
+			var temple:Building = new Building();
+			
+			barracks.type = Building.BARRACKS;
+			market.type = Building.MARKET;
+			temple.type = Building.TEMPLE;
+			
+			buildings.push(barracks);
+			buildings.push(market);
+			buildings.push(temple);
+			
+			return buildings;
+		}
 
 		public function setCityInfo(cityInfo:InfoCity):void
 		{
 			trace("City - setCityInfo");
-
+			queueEntries.length = 0;
+			
 			cityName = cityInfo.name;
 
 			var buildingsInfo:Array = cityInfo.buildings;
+			var buildingsQueueInfo:Array = cityInfo.buildingsQueue;
 			var unitsInfo:Array = cityInfo.units;
 			var unitsQueueInfo:Array = cityInfo.unitsQueue;
 			var claimsInfo:Array = cityInfo.claims;
@@ -197,6 +210,7 @@
 			var populationsInfo:Array = cityInfo.populations;
 
 			setBuildings(buildingsInfo);
+			setBuildingsQueue(buildingsQueueInfo);
 			setUnits(unitsInfo);
 			setUnitsQueue(unitsQueueInfo);
 			setClaims(claimsInfo);
@@ -212,7 +226,28 @@
 
 			for (var i:int = 0; i < buildingsInfo.length; i++)
 			{
-				buildings[i] = buildingsInfo[i];
+				var building:Building = new Building();
+				
+				building.id = buildingsInfo[i].id;
+				building.hp = buildingsInfo[i].hp;
+				building.type = buildingsInfo[i].type;
+				
+				buildings.push(building);
+			}
+		}
+		
+		private function setBuildingsQueue(buildingsQueueInfo:Array) : void
+		{
+			for(var i:int = 0; i < buildingsQueueInfo.length; i++)
+			{
+				var queueEntry:QueueEntry = new QueueEntry();
+				queueEntry.queueId = buildingsQueueInfo[i].id;
+				queueEntry.objectId = buildingsQueueInfo[i].building_id;
+				queueEntry.objectType = Building.TYPE;
+				queueEntry.production = buildingsQueueInfo[i].production;
+				queueEntry.startTime = buildingsQueueInfo[i].startTime;
+				
+				queueEntries.push(queueEntry);
 			}
 		}
 
@@ -237,10 +272,6 @@
 
 		private function setUnitsQueue(unitsQueueInfo:Array):void
 		{
-			landQueue.length = 0;
-			seaQueue.length = 0;
-			airQueue.length = 0;
-
 			var currentDate:Date = new Date();
 			var currentTime:int = currentDate.getTime() / 1000;
 
@@ -256,8 +287,6 @@
 
 				unitQueue.remainingTime = unitQueue.endTime - currentTime;
 
-				//TODO: Add other types of queues
-				landQueue.push(unitQueue);
 			}
 		}
 
@@ -301,6 +330,7 @@
 				
 				assignment.id = assignmentsInfo[i].id;
 				assignment.caste = assignmentsInfo[i].caste;
+				assignment.race = assignmentsInfo[i].race;				
 				assignment.amount = assignmentsInfo[i].amount;
 				assignment.taskId = assignmentsInfo[i].taskId;
 				assignment.taskType = assignmentsInfo[i].taskType;
@@ -332,11 +362,14 @@
 		{
 			populations.length = 0;
 			
+			trace("City - populationsInfo.length: " + populationsInfo.length);
+			
 			for(var i = 0; i < populationsInfo.length; i++)
 			{
 				var population:Population = new Population();
 				population.cityId = populationsInfo[i].cityId;
 				population.caste = populationsInfo[i].caste;
+				population.race = populationsInfo[i].race;
 				population.value = populationsInfo[i].value;
 				
 				populations.push(population);
@@ -373,10 +406,6 @@
 
 		private function timerHandler(e:TimerEvent):void
 		{
-			for (var i:int = 0; i < landQueue.length; i++)
-			{
-				landQueue[i].remainingTime--;
-			}
 		}
 
 	}

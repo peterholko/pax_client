@@ -2,11 +2,8 @@
 {	
 	import flash.display.MovieClip;
 	
-	public class SoldiersHeader extends MovieClip 
+	public class SoldiersHeader extends PopulationHeader
 	{
-		public var soldiersOpenButton:MovieClip;
-		public var soldiersCloseButton:MovieClip;
-		
 		public function SoldiersHeader() {
 			// constructor code
 		}

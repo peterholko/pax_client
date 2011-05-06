@@ -1,16 +1,15 @@
 ﻿package ui {
 	
 	import flash.display.MovieClip;
-	
-	
-	public class NoblesHeader extends MovieClip 
-	{
-		public var noblesCloseButton:MovieClip;
-		public var noblesOpenButton:MovieClip;
+	import flash.events.MouseEvent;
 		
-		public function NoblesHeader() {
-			// constructor code
+	public class NoblesHeader extends PopulationHeader
+	{
+		
+		public function NoblesHeader() 
+		{
 		}
+		
 	}
 	
 }

@@ -2,11 +2,8 @@
 {
 	import flash.display.MovieClip;
 	
-	public class CommonersHeader extends MovieClip 
-	{
-		public var commonersOpenButton:MovieClip;
-		public var commonersCloseButton:MovieClip;
-		
+	public class CommonersHeader extends PopulationHeader
+	{		
 		public function CommonersHeader() 
 		{
 			// constructor code
