@@ -170,8 +170,8 @@
 			socket.writeByte(assignTask.caste);
 			socket.writeByte(assignTask.race);
 			socket.writeInt(assignTask.amount);
-			socket.writeInt(assignTask.taskId);
-			socket.writeShort(assignTask.taskType);
+			socket.writeInt(assignTask.targetId);
+			socket.writeShort(assignTask.targetType);
 			socket.flush();
 		}
 		
@@ -341,15 +341,14 @@
 		public static function readInfoCity(byteArray:ByteArray) : InfoCity
 		{
 			var infoCity:InfoCity = new InfoCity();			
-			var buildingList:Array = new Array();
-			var buildingQueueList:Array = new Array();
-			var unitList:Array = new Array();
-			var unitQueueList:Array = new Array();
+			var buildingList:Array = new Array();			
+			var unitList:Array = new Array();		
 			var claimList:Array = new Array();
 			var improvementList:Array = new Array();
 			var assignmentList:Array = new Array();
 			var itemList:Array = new Array();
 			var populationList:Array = new Array();
+			var contractList:Array = new Array();
 			
 			var i:int;
 			
@@ -366,19 +365,7 @@
 				
 				buildingList.push(buildingInfo);
 			}
-			
-			var numBuildingQueues:int = byteArray.readUnsignedShort();
-			
-			for (i = 0; i < numBuildingQueues; i++)
-			{
-				var buildingQueueInfo:Object = {id: byteArray.readInt(),
-												building_id: byteArray.readInt(),
-												production: byteArray.readInt(),
-												start_time: byteArray.readInt() };
-												
-				buildingQueueList.push(buildingQueueInfo);
-			}
-			
+						
 			var numUnits:int = byteArray.readUnsignedShort();
 			
 			for (i = 0; i < numUnits; i++)
@@ -388,19 +375,6 @@
 										size: byteArray.readInt()};
 										
 				unitList.push(unitInfo);
-			}
-			
-			var numUnitQueues:int = byteArray.readUnsignedShort();
-			
-			for (i = 0; i < numUnitQueues; i++)
-			{
-				var unitQueueInfo:Object = {id: byteArray.readInt(),
-											type: byteArray.readUnsignedShort(),
-											size: byteArray.readInt(),
-											startTime: byteArray.readInt(),
-											endTime: byteArray.readInt() };
-											
-				unitQueueList.push(unitQueueInfo);											
 			}
 			
 			var numClaims:int = byteArray.readUnsignedShort();
@@ -434,14 +408,14 @@
 				assignment.caste = byteArray.readByte();
 				assignment.race = byteArray.readByte();
 				assignment.amount = byteArray.readInt();
-				assignment.taskId = byteArray.readInt();
-				assignment.taskType = byteArray.readShort();										
+				assignment.targetId = byteArray.readInt();
+				assignment.targetType = byteArray.readShort();										
 										  
 				assignmentList.push(assignment);										  
 			}					
 						
 			var numItems:int = byteArray.readUnsignedShort();
-			trace("Packet - numItems: " + numItems);
+
 			for(i = 0; i < numItems; i++)
 			{
 				var item:ItemPacket = new ItemPacket();
@@ -466,16 +440,32 @@
 				
 				populationList.push(population);
 			}
+			
+			var numContracts:int = byteArray.readUnsignedShort();
+				
+			for(i = 0; i < numContracts; i++)
+			{
+				var contract:ContractPacket = new ContractPacket();
+				contract.id = byteArray.readInt();
+				contract.cityId = byteArray.readInt();
+				contract.targetType = byteArray.readShort();
+				contract.targetId = byteArray.readInt();
+				contract.objectType = byteArray.readShort();
+				contract.production = byteArray.readInt();
+				contract.createdTime = byteArray.readInt();
+				contract.lastUpdate = byteArray.readInt();
+				
+				contractList.push(contract);
+			}
 								
-			infoCity.buildings = buildingList;
-			infoCity.buildingsQueue = buildingQueueList;
-			infoCity.units = unitList;
-			infoCity.unitsQueue = unitQueueList;
+			infoCity.buildings = buildingList;			
+			infoCity.units = unitList;			
 			infoCity.claims = claimList;
 			infoCity.improvements = improvementList;
 			infoCity.assignments = assignmentList;
 			infoCity.items = itemList;
 			infoCity.populations = populationList;
+			infoCity.contracts = contractList;
 								
 			return infoCity;
 		}
