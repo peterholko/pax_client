@@ -302,8 +302,8 @@
 			assignTask.caste = assignment.caste;
 			assignTask.race = assignment.race;
 			assignTask.amount = assignment.amount;
-			assignTask.taskId = assignment.taskId;
-			assignTask.taskType = assignment.taskType;
+			assignTask.targetId = assignment.targetId;
+			assignTask.targetType = assignment.targetType;
 			
 			lastPacket = assignTask;
 			

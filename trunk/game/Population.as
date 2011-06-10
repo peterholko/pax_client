@@ -14,6 +14,11 @@
 		public static var CASTE_COMMONERS:int = 2;
 		public static var CASTE_NOBLES:int = 3;		
 		
+		public static var CASTE_SLAVES_RATE:Number = 0.5;
+		public static var CASTE_SOLDIERS_RATE:Number = 1.5;
+		public static var CASTE_COMMONERS_RATE:Number = 2.0;
+		public static var CASTE_NOBLES_RATE:Number = 1.0;
+		
 		public var cityId:int;
 		public var caste:int;
 		public var race:int;
@@ -22,6 +27,23 @@
 		public function Population() 
 		{
 			// constructor code
+		}
+		
+		public static function getProductionRate(casteType:int) : Number
+		{
+			switch(casteType)
+			{
+				case CASTE_SLAVES:
+					return CASTE_SLAVES_RATE;
+				case CASTE_SOLDIERS:
+					return CASTE_SOLDIERS_RATE;
+				case CASTE_COMMONERS:
+					return CASTE_COMMONERS_RATE;
+				case CASTE_NOBLES:
+					return CASTE_NOBLES_RATE;
+			}
+			
+			return 0.0;
 		}
 		
 		public static function getCasteName(casteType:int) : String

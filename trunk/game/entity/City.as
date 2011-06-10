@@ -22,7 +22,7 @@
 	import game.Item;
 	import game.Population;
 	import game.Building;
-	import game.QueueEntry;
+	import game.Contract;
 
 	public class City extends Entity
 	{
@@ -38,9 +38,8 @@
 		public var improvements:Array;
 		public var assignments:Array;
 		public var items:Array;
-		public var populations:Array;
-		
-		public var queueEntries:Array;
+		public var populations:Array;		
+		public var contracts:Array;
 
 		public var landQueue:Array;
 		public var seaQueue:Array;
@@ -51,13 +50,13 @@
 		public function City():void
 		{
 			buildings = new Array();
-			queueEntries = new Array();
 			units = new Array();
 			claims = new Array();
 			improvements = new Array();
 			assignments = new Array();
 			items = new Array();
 			populations = new Array();
+			contracts = new Array();
 			
 		}
 
@@ -173,6 +172,38 @@
 			return null;
 		}
 		
+		public function getBuildingByType(buildingType:int) : Building
+		{
+			for(var i:int = 0; i < buildings.length; i++)
+			{
+				var building:Building = Building(buildings[i]);
+				
+				if(building.type == buildingType)
+					return building;
+			}
+			
+			return null;
+		}
+		
+		public function getBuildingConstructionRate(building:Building) : Number
+		{
+			for(var i = 0; i < assignments.length; i++)
+			{
+				var assignment:Assignment = Assignment(assignments[i]);
+				
+				if(assignment.targetId == building.id && 
+				   assignment.targetType == Assignment.TASK_BUILDING)
+				{
+					var productionRatePerGameDay:Number = Population.getProductionRate(assignment.caste);				
+					var productionRatePerSecond:Number = productionRatePerGameDay / (3600 * 6);
+					
+					return (productionRatePerSecond * assignment.amount);
+				}
+			}
+			
+			return 0.0;
+		}
+		
 		public function getAvailableBuildings() : Array
 		{	
 			var buildings:Array = new Array();
@@ -195,29 +226,16 @@
 		public function setCityInfo(cityInfo:InfoCity):void
 		{
 			trace("City - setCityInfo");
-			queueEntries.length = 0;
-			
 			cityName = cityInfo.name;
 
-			var buildingsInfo:Array = cityInfo.buildings;
-			var buildingsQueueInfo:Array = cityInfo.buildingsQueue;
-			var unitsInfo:Array = cityInfo.units;
-			var unitsQueueInfo:Array = cityInfo.unitsQueue;
-			var claimsInfo:Array = cityInfo.claims;
-			var improvementsInfo:Array = cityInfo.improvements;
-			var assignmentsInfo:Array = cityInfo.assignments;
-			var itemsInfo:Array = cityInfo.items;
-			var populationsInfo:Array = cityInfo.populations;
-
-			setBuildings(buildingsInfo);
-			setBuildingsQueue(buildingsQueueInfo);
-			setUnits(unitsInfo);
-			setUnitsQueue(unitsQueueInfo);
-			setClaims(claimsInfo);
-			setImprovements(improvementsInfo);
-			setAssignments(assignmentsInfo);
-			setItems(itemsInfo);
-			setPopulations(populationsInfo);
+			setBuildings(cityInfo.buildings);
+			setUnits(cityInfo.units);
+			setClaims(cityInfo.claims);
+			setImprovements(cityInfo.improvements);
+			setAssignments(cityInfo.assignments);
+			setItems(cityInfo.items);
+			setPopulations(cityInfo.populations);
+			setContracts(cityInfo.contracts);
 		}
 
 		private function setBuildings(buildingsInfo:Array):void
@@ -236,21 +254,6 @@
 			}
 		}
 		
-		private function setBuildingsQueue(buildingsQueueInfo:Array) : void
-		{
-			for(var i:int = 0; i < buildingsQueueInfo.length; i++)
-			{
-				var queueEntry:QueueEntry = new QueueEntry();
-				queueEntry.queueId = buildingsQueueInfo[i].id;
-				queueEntry.objectId = buildingsQueueInfo[i].building_id;
-				queueEntry.objectType = Building.TYPE;
-				queueEntry.production = buildingsQueueInfo[i].production;
-				queueEntry.startTime = buildingsQueueInfo[i].startTime;
-				
-				queueEntries.push(queueEntry);
-			}
-		}
-
 		private function setUnits(unitsInfo:Array ):void
 		{
 			units.length = 0;
@@ -268,26 +271,6 @@
 			}
 
 			trace("units; " + units.length);
-		}
-
-		private function setUnitsQueue(unitsQueueInfo:Array):void
-		{
-			var currentDate:Date = new Date();
-			var currentTime:int = currentDate.getTime() / 1000;
-
-			for (var i:int = 0; i < unitsQueueInfo.length; i++)
-			{
-				var unitQueue:UnitQueue = new UnitQueue();
-
-				unitQueue.id = unitsQueueInfo[i].id;
-				unitQueue.type = unitsQueueInfo[i].type;
-				unitQueue.size = unitsQueueInfo[i].size;
-				unitQueue.startTime = unitsQueueInfo[i].startTime;
-				unitQueue.endTime = unitsQueueInfo[i].endTime;
-
-				unitQueue.remainingTime = unitQueue.endTime - currentTime;
-
-			}
 		}
 
 		private function setClaims(claimsInfo:Array):void
@@ -332,8 +315,8 @@
 				assignment.caste = assignmentsInfo[i].caste;
 				assignment.race = assignmentsInfo[i].race;				
 				assignment.amount = assignmentsInfo[i].amount;
-				assignment.taskId = assignmentsInfo[i].taskId;
-				assignment.taskType = assignmentsInfo[i].taskType;
+				assignment.targetId = assignmentsInfo[i].targetId;
+				assignment.targetType = assignmentsInfo[i].targetType;
 				
 				assignments.push(assignment);
 			}
@@ -375,35 +358,30 @@
 				populations.push(population);
 			}
 		}
-
-		/*private function setUnit(unit:Unit) : void
-		{
 		
-		
-		trace("unit.size: " + unit.size + " unit.endTime: " + unit.endTime + " currentTime: " + currentTime);
-		if (unit.endTime > currentTime)
+		private function setContracts(contractsInfo:Array) : void
 		{
-		unit.remainingTime = unit.endTime - currentTime;
-		landQueue.push(unit);
-		
-		//TODO: Add other types of queues
-		switch(unit.type)
-		{
-		case Unit.LAND:
-		landQueue.push(unit);
-		break;
-		case Unit.SEA:
-		seaQueue.push(unit);
-		break;
-		case Unit.AIR:
-		airQueue.push(unit);
-		break;
-		default:
-		throw new Error("Invalid Unit Type");
+			contracts.length = 0;
+			
+			trace("City - contractsInfo.lenght: " + contractsInfo.length);
+			
+			for(var i = 0; i < contractsInfo.length; i++)
+			{
+				var contract:Contract = new Contract();
+				
+				contract.id = contractsInfo[i].id;
+				contract.cityId = contractsInfo[i].cityId;
+				contract.targetType = contractsInfo[i].targetType;
+				contract.targetId = contractsInfo[i].targetId;
+				contract.objectType = contractsInfo[i].objectType;
+				contract.production = contractsInfo[i].production;
+				contract.createdTime = contractsInfo[i].createdTime;
+				contract.lastUpdate = contractsInfo[i].lastUpdate;
+				
+				contracts.push(contract);
+			}
 		}
-		}
-		}*/
-
+		
 		private function timerHandler(e:TimerEvent):void
 		{
 		}

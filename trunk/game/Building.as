@@ -18,6 +18,26 @@
 		{
 		}
 		
+		public static function getName(type:int) : String
+		{
+			switch(type)
+			{
+				case BARRACKS:
+					return "Barracks";
+				case MARKET:
+					return "Market";
+				case TEMPLE:
+					return "Temple";
+			}
+			
+			return "None";
+		}
+		
+		public function getBuildingName() : String
+		{
+			return getName(type);
+		}
+		
 		public function getImage() : BitmapData
 		{			
 			trace("Building - GetImage() type: " + type);
@@ -33,18 +53,18 @@
 			}
 			
 			return null;
-		}			
+		}						
 		
 		public function getProductionCost() : int
 		{
 			switch(type)
 			{
 				case BARRACKS:
-					return 100;
+					return 20;
 				case TEMPLE:
-					return 100;
+					return 5;
 				case MARKET:
-					return 100;
+					return 4;
 			}
 			
 			return Number.MAX_VALUE;
