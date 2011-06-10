@@ -13,8 +13,8 @@
 	import game.Game;
 	import game.map.MapObjectType;
 	import game.Building;
-	import game.QueueEntry;
 	import game.Assignment;
+	import game.Population;
 		
 	public class CityUI extends MovieClip 
 	{		
@@ -56,10 +56,14 @@
 		public var infrastructureInfo:MovieClip;
 		
 		public var queueMarketUI:QueueMarketUI;
+		public var buildingDetailCard:BuildingDetailCard;
 	
 		public var totalPopText:TLFTextField;
 		public var cityNameText:TLFTextField;
 		public var empireKingdomNameText:TLFTextField;
+		
+		public var assignPopUI:AssignPopUI;
+		public var disableBackground:MovieClip;
 		
 		private var city:City;
 		
@@ -75,9 +79,9 @@
 			improvementIcons = new Array();
 			buildingsIcons = new Array();			
 			
-			this.addEventListener(MouseEvent.CLICK, mouseClick);
-			this.addEventListener(MouseEvent.MOUSE_DOWN, mouseDown);
-			this.addEventListener(MouseEvent.MOUSE_UP, mouseUp);	
+			//this.addEventListener(MouseEvent.CLICK, mouseClick);
+			//this.addEventListener(MouseEvent.MOUSE_DOWN, mouseDown);
+			//this.addEventListener(MouseEvent.MOUSE_UP, mouseUp);	
 			
 			closeButton.addEventListener(MouseEvent.CLICK, closeButtonClick);			
 		}
@@ -96,6 +100,11 @@
 			buildingsInfo.addEventListener(MouseEvent.CLICK, buildingsInfoClick);
 			improvementsInfo.addEventListener(MouseEvent.CLICK, improvementsInfoClick);
 			infrastructureInfo.addEventListener(MouseEvent.CLICK, infrastructureInfoClick);
+			
+			assignPopUI.confirmButton.addEventListener(MouseEvent.CLICK, assignPopConfirmClick);
+			assignPopUI.cancelButton.addEventListener(MouseEvent.CLICK, assignPopCancelClick);
+			
+			buildingDetailCard.closeButton.addEventListener(MouseEvent.CLICK, buildingDetailCloseClick);
 		}
 		
 		public function setCity(city:City) : void
@@ -113,17 +122,18 @@
 			productionUI.cityUI = this;
 			
 			queueMarketUI.city = city;
+			queueMarketUI.init();
 		}
 						
 		public function showPanel() : void
 		{			
-			this.parent.setChildIndex(this, this.parent.numChildren - 1);	
+			this.parent.setChildIndex(this, this.parent.numChildren - 1);							
 		
 			if(this.visible)
 			{
 				previousPanel.hidePanel();
 				activatedPanel.showPanel();
-				showActivatedInfoPanel();								
+				showActivatedInfoPanel();											
 			}
 			else
 			{
@@ -134,8 +144,10 @@
 				throneUI.showPanel();
 				activatedInfoColumn = BUILDINGS_INFO;
 				showActivatedInfoPanel();
-			}																					
+			}															
 		
+			hidePopUps();
+			
 			totalPopText.text = UtilUI.FormatNum(city.getTotalPop());
 			cityNameText.text = city.cityName;
 			empireKingdomNameText.text = Game.INSTANCE.kingdom.name;			
@@ -146,7 +158,7 @@
 			return city.id;
 		}
 		
-		public function checkPopulationDropTarget(popDropTarget:DisplayObject, caste:int) : void
+		public function checkPopulationDropTarget(popDropTarget:DisplayObject, caste:int, race:int) : void
 		{
 			for(var i:int = 0; i < buildingsIcons.length; i++)
 			{
@@ -154,7 +166,14 @@
 				
 				if(iconBuilding.contains(popDropTarget))
 				{
-					//showAssignPopulation(iconBuilding.building, caste);					
+					trace("Set assign pop visible")
+					var type:int = iconBuilding.building.type;
+					var taskId:int = iconBuilding.building.id;
+					var buildingName:String = Building.getName(type);
+					var hp:int = iconBuilding.building.hp;							
+					
+					showAssignPopUp(Assignment.TASK_BUILDING, taskId, buildingName, hp, caste, race, 100);
+					//assignTaskBuilding(iconBuilding.building, caste, race);					
 					break;
 				}
 			}
@@ -172,15 +191,16 @@
 			}
 		}
 				
-		private function assignTaskBuilding(building:Building, caste:int): void
+		private function assignTaskBuilding(caste:int, race:int, amount:int, targetId:int, targetType:int): void
 		{
 			var assignment:Assignment = new Assignment()
 			
 			assignment.cityId = city.id;
 			assignment.caste = caste;
-			//assignment.amount = amount;
-			assignment.taskId = building.id;
-			assignment.taskType = Assignment.TASK_CONSTRUCTION;
+			assignment.race = race;
+			assignment.amount = amount;			
+			assignment.targetId = targetId;
+			assignment.targetType = targetType;
 		
 			var pEvent:ParamEvent = new ParamEvent(Game.assignTaskEvent);
 			pEvent.params = assignment;
@@ -188,10 +208,32 @@
 			Game.INSTANCE.dispatchEvent(pEvent);						
 		}
 		
-		private function assignTaskImprovement(improvement:Improvement, caste:int, amount:int) : void
+		private function assignPopConfirmClick(e:MouseEvent) : void
 		{
+			hidePopUps();
 			
+			var amount:int = parseInt(assignPopUI.popInputText.text)
+			
+			if(amount == NaN)
+				amount = 0;
+			
+			switch(assignPopUI.taskType)
+			{
+				case Assignment.TASK_BUILDING:				
+				
+					assignTaskBuilding(assignPopUI.caste,
+									   assignPopUI.race,
+									   amount,
+									   assignPopUI.taskId,
+									   assignPopUI.taskType);
+					break;				
+			}
 		}
+		
+		private function assignPopCancelClick(e:MouseEvent) : void
+		{
+			hidePopUps();
+		}		
 		
 		private function throneTextClick(e:MouseEvent) : void
 		{			
@@ -301,12 +343,25 @@
 				iconBuilding.x = BUILDINGS_START_X + ICON_SPACER + i * (iconBuilding.width + ICON_SPACER);
 				iconBuilding.y = BUILDINGS_START_Y;
 				iconBuilding.anchorX = iconBuilding.x;
-				iconBuilding.anchorY = iconBuilding.y;		
+				iconBuilding.anchorY = iconBuilding.y;
+				iconBuilding.addEventListener(MouseEvent.CLICK, buildingDoubleClick);
 				
 				buildingsIcons.push(iconBuilding);
 				
 				addChild(iconBuilding);
 			}
+		}
+		
+		private function buildingDoubleClick(e:MouseEvent) : void
+		{
+			trace("buildingDoubleClick");
+			var iconBuilding:IconBuilding = IconBuilding(e.target);
+			
+			buildingDetailCard.visible = true;
+			buildingDetailCard.objectNameText.text = iconBuilding.building.getBuildingName();
+			buildingDetailCard.objectFullNameText.text = iconBuilding.building.getBuildingName();
+			buildingDetailCard.objectNameLevelText.text = "Level 1";
+			buildingDetailCard.hpText.text = iconBuilding.building.hp.toString();			
 		}
 						
 		private function removeImprovementIcons():void
@@ -394,6 +449,39 @@
 			this.visible = false;
 		}
 		
+		private function buildingDetailCloseClick(e:MouseEvent) : void
+		{
+			buildingDetailCard.visible = false;
+		}
+		
+		private function showAssignPopUp(taskType:int, taskId:int, objectName:String, hp:int, 
+										 caste:int, race:int, amount:int) : void
+		{
+			this.setChildIndex(disableBackground, this.numChildren - 1);
+			disableBackground.visible = true;			
+			
+			this.setChildIndex(assignPopUI, this.numChildren - 1);	
+			assignPopUI.visible = true;
+			
+			assignPopUI.taskType = taskType;
+			assignPopUI.taskId = taskId;
+			assignPopUI.caste = caste;
+			assignPopUI.race = race;
+			assignPopUI.amount = amount;
+			
+			assignPopUI.objectFullNameText.text = objectName;
+			assignPopUI.objectNameLevelText.text = "";
+			assignPopUI.casteNameText.text = Population.getCasteName(caste) + " " + Population.getRaceName(race);
+			assignPopUI.popInputText.text = amount.toString();
+		}
+		
+		private function hidePopUps() : void
+		{
+			disableBackground.visible = false;
+			assignPopUI.visible = false;
+			buildingDetailCard.visible = false;
+		}
+		
 		private function hidePanels() : void
 		{
 			inventoryUI.hidePanel();
@@ -410,7 +498,7 @@
 			e.stopImmediatePropagation();
 		}
 		
-		private function mouseDown(e:MouseEvent) : void
+		/*private function mouseDown(e:MouseEvent) : void
 		{	
 			this.parent.setChildIndex(this, this.parent.numChildren - 1);	
 			startDrag();			
@@ -422,7 +510,7 @@
 			trace("MouseUp: " + parent);			
 			stopDrag();
 			e.stopImmediatePropagation();
-		}				
+		}*/				
 	}
 	
 }

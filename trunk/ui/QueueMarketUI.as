@@ -5,8 +5,7 @@
 	import flash.events.MouseEvent;
 	
 	import game.entity.City;
-	import game.QueueEntry;
-	
+	import game.Contract;
 	
 	public class QueueMarketUI extends MovieClip 
 	{
@@ -29,6 +28,12 @@
 			
 			queueInfo.addEventListener(MouseEvent.CLICK, queueInfoClick);
 			marketInfo.addEventListener(MouseEvent.CLICK, marketInfoClick);
+		}
+		
+		public function init() : void
+		{
+			bottomMarketInfo();
+			setQueueEntries();
 		}
 		
 		private function queueInfoClick(e:MouseEvent) : void
@@ -57,13 +62,12 @@
 		
 		private function setQueueEntries() : void
 		{
-			for(var i:int = 0; i < city.queueEntries.length; i++)
+			for(var i:int = 0; i < city.contracts.length; i++)
 			{								
-				var queueEntry:QueueEntry = new QueueEntry();
-				var queueEntry:QueueEntry = QueueEntry(city.queueEntries[i]);
+				var contract:Contract = Contract(city.contracts[i]);
 				var queueEntryUI:QueueEntryUI = new QueueEntryUI();
 				queueEntryUI.city = city;
-				queueEntryUI.setQueueEntry(queueEntry);
+				queueEntryUI.setQueueEntry(contract);
 				queueEntryUI.x = QUEUE_START_X;				
 				queueEntryUI.y = QUEUE_START_Y + i * queueEntryUI.height;
 												

@@ -3,11 +3,12 @@
 	import flash.display.MovieClip;
 	import fl.text.TLFTextField;
 	
-	import game.QueueEntry;
+	import game.Contract;
 	import game.Building;
 	import game.entity.City;
 	
 	import QueueProgressIcon;
+	import game.Assignment;
 	
 	public class QueueEntryUI extends MovieClip
 	{		
@@ -20,27 +21,33 @@
 		public var queueEntryName:TLFTextField;
 		public var remainingTimeText:TLFTextField;
 		
-		private var queueEntry:QueueEntry;
+		private var contract:Contract;
 		
 		public function QueueEntryUI()
 		{			
 		}
 		
-		public function setQueueEntry(queueEntry:QueueEntry) : void
+		public function setQueueEntry(contract:Contract) : void
 		{
-			this.queueEntry = queueEntry;
+			this.contract = contract;						
 			
+			clearQueueEntry();
 			setQueueEntryIcon();
 		}
 		
 		private function setQueueEntryIcon() : void
 		{
-			switch(queueEntry.objectType)
+			switch(contract.targetType)
 			{
-				case Building.TYPE:
-					var building:Building = city.getBuilding(queueEntry.objectId);
+				case Contract.CONTRACT_BUILDING:
+					var building:Building = city.getBuildingByType(contract.objectType);
+					var constructionRate:Number = city.getBuildingConstructionRate(building);
+					
 					setBuildingIcon(building);
-					setProgressIcons(queueEntry.production, building.getProductionCost());
+					setProgressIcons(contract.production, building.getProductionCost());
+					setQueueEntryName(Building.getName(building.type));
+					setRemainingTime(contract.production, constructionRate, building.getProductionCost());
+					
 					break;					
 			}					
 		}
@@ -58,7 +65,12 @@
 		
 		private function setProgressIcons(currentProduction:int, productionCost:int) : void
 		{
-			var progressRatio:Number = currentProduction / productionCost;
+			trace("currentProduction: " + currentProduction + " productionCost: " + productionCost);
+			var progressRatio:Number = 0;
+			
+			if(currentProduction != 0)
+				 progressRatio = currentProduction / productionCost;
+			
 			var numProgressIcons:int = Math.floor(progressRatio * 10);
 			
 			for(var i:int = 0; i < numProgressIcons; i++)
@@ -71,6 +83,40 @@
 				addChild(progressIcon);
 			}			
 		}		
+		
+		private function setQueueEntryName(entryName:String)
+		{
+			queueEntryName.text = entryName;
+		}
+		
+		private function setRemainingTime(production:int, progressRate:Number, productionCost:int) : void
+		{			
+			trace("progressRate: " + progressRate + " productionCost: " + productionCost);		
+			var remainingDays:Number;
+			var remainingHours:Number;
+		
+			if(progressRate > 0)
+			{
+				var date:Date = new Date();
+				var currentTime:int = date.getTime() / 1000;
+				var remainingProduction:int = productionCost - production;
+				var remainingTime:int = remainingProduction / progressRate;		
+				remainingDays = remainingTime / (3600 * 24);
+				remainingHours = (remainingTime % (3600 * 24)) / 3600;
+			}
+			else
+			{
+				remainingDays = Number.POSITIVE_INFINITY;
+				remainingHours = Number.POSITIVE_INFINITY;
+			}
+			
+			remainingTimeText.text = remainingDays.toString() + "D " + remainingHours.toString() + "H";			
+		}
+		
+		private function clearQueueEntry() : void
+		{
+			
+		}
 	}
 	
 }

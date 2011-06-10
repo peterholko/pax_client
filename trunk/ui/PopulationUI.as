@@ -50,6 +50,7 @@
 		private var goblinIcon:MovieClip;
 		
 		private var selectedCasteType:int;
+		private var selectedRaceType:int;
 	
 		public function PopulationUI() 
 		{							
@@ -306,6 +307,7 @@
 			raceIcon.startDrag()								
 			
 			selectedCasteType = iconCaste.caste;
+			selectedRaceType = iconCaste.race;
 		}
 		
 		private function getRaceIcon(race:int) : MovieClip
@@ -325,59 +327,15 @@
 			return null;
 		}
 		
-		/*private function noblesCasteMouseDown(e:MouseEvent) : void
-		{					
-			this.parent.setChildIndex(this, this.parent.numChildren - 1);			
-			e.stopPropagation();		
-			
-			selectedCasteType = Population.CASTE_NOBLES;
-			humanIconStartDrag(e, noblesCaste.x, noblesCaste.y);						
-		}
-		
-		private function commonersCasteMouseDown(e:MouseEvent) : void
-		{
-			this.parent.setChildIndex(this, this.parent.numChildren - 1);			
-			e.stopPropagation();		
-			
-			selectedCasteType = Population.CASTE_COMMONERS;
-			humanIconStartDrag(e, commonersCaste.x, commonersCaste.y);								
-		}
-		
-		private function soldiersCasteMouseDown(e:MouseEvent) : void
-		{
-			this.parent.setChildIndex(this, this.parent.numChildren - 1);			
-			e.stopPropagation();		
-			
-			selectedCasteType = Population.CASTE_SOLDIERS;
-			humanIconStartDrag(e, soldiersCaste.x, soldiersCaste.y);		
-		}
-		
-		private function slavesCasteMouseDown(e:MouseEvent) : void
-		{
-			this.parent.setChildIndex(this, this.parent.numChildren - 1);			
-			e.stopPropagation();		
-			
-			selectedCasteType = Population.CASTE_SLAVES;
-			humanIconStartDrag(e, slavesCaste.x, slavesCaste.y);					
-		}*/	
-		
-		private function humanIconStartDrag(e:MouseEvent, casteIconX:int, casteIconY:int) : void
-		{
-			humanIcon.visible = true;
-						
-			humanIcon.x = e.localX + casteIconX - humanIcon.width / 2;
-			humanIcon.y = e.localY + casteIconY - humanIcon.height / 2;
-			humanIcon.startDrag()						
-		}
-		
 		private function raceIconMouseUp(e:MouseEvent) : void
 		{
+			trace("raceIconMouseUp");
 			var raceIcon:MovieClip = MovieClip(e.currentTarget);
 			
 			raceIcon.stopDrag();
 			raceIcon.visible = false;
-			
-			cityUI.checkPopulationDropTarget(raceIcon.dropTarget, selectedCasteType);
+						
+			cityUI.checkPopulationDropTarget(raceIcon.dropTarget, selectedCasteType, selectedRaceType);
 		}
 		
 		private function createRaceIcon(race:int) : MovieClip
