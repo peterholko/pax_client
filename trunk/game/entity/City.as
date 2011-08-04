@@ -72,6 +72,11 @@
 			this.image = new Bitmap(imageData);
 			this.addChild(this.image);
 		}
+				
+		override public function getName() : String
+		{			
+			return cityName;
+		}		
 
 		override protected function mouseClick(e:Event):void
 		{
@@ -126,6 +131,57 @@
 			}
 			
 			return populationList;
+		}
+		
+		public function getNumAssigned(caste:int, race:int) : int
+		{
+			var numAssigned:int = 0;
+					
+			for(var i = 0; i < assignments.length; i++)
+			{
+				var assignment:Assignment = Assignment(assignments[i]);
+				
+				if(assignment.caste == caste && assignment.race == race)
+				{
+					numAssigned += assignment.amount;
+				}
+			}
+			
+			return numAssigned;
+		}
+		
+		public function getAssignmentsByTarget(targetId:int, targetType) : Array
+		{
+			var targetAssignments:Array = new Array();
+			
+			for(var i = 0; i < assignments.length; i++)
+			{
+				var assignment:Assignment = Assignment(assignments[i]);
+				
+				if(assignment.targetId == targetId &&
+				   assignment.targetType == targetType)
+				{
+					targetAssignments.push(assignment);
+				}
+			}
+			
+			return targetAssignments;
+		}
+		
+		public function getContract(targetId:int, targetType:int) : Contract
+		{
+			for(var i:int = 0; i < contracts.length; i++)			
+			{
+				var contract:Contract = Contract(contracts[i]);
+				
+				if(contract.targetId == targetId && 
+				   contract.targetType == targetType)
+				{
+					return contract;
+				}				
+			}
+			
+			return null;
 		}
 		
 		public function getTotalPop() : int
@@ -192,7 +248,7 @@
 				var assignment:Assignment = Assignment(assignments[i]);
 				
 				if(assignment.targetId == building.id && 
-				   assignment.targetType == Assignment.TASK_BUILDING)
+				   assignment.targetType == BUILDING)
 				{
 					var productionRatePerGameDay:Number = Population.getProductionRate(assignment.caste);				
 					var productionRatePerSecond:Number = productionRatePerGameDay / (3600 * 6);
@@ -221,6 +277,24 @@
 			buildings.push(temple);
 			
 			return buildings;
+		}
+		
+		public function getAvailableHarvestItems() : Array
+		{
+			var harvestItems:Array = new Array();
+			
+			for(var i:int = 0; i < improvements.length; i++)
+			{
+				var improvement:Improvement = Improvement(improvements[i]);
+				
+				if(!hasContract(improvement))
+				{
+					var improvementItems:Array = improvement.getHarvestItems();
+					harvestItems = harvestItems.concat(improvementItems);
+				}
+			}
+			
+			return harvestItems;
 		}
 
 		public function setCityInfo(cityInfo:InfoCity):void
@@ -363,7 +437,7 @@
 		{
 			contracts.length = 0;
 			
-			trace("City - contractsInfo.lenght: " + contractsInfo.length);
+			trace("City - contractsInfo.length: " + contractsInfo.length);
 			
 			for(var i = 0; i < contractsInfo.length; i++)
 			{
@@ -371,15 +445,31 @@
 				
 				contract.id = contractsInfo[i].id;
 				contract.cityId = contractsInfo[i].cityId;
+				contract.type = contractsInfo[i].type;
 				contract.targetType = contractsInfo[i].targetType;
 				contract.targetId = contractsInfo[i].targetId;
 				contract.objectType = contractsInfo[i].objectType;
 				contract.production = contractsInfo[i].production;
 				contract.createdTime = contractsInfo[i].createdTime;
-				contract.lastUpdate = contractsInfo[i].lastUpdate;
+				contract.lastUpdate = contractsInfo[i].lastUpdate;			
 				
 				contracts.push(contract);
 			}
+		}
+		
+		private function hasContract(improvement:Improvement) : Boolean
+		{
+			for(var i:int = 0; i < contracts.length; i++)
+			{
+				var contract:Contract = Contract(contracts[i]);
+				
+				if(contract.targetId == improvement.id)
+				{
+					return true;
+				}
+			}
+			
+			return false;
 		}
 		
 		private function timerHandler(e:TimerEvent):void

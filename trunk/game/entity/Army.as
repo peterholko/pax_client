@@ -56,6 +56,11 @@
 			this.addChild(this.image);	
 		}
 		
+		override public function getName() : String
+		{
+			return armyName;
+		}
+		
 		public function showBorder() : void
 		{
 			this.border.alpha = 1;

@@ -4,7 +4,7 @@
 
 	public class Item 
 	{
-		public static var PLANTS:int = 0;
+		public static var PLANTS:int = 1;
 		
 		public var id:int;
 		public var entityId:int;
@@ -15,12 +15,25 @@
 		{
 		}
 		
+		public static function getNameByType(type:int) : String
+		{
+			switch(type)
+			{
+				case PLANTS:
+					return "Plants";
+			}
+			
+			return "None";
+		}		
+		
+		public function getName() : String
+		{
+			return getNameByType(type);
+		}
 		
 		public function getImage() : BitmapData
-		{
-			trace("Item - GetImage()");
-			trace("type: " + type);
-			
+		{			
+			trace("Item - type: " + type);
 			switch(type)
 			{
 				case PLANTS:

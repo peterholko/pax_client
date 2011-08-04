@@ -43,6 +43,7 @@
 		public static var onSendRequestInfo:String = "onSendRequestInfo";
 		public static var onSendCityQueueUnit:String = "onSendCityQueueUnit";
 		public static var onSendCityQueueBuilding:String = "onSendCityQueueBuilding";
+		public static var onSendCityQueueItem:String = "onSendCityQueueItem";
 		public static var onSendTransferUnit:String = "onSendTransferUnit";
 		public static var onSendBattleTarget:String = "onSendBattleTarget";
 		public static var onSendAddClaim:String = "onSendAddClaim";
@@ -110,6 +111,7 @@
 			addEventListener(onSendRequestInfo, sendRequestInfo);
 			addEventListener(onSendCityQueueUnit, sendCityQueueUnit);
 			addEventListener(onSendCityQueueBuilding, sendCityQueueBuilding);
+			addEventListener(onSendCityQueueItem, sendCityQueueItem);
 			addEventListener(onSendTransferUnit, sendTransferUnit);
 			addEventListener(onSendBattleTarget, sendBattleTarget);
 			addEventListener(onSendAddClaim, sendAddClaim);
@@ -311,10 +313,17 @@
 		
 		private function sendCityQueueBuilding(e:ParamEvent) : void
 		{
-			trace("Connection - sendCityQueueUnit");
+			trace("Connection - sendCityQueueBuilding");
 			var cityQueueBuilding:CityQueueBuilding = e.params;
 			Packet.sendCityQueueBuilding(socket, cityQueueBuilding);
 		}		
+		
+		private function sendCityQueueItem(e:ParamEvent) : void
+		{
+			trace("Connection - sendCityQueueItem");
+			var cityQueueItem:CityQueueItem = e.params;
+			Packet.sendCityQueueItem(socket, cityQueueItem);
+		}				
 		
 		private function sendTransferUnit(e:ParamEvent) : void
 		{

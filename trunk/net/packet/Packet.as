@@ -26,8 +26,6 @@
 		public static var INFO_UNIT_QUEUE:int = 55;
 		public static var INFO_GENERIC_ARMY:int = 56;
 		public static var INFO_GENERIC_CITY:int = 57;
-		public static var CITY_QUEUE_BUILDING:int = 59;
-		public static var CITY_QUEUE_UNIT:int = 60;
 		public static var TRANSFER_UNIT:int = 61;
 		public static var BATTLE_INFO:int = 70;
 		public static var BATTLE_ADD_ARMY:int = 71;
@@ -36,7 +34,10 @@
 		public static var BATTLE_TARGET:int = 75;
 		public static var BATTLE_RETREAT:int = 76;
 		public static var BATTLE_LEAVE:int = 77;
-		public static var BUILD_IMPROVEMENT:int = 100;		
+		public static var CITY_QUEUE_UNIT:int = 100;				
+		public static var CITY_QUEUE_BUILDING:int = 101;
+		public static var CITY_QUEUE_IMPROVEMENT:int = 102;		
+		public static var CITY_QUEUE_ITEM:int = 103;
 		public static var ADD_CLAIM:int = 125;		
 		public static var ASSIGN_TASK:int = 130;
 		public static var TRANSFER_ITEM:int = 150;
@@ -111,11 +112,21 @@
 		{
 			trace("Packet - sendCityQueueBuilding");
 			socket.writeByte(CITY_QUEUE_BUILDING);
-			socket.writeInt(cityQueueBuilding.buildingId);
-			socket.writeInt(cityQueueBuilding.cityId);
+			socket.writeInt(cityQueueBuilding.cityId);	
 			socket.writeShort(cityQueueBuilding.buildingType);
 			socket.flush();
 		}
+		
+		public static function sendCityQueueItem(socket:Socket, cityQueueItem:CityQueueItem) : void
+		{
+			trace("Packet - sendCityQueueItem");
+			trace("itemType: " + cityQueueItem.itemType + " itemSize: " + cityQueueItem.itemSize);
+			socket.writeByte(CITY_QUEUE_ITEM);
+			socket.writeInt(cityQueueItem.cityId);	
+			socket.writeShort(cityQueueItem.itemType);
+			socket.writeInt(cityQueueItem.itemSize);
+			socket.flush();
+		}		
 		
 		public static function sendTransferUnit(socket:Socket, transferUnit:TransferUnit) : void
 		{
@@ -154,7 +165,7 @@
 		public static function sendBuildImprovement(socket:Socket, buildImprovement:BuildImprovement) : void
 		{
 			trace("Packet - sendBuildImprovement");
-			socket.writeByte(BUILD_IMPROVEMENT);
+			socket.writeByte(CITY_QUEUE_IMPROVEMENT);
 			socket.writeInt(buildImprovement.cityId);
 			socket.writeShort(buildImprovement.x);
 			socket.writeShort(buildImprovement.y);
@@ -448,6 +459,7 @@
 				var contract:ContractPacket = new ContractPacket();
 				contract.id = byteArray.readInt();
 				contract.cityId = byteArray.readInt();
+				contract.type = byteArray.readShort();
 				contract.targetType = byteArray.readShort();
 				contract.targetId = byteArray.readInt();
 				contract.objectType = byteArray.readShort();

@@ -68,10 +68,10 @@
 			var iconBitmapData:BitmapData = tileImage.bitmapData;			
 			
 			image = new Bitmap(iconBitmapData);
-			image.width = 34;
-			image.height = 34;
-			image.x = 1;
-			image.y = 1;
+			image.width = 48;
+			image.height = 48;
+			image.x = 0;
+			image.y = 0;
 			
 			addChild(image);			
 		}		

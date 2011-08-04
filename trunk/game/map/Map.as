@@ -209,6 +209,16 @@
 			return ((yCoord * HEIGHT) + xCoord);
 		}
 		
+		public static function convertCoordX(tileIndex:int) : int
+		{
+			return (tileIndex % Map.WIDTH);			
+		}
+		
+		public static function convertCoordY(tileIndex:int) : int
+		{
+			return (tileIndex / Map.HEIGHT)
+		}
+		
 		private function unexploredClick(e:MouseEvent) : void
 		{
 			trace("unexploredClick");

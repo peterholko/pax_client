@@ -27,6 +27,7 @@
 
 	import ui.ArmyUI;
 	import ui.CityUI;
+	import ui.LandDetailCard;
 
 	import net.Connection;
 	import net.packet.InfoKingdom;
@@ -41,6 +42,7 @@
 	import net.packet.TransferUnit;
 	import net.packet.TransferItem;
 	import net.packet.CityQueueBuilding;
+	import net.packet.CityQueueItem;
 		
 	public class Game extends Sprite
 	{				
@@ -57,6 +59,7 @@
 		public static var transferUnitEvent:String = "transferUnitEvent";
 		public static var transferItemEvent:String = "transferItemEvent";
 		public static var cityQueueBuildingEvent:String = "cityQueueBuildingEvent";
+		public static var cityQueueItemEvent:String = "cityQueueItemEvent";
 		
 		//States
 		public static var TileNone:int = 0;
@@ -103,6 +106,7 @@
 			Connection.INSTANCE.addEventListener(Connection.onInfoKingdomEvent, connectionInfoKingdom);
 			Connection.INSTANCE.addEventListener(Connection.onInfoArmyEvent, connectionInfoArmy);
 			Connection.INSTANCE.addEventListener(Connection.onInfoCityEvent, connectionInfoCity);
+			Connection.INSTANCE.addEventListener(Connection.onInfoTileEvent, connectionInfoTile);
 			Connection.INSTANCE.addEventListener(Connection.onBattleInfoEvent, connectionBattleInfo);
 			Connection.INSTANCE.addEventListener(Connection.onBattleDamageEvent, connectionBattleDamage);
 			
@@ -122,6 +126,7 @@
 			addEventListener(transferUnitEvent, processTransferUnit);
 			addEventListener(transferItemEvent, processTransferItem);
 			addEventListener(cityQueueBuildingEvent, processCityQueueBuilding);
+			addEventListener(cityQueueItemEvent, processCityQueueItem);
 		}						
 				
 		public function addPerceptionData(perception:Perception) : void
@@ -437,6 +442,19 @@
 			
 			Connection.INSTANCE.dispatchEvent(sendCityQueueBuilding);
 		}
+		
+		private function processCityQueueItem(e:ParamEvent) : void
+		{
+			var cityQueueItem:CityQueueItem = new CityQueueItem();			
+			cityQueueItem.cityId = e.params.cityId; 
+			cityQueueItem.itemType = e.params.itemType; 
+			cityQueueItem.itemSize = e.params.itemSize;
+			
+			var sendCityQueueItem:ParamEvent = new ParamEvent(Connection.onSendCityQueueItem);			
+			sendCityQueueItem.params = cityQueueItem;
+			
+			Connection.INSTANCE.dispatchEvent(sendCityQueueItem);
+		}		
 				
 		private function tileClicked(e:ParamEvent) : void
 		{
@@ -596,6 +614,19 @@
 				initialPerception = false;
 			}
 		}		
+		
+		private function connectionInfoTile(e:ParamEvent) : void
+		{
+			trace("Game - infoTile");
+			var infoTile:InfoTile = InfoTile(e.params);
+			var landDetailCard:LandDetailCard = new LandDetailCard();
+			
+			main.addChild(landDetailCard);	
+			
+			landDetailCard.setInfo(infoTile);
+			landDetailCard.showPanel();
+			landDetailCard.closeButton.addEventListener(MouseEvent.CLICK, landDetailCloseClick);						
+		}
 				
 		private function connectionBattleInfo(e:ParamEvent) : void
 		{
@@ -768,6 +799,17 @@
 					}
 				}				
 			}
+		}
+		
+		private function landDetailCloseClick(e:MouseEvent) : void
+		{
+			var landDetailCard:LandDetailCard = LandDetailCard(e.target.parent);
+			
+			if(main.contains(landDetailCard))
+			{
+				landDetailCard.closeButton.removeEventListener(MouseEvent.CLICK, landDetailCloseClick);
+				main.removeChild(landDetailCard);
+			}			
 		}
 	}
 }

@@ -7,9 +7,10 @@
 	
 	public class BuildingCaste extends MovieClip 
 	{
+		public var assignmentId:int;
 		public var amountRaceText:TLFTextField;
 		public var casteText:TLFTextField;
-		public var removeButton:CloseButton;
+		public var removeButton:CloseButton;		
 		
 		public function BuildingCaste() 
 		{			

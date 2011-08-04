@@ -39,15 +39,20 @@
 		{
 		}
 		
+		public function getName() : String
+		{
+			return "Entity";
+		}
+		
 		public function update() : void
 		{
 			x = gameX * Tile.WIDTH;
 			y = gameY * Tile.HEIGHT;				
 		}
 		
-		public function getImage() : Bitmap
+		public function getImage() : BitmapData
 		{
-			return image;
+			return image.bitmapData;
 		}
 		
 		public function isPlayers() : Boolean

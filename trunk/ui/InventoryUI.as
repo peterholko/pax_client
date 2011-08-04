@@ -52,6 +52,7 @@
 			{
 				var item:Item = Item(city.items[i]);
 				var iconItem:IconItem = new IconItem();
+				
 				iconItem.setItem(item);
 				iconItem.x = ICON_X_START + i * (iconItem.width + ICON_X_SPACER);
 				iconItem.y = ICON_Y_START;

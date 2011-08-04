@@ -9,6 +9,9 @@
 	
 	import QueueProgressIcon;
 	import game.Assignment;
+	import game.entity.Improvement;
+	import flash.display.BitmapData;
+	import flash.display.Bitmap;
 	
 	public class QueueEntryUI extends MovieClip
 	{		
@@ -21,7 +24,7 @@
 		public var queueEntryName:TLFTextField;
 		public var remainingTimeText:TLFTextField;
 		
-		private var contract:Contract;
+		private var contract:Contract;		
 		
 		public function QueueEntryUI()
 		{			
@@ -35,9 +38,14 @@
 			setQueueEntryIcon();
 		}
 		
+		public function getContract() : Contract
+		{
+			return contract;
+		}
+		
 		private function setQueueEntryIcon() : void
 		{
-			switch(contract.targetType)
+			switch(contract.type)
 			{
 				case Contract.CONTRACT_BUILDING:
 					var building:Building = city.getBuildingByType(contract.objectType);
@@ -45,25 +53,41 @@
 					
 					setBuildingIcon(building);
 					setProgressIcons(contract.production, building.getProductionCost());
-					setQueueEntryName(Building.getName(building.type));
+					setQueueEntryName(Building.getNameByType(building.type));
 					setRemainingTime(contract.production, constructionRate, building.getProductionCost());
 					
-					break;					
+					break;		
+				case Contract.CONTRACT_IMPROVEMENT:
+					var improvement:Improvement = city.getImprovement(contract.targetId);
+					
+					setImprovementIcon(improvement);
+					setProgressIcons(contract.production, improvement.getProductionCost());
+					setQueueEntryName(improvement.getName());
+					break;
 			}					
 		}
 		
 		private function setBuildingIcon(building:Building) : void
 		{							
-			var iconBuilding:IconBuilding = new IconBuilding();			
+			var iconBitmapData:BitmapData = building.getImage();			
+			var image:Bitmap = new Bitmap(iconBitmapData);
+			image.x = 0;
+			image.y = 0;
 			
-			iconBuilding.setBuilding(building);
-			iconBuilding.x = 0;
-			iconBuilding.y = 0;										
-			
-			addChild(iconBuilding);
+			addChild(image);
 		}
 		
-		private function setProgressIcons(currentProduction:int, productionCost:int) : void
+		private function setImprovementIcon(improvement:Improvement) : void
+		{
+			var iconBitmapData:BitmapData = improvement.getImage();		
+			var image:Bitmap = 	new Bitmap(iconBitmapData);
+			image.x = 0;
+			image.y = 0;
+			
+			addChild(image);
+		}
+		
+		private function setProgressIcons(currentProduction:Number, productionCost:Number) : void
 		{
 			trace("currentProduction: " + currentProduction + " productionCost: " + productionCost);
 			var progressRatio:Number = 0;

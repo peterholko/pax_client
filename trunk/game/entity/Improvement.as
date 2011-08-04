@@ -8,6 +8,8 @@
 	
 	import game.Game;
 	import game.map.Tile;
+	import game.Item;
+	
 	import ui.IconEntity;	
 	
 	import FarmImage;
@@ -15,7 +17,7 @@
 	public class Improvement extends Entity 
 	{
 		public static var TYPE:int = Entity.IMPROVEMENT;
-		public static var FARM:int = 0;		
+		public static var FARM:int = 1;		
 				
 		public static var onDoubleClick:String = "onImprovementDoubleClick";		
 		
@@ -38,6 +40,17 @@
 			this.addChild(this.image);	
 		}		
 		
+		override public function getName() : String
+		{
+			switch(this.subType)
+			{
+				case FARM:
+					return "Farm";
+			}
+			
+			return "Unknown";
+		}		
+		
 		override protected function mouseClick(e:Event):void
 		{
 			var pEvent:ParamEvent = new ParamEvent(Tile.onClick);
@@ -53,20 +66,23 @@
 			pEvent.params = this;
 
 			Game.INSTANCE.dispatchEvent(pEvent);
-		}		
+		}				
 		
-		public function getName() : String
+		public function getHarvestItems() : Array
 		{
+			var items:Array = new Array();
+			
 			switch(this.subType)
 			{
 				case FARM:
-					return "Farm";
+					items.push(Item.PLANTS);
+					return items;
 			}
 			
-			return "Unknown";
+			return items;			
 		}
 		
-		public function getAvailableResources() : Array
+		public function getAvailableResource() : Array
 		{
 			var resources:Array = new Array();
 			
@@ -80,6 +96,17 @@
 			resources.push("None");
 			return resources;
 		}
+		
+		public function getProductionCost() : int
+		{
+			switch(type)
+			{
+				case FARM:
+					return 100;
+			}
+			
+			return Number.MAX_VALUE;
+		}		
 
 	}
 	

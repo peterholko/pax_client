@@ -1,15 +1,15 @@
 ﻿package ui
 {
 	import flash.display.MovieClip;
-	import flash.text.TextField;
 	import flash.events.MouseEvent;	
+	import fl.text.TLFTextField;
 		
 	public class ActionButton extends MovieClip
 	{
 		private static var REST:int = 0;
 		private static var ACTIVATE:int = 1;		
 		
-		public var actionText:TextField;
+		public var actionText:TLFTextField;
 		
 		private var iconState:int = REST;
 		

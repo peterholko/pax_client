@@ -78,6 +78,11 @@
 			updateStackSize();
 		}
 		
+		public function hideStackSize() : void
+		{
+			stackSize.visible = false;
+		}
+		
 		private function updateStackSize() : void
 		{
 			stackSize.sizeText.text = UtilUI.FormatNum(item.value);

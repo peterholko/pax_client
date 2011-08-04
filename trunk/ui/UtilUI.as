@@ -19,13 +19,13 @@
 			
 			if(num >= 1000000)
 			{
-				workingNum = round3(num / 1000000);
-				return ( workingNum.toString() + "M");
+				workingNum = num / 1000000;
+				return ( workingNum.toPrecision(3) + "M");
 			}
 			else if(num >= 1000)
 			{
-				workingNum = round3(num / 1000);
-				return ( workingNum.toString() + "K");
+				workingNum = num / 1000;
+				return ( workingNum.toPrecision(3) + "K");
 			}			
 			else
 			{
@@ -33,10 +33,10 @@
 			}
 		}
 		
-		public static function round3(num:Number) : Number
+		public static function round1(num:Number) : Number
 		{
-			var rounded:Number = Math.round(num * 1000);
-			return rounded / 1000;
+			var rounded:Number = Math.round(num * 100);
+			return rounded / 100;
 		}
 	}
 	

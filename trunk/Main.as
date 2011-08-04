@@ -34,7 +34,7 @@
 		
 		public var mainUI:MainUI;
 		public var cityUI:CityUI;
-		public var battleUI:BattleUI;
+		public var battleUI:BattleUI;		
 		
 		public var loginScreen:LoginScreen;
 		

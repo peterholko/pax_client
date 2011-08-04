@@ -24,14 +24,14 @@
 			this.mouseChildren = false;
 		}
 		
-		public function setCasteRace(caste:int, race:int, size:int) : void
+		public function setCasteRace(caste:int, race:int, size:int, numAssigned:int) : void
 		{			
 			this.caste = caste;
 			this.race = race;
 			this.size = size;
 		
 			raceText.text = Population.getRaceName(race) + " " + Population.getCasteName(caste);	
-			sizeText.text = UtilUI.FormatNum(size);
+			sizeText.text = UtilUI.FormatNum(numAssigned) + " / " + UtilUI.FormatNum(size);
 			
 			var iconBitmapData:BitmapData = Population.getImage(race);
 			

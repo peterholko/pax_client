@@ -45,12 +45,16 @@
 		public var warfareText:TextField;
 		public var arcaneText:TextField;
 		public var civicsText:TextField;
+		
+		public var selectedCity:SelectedCity;
+		public var selectedArmy:SelectedArmy;
+		public var selectedHero:SelectedHero;
+		
 		public var infoButton:ActionButton;
 		public var moveButton:ActionButton;
 		public var attackButton:ActionButton;
 		public var claimButton:ActionButton;
-		public var buildFarmButton:ActionButton;
-		public var tradeButton:ActionButton;	
+		public var buildButton:ActionButton;		
 
 		public var targetName:TLFTextField;
 		public var empireKingdomName:TLFTextField;
@@ -77,7 +81,8 @@
 		public var mtLabel:TLFTextField;
 		public var mtValue:TLFTextField;
 		
-		public var goldText:TextField;
+		public var goldText:TLFTextField;
+		public var totalPopText:TLFTextField;
 		
 		public var iconTile:IconTile;
 
@@ -86,8 +91,6 @@
 		private var selectedEntity:Entity;
 		private var iconEntities/*Entity*/:Array;
 		private var command:int;
-		
-		
 
 		public function MainUI()
 		{
@@ -106,7 +109,7 @@
 			moveButton.actionText.text = "Move";
 			attackButton.actionText.text = "Attack";
 			claimButton.actionText.text = "Claim";
-			buildFarmButton.actionText.text = "Build";
+			buildButton.actionText.text = "Build";
 			
 			//goldText.text = "123456789,9999";
 			//trace(goldText.textFlow.computedFormat.fontFamily);
@@ -115,7 +118,7 @@
 			moveButton.addEventListener(MouseEvent.CLICK, moveButtonClick);
 			attackButton.addEventListener(MouseEvent.CLICK, attackButtonClick);
 			claimButton.addEventListener(MouseEvent.CLICK, claimButtonClick);
-			buildFarmButton.addEventListener(MouseEvent.CLICK, buildFarmButtonClick);											 
+			buildButton.addEventListener(MouseEvent.CLICK, buildButtonClick);
 
 			iconTile.visible = false;
 			iconTile.addEventListener(MouseEvent.CLICK, iconTileClick);
@@ -180,7 +183,7 @@
 				{
 					var iconEntity:IconEntity = new IconEntity();
 					iconEntity.setEntity(selectedTile.entities[i]);
-					iconEntity.copyImage(32, 32);
+					iconEntity.copyImage(48, 48);
 					iconEntity.x = iconTileEdgeX + ICON_X_SPACER + i * (iconEntity.width + ICON_X_SPACER);
 					iconEntity.y = iconTile.y;
 					iconEntity.addEventListener(MouseEvent.CLICK, iconEntityClick);
@@ -261,7 +264,7 @@
 				
 				if(Game.INSTANCE.tileStatus == Game.TileClaimed)
 				{
-					buildFarmButton.visible = true;
+					buildButton.visible = true;
 				}				   
 			}
 			else if (selectedType == SELECTED_ENTITY)
@@ -293,12 +296,12 @@
 			moveButton.visible = false;
 			attackButton.visible = false;
 			claimButton.visible = false;
-			buildFarmButton.visible = false;
+			buildButton.visible = false;
 		}
 
 		private function hideTargetBar():void
 		{
-			targetName.visible = false;
+			/*targetName.visible = false;
 			empireKingdomName.visible = false;
 			ratingLabel.visible = false;
 			repLabel.visible = false;
@@ -321,7 +324,7 @@
 			mpLabel.visible = false;
 			mpValue.visible = false;
 			mtLabel.visible = false;
-			mtValue.visible = false;
+			mtValue.visible = false;*/
 		}
 
 		private function infoButtonClick(e:MouseEvent):void
@@ -393,12 +396,12 @@
 			main.moveReticule.show();			
 		}
 		
-		private function buildFarmButtonClick(e:MouseEvent) : void
+		private function buildButtonClick(e:MouseEvent) : void
 		{
-			trace("MainUI - buildFarmButtonClick");			
+			trace("MainUI - buildButtonClick");			
 			removeReticules();
 			hideActivateActionButtons();
-			buildFarmButton.showActivate();
+			buildButton.showActivate();
 					
 			var pEvent:ParamEvent = new ParamEvent(Game.buildImprovementEvent);
 			pEvent.params = Improvement.FARM;
@@ -424,12 +427,12 @@
 			
 			hideTargetBar();
 			
-			targetName.text = infoArmy.name;
+			/*targetName.text = infoArmy.name;
 			empireKingdomName.text = Game.INSTANCE.kingdom.name;
 			ratingValue.text = "0";
 			repValue.text = "Ally";
 			diffValue.text = "Easy";
-			hpAtkDefValue.text = "100\n1\n1";		
+			hpAtkDefValue.text = "100\n1\n1";		*/
 			
 			showArmyTarget();
 		}
@@ -441,9 +444,9 @@
 			
 			hideTargetBar();
 			
-			targetName.text = infoCity.name;
+			/*targetName.text = infoCity.name;
 			empireKingdomName.text = Game.INSTANCE.kingdom.name;
-			pwrWeaInfValue.text = "0\n0\n0";
+			pwrWeaInfValue.text = "0\n0\n0";*/
 			
 			showCityTarget();
 		}
@@ -455,7 +458,7 @@
 			
 			hideTargetBar();
 			
-			targetName.text = Tile.GetTileName(infoTile.tileType);
+			/*targetName.text = Tile.GetTileName(infoTile.tileType);*/
 			
 			showTileTarget();
 		}
@@ -467,13 +470,13 @@
 			
 			hideTargetBar();
 			
-			targetName.text = infoGenericArmy.name;
+			/*targetName.text = infoGenericArmy.name;
 			empireKingdomName.text = infoGenericArmy.kingdomName;
 			ratingValue.text = "0";
 			repValue.text = "Enemy";
 			repValue.textColor = 0xFF0000;
 			diffValue.text = "Easy";
-			hpAtkDefValue.text = "100\n1\n1";	
+			hpAtkDefValue.text = "100\n1\n1";	*/
 			
 			showArmyTarget();
 		}
@@ -485,7 +488,7 @@
 		
 		private function showArmyTarget() : void
 		{
-			targetName.visible = true;
+			/*targetName.visible = true;
 			empireKingdomName.visible = true;
 			ratingLabel.visible = true;
 			ratingValue.visible = true;
@@ -494,21 +497,21 @@
 			diffLabel.visible = true;
 			diffValue.visible = true;
 			hpAtkDefLabel.visible = true;
-			hpAtkDefValue.visible = true;
+			hpAtkDefValue.visible = true;*/
 		}
 		
 		private function showCityTarget() : void
 		{
-			targetName.visible = true;
+			/*targetName.visible = true;
 			empireKingdomName.visible = true;
 			pwrWeaInfLabel.visible = true;
 			pwrWeaInfValue.visible = true;
-			loyHeaSecLabel.visible = true;
+			loyHeaSecLabel.visible = true;*/
 		}
 		
 		private function showTileTarget() : void
 		{
-			targetName.visible = true;
+			//targetName.visible = true;
 		}
 		
 		private function hideActivateActionButtons() : void

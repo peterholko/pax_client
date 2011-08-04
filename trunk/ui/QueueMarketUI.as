@@ -33,8 +33,24 @@
 		public function init() : void
 		{
 			bottomMarketInfo();
+			clearInfo();
 			setQueueEntries();
 		}
+		
+		public function getQueueEntry(contractId:int) : QueueEntryUI
+		{
+			for(var i:int = 0; i < queueEntryUIList.length; i++)
+			{
+				var queueEntryUI:QueueEntryUI = QueueEntryUI(queueEntryUIList[i]);
+				var contract:Contract = queueEntryUI.getContract();
+				
+				if(contract.id == contractId)
+					return queueEntryUI;
+				
+			}
+			
+			return null;			
+		}		
 		
 		private function queueInfoClick(e:MouseEvent) : void
 		{
@@ -75,7 +91,7 @@
 				
 				addChild(queueEntryUI);
 			}
-		}
+		}		
 		
 		
 		private function clearInfo() : void
@@ -84,7 +100,7 @@
 		}		
 		
 		private function removeQueueEntries() : void
-		{
+		{			
 			if(queueEntryUIList != null)
 			{
 				for(var i = 0; i < queueEntryUIList.length; i++)

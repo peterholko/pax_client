@@ -63,8 +63,7 @@
 		
 		public function copyImage(iconWidth:int, iconHeight:int) : void
 		{
-			var entityImage:Bitmap = entity.getImage();
-			var iconBitmapData:BitmapData = entityImage.bitmapData;	
+			var iconBitmapData:BitmapData =  entity.getImage();
 			
 			image = new Bitmap(iconBitmapData);
 			image.width = iconWidth + 2;

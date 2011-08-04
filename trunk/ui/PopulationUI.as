@@ -122,8 +122,9 @@
 			{
 				var population:Population = Population(populationList[i]);
 				var iconCaste:IconCaste = new IconCaste();
+				var numAssigned:int = city.getNumAssigned(population.caste, population.race);
 								
-				iconCaste.setCasteRace(population.caste, population.race, population.value);				
+				iconCaste.setCasteRace(population.caste, population.race, population.value, numAssigned);				
 				iconCaste.addEventListener(MouseEvent.MOUSE_DOWN, iconCasteMouseDown);
 				
 				iconCasteList.push(iconCaste);

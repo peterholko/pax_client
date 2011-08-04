@@ -18,7 +18,7 @@
 		{
 		}
 		
-		public static function getName(type:int) : String
+		public static function getNameByType(type:int) : String
 		{
 			switch(type)
 			{
@@ -33,9 +33,9 @@
 			return "None";
 		}
 		
-		public function getBuildingName() : String
+		public function getName() : String
 		{
-			return getName(type);
+			return getNameByType(type);
 		}
 		
 		public function getImage() : BitmapData
@@ -60,11 +60,11 @@
 			switch(type)
 			{
 				case BARRACKS:
-					return 20;
+					return 100;
 				case TEMPLE:
-					return 5;
+					return 150;
 				case MARKET:
-					return 4;
+					return 200;
 			}
 			
 			return Number.MAX_VALUE;
