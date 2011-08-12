@@ -296,6 +296,36 @@
 			
 			return harvestItems;
 		}
+		
+		public function getAvailableTileImprovements(tileType:int) : Array
+		{
+			var improvements:Array = new Array();
+			
+			/*switch(tileType)
+			{
+				case Tile.MOUNTAIN:
+					improvements.push(Improvement.MINE);
+					improvements.push(Improvement.QUARRY);
+					break;
+				case Tile.FOREST:
+					improvements.push(Improvement.LUMBERMILL);
+					improvements.push(Improvement.TRAPPER);
+					break;
+				case Tile.PLAINS:
+					improvements.push(Improvement.FARM);
+					break;
+				case Tile.SWAMP:
+					improvements.push(Improvement.
+			}*/
+			
+			improvements.push(Improvement.FARM);
+			improvements.push(Improvement.LUMBERMILL);
+			improvements.push(Improvement.TRAPPER);
+			improvements.push(Improvement.MINE);
+			improvements.push(Improvement.QUARRY);
+			
+			return improvements;
+		}
 
 		public function setCityInfo(cityInfo:InfoCity):void
 		{

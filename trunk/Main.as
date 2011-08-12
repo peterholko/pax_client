@@ -11,6 +11,7 @@
 	import flash.geom.Rectangle;
 	import flash.events.KeyboardEvent;
 	import flash.system.Security;
+	import fl.text.TLFTextField;	
 	
 	import net.Connection;
 	import game.Game;
@@ -20,6 +21,8 @@
 	import ui.MoveReticule;
 	import ui.AttackReticule;
 	import ui.BattleUI;
+
+	import ui.BuildSelector;
 	
 	public class Main extends MovieClip
 	{
@@ -34,15 +37,17 @@
 		
 		public var mainUI:MainUI;
 		public var cityUI:CityUI;
-		public var battleUI:BattleUI;		
+		public var battleUI:BattleUI;	
+		public var buildSelector:BuildSelector;
 		
 		public var loginScreen:LoginScreen;
+		public var loginErrorText:TLFTextField;
 		
 		public var moveReticule:MoveReticule;
 		public var attackReticule:AttackReticule;		
 		
 		private var account:String;
-		private var password:String;
+		private var password:String;		
 		
 		private var connection:Connection;
 				
@@ -67,8 +72,8 @@
 			mainUI.init(this);
 			cityUI.init();		
 			battleUI.init();
-			
-						
+			buildSelector.init();
+									
 			Game.INSTANCE.main = this;
 			Game.INSTANCE.setLastLoopTime(connection.clockSyncStartTime);
 			Game.INSTANCE.player.id = connection.playerId;			
@@ -91,6 +96,7 @@
 				connection.addEventListener(Connection.onCloseEvent, connectionCloseError);
 				connection.addEventListener(Connection.onLoggedInEvent, connectionLoggedIn);
 				connection.addEventListener(Connection.onClockSyncEvent, connectionClockSync);
+				connection.addEventListener(Connection.onBadEvent, connectionBadEvent);
 			
 				connection.connect();
 			}
@@ -116,15 +122,26 @@
 			connectionError("Connection closed.");
 		}	
 		
+		private function connectionBadEvent(e:Event) : void
+		{
+			connectionError("Bad Login");
+		}
+		
 		private function connectionError(msg:String) : void
 		{
-			connection.removeEventListener(Connection.onConnectEvent, connectionComplete);
+			/*connection.removeEventListener(Connection.onConnectEvent, connectionComplete);
 			connection.removeEventListener(Connection.onIOErrorEvent, connectionIOError);
 			connection.removeEventListener(Connection.onSecurityErrorEvent, connectionSecurityError);
 			connection.removeEventListener(Connection.onCloseEvent, connectionCloseError);
-			connection.removeEventListener(Connection.onClockSyncEvent, connectionClockSync);
+			connection.removeEventListener(Connection.onClockSyncEvent, connectionClockSync);*/
 			
-			gotoAndStop("Login");
+			clientStatus = STATUS_WAITING;			
+			loginScreen.passwordTextInput.text = "";
+			loginScreen.loginButton.enabled = true;		
+			loginErrorText.text = msg;
+			
+			
+			this.gotoAndStop("Login");
 		}
 		
 		private function connectionLoggedIn(e:Event) : void

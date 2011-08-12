@@ -117,6 +117,17 @@
 			socket.flush();
 		}
 		
+		public static function sendCityQueueImprovement(socket:Socket, cityQueueImprovement:CityQueueImprovement) : void
+		{
+			trace("Packet - sendCityQueueImprovement");
+			socket.writeByte(CITY_QUEUE_IMPROVEMENT);
+			socket.writeInt(cityQueueImprovement.cityId);
+			socket.writeShort(cityQueueImprovement.x);
+			socket.writeShort(cityQueueImprovement.y);
+			socket.writeShort(cityQueueImprovement.type);
+			socket.flush();
+		}		
+		
 		public static function sendCityQueueItem(socket:Socket, cityQueueItem:CityQueueItem) : void
 		{
 			trace("Packet - sendCityQueueItem");
@@ -160,18 +171,7 @@
 			socket.writeShort(addClaim.x);
 			socket.writeShort(addClaim.y);
 			socket.flush();
-		}
-		
-		public static function sendBuildImprovement(socket:Socket, buildImprovement:BuildImprovement) : void
-		{
-			trace("Packet - sendBuildImprovement");
-			socket.writeByte(CITY_QUEUE_IMPROVEMENT);
-			socket.writeInt(buildImprovement.cityId);
-			socket.writeShort(buildImprovement.x);
-			socket.writeShort(buildImprovement.y);
-			socket.writeShort(buildImprovement.type);
-			socket.flush();
-		}
+		}		
 		
 		public static function sendAssignTask(socket:Socket, assignTask:AssignTask) : void
 		{
@@ -605,7 +605,9 @@
 			
 			switch(error)
 			{
-				case 255:
+				
+				
+				case 1:
 					msg = "Bad Login";
 					break;
 				default:

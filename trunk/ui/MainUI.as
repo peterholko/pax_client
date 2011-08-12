@@ -54,7 +54,7 @@
 		public var moveButton:ActionButton;
 		public var attackButton:ActionButton;
 		public var claimButton:ActionButton;
-		public var buildButton:ActionButton;		
+		public var buildButton:ActionButton;						
 
 		public var targetName:TLFTextField;
 		public var empireKingdomName:TLFTextField;
@@ -401,12 +401,10 @@
 			trace("MainUI - buildButtonClick");			
 			removeReticules();
 			hideActivateActionButtons();
-			buildButton.showActivate();
+			buildButton.showActivate();						
 					
-			var pEvent:ParamEvent = new ParamEvent(Game.buildImprovementEvent);
-			pEvent.params = Improvement.FARM;
-
-			Game.INSTANCE.dispatchEvent(pEvent);							
+			var pEvent:ParamEvent = new ParamEvent(Game.mainUIBuildClickEvent);			
+			Game.INSTANCE.dispatchEvent(pEvent);
 		}
 		
 		private function infoKingdomEvent(e:ParamEvent) : void

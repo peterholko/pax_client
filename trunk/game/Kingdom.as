@@ -41,7 +41,7 @@
 			
 			for(var i = 0; i < cities.length; i++)
 			{
-				var city:City = cities[i];
+				var city:City = City(cities[i]);
 				
 				for(var j = 0; j < city.claims.length; j++)
 				{
@@ -55,6 +55,23 @@
 			return null;			
 		}
 		
+		public function getCity(cityId:int) : City
+		{
+			var cities:Array = getCities();
+			
+			for(var i = 0; i < cities.length; i++)
+			{
+				var city:City = City(cities[i]);
+				
+				if(cityId == city.id)
+				{
+					return city;
+				}
+			}			
+			
+			return null;
+		}
+				
 		private function getCities() : Array
 		{
 			var entities:Dictionary = PerceptionManager.INSTANCE.getEntities();

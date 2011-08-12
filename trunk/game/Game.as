@@ -36,30 +36,33 @@
 	import net.packet.BattleAddArmy;
 	import net.packet.BattleDamage;	
 	import net.packet.AddClaim;
-	import net.packet.BuildImprovement;
 	import net.packet.Success;	
 	import net.packet.AssignTask;	
 	import net.packet.TransferUnit;
 	import net.packet.TransferItem;
 	import net.packet.CityQueueBuilding;
 	import net.packet.CityQueueItem;
+	import net.packet.CityQueueImprovement;
 		
 	public class Game extends Sprite
 	{				
 		public static var INSTANCE:Game = new Game();	
 		public static var SCROLL_SPEED:int = 8;
-		public static var GAME_LOOP_TIME:int = 50;	
+		public static var GAME_LOOP_TIME:int = 50;					
 		
 		//Incoming events
 		public static var onInfoArmy:String = "onInfoArmy";
 		
-		//Outgoing events
-		public static var buildImprovementEvent:String = "buildImprovementEvent";		
+		//Outgoing events		
+		public static var cityQueueImprovementEvent:String = "cityQueueImprovementEvent";
 		public static var assignTaskEvent:String = "assignTaskEvent";
 		public static var transferUnitEvent:String = "transferUnitEvent";
 		public static var transferItemEvent:String = "transferItemEvent";
 		public static var cityQueueBuildingEvent:String = "cityQueueBuildingEvent";
 		public static var cityQueueItemEvent:String = "cityQueueItemEvent";
+		
+		//UI events
+		public static var mainUIBuildClickEvent:String = "mainUIBuildClickEvent";
 		
 		//States
 		public static var TileNone:int = 0;
@@ -121,12 +124,14 @@
 			addEventListener(City.onDoubleClick, cityDoubleClicked);
 			addEventListener(MapBattle.onDoubleClick, battleDoubleClicked);
 			
-			addEventListener(buildImprovementEvent, processBuildImprovement);
+			addEventListener(mainUIBuildClickEvent, processMainUIBuildClick);
+		
 			addEventListener(assignTaskEvent, processAssignTask);
 			addEventListener(transferUnitEvent, processTransferUnit);
 			addEventListener(transferItemEvent, processTransferItem);
 			addEventListener(cityQueueBuildingEvent, processCityQueueBuilding);
 			addEventListener(cityQueueItemEvent, processCityQueueItem);
+			addEventListener(cityQueueImprovementEvent, processCityQueueImprovement);			
 		}						
 				
 		public function addPerceptionData(perception:Perception) : void
@@ -271,30 +276,27 @@
 			Connection.INSTANCE.dispatchEvent(addClaimEvent);
 		}		
 		
-		private function processBuildImprovement(e:ParamEvent) : void
+		private function processMainUIBuildClick(e:ParamEvent) : void
 		{
-			trace("Game - processBuildImprovement");
-			
-			var buildImprovement:BuildImprovement = new BuildImprovement();
-			var claim:Claim = kingdom.getClaim(selectedTile.index);	
-			
+			trace("Game - processMainUIBuildClick");
+			var claim:Claim = kingdom.getClaim(selectedTile.index);							
+									
 			if(claim != null)
 			{
-				buildImprovement.cityId = claim.cityId;
-				buildImprovement.type = e.params;
-				buildImprovement.x = selectedTile.gameX;
-				buildImprovement.y = selectedTile.gameY;
+				trace("Game - processMainUIBuildClick - valid claim");
 				
-				var sendBuildImprovementEvent:ParamEvent = new ParamEvent(Connection.onSendBuildImprovement);
-				sendBuildImprovementEvent.params = buildImprovement;
-				
-				Connection.INSTANCE.dispatchEvent(sendBuildImprovementEvent);
+				var city:City = kingdom.getCity(claim.cityId);
+				var improvements:Array = city.getAvailableTileImprovements(selectedTile.type);
+
+				main.buildSelector.showPanel();
+				main.buildSelector.setImprovements(improvements);	
+				main.buildSelector.setTileInfo(selectedTile);				
 			}
 			else	
 			{
-				trace("Game - processBuildImprovement failed: No claim found.");
+				trace("Game - processMainUIBuildClick failed: No claim found.");
 			}
-		}
+		}		
 		
 		private function processAssignTask(e:ParamEvent) : void
 		{
@@ -454,6 +456,30 @@
 			sendCityQueueItem.params = cityQueueItem;
 			
 			Connection.INSTANCE.dispatchEvent(sendCityQueueItem);
+		}		
+		
+		private function processCityQueueImprovement(e:ParamEvent) : void
+		{
+			var claim:Claim = kingdom.getClaim(selectedTile.index);					
+			
+			if(claim != null)
+			{			
+				var cityQueueImprovement:CityQueueImprovement = new CityQueueImprovement();
+		
+				cityQueueImprovement.cityId = claim.cityId;
+				cityQueueImprovement.type = e.params;
+				cityQueueImprovement.x = selectedTile.gameX;
+				cityQueueImprovement.y = selectedTile.gameY;
+				
+				var sendCityQueueImprovement:ParamEvent = new ParamEvent(Connection.onSendCityQueueImprovement);
+				sendCityQueueImprovement.params = cityQueueImprovement;
+				
+				Connection.INSTANCE.dispatchEvent(sendCityQueueImprovement);
+			}
+			else
+			{
+				trace("Game - processCityQueueImprovement failed: No claim found.");
+			}
 		}		
 				
 		private function tileClicked(e:ParamEvent) : void

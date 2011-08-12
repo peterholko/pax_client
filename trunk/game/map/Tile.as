@@ -16,8 +16,13 @@
 		public static var onClick:String = "onTileClick";
 		public static var onDoubleClick:String = "onTileDoubleClick";		
 		
+		public static const MOUNTAIN:int = 0;
+		public static const FOREST:int = 1;
+		public static const PLAINS:int = 2;
+		public static const SWAMP:int = 3;		
+		
 		public static const WIDTH:int = 48;
-		public static const HEIGHT:int = 48;		
+		public static const HEIGHT:int = 48;						
 		
 		private static var imageTiles:BitmapData = new TestTiles(0,0);	
 		

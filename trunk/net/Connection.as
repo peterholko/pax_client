@@ -43,11 +43,11 @@
 		public static var onSendRequestInfo:String = "onSendRequestInfo";
 		public static var onSendCityQueueUnit:String = "onSendCityQueueUnit";
 		public static var onSendCityQueueBuilding:String = "onSendCityQueueBuilding";
+		public static var onSendCityQueueImprovement:String = "onSendCityQueueImprovement";		
 		public static var onSendCityQueueItem:String = "onSendCityQueueItem";
 		public static var onSendTransferUnit:String = "onSendTransferUnit";
 		public static var onSendBattleTarget:String = "onSendBattleTarget";
 		public static var onSendAddClaim:String = "onSendAddClaim";
-		public static var onSendBuildImprovement:String = "onSendBuildImprovement";
 		public static var onSendAssignTask:String = "onSendAssignTask";
 		public static var onSendTransferItem:String = "onSendTransferItem";
 		
@@ -111,14 +111,13 @@
 			addEventListener(onSendRequestInfo, sendRequestInfo);
 			addEventListener(onSendCityQueueUnit, sendCityQueueUnit);
 			addEventListener(onSendCityQueueBuilding, sendCityQueueBuilding);
+			addEventListener(onSendCityQueueImprovement, sendCityQueueImprovement);			
 			addEventListener(onSendCityQueueItem, sendCityQueueItem);
 			addEventListener(onSendTransferUnit, sendTransferUnit);
 			addEventListener(onSendBattleTarget, sendBattleTarget);
 			addEventListener(onSendAddClaim, sendAddClaim);
-			addEventListener(onSendBuildImprovement, sendBuildImprovement);
 			addEventListener(onSendAssignTask, sendAssignTask);
-			addEventListener(onSendTransferItem, sendTransferItem);
-			
+			addEventListener(onSendTransferItem, sendTransferItem);			
 		}
 		
 		private function closeHandler(event:Event):void {
@@ -267,6 +266,7 @@
 					else if(cmd == Packet.BAD)
 					{
 						serverErrorMsg = Packet.readBad(bArr);
+						trace("Connection - server error msg: " + serverErrorMsg);
 						dispatchEvent(new Event(Connection.onBadEvent));
 					}
 					else
@@ -318,6 +318,13 @@
 			Packet.sendCityQueueBuilding(socket, cityQueueBuilding);
 		}		
 		
+		private function sendCityQueueImprovement(e:ParamEvent) : void
+		{
+			trace("Connection - onSendCityQueueImprovement");
+			var cityQueueImprovement:CityQueueImprovement = e.params;
+			Packet.sendCityQueueImprovement(socket, cityQueueImprovement);										
+		}		
+		
 		private function sendCityQueueItem(e:ParamEvent) : void
 		{
 			trace("Connection - sendCityQueueItem");
@@ -344,14 +351,7 @@
 			trace("Connection - sendAddClaim");
 			var addClaim:AddClaim = e.params;
 			Packet.sendAddClaim(socket, addClaim);
-		}
-		
-		private function sendBuildImprovement(e:ParamEvent) : void
-		{
-			trace("Connection - sendBuildImprovement");
-			var buildImprovement:BuildImprovement = e.params;
-			Packet.sendBuildImprovement(socket, buildImprovement);										
-		}
+		}	
 		
 		private function sendAssignTask(e:ParamEvent) : void
 		{

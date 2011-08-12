@@ -130,6 +130,9 @@
 			
 			queueMarketUI.city = city;
 			queueMarketUI.init();
+			
+			buildingDetailCard.city = city;
+			buildingDetailCard.cityUI = this;
 		}
 						
 		public function showPanel() : void
@@ -397,9 +400,6 @@
 			var buildingId:int = iconBuilding.building.id;
 			var assignments:Array = city.getAssignmentsByTarget(buildingId, Entity.BUILDING);			
 			var contract:Contract = city.getContract(buildingId, Entity.BUILDING);
-			var queueEntryUI:QueueEntryUI = queueMarketUI.getQueueEntry(contract.id);
-			
-			trace("queueEntryUI: " + queueEntryUI);
 			
 			buildingDetailCard.visible = true;
 			buildingDetailCard.objectNameText.text = iconBuilding.building.getName();
@@ -407,7 +407,7 @@
 			buildingDetailCard.objectNameLevelText.text = "Level 1";
 			buildingDetailCard.hpText.text = iconBuilding.building.hp.toString();								
 			buildingDetailCard.setAssignments(assignments);
-			buildingDetailCard.setActiveContract(queueEntryUI);
+			buildingDetailCard.setActiveContract(contract);
 		}
 		
 		private function improvementClick(e:MouseEvent) : void
@@ -416,9 +416,6 @@
 			var improvement:Improvement = Improvement(iconEntity.entity);
 			var assignments:Array = city.getAssignmentsByTarget(improvement.id, Entity.IMPROVEMENT);	
 			var contract:Contract = city.getContract(improvement.id, Entity.IMPROVEMENT);
-			var queueEntryUI:QueueEntryUI = queueMarketUI.getQueueEntry(contract.id);
-			
-			trace("queueEntryUI: " + queueEntryUI);			
 			
 			buildingDetailCard.visible = true;
 			buildingDetailCard.objectNameText.text = improvement.getName();
@@ -426,7 +423,7 @@
 			buildingDetailCard.objectNameLevelText.text = "Level 1";
 			buildingDetailCard.hpText.text = "0";
 			buildingDetailCard.setAssignments(assignments);
-			buildingDetailCard.setActiveContract(queueEntryUI);
+			buildingDetailCard.setActiveContract(contract);
 		}
 						
 		private function removeImprovementIcons():void

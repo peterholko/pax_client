@@ -13,11 +13,19 @@
 	import ui.IconEntity;	
 	
 	import FarmImage;
+	import MineImage;
+	import TrapperImage;
+	import LumbermillImage;
+	import QuarryImage;
 	
 	public class Improvement extends Entity 
 	{
 		public static var TYPE:int = Entity.IMPROVEMENT;
 		public static var FARM:int = 1;		
+		public static var TRAPPER:int = 2;
+		public static var LUMBERMILL:int = 3;
+		public static var MINE:int = 4;
+		public static var QUARRY:int = 5;
 				
 		public static var onDoubleClick:String = "onImprovementDoubleClick";		
 		
@@ -27,28 +35,64 @@
 		{				
 		}
 		
-		override public function initialize() : void
+		public static function getImageStatic(type:int) : BitmapData
 		{
 			var imageData:BitmapData = null;
 			
-			if(this.subType == FARM)
+			if(type == FARM)
 				imageData = new FarmImage(0,0);
+			else if(type == TRAPPER)
+				imageData = new TrapperImage(0,0);
+			else if(type == LUMBERMILL)
+				imageData = new LumbermillImage(0,0);
+			else if(type == MINE)
+				imageData = new MineImage(0,0);			
+			else if(type == QUARRY)
+				imageData = new QuarryImage(0,0);
 			else
-				imageData = new FarmImage(0,0);
+				imageData = new FarmImage(0,0);		
+				
+			return imageData;
+		}
+		
+		public static function getNameStatic(type:int) : String
+		{
+			switch(type)
+			{
+				case FARM:
+					return "Farm";
+				case TRAPPER:
+					return "Trapper";
+				case LUMBERMILL:
+					return "Lumbermill";
+				case MINE:
+					return "Mine";
+				case QUARRY:
+					return "Quarry";
+			}
 			
-			this.image = new Bitmap(imageData);
+			return "Unknown";			
+		}
+		
+		public static function getCost(type:int) : int
+		{
+			return 100;
+		}
+		
+		override public function getImage() : BitmapData
+		{
+			return getImageStatic(this.subType);
+		}
+		
+		override public function initialize() : void
+		{								
+			this.image = new Bitmap(getImageStatic(this.subType));
 			this.addChild(this.image);	
 		}		
 		
 		override public function getName() : String
 		{
-			switch(this.subType)
-			{
-				case FARM:
-					return "Farm";
-			}
-			
-			return "Unknown";
+			return getNameStatic(this.subType);
 		}		
 		
 		override protected function mouseClick(e:Event):void

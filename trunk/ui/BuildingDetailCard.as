@@ -7,10 +7,16 @@
 	
 	import game.Assignment;
 	import game.Population;
-	import flash.events.MouseEvent;
+	import game.Contract;
+	import game.entity.City;
+	
+	import flash.events.MouseEvent;	
 	
 	public class BuildingDetailCard extends MovieClip 
 	{
+		public static var CONTRACT_X:int = 6;
+		public static var CONTRACT_Y:int = 199;
+		
 		public var objectNameText:TLFTextField;
 		public var objectFullNameText:TLFTextField;
 		public var objectNameLevelText:TLFTextField;
@@ -19,11 +25,15 @@
 		public var closeButton:MovieClip;
 		
 		public var castes:Array;
+		public var city:City;
+		public var cityUI:CityUI;
 		
 		private var raceIcons:Array;
+		private var queueEntryUI:QueueEntryUI
 		
 		public function BuildingDetailCard() 
 		{			
+			queueEntryUI = new QueueEntryUI();
 			castes = new Array();
 			raceIcons = new Array();
 		}				
@@ -59,10 +69,17 @@
 			}
 		}
 		
-		public function setActiveContract(queueEntryUI:QueueEntryUI) : void
+		public function setActiveContract(contract:Contract) : void
 		{
-			if(queueEntryUI != null)			
-			{				
+			removeActiveContract();
+			
+			if(contract != null)			
+			{								
+				queueEntryUI.city = city;
+				queueEntryUI.setQueueEntry(contract);
+				queueEntryUI.x = CONTRACT_X;				
+				queueEntryUI.y = CONTRACT_Y;		
+				
 				addChild(queueEntryUI);
 			}
 		}
@@ -95,6 +112,15 @@
 				
 				removeChild(castes[i]);
 			}		
+		}
+		
+		private function removeActiveContract() : void
+		{
+			if(queueEntryUI != null)
+			{
+				if(this.contains(queueEntryUI))
+					this.removeChild(queueEntryUI);
+			}
 		}
 	}
 	
