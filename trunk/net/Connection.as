@@ -53,6 +53,7 @@
 		
 		public static var onSuccessAddClaim:String = "onSuccessAddClaim";
 		public static var onSuccessAssignTask:String = "onSuccessAssignTask";
+        public static var onSuccessCityQueueImprovement:String = "onSuccessCityQueueImprovement";
 				
 		public var clockSyncStartTime:Number = 0;
 		public var clockSyncEndTime:Number = 0;
@@ -260,6 +261,11 @@
 							pEvent = new ParamEvent(onSuccessAssignTask);
 							pEvent.params = success.id;
 						}
+                        else if(success.type == Packet.CITY_QUEUE_IMPROVEMENT)
+                        {
+                            pEvent = new ParamEvent(onSuccessCityQueueImprovement)
+                            pEvent.params = success.id;
+                        }
 						
 						dispatchEvent(pEvent);												
 					}

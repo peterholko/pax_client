@@ -47,6 +47,11 @@
 			confirmPopup.visible = false;			
 			this.visible = true;
 		}
+
+        public function hidePanel() : void
+        {
+            this.visible = false;
+        }
 		
 		public function setTileInfo(tile:Tile) : void
 		{

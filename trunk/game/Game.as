@@ -86,7 +86,7 @@
 		
 		private var initialPerception:Boolean = true;
 		
-		private var lastPacket:Object;		
+		private var prevSentPacket:Object;		
 		
 		private var armyUIList:Array;
 		
@@ -115,6 +115,7 @@
 			
 			Connection.INSTANCE.addEventListener(Connection.onSuccessAddClaim, successAddClaim);			
 			Connection.INSTANCE.addEventListener(Connection.onSuccessAssignTask, successAssignTask);
+			Connection.INSTANCE.addEventListener(Connection.onSuccessCityQueueImprovement, successCityQueueImprovement);
 			
 			addEventListener(Tile.onClick, tileClicked);
 			addEventListener(Tile.onDoubleClick, tileDoubleClicked);
@@ -268,7 +269,7 @@
 			addClaim.cityId = cityId;
 			addClaim.x = tileX;
 			addClaim.y = tileY;
-			lastPacket = addClaim;
+			prevSentPacket = addClaim;
 			
 			var addClaimEvent:ParamEvent = new ParamEvent(Connection.onSendAddClaim);
 			addClaimEvent.params = addClaim;
@@ -312,7 +313,7 @@
 			assignTask.targetId = assignment.targetId;
 			assignTask.targetType = assignment.targetType;
 			
-			lastPacket = assignTask;
+		    prevSentPacket = assignTask;
 			
 			var sendAssignTask:ParamEvent = new ParamEvent(Connection.onSendAssignTask);
 			sendAssignTask.params = assignTask;
@@ -689,10 +690,10 @@
 		private function successAddClaim(e:ParamEvent) : void
 		{
 			trace("Game - successAddClaim");						
-			if(lastPacket != null)
+			if(prevSentPacket != null)
 			{
 				var claimId:int = e.params;				
-				var addClaim:AddClaim = AddClaim(lastPacket);
+				var addClaim:AddClaim = AddClaim(prevSentPacket);
 				var claim:Claim = new Claim();
 				var city:City = City(perceptionManager.getEntity(addClaim.cityId));
 				
@@ -714,12 +715,21 @@
 		private function successAssignTask(e:ParamEvent) : void
 		{
 			trace("Game - successAssignTask");
-			if(lastPacket != null)
+			if(prevSentPacket != null)
 			{
-				var assignTask:AssignTask = AssignTask(lastPacket);				
+				var assignTask:AssignTask = AssignTask(prevSentPacket);				
 				requestInfo(MapObjectType.CITY, assignTask.cityId);
 			}
 		}
+
+        private function successCityQueueImprovement(e:ParamEvent) : void
+        {
+            trace("Game - successCityQueueImprovement");
+            if(prevSentPacket != null)
+            {
+                mainUI.buildSelector.hidePanel();
+            }
+        }
 		
 		private function setTileStatus(tile:Tile) : void
 		{
