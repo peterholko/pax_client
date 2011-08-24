@@ -17,6 +17,11 @@
 			entities = new Array();			
 		}
 		
+		public function getEntities() : Array
+		{
+			return entities;
+		}
+		
 		public function setEntities(perceptionEntities:Array) : void
 		{			
 			var perceptionEntityList:Array = perceptionEntities;

@@ -63,6 +63,7 @@
 		
 		//UI events
 		public static var mainUIBuildClickEvent:String = "mainUIBuildClickEvent";
+		public static var mainUIClaimClickEvent:String = "mainUIClaimClickEvent";
 		
 		//States
 		public static var TileNone:int = 0;
@@ -126,6 +127,7 @@
 			addEventListener(MapBattle.onDoubleClick, battleDoubleClicked);
 			
 			addEventListener(mainUIBuildClickEvent, processMainUIBuildClick);
+			addEventListener(mainUIClaimClickEvent, processMainUIClaimClick);
 		
 			addEventListener(assignTaskEvent, processAssignTask);
 			addEventListener(transferUnitEvent, processTransferUnit);
@@ -262,11 +264,12 @@
 			Connection.INSTANCE.dispatchEvent(battleTargetEvent);
 		}		
 		
-		private function processAddClaim(cityId:int, tileX:int, tileY:int) : void
+		private function processAddClaim(cityId:int, armyId:int, tileX:int, tileY:int) : void
 		{
 			var addClaim:AddClaim = new AddClaim();
 			
 			addClaim.cityId = cityId;
+			addClaim.armyId = armyId;
 			addClaim.x = tileX;
 			addClaim.y = tileY;
 			prevSentPacket = addClaim;
@@ -286,7 +289,7 @@
 			{
 				trace("Game - processMainUIBuildClick - valid claim");
 				
-				var city:City = kingdom.getCity(claim.cityId);
+				var city:City = kingdom.getCityById(claim.cityId);
 				var improvements:Array = city.getAvailableTileImprovements(selectedTile.type);
 
 				main.buildSelector.showPanel();
@@ -298,6 +301,18 @@
 				trace("Game - processMainUIBuildClick failed: No claim found.");
 			}
 		}		
+		
+		private function processMainUIClaimClick(e:ParamEvent) : void
+		{
+			trace("Game - processMainUIClaimClick");
+			var numCities:int = kingdom.getNumCities();
+			
+			if(numCities == 1)
+			{
+				var city:City = kingdom.getCity();				
+				processAddClaim(city.id, selectedEntity.id, selectedTile.gameX, selectedTile.gameY)
+			}
+		}
 		
 		private function processAssignTask(e:ParamEvent) : void
 		{
@@ -508,8 +523,7 @@
 				{
 					trace("isClaimCommand");
 					main.mainUI.resetCommand();
-					
-					processAddClaim(selectedEntity.id, tile.gameX, tile.gameY);
+
 				}				
 				else if(main.mainUI.isMoveCommand())
 				{
@@ -650,6 +664,7 @@
 			
 			main.addChild(landDetailCard);	
 			
+			landDetailCard.init();
 			landDetailCard.setInfo(infoTile);
 			landDetailCard.showPanel();
 			landDetailCard.closeButton.addEventListener(MouseEvent.CLICK, landDetailCloseClick);						
@@ -727,7 +742,7 @@
             trace("Game - successCityQueueImprovement");
             if(prevSentPacket != null)
             {
-                mainUI.buildSelector.hidePanel();
+                main.buildSelector.hidePanel();
             }
         }
 		

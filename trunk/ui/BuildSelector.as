@@ -117,7 +117,7 @@
 		
 		private function confirmPopupCancelClick(e:MouseEvent) : void
 		{
-			
+			confirmPopup.visible = false;
 		}		
 		
 		private function buildButtonClick(e:MouseEvent) : void

@@ -35,6 +35,27 @@
 		{				
 		}
 		
+		public static function getImprovementFromPos(xCoord:int, yCoord:int) : Improvement
+		{
+			var entities:Array = EntityManager.INSTANCE.getEntities();
+			
+			for(var i:int = 0; i < entities.length; i++)
+			{
+				var entity:Entity = Entity(entities[i]);
+				
+				if(entity.type == Entity.IMPROVEMENT)
+				{
+					if(entity.gameX == xCoord && 
+					   entity.gameY == yCoord)
+					{
+						return Improvement(entity);
+					}
+				}
+			}
+			
+			return null;
+		}
+		
 		public static function getImageStatic(type:int) : BitmapData
 		{
 			var imageData:BitmapData = null;

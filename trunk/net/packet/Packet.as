@@ -168,6 +168,7 @@
 			trace("Packet - sendAddClaim");
 			socket.writeByte(ADD_CLAIM);
 			socket.writeInt(addClaim.cityId);
+			socket.writeInt(addClaim.armyId);
 			socket.writeShort(addClaim.x);
 			socket.writeShort(addClaim.y);
 			socket.flush();

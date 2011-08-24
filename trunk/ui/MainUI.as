@@ -277,13 +277,14 @@
 					{
 						moveButton.visible = true;
 						attackButton.visible = true;
+						claimButton.visible = true;
 					}
 				}
 				else if (selectedEntity.type == Entity.CITY)
 				{
 					if (selectedEntity.isPlayers())
 					{
-						claimButton.visible = true;
+						
 					}
 				}
 			}
@@ -393,7 +394,8 @@
 			Game.INSTANCE.selectedEntity = selectedEntity;
 			command = COMMAND_CLAIM;
 			
-			main.moveReticule.show();			
+			var pEvent:ParamEvent = new ParamEvent(Game.mainUIClaimClickEvent);
+			Game.INSTANCE.dispatchEvent(pEvent);
 		}
 		
 		private function buildButtonClick(e:MouseEvent) : void

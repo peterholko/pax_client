@@ -16,6 +16,18 @@
 		{
 		}
 
+		public function getNumCities() : int
+		{
+			var cities:Array = getCities();
+			return cities.length;
+		}
+		
+		public function getCity() : City
+		{
+			var cities:Array = getCities();
+			return City(cities[0]);
+		}
+
 		public function getEntities() : Array
 		{
 			var entities:Dictionary = PerceptionManager.INSTANCE.getEntities();
@@ -55,7 +67,7 @@
 			return null;			
 		}
 		
-		public function getCity(cityId:int) : City
+		public function getCityById(cityId:int) : City
 		{
 			var cities:Array = getCities();
 			
