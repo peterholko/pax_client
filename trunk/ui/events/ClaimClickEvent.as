@@ -1,0 +1,1 @@
+﻿package ui.events {		import flash.events.Event;	import game.map.Tile;	import game.entity.Army;	public class ClaimClickEvent extends Event	{		public var selectedTile:Tile;				public var selectedArmy:Army;		public function ClaimClickEvent(type:String, bubbles:Boolean = false, cancelable:Boolean = false)		{			super(type, bubbles, cancelable);		}									}	}

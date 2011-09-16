@@ -1,0 +1,1 @@
+﻿package ui.events{		public class GameEvents 	{		public static const SuccessAddClaim = "SuccessAddClaim";		public function GameEvents() 		{					}	}	}

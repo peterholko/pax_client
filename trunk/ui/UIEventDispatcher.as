@@ -1,0 +1,1 @@
+﻿package ui{	import flash.events.EventDispatcher;			public class UIEventDispatcher extends EventDispatcher	{		public static var INSTANCE:UIEventDispatcher = new UIEventDispatcher();		public function UIEventDispatcher() 		{					}	}}

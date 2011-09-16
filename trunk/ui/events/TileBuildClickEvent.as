@@ -1,0 +1,1 @@
+﻿package ui.events {		import flash.events.Event;	import game.map.Tile;	public class TileBuildClickEvent extends Event	{		public var tile:Tile;		public function TileBuildClickEvent(type:String, bubbles:Boolean = false, cancelable:Boolean = false)		{			super(type, bubbles, cancelable);		}									}	}

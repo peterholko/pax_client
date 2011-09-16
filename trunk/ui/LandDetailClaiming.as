@@ -1,0 +1,1 @@
+﻿package ui {		import flash.display.MovieClip;	import fl.text.TLFTextField;			public class LandDetailClaiming extends MovieClip {				public var empireName:TLFTextField;		public var claimStatus:TLFTextField;		public var timeRemaining:TLFTextField;				public function LandDetailClaiming() {			// constructor code		}	}	}

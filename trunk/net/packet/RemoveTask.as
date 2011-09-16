@@ -1,0 +1,1 @@
+﻿package net.packet{	public class RemoveTask implements IPacket	{		public var cityId:int;		public var assignmentId:int;				public function RemoveTask() : void		{				}	}	}

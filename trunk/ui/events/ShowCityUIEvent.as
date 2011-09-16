@@ -1,0 +1,1 @@
+﻿package ui.events {		import flash.events.Event;	import game.entity.City;	public class ShowCityUIEvent extends Event	{		public var city:City;		public function ShowCityUIEvent(type:String, bubbles:Boolean = false, cancelable:Boolean = false)		{			super(type, bubbles, cancelable);		}									}	}

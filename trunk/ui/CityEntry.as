@@ -1,0 +1,1 @@
+﻿package ui {		import flash.display.MovieClip;	import fl.text.TLFTextField;			public class CityEntry extends MovieClip 	{		public var cityId:int;		public var cityName:TLFTextField;		public var cityLevelType:TLFTextField;				public function CityEntry() 		{			// constructor code		}	}	}
