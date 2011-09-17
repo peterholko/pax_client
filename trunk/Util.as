@@ -5,6 +5,8 @@
 	
 	public class Util
 	{
+        public var test:int;
+
 		public static function removeChildren(displayContainer:DisplayObjectContainer) : void
 		{
 			while (displayContainer.numChildren)
@@ -17,8 +19,7 @@
 				return true;
 				
 			return false;
-		}
-		
+		}	
 	}
 	
 }
