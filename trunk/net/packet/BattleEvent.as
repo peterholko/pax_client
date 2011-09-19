@@ -1,0 +1,1 @@
+﻿package net.packet {	public class BattleEvent implements IPacket	{		public var eventType:int;		public var battleId:int;		public var army:ArmyPacket;				public function BattleEvent() : void		{		}	}	}
