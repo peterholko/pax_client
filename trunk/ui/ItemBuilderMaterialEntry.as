@@ -1,0 +1,1 @@
+﻿package ui {		import flash.display.MovieClip;			public class ItemBuilderMaterialEntry extends MovieClip {						public function ItemBuilderMaterialEntry() {			// constructor code		}	}	}

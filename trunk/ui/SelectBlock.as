@@ -1,0 +1,1 @@
+﻿package ui {		import flash.display.MovieClip;			public class SelectBlock extends MovieClip {				public var createNew:MovieClip;				public function SelectBlock() {			// constructor code		}	}	}

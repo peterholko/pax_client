@@ -1,0 +1,1557 @@
+<buildings>
+<row>
+  <Id>1</Id>
+  <Building_Type>Imperial Palace</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>2</Id>
+  <Building_Type>Royal Palace </Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>3</Id>
+  <Building_Type>Royal Palace </Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>4</Id>
+  <Building_Type>Royal Palace </Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>5</Id>
+  <Building_Type>Royal Palace </Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>6</Id>
+  <Building_Type>Royal Palace </Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>7</Id>
+  <Building_Type>Governor&apos;s Palace</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>8</Id>
+  <Building_Type>Governor&apos;s Palace</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>9</Id>
+  <Building_Type>Governor&apos;s Palace</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>10</Id>
+  <Building_Type>Governor&apos;s Palace</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>11</Id>
+  <Building_Type>Governor&apos;s Palace</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>12</Id>
+  <Building_Type>Divine Temple</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>13</Id>
+  <Building_Type>Divine Temple</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>14</Id>
+  <Building_Type>Divine Temple</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>15</Id>
+  <Building_Type>Divine Temple</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>16</Id>
+  <Building_Type>Divine Temple</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>17</Id>
+  <Building_Type>Corrupt Temple</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>18</Id>
+  <Building_Type>Corrupt Temple</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>19</Id>
+  <Building_Type>Corrupt Temple</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>20</Id>
+  <Building_Type>Corrupt Temple</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>21</Id>
+  <Building_Type>Corrupt Temple</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>22</Id>
+  <Building_Type>Water Temple</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>23</Id>
+  <Building_Type>Water Temple</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>24</Id>
+  <Building_Type>Water Temple</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>25</Id>
+  <Building_Type>Water Temple</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>26</Id>
+  <Building_Type>Water Temple</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>27</Id>
+  <Building_Type>Nature Temple</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>28</Id>
+  <Building_Type>Nature Temple</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>29</Id>
+  <Building_Type>Nature Temple</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>30</Id>
+  <Building_Type>Nature Temple</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>31</Id>
+  <Building_Type>Nature Temple</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>32</Id>
+  <Building_Type>Fire Temple</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>33</Id>
+  <Building_Type>Fire Temple</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>34</Id>
+  <Building_Type>Fire Temple</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>35</Id>
+  <Building_Type>Fire Temple</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>36</Id>
+  <Building_Type>Fire Temple</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>37</Id>
+  <Building_Type>Earth Temple</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>38</Id>
+  <Building_Type>Earth Temple</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>39</Id>
+  <Building_Type>Earth Temple</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>40</Id>
+  <Building_Type>Earth Temple</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>41</Id>
+  <Building_Type>Earth Temple</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>42</Id>
+  <Building_Type>Barracks</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>43</Id>
+  <Building_Type>Barracks</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>44</Id>
+  <Building_Type>Barracks</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>45</Id>
+  <Building_Type>Barracks</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>46</Id>
+  <Building_Type>Barracks</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>47</Id>
+  <Building_Type>Shipyard</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>48</Id>
+  <Building_Type>Shipyard</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>49</Id>
+  <Building_Type>Shipyard</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>50</Id>
+  <Building_Type>Shipyard</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>51</Id>
+  <Building_Type>Shipyard</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>52</Id>
+  <Building_Type>Airstrip</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>53</Id>
+  <Building_Type>Airstrip</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>54</Id>
+  <Building_Type>Airstrip</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>55</Id>
+  <Building_Type>Airstrip</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>56</Id>
+  <Building_Type>Airstrip</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>57</Id>
+  <Building_Type>Artificer</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>58</Id>
+  <Building_Type>Artificer</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>59</Id>
+  <Building_Type>Artificer</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>60</Id>
+  <Building_Type>Artificer</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>61</Id>
+  <Building_Type>Artificer</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>62</Id>
+  <Building_Type>Alchemist</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>63</Id>
+  <Building_Type>Alchemist</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>64</Id>
+  <Building_Type>Alchemist</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>65</Id>
+  <Building_Type>Alchemist</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>66</Id>
+  <Building_Type>Alchemist</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>67</Id>
+  <Building_Type>Armorsmith</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>68</Id>
+  <Building_Type>Armorsmith</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>69</Id>
+  <Building_Type>Armorsmith</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>70</Id>
+  <Building_Type>Armorsmith</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>71</Id>
+  <Building_Type>Armorsmith</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>72</Id>
+  <Building_Type>Bakery</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>73</Id>
+  <Building_Type>Bakery</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>74</Id>
+  <Building_Type>Bakery</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>75</Id>
+  <Building_Type>Bakery</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>76</Id>
+  <Building_Type>Bakery</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>77</Id>
+  <Building_Type>Blacksmith</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>78</Id>
+  <Building_Type>Blacksmith</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>79</Id>
+  <Building_Type>Blacksmith</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>80</Id>
+  <Building_Type>Blacksmith</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>81</Id>
+  <Building_Type>Blacksmith</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>82</Id>
+  <Building_Type>Bonecarver</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>83</Id>
+  <Building_Type>Bonecarver</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>84</Id>
+  <Building_Type>Bonecarver</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>85</Id>
+  <Building_Type>Bonecarver</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>86</Id>
+  <Building_Type>Bonecarver</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>87</Id>
+  <Building_Type>Bowyer</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>88</Id>
+  <Building_Type>Bowyer</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>89</Id>
+  <Building_Type>Bowyer</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>90</Id>
+  <Building_Type>Bowyer</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>91</Id>
+  <Building_Type>Bowyer</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>92</Id>
+  <Building_Type>Brewery</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>93</Id>
+  <Building_Type>Brewery</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>94</Id>
+  <Building_Type>Brewery</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>95</Id>
+  <Building_Type>Brewery</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>96</Id>
+  <Building_Type>Brewery</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>97</Id>
+  <Building_Type>Butcher</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>98</Id>
+  <Building_Type>Butcher</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>99</Id>
+  <Building_Type>Butcher</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>100</Id>
+  <Building_Type>Butcher</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>101</Id>
+  <Building_Type>Butcher</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>102</Id>
+  <Building_Type>Fishery</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>103</Id>
+  <Building_Type>Fishery</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>104</Id>
+  <Building_Type>Fishery</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>105</Id>
+  <Building_Type>Fishery</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>106</Id>
+  <Building_Type>Fishery</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>107</Id>
+  <Building_Type>Foundry</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>108</Id>
+  <Building_Type>Foundry</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>109</Id>
+  <Building_Type>Foundry</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>110</Id>
+  <Building_Type>Foundry</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>111</Id>
+  <Building_Type>Foundry</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>112</Id>
+  <Building_Type>Gunsmith</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>113</Id>
+  <Building_Type>Gunsmith</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>114</Id>
+  <Building_Type>Gunsmith</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>115</Id>
+  <Building_Type>Gunsmith</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>116</Id>
+  <Building_Type>Gunsmith</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>117</Id>
+  <Building_Type>Herbalist</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>118</Id>
+  <Building_Type>Herbalist</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>119</Id>
+  <Building_Type>Herbalist</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>120</Id>
+  <Building_Type>Herbalist</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>121</Id>
+  <Building_Type>Herbalist</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>122</Id>
+  <Building_Type>Jeweler</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>123</Id>
+  <Building_Type>Jeweler</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>124</Id>
+  <Building_Type>Jeweler</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>125</Id>
+  <Building_Type>Jeweler</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>126</Id>
+  <Building_Type>Jeweler</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>127</Id>
+  <Building_Type>Kiln</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>128</Id>
+  <Building_Type>Kiln</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>129</Id>
+  <Building_Type>Kiln</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>130</Id>
+  <Building_Type>Kiln</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>131</Id>
+  <Building_Type>Kiln</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>132</Id>
+  <Building_Type>Kitchens</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>133</Id>
+  <Building_Type>Kitchens</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>134</Id>
+  <Building_Type>Kitchens</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>135</Id>
+  <Building_Type>Kitchens</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>136</Id>
+  <Building_Type>Kitchens</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>137</Id>
+  <Building_Type>Leatherworks</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>138</Id>
+  <Building_Type>Leatherworks</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>139</Id>
+  <Building_Type>Leatherworks</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>140</Id>
+  <Building_Type>Leatherworks</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>141</Id>
+  <Building_Type>Leatherworks</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>142</Id>
+  <Building_Type>Mason</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>143</Id>
+  <Building_Type>Mason</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>144</Id>
+  <Building_Type>Mason</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>145</Id>
+  <Building_Type>Mason</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>146</Id>
+  <Building_Type>Mason</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>147</Id>
+  <Building_Type>Mechanist</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>148</Id>
+  <Building_Type>Mechanist</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>149</Id>
+  <Building_Type>Mechanist</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>150</Id>
+  <Building_Type>Mechanist</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>151</Id>
+  <Building_Type>Mechanist</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>152</Id>
+  <Building_Type>Mill</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>153</Id>
+  <Building_Type>Mill</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>154</Id>
+  <Building_Type>Mill</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>155</Id>
+  <Building_Type>Mill</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>156</Id>
+  <Building_Type>Mill</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>157</Id>
+  <Building_Type>Siege Shop</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>158</Id>
+  <Building_Type>Siege Shop</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>159</Id>
+  <Building_Type>Siege Shop</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>160</Id>
+  <Building_Type>Siege Shop</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>161</Id>
+  <Building_Type>Siege Shop</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>162</Id>
+  <Building_Type>Stables</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>163</Id>
+  <Building_Type>Stables</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>164</Id>
+  <Building_Type>Stables</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>165</Id>
+  <Building_Type>Stables</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>166</Id>
+  <Building_Type>Stables</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>167</Id>
+  <Building_Type>Tailor</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>168</Id>
+  <Building_Type>Tailor</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>169</Id>
+  <Building_Type>Tailor</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>170</Id>
+  <Building_Type>Tailor</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>171</Id>
+  <Building_Type>Tailor</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>172</Id>
+  <Building_Type>Tanner</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>173</Id>
+  <Building_Type>Tanner</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>174</Id>
+  <Building_Type>Tanner</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>175</Id>
+  <Building_Type>Tanner</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>176</Id>
+  <Building_Type>Tanner</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>177</Id>
+  <Building_Type>Weaponsmith</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>178</Id>
+  <Building_Type>Weaponsmith</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>179</Id>
+  <Building_Type>Weaponsmith</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>180</Id>
+  <Building_Type>Weaponsmith</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>181</Id>
+  <Building_Type>Weaponsmith</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>182</Id>
+  <Building_Type>Weaver</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>183</Id>
+  <Building_Type>Weaver</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>184</Id>
+  <Building_Type>Weaver</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>185</Id>
+  <Building_Type>Weaver</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>186</Id>
+  <Building_Type>Weaver</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>187</Id>
+  <Building_Type>Woodcarver</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>188</Id>
+  <Building_Type>Woodcarver</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>189</Id>
+  <Building_Type>Woodcarver</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>190</Id>
+  <Building_Type>Woodcarver</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>191</Id>
+  <Building_Type>Woodcarver</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>192</Id>
+  <Building_Type>Academy</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>193</Id>
+  <Building_Type>Academy</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>194</Id>
+  <Building_Type>Academy</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>195</Id>
+  <Building_Type>Academy</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>196</Id>
+  <Building_Type>Academy</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>197</Id>
+  <Building_Type>Admiralty</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>198</Id>
+  <Building_Type>Admiralty</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>199</Id>
+  <Building_Type>Admiralty</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>200</Id>
+  <Building_Type>Admiralty</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>201</Id>
+  <Building_Type>Admiralty</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>202</Id>
+  <Building_Type>Arena</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>203</Id>
+  <Building_Type>Arena</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>204</Id>
+  <Building_Type>Arena</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>205</Id>
+  <Building_Type>Arena</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>206</Id>
+  <Building_Type>Arena</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>207</Id>
+  <Building_Type>Brothel</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>208</Id>
+  <Building_Type>Brothel</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>209</Id>
+  <Building_Type>Brothel</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>210</Id>
+  <Building_Type>Brothel</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>211</Id>
+  <Building_Type>Brothel</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>212</Id>
+  <Building_Type>Courthouse</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>213</Id>
+  <Building_Type>Courthouse</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>214</Id>
+  <Building_Type>Courthouse</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>215</Id>
+  <Building_Type>Courthouse</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>216</Id>
+  <Building_Type>Courthouse</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>217</Id>
+  <Building_Type>Excubitor Barracks</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>218</Id>
+  <Building_Type>Excubitor Barracks</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>219</Id>
+  <Building_Type>Excubitor Barracks</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>220</Id>
+  <Building_Type>Excubitor Barracks</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>221</Id>
+  <Building_Type>Excubitor Barracks</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>222</Id>
+  <Building_Type>Jail</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>223</Id>
+  <Building_Type>Jail</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>224</Id>
+  <Building_Type>Jail</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>225</Id>
+  <Building_Type>Jail</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>226</Id>
+  <Building_Type>Jail</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>227</Id>
+  <Building_Type>Judicator Barracks</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>228</Id>
+  <Building_Type>Judicator Barracks</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>229</Id>
+  <Building_Type>Judicator Barracks</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>230</Id>
+  <Building_Type>Judicator Barracks</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>231</Id>
+  <Building_Type>Judicator Barracks</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>232</Id>
+  <Building_Type>Library</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>233</Id>
+  <Building_Type>Library</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>234</Id>
+  <Building_Type>Library</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>235</Id>
+  <Building_Type>Library</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>236</Id>
+  <Building_Type>Library</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>237</Id>
+  <Building_Type>Slave Market</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>238</Id>
+  <Building_Type>Slave Market</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>239</Id>
+  <Building_Type>Slave Market</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>240</Id>
+  <Building_Type>Slave Market</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>241</Id>
+  <Building_Type>Slave Market</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>242</Id>
+  <Building_Type>Theatre</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>243</Id>
+  <Building_Type>Theatre</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>244</Id>
+  <Building_Type>Theatre</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>245</Id>
+  <Building_Type>Theatre</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>246</Id>
+  <Building_Type>Theatre</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>247</Id>
+  <Building_Type>Torture Pit </Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>248</Id>
+  <Building_Type>Torture Pit </Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>249</Id>
+  <Building_Type>Torture Pit </Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>250</Id>
+  <Building_Type>Torture Pit </Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>251</Id>
+  <Building_Type>Torture Pit </Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>252</Id>
+  <Building_Type>Tribunal</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>253</Id>
+  <Building_Type>Tribunal</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>254</Id>
+  <Building_Type>Tribunal</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>255</Id>
+  <Building_Type>Tribunal</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>256</Id>
+  <Building_Type>Tribunal</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>257</Id>
+  <Building_Type>Aerodrome </Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>258</Id>
+  <Building_Type>Aerodrome </Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>259</Id>
+  <Building_Type>Aerodrome </Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>260</Id>
+  <Building_Type>Aerodrome </Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>261</Id>
+  <Building_Type>Aerodrome </Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>262</Id>
+  <Building_Type>Bank </Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>263</Id>
+  <Building_Type>Bank </Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>264</Id>
+  <Building_Type>Bank </Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>265</Id>
+  <Building_Type>Bank </Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>266</Id>
+  <Building_Type>Bank </Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>267</Id>
+  <Building_Type>Market</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>268</Id>
+  <Building_Type>Market</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>269</Id>
+  <Building_Type>Market</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>270</Id>
+  <Building_Type>Market</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>271</Id>
+  <Building_Type>Market</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>272</Id>
+  <Building_Type>Port </Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>273</Id>
+  <Building_Type>Port </Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>274</Id>
+  <Building_Type>Port </Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>275</Id>
+  <Building_Type>Port </Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>276</Id>
+  <Building_Type>Port </Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>277</Id>
+  <Building_Type>Tavern </Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>278</Id>
+  <Building_Type>Tavern </Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>279</Id>
+  <Building_Type>Tavern </Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>280</Id>
+  <Building_Type>Tavern </Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>281</Id>
+  <Building_Type>Tavern </Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>282</Id>
+  <Building_Type>Explorer&apos;s Guild </Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>283</Id>
+  <Building_Type>Explorer&apos;s Guild </Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>284</Id>
+  <Building_Type>Explorer&apos;s Guild </Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>285</Id>
+  <Building_Type>Explorer&apos;s Guild </Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>286</Id>
+  <Building_Type>Explorer&apos;s Guild </Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>287</Id>
+  <Building_Type>Merchant&apos;s Guild</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>288</Id>
+  <Building_Type>Merchant&apos;s Guild</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>289</Id>
+  <Building_Type>Merchant&apos;s Guild</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>290</Id>
+  <Building_Type>Merchant&apos;s Guild</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>291</Id>
+  <Building_Type>Merchant&apos;s Guild</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>292</Id>
+  <Building_Type>Thieves Guild</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>293</Id>
+  <Building_Type>Thieves Guild</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>294</Id>
+  <Building_Type>Thieves Guild</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>295</Id>
+  <Building_Type>Thieves Guild</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>296</Id>
+  <Building_Type>Thieves Guild</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>297</Id>
+  <Building_Type>Armory</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>298</Id>
+  <Building_Type>Armory</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>299</Id>
+  <Building_Type>Armory</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>300</Id>
+  <Building_Type>Armory</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>301</Id>
+  <Building_Type>Armory</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>302</Id>
+  <Building_Type>Silo</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>303</Id>
+  <Building_Type>Silo</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>304</Id>
+  <Building_Type>Silo</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>305</Id>
+  <Building_Type>Silo</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>306</Id>
+  <Building_Type>Silo</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+<row>
+  <Id>307</Id>
+  <Building_Type>Warehouse</Building_Type>
+  <Building_Level>1</Building_Level>
+</row>
+<row>
+  <Id>308</Id>
+  <Building_Type>Warehouse</Building_Type>
+  <Building_Level>2</Building_Level>
+</row>
+<row>
+  <Id>309</Id>
+  <Building_Type>Warehouse</Building_Type>
+  <Building_Level>3</Building_Level>
+</row>
+<row>
+  <Id>310</Id>
+  <Building_Type>Warehouse</Building_Type>
+  <Building_Level>4</Building_Level>
+</row>
+<row>
+  <Id>311</Id>
+  <Building_Type>Warehouse</Building_Type>
+  <Building_Level>5</Building_Level>
+</row>
+</buildings>

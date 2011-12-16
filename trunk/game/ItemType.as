@@ -1,0 +1,1 @@
+﻿package game{		public class ItemType 	{		public var id:int;		public var category:int;		public var name:String;		public var buildingReq:int;		public var improvementReq:int;		public var materialReq:Array;				public function ItemType() 		{		}	}	}

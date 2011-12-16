@@ -1,0 +1,1 @@
+﻿package ui {		import flash.display.MovieClip;			public class ItemBuilderStatsPanel extends MovieClip {						public function ItemBuilderStatsPanel() {			// constructor code		}	}	}

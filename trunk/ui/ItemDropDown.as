@@ -1,0 +1,1 @@
+﻿package ui {		import flash.display.MovieClip;	import fl.text.TLFTextField;			public class ItemDropDown extends MovieClip {				public var itemName:TLFTextField;		public var itemBuilderStats:ItemBuilderStats;				public function ItemDropDown() 		{		}	}	}

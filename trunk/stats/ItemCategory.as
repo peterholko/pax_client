@@ -1,0 +1,1 @@
+﻿package stats{		public class ItemCategory 	{		public var id:int;		public var name:String;		public var contains:Array = new Array();		public function ItemCategory() 		{		}	}	}
