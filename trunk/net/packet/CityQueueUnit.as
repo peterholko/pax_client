@@ -1,0 +1,1 @@
+﻿package net.packet{		public class CityQueueUnit implements IPacket	{		public var cityId:int;		public var buildingId:int;		public var unitType:int;		public var unitSize:int;		public var caste:int;		public var race:int;				public function CityQueueUnit() : void		{			// constructor code		}	}	}

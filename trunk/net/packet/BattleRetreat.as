@@ -1,0 +1,1 @@
+﻿package net.packet {		public class BattleRetreat 	{		public var battleId:int;		public var armyId:int;		public function BattleRetreat()		{			// constructor code		}	}	}

@@ -1,14 +1,1 @@
-﻿package net.packet
-{
-	public class InfoKingdom implements IPacket
-	{
-		public var id:int;
-		public var name:String;
-		public var gold:int;
-		
-		public function InfoKingdom() : void
-		{		
-		}
-	}
-	
-}
+﻿package net.packet{	public class InfoKingdom implements IPacket	{		public var id:int;		public var name:String;		public var gold:int;		public var itemRecipes:Array;		public var unitRecipes:Array;				public function InfoKingdom() : void		{				}	}	}

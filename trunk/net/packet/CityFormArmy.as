@@ -1,0 +1,1 @@
+﻿package net.packet {		public class CityFormArmy {				public var cityId:int;		public var armyName:String;		public function CityFormArmy() {			// constructor code		}	}	}

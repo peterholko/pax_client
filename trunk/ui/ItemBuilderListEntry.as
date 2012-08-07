@@ -1,0 +1,1 @@
+﻿package ui {	import fl.text.TLFTextField;	import flash.display.MovieClip;	import stats.ItemTemplate;	public class ItemBuilderListEntry extends MovieClip	{		public var itemText:TLFTextField;		public var itemTemplate:ItemTemplate;		public function ItemBuilderListEntry() 		{		}	}	}

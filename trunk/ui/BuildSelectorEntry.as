@@ -1,38 +1,1 @@
-﻿package ui {
-	
-	import flash.display.MovieClip;
-	import fl.text.TLFTextField;
-	import flash.display.Bitmap;
-	import game.entity.Improvement;
-	import flash.display.BitmapData;
-	
-	public class BuildSelectorEntry extends MovieClip 
-	{
-		public var improvementName:TLFTextField;
-		public var improvementNameDetail:TLFTextField;					
-		public var improvementType:int;		
-		
-		private var image:Bitmap;
-				
-		public function BuildSelectorItem() 
-		{						
-		}
-		
-		public function setEntry(_improvementType:int) : void
-		{
-			improvementType = _improvementType;
-			improvementName.text = Improvement.getNameStatic(improvementType);
-			improvementNameDetail.text = Improvement.getNameStatic(improvementType);			
-			
-			var bitmapData:BitmapData = Improvement.getImageStatic(improvementType);
-			
-			image = new Bitmap(bitmapData);
-			
-			image.x = 1;
-			image.y = 1;
-			
-			addChild(image);	
-		}
-	}
-	
-}
+﻿package ui {		import flash.display.MovieClip;	import fl.text.TLFTextField;	import flash.display.Bitmap;	import game.entity.Improvement;	import flash.display.BitmapData;	import flash.events.MouseEvent;	import stats.ImprovementStat;		public class BuildSelectorEntry extends MovieClip 	{		public var improvementName:TLFTextField;		public var improvementNameDetail:TLFTextField;							public var improvementType:int;						private var image:Bitmap;				private var isSelected:Boolean = false;						public function BuildSelectorEntry() 		{			addEventListener(MouseEvent.MOUSE_OUT, mouseOut);			addEventListener(MouseEvent.MOUSE_OVER, mouseOver);					}				public function setEntry(improvementStat:ImprovementStat) : void		{			improvementType = improvementStat.id;			improvementName.text = improvementStat.name;;			improvementNameDetail.text = improvementStat.name;						var bitmapData:BitmapData = Images.INSTANCE.getImage(improvementStat.image48);						image = new Bitmap(bitmapData);						image.x = 1;			image.y = 1;						addChild(image);			}				public function showSelected() : void		{			isSelected = true;			this.gotoAndStop(3);		}				private function mouseOut(e:MouseEvent) : void		{			if(isSelected)				this.gotoAndStop(3);			else				this.gotoAndStop(1);		}				private function mouseOver(e:MouseEvent) : void		{			this.gotoAndStop(2);		}							}	}

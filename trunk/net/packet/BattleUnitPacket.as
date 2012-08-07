@@ -1,0 +1,1 @@
+﻿package net.packet {		public class BattleUnitPacket {				public var id:int;		public var name:String;		public var templateId:int;		public var size:int;		public function BattleUnitPacket() {			// constructor code		}	}	}

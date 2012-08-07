@@ -1,0 +1,1 @@
+﻿package ui.events {		import flash.events.Event;	public class TrainCreateNewEvent extends Event	{		public function TrainCreateNewEvent(type:String, bubbles:Boolean = false, cancelable:Boolean = false)		{			super(type, bubbles, cancelable);		}									}	}

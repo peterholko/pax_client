@@ -1,0 +1,1 @@
+﻿package ui {		import flash.display.MovieClip;	import fl.text.TLFTextField;			public class DisbandPopup extends MovieClip 	{		public var cityName:TLFTextField;		public var armyName:TLFTextField;				public var confirmButton:MovieClip;		public var cancelButton:MovieClip;				public function DisbandPopup() 		{			// constructor code		}	}	}

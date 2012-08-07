@@ -1,0 +1,1 @@
+﻿package ui {		import flash.display.MovieClip;			public class SmallRightArrow extends MovieClip 	{						public function SmallRightArrow() 		{		}	}	}

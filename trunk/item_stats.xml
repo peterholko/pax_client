@@ -1,0 +1,5762 @@
+<item_stats>
+<row>
+ <id>255</id>
+ <build_group>foundry1</build_group>
+ <name>Airship Plating</name>
+ <description>These thick metal plates are used to protect an airship from damage.</description>
+ <rarity>none</rarity>
+ <item_category_id>air_gear</item_category_id>
+ <atk>0</atk>
+ <def>250</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-5</eva>
+ <weight>1000</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>256</id>
+ <build_group>gun1</build_group>
+ <name>Arquebus</name>
+ <description>An early firearm with a powerful shot but poor accuracy.</description>
+ <rarity>none</rarity>
+ <item_category_id>gun_ranged</item_category_id>
+ <atk>10</atk>
+ <def>0</def>
+ <range>3</range>
+ <speed>10</speed>
+ <acc>-5</acc>
+ <eva>0</eva>
+ <weight>2</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>pierce</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>50</value>
+ </row>
+<row>
+ <id>257</id>
+ <build_group>foundry2</build_group>
+ <name>Arquebus Barrel</name>
+ <description>The barrel of an arquebus rifle.</description>
+ <rarity>none</rarity>
+ <item_category_id>arq_barrel</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>2</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>258</id>
+ <build_group>bow1</build_group>
+ <name>Arrow</name>
+ <description>A projectile fired from a ranged bow weapon.</description>
+ <rarity>none</rarity>
+ <item_category_id>bow_ammo</item_category_id>
+ <atk>1</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>259</id>
+ <build_group>weapon2</build_group>
+ <name>Axe</name>
+ <description>Sharp crescent blade fastened to a haft.</description>
+ <rarity>none</rarity>
+ <item_category_id>slash</item_category_id>
+ <atk>3</atk>
+ <def>0</def>
+ <range>1</range>
+ <speed>4</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>2</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>slash</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>260</id>
+ <build_group>bow2</build_group>
+ <name>Ballista </name>
+ <description>A light crossbow-like siege weapon.</description>
+ <rarity>none</rarity>
+ <item_category_id>siege</item_category_id>
+ <atk>45</atk>
+ <def>0</def>
+ <range>5</range>
+ <speed>10</speed>
+ <acc>-5</acc>
+ <eva>0</eva>
+ <weight>50</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>150</value>
+ </row>
+<row>
+ <id>261</id>
+ <build_group>bow1</build_group>
+ <name>Ballista Bolt</name>
+ <description>A heavy wooden siege bolt. Especially effective against soldiers.</description>
+ <rarity>none</rarity>
+ <item_category_id>siege_ammo</item_category_id>
+ <atk>5</atk>
+ <def>0</def>
+ <range>5</range>
+ <speed>1</speed>
+ <acc>-5</acc>
+ <eva>0</eva>
+ <weight>5</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>262</id>
+ <build_group>siege1</build_group>
+ <name>Battering Ram</name>
+ <description>Swinging beam used to break down gates.</description>
+ <rarity>none</rarity>
+ <item_category_id>siege</item_category_id>
+ <atk>25</atk>
+ <def>0</def>
+ <range>1</range>
+ <speed>5</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>50</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>75</value>
+ </row>
+<row>
+ <id>263</id>
+ <build_group>weapon3</build_group>
+ <name>Battle Axe</name>
+ <description>Large double-bladed heavy axe.</description>
+ <rarity>none</rarity>
+ <item_category_id>2h_slash</item_category_id>
+ <atk>10</atk>
+ <def>0</def>
+ <range>2</range>
+ <speed>7</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>3</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>slash</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>25</value>
+ </row>
+<row>
+ <id>264</id>
+ <build_group>brew1</build_group>
+ <name>Beer</name>
+ <description>An alcoholic beverage made using grains.</description>
+ <rarity>none</rarity>
+ <item_category_id>food</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>1</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>265</id>
+ <build_group>bake1</build_group>
+ <name>Biscuit</name>
+ <description>A small hard bread-like food stuff.</description>
+ <rarity>none</rarity>
+ <item_category_id>food</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>1</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>266</id>
+ <build_group>herb2</build_group>
+ <name>Blood Draught</name>
+ <description>Small herbal potion made with blood.</description>
+ <rarity>none</rarity>
+ <item_category_id>herb</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.2</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>267</id>
+ <build_group>herb4</build_group>
+ <name>Blood Elixir</name>
+ <description>Large herbal potion made with blood.</description>
+ <rarity>none</rarity>
+ <item_category_id>herb</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.4</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>20</value>
+ </row>
+<row>
+ <id>268</id>
+ <build_group>herb1</build_group>
+ <name>Blood Oil</name>
+ <description>Tiny herbal potion made with blood.</description>
+ <rarity>none</rarity>
+ <item_category_id>herb</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>269</id>
+ <build_group>herb3</build_group>
+ <name>Blood Potion</name>
+ <description>Herbal potion made with blood.</description>
+ <rarity>none</rarity>
+ <item_category_id>herb</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.3</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>270</id>
+ <build_group>foundry3</build_group>
+ <name>Boiler</name>
+ <description>Large metal drum used to boil water. Component in steam engine.</description>
+ <rarity>none</rarity>
+ <item_category_id>boiler</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>10</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>25</value>
+ </row>
+<row>
+ <id>271</id>
+ <build_group>bow1</build_group>
+ <name>Bolt</name>
+ <description>A short projectile used in crossbow weapons.</description>
+ <rarity>none</rarity>
+ <item_category_id>xbow_ammo</item_category_id>
+ <atk>1</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>272</id>
+ <build_group>air1</build_group>
+ <name>Bomb Hold</name>
+ <description>An airship hold used to store and drop bombs.</description>
+ <rarity>none</rarity>
+ <item_category_id>air_hold</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>2500</effect_amount>
+ <effect_type>bombspace</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>500</value>
+ </row>
+<row>
+ <id>273</id>
+ <build_group>gun4</build_group>
+ <name>Bombard</name>
+ <description>A very heavy and powerful artillery weapon.</description>
+ <rarity>none</rarity>
+ <item_category_id>siege</item_category_id>
+ <atk>300</atk>
+ <def>0</def>
+ <range>5</range>
+ <speed>20</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>200</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>750</value>
+ </row>
+<row>
+ <id>274</id>
+ <build_group>bone2</build_group>
+ <name>Bone Armor</name>
+ <description>An effective light-weight armor made from bone.</description>
+ <rarity>none</rarity>
+ <item_category_id>medium_armor</item_category_id>
+ <atk>0</atk>
+ <def>3</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-1</eva>
+ <weight>0.5</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>med_ac</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>3</value>
+ </row>
+<row>
+ <id>275</id>
+ <build_group>bone1</build_group>
+ <name>Bone Club</name>
+ <description>A short bone club.</description>
+ <rarity>none</rarity>
+ <item_category_id>bludgeon</item_category_id>
+ <atk>4</atk>
+ <def>0</def>
+ <range>1</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>bludgeon</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>4</value>
+ </row>
+<row>
+ <id>276</id>
+ <build_group>bone1</build_group>
+ <name>Bone Crafts</name>
+ <description>Assorted bone crafts.</description>
+ <rarity>none</rarity>
+ <item_category_id>crafts</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>277</id>
+ <build_group>herb2</build_group>
+ <name>Bone Draught</name>
+ <description>Small herbal potion made with bone.</description>
+ <rarity>none</rarity>
+ <item_category_id>herb</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.2</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>278</id>
+ <build_group>herb4</build_group>
+ <name>Bone Elixir</name>
+ <description>Large herbal potion made with bone.</description>
+ <rarity>none</rarity>
+ <item_category_id>herb</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.4</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>20</value>
+ </row>
+<row>
+ <id>279</id>
+ <build_group>bone1</build_group>
+ <name>Bone Haft</name>
+ <description>Long carved bone haft for use in weapons.</description>
+ <rarity>none</rarity>
+ <item_category_id>haft</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>2</value>
+ </row>
+<row>
+ <id>280</id>
+ <build_group>bone1</build_group>
+ <name>Bone Hilt</name>
+ <description>Short carved bone hilt for use in weapons.</description>
+ <rarity>none</rarity>
+ <item_category_id>hilt</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>2</value>
+ </row>
+<row>
+ <id>281</id>
+ <build_group>bone3</build_group>
+ <name>Bone Heavy Armor</name>
+ <description>Heavy armor carapace made with bone.</description>
+ <rarity>none</rarity>
+ <item_category_id>heavy_armor</item_category_id>
+ <atk>0</atk>
+ <def>5</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-2</eva>
+ <weight>1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>high_ac</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>6</value>
+ </row>
+<row>
+ <id>282</id>
+ <build_group>bone2</build_group>
+ <name>Bone Heavy Club</name>
+ <description>Heavy two-handed club made with bone.</description>
+ <rarity>none</rarity>
+ <item_category_id>2h_bludgeon</item_category_id>
+ <atk>6</atk>
+ <def>0</def>
+ <range>2</range>
+ <speed>8</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>2</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>bludgeon</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>8</value>
+ </row>
+<row>
+ <id>283</id>
+ <build_group>bone2</build_group>
+ <name>Bone Heavy Mount Armor</name>
+ <description>Heavy armor bone carapace for use with mounts.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>5</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-2</eva>
+ <weight>2</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>284</id>
+ <build_group>bone1</build_group>
+ <name>Bone Javelin</name>
+ <description>Long thin spear of bone.</description>
+ <rarity>none</rarity>
+ <item_category_id>pierce</item_category_id>
+ <atk>2</atk>
+ <def>0</def>
+ <range>2</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>pierce</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>4</value>
+ </row>
+<row>
+ <id>285</id>
+ <build_group>bone1</build_group>
+ <name>Bone Mount Armor</name>
+ <description>Armor bone carapace for use with mounts.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>3</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-1</eva>
+ <weight>4</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>286</id>
+ <build_group>herb1</build_group>
+ <name>Bone Oil</name>
+ <description>Tiny herbal potion made with bone.</description>
+ <rarity>none</rarity>
+ <item_category_id>herb</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>287</id>
+ <build_group>herb3</build_group>
+ <name>Bone Potion</name>
+ <description>Herbal potion made with bone.</description>
+ <rarity>none</rarity>
+ <item_category_id>herb</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.3</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>288</id>
+ <build_group>bone1</build_group>
+ <name>Bone Stock</name>
+ <description>Carved bone stock for use in weapons.</description>
+ <rarity>none</rarity>
+ <item_category_id>stock</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>289</id>
+ <build_group>bow1</build_group>
+ <name>Bow</name>
+ <description>Ranged weapon that fires arrows.</description>
+ <rarity>none</rarity>
+ <item_category_id>bow_ranged</item_category_id>
+ <atk>6</atk>
+ <def>0</def>
+ <range>2</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>pierce</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>6</value>
+ </row>
+<row>
+ <id>290</id>
+ <build_group>bake2</build_group>
+ <name>Bread</name>
+ <description>A load of hardy whole-grain bread.</description>
+ <rarity>none</rarity>
+ <item_category_id>food</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>3</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>291</id>
+ <build_group>gun1</build_group>
+ <name>Bullet</name>
+ <description>Tiny ball of metal fired using a gun.</description>
+ <rarity>none</rarity>
+ <item_category_id>gun_ammo</item_category_id>
+ <atk>2</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>3</value>
+ </row>
+<row>
+ <id>292</id>
+ <build_group>bake3</build_group>
+ <name>Cake</name>
+ <description>A delicious cake.</description>
+ <rarity>none</rarity>
+ <item_category_id>food</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>5</food>
+ <build>0</build>
+ <value>25</value>
+ </row>
+<row>
+ <id>293</id>
+ <build_group>gun2</build_group>
+ <name>Cannon</name>
+ <description>An artillery weapon.</description>
+ <rarity>none</rarity>
+ <item_category_id>siege</item_category_id>
+ <atk>100</atk>
+ <def>0</def>
+ <range>5</range>
+ <speed>10</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>100</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>300</value>
+ </row>
+<row>
+ <id>294</id>
+ <build_group>gun1</build_group>
+ <name>Cannon Ball</name>
+ <description>Ball of heavy metal used in siege weapons.</description>
+ <rarity>none</rarity>
+ <item_category_id>siege_ammo</item_category_id>
+ <atk>25</atk>
+ <def>0</def>
+ <range>5</range>
+ <speed>1</speed>
+ <acc>-5</acc>
+ <eva>0</eva>
+ <weight>5</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>20</value>
+ </row>
+<row>
+ <id>295</id>
+ <build_group>air1</build_group>
+ <name>Cargo Hold</name>
+ <description>An airship hold used to store food, gear and other items.</description>
+ <rarity>none</rarity>
+ <item_category_id>air_hold</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>2500</effect_amount>
+ <effect_type>cargospace</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>500</value>
+ </row>
+<row>
+ <id>296</id>
+ <build_group>ship1</build_group>
+ <name>Cargo Hold</name>
+ <description>A ship hold used to store food, gear and other items.</description>
+ <rarity>none</rarity>
+ <item_category_id>ship_hold</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>500</effect_amount>
+ <effect_type>cargospace</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>150</value>
+ </row>
+<row>
+ <id>297</id>
+ <build_group>siege1</build_group>
+ <name>Catapult</name>
+ <description>Spring loaded siege weapon.</description>
+ <rarity>none</rarity>
+ <item_category_id>siege</item_category_id>
+ <atk>50</atk>
+ <def>0</def>
+ <range>5</range>
+ <speed>20</speed>
+ <acc>-5</acc>
+ <eva>0</eva>
+ <weight>100</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>300</value>
+ </row>
+<row>
+ <id>298</id>
+ <build_group>armor1</build_group>
+ <name>Chain Mail Armor</name>
+ <description>Armor made up of small links of interwoven metal. </description>
+ <rarity>none</rarity>
+ <item_category_id>medium_armor</item_category_id>
+ <atk>0</atk>
+ <def>3</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-1</eva>
+ <weight>1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>med_ac</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>6</value>
+ </row>
+<row>
+ <id>299</id>
+ <build_group>tailor4</build_group>
+ <name>Chroma Cloth</name>
+ <description>Chroma-infused cloth. Used for magic enhancing armor and Sky Sails.</description>
+ <rarity>none</rarity>
+ <item_category_id>cloth</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5000</value>
+ </row>
+<row>
+ <id>300</id>
+ <build_group>mech3</build_group>
+ <name>Chroma Core</name>
+ <description>The energy core of an airship Lift Reactor.</description>
+ <rarity>none</rarity>
+ <item_category_id>core</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>20</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5000</value>
+ </row>
+<row>
+ <id>301</id>
+ <build_group>tailor3</build_group>
+ <name>Chroma Thread</name>
+ <description>Delicate strands of brilliant chroma-infused thread. Component in Sky Sails.</description>
+ <rarity>none</rarity>
+ <item_category_id>thread</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>2500</value>
+ </row>
+<row>
+ <id>302</id>
+ <build_group>tailor1</build_group>
+ <name>Cloak</name>
+ <description>Shoulder-wrapped garment for keeping out the elements.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>1</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>2</value>
+ </row>
+<row>
+ <id>303</id>
+ <build_group>tailor1</build_group>
+ <name>Hood</name>
+ <description>Cloth head-wrapped garment.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>1</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>2</value>
+ </row>
+<row>
+ <id>304</id>
+ <build_group>bow2</build_group>
+ <name>Crossbow</name>
+ <description>A bolt action bow configured across a stock.</description>
+ <rarity>none</rarity>
+ <item_category_id>2h_xbow_ranged</item_category_id>
+ <atk>8</atk>
+ <def>0</def>
+ <range>1</range>
+ <speed>5</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>pierce</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>305</id>
+ <build_group>gun1</build_group>
+ <name>Fire Bullet</name>
+ <description>Tiny hollow ball of metal filled with explosives.</description>
+ <rarity>none</rarity>
+ <item_category_id>gun_ammo</item_category_id>
+ <atk>1</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>306</id>
+ <build_group>gun1</build_group>
+ <name>Fire Grenado</name>
+ <description>A small metal sphere filled with explosives.</description>
+ <rarity>none</rarity>
+ <item_category_id>gren_ranged</item_category_id>
+ <atk>5</atk>
+ <def>0</def>
+ <range>2</range>
+ <speed>10</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>pierce</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>307</id>
+ <build_group>bake2</build_group>
+ <name>Fruit Pie</name>
+ <description>A pastry filled with fruit.</description>
+ <rarity>none</rarity>
+ <item_category_id>food</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>3</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>308</id>
+ <build_group>armor3</build_group>
+ <name>Full Plate Armor</name>
+ <description>Hardened heavy armor made of interlocking plates.</description>
+ <rarity>none</rarity>
+ <item_category_id>heavy_armor</item_category_id>
+ <atk>0</atk>
+ <def>12</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-5</eva>
+ <weight>5</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>high_ac</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>12</value>
+ </row>
+<row>
+ <id>309</id>
+ <build_group>foundry3</build_group>
+ <name>Furnace</name>
+ <description>Heavy metal enclosure for a wood/coal burning fire. Component in steam engine.</description>
+ <rarity>none</rarity>
+ <item_category_id>furnace</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>15</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>75</value>
+ </row>
+<row>
+ <id>310</id>
+ <build_group>weapon3</build_group>
+ <name>Great Sword</name>
+ <description>Large heavy two-handed sword.</description>
+ <rarity>none</rarity>
+ <item_category_id>2h_slash</item_category_id>
+ <atk>12</atk>
+ <def>0</def>
+ <range>2</range>
+ <speed>8</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>3</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>slash</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>25</value>
+ </row>
+<row>
+ <id>311</id>
+ <build_group>foundry1</build_group>
+ <name>Grenado Casing</name>
+ <description>A small hollow ball of metal.</description>
+ <rarity>none</rarity>
+ <item_category_id>gren_casing</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>312</id>
+ <build_group>air1</build_group>
+ <name>Gun Deck</name>
+ <description>An airship hold used to arrange siege weapons for battle.</description>
+ <rarity>none</rarity>
+ <item_category_id>air_hold</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>2500</effect_amount>
+ <effect_type>siegespace</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>500</value>
+ </row>
+<row>
+ <id>313</id>
+ <build_group>ship1</build_group>
+ <name>Gun Deck</name>
+ <description>A ship hold used to arrange siege weapons for battle.</description>
+ <rarity>none</rarity>
+ <item_category_id>ship_hold</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>500</effect_amount>
+ <effect_type>siegespace</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>150</value>
+ </row>
+<row>
+ <id>314</id>
+ <build_group>armor2</build_group>
+ <name>Half Plate Armor</name>
+ <description>Heavy armor made of interlocking plates.</description>
+ <rarity>none</rarity>
+ <item_category_id>heavy_armor</item_category_id>
+ <atk>0</atk>
+ <def>10</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-4</eva>
+ <weight>4</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>high_ac</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>315</id>
+ <build_group>weapon1</build_group>
+ <name>Hand Axe</name>
+ <description>A small crescent blade fastened to a haft.</description>
+ <rarity>none</rarity>
+ <item_category_id>slash</item_category_id>
+ <atk>2</atk>
+ <def>0</def>
+ <range>1</range>
+ <speed>4</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>slash</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>316</id>
+ <build_group>leather1</build_group>
+ <name>Harness</name>
+ <description>Leather straps for use with mounts.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>1</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>2</acc>
+ <eva>0</eva>
+ <weight>2</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>4</value>
+ </row>
+<row>
+ <id>317</id>
+ <build_group>bow3</build_group>
+ <name>Heavy Ballista</name>
+ <description>A large heavy crossbow-like siege weapon.</description>
+ <rarity>none</rarity>
+ <item_category_id>siege</item_category_id>
+ <atk>90</atk>
+ <def>0</def>
+ <range>5</range>
+ <speed>15</speed>
+ <acc>-5</acc>
+ <eva>0</eva>
+ <weight>150</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>250</value>
+ </row>
+<row>
+ <id>318</id>
+ <build_group>siege2</build_group>
+ <name>Heavy Battering Ram</name>
+ <description>A heavy swinging beam used to break down gates.</description>
+ <rarity>none</rarity>
+ <item_category_id>siege</item_category_id>
+ <atk>25</atk>
+ <def>0</def>
+ <range>1</range>
+ <speed>5</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>150</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>75</value>
+ </row>
+<row>
+ <id>319</id>
+ <build_group>gun3</build_group>
+ <name>Heavy Cannon</name>
+ <description>A large artillery weapon.</description>
+ <rarity>none</rarity>
+ <item_category_id>siege</item_category_id>
+ <atk>200</atk>
+ <def>0</def>
+ <range>5</range>
+ <speed>15</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>150</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>500</value>
+ </row>
+<row>
+ <id>320</id>
+ <build_group>tailor2</build_group>
+ <name>Heavy Cloak</name>
+ <description>Heavy shoulder-wrapped garment.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>2</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>4</value>
+ </row>
+<row>
+ <id>321</id>
+ <build_group>bow3</build_group>
+ <name>Heavy Crossbow</name>
+ <description>A large heavy bolt-action bow configured across a stock.</description>
+ <rarity>none</rarity>
+ <item_category_id>2h_xbow_ranged</item_category_id>
+ <atk>12</atk>
+ <def>0</def>
+ <range>2</range>
+ <speed>5</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>322</id>
+ <build_group>armor3</build_group>
+ <name>Heavy Mount Armor</name>
+ <description>Heavy metal plating for use with mounts.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>8</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-3</eva>
+ <weight>6</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>323</id>
+ <build_group>tailor3</build_group>
+ <name>Heavy Quilted Armor</name>
+ <description>Thick, padded cloth armor.</description>
+ <rarity>none</rarity>
+ <item_category_id>light_armor</item_category_id>
+ <atk>0</atk>
+ <def>3</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.75</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>low_ac</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>8</value>
+ </row>
+<row>
+ <id>324</id>
+ <build_group>tailor2</build_group>
+ <name>Heavy Robe</name>
+ <description>A thick cloth robe.</description>
+ <rarity>none</rarity>
+ <item_category_id>light_armor</item_category_id>
+ <atk>0</atk>
+ <def>2</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>low_ac</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>325</id>
+ <build_group>alch4</build_group>
+ <name>High-grade Explosive</name>
+ <description>Powerful explosive power made from gem dust.</description>
+ <rarity>none</rarity>
+ <item_category_id>explosive</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>explosive</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>300</value>
+ </row>
+<row>
+ <id>326</id>
+ <build_group>alch4</build_group>
+ <name>High-grade Poison</name>
+ <description>Powerful dilution of poison made from plants.</description>
+ <rarity>none</rarity>
+ <item_category_id>poison</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>poison</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>327</id>
+ <build_group>butcher1</build_group>
+ <name>Jerky</name>
+ <description>Dried and smoked meat strip.</description>
+ <rarity>none</rarity>
+ <item_category_id>food</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>1</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>328</id>
+ <build_group>siege1</build_group>
+ <name>Ladders</name>
+ <description>Simple wooden ladders used to climb over walls.</description>
+ <rarity>none</rarity>
+ <item_category_id>siege</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>1</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>25</value>
+ </row>
+<row>
+ <id>329</id>
+ <build_group>foundry4</build_group>
+ <name>Large Bomb Casing</name>
+ <description>A large hardened metal bomb casing.</description>
+ <rarity>none</rarity>
+ <item_category_id>lbomb_casing</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>10</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>330</id>
+ <build_group>none</build_group>
+ <name>none</name>
+ <description>none</description>
+ <rarity>none</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>331</id>
+ <build_group>none</build_group>
+ <name>none</name>
+ <description>none</description>
+ <rarity>none</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>332</id>
+ <build_group>none</build_group>
+ <name>none</name>
+ <description>none</description>
+ <rarity>none</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>333</id>
+ <build_group>gun4</build_group>
+ <name>Large Fire Bomb</name>
+ <description>A large bomb filled with explosives.</description>
+ <rarity>none</rarity>
+ <item_category_id>bomb</item_category_id>
+ <atk>80</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>300</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>80</value>
+ </row>
+<row>
+ <id>334</id>
+ <build_group>none</build_group>
+ <name>none</name>
+ <description>none</description>
+ <rarity>none</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>335</id>
+ <build_group>none</build_group>
+ <name>none</name>
+ <description>none</description>
+ <rarity>none</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>336</id>
+ <build_group>gun4</build_group>
+ <name>Large Poison Bomb</name>
+ <description>A large bomb filled with poison.</description>
+ <rarity>none</rarity>
+ <item_category_id>bomb</item_category_id>
+ <atk>80</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>300</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>80</value>
+ </row>
+<row>
+ <id>337</id>
+ <build_group>none</build_group>
+ <name>none</name>
+ <description>none</description>
+ <rarity>none</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>338</id>
+ <build_group>none</build_group>
+ <name>none</name>
+ <description>none</description>
+ <rarity>none</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>339</id>
+ <build_group>leather1</build_group>
+ <name>Leather Armor</name>
+ <description>Armor made from leather hide.</description>
+ <rarity>none</rarity>
+ <item_category_id>medium_armor</item_category_id>
+ <atk>0</atk>
+ <def>2</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-0.25</eva>
+ <weight>0.25</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>med_ac</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>4</value>
+ </row>
+<row>
+ <id>340</id>
+ <build_group>leather1</build_group>
+ <name>Leather Boots</name>
+ <description>Boots made from leather hide.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>2</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>341</id>
+ <build_group>leather1</build_group>
+ <name>Leather Gloves</name>
+ <description>Gloves made from leather hide.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>2</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>342</id>
+ <build_group>leather1</build_group>
+ <name>Leather Helm</name>
+ <description>Helm made from leather hide.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>2</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>343</id>
+ <build_group>mech3</build_group>
+ <name>Lift Reactor</name>
+ <description>Focused-mana airship engine. Requires 3 shards per day to operate.</description>
+ <rarity>none</rarity>
+ <item_category_id>air_engine</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1000</weight>
+ <effect_amount>3</effect_amount>
+ <effect_type>reqshard</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>25000</value>
+ </row>
+<row>
+ <id>344</id>
+ <build_group>armor1</build_group>
+ <name>Light Mount Armor</name>
+ <description>Chain armor plating for use with mounts.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>4</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-1</eva>
+ <weight>2</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>6</value>
+ </row>
+<row>
+ <id>345</id>
+ <build_group>armor1</build_group>
+ <name>Light Plate Armor</name>
+ <description>Heavy armor made of segmented plating.</description>
+ <rarity>none</rarity>
+ <item_category_id>heavy_armor</item_category_id>
+ <atk>0</atk>
+ <def>8</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-3</eva>
+ <weight>3</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>high_ac</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>8</value>
+ </row>
+<row>
+ <id>346</id>
+ <build_group>weapon2</build_group>
+ <name>Long Sword</name>
+ <description>Large two-handed sword.</description>
+ <rarity>none</rarity>
+ <item_category_id>2h_slash</item_category_id>
+ <atk>8</atk>
+ <def>0</def>
+ <range>2</range>
+ <speed>7</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>2</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>slash</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>347</id>
+ <build_group>bow2</build_group>
+ <name>Longbow</name>
+ <description>A tall long range bow weapon.</description>
+ <rarity>none</rarity>
+ <item_category_id>bow_ranged</item_category_id>
+ <atk>8</atk>
+ <def>0</def>
+ <range>3</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>pierce</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>12</value>
+ </row>
+<row>
+ <id>348</id>
+ <build_group>alch2</build_group>
+ <name>Low-grade Explosive</name>
+ <description>Weak explosive power made from gem dust.</description>
+ <rarity>none</rarity>
+ <item_category_id>explosive</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>explosive</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>349</id>
+ <build_group>alch2</build_group>
+ <name>Low-grade Poison</name>
+ <description>Weak dilution of poison made from plants.</description>
+ <rarity>none</rarity>
+ <item_category_id>poison</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>poison</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>50</value>
+ </row>
+<row>
+ <id>350</id>
+ <build_group>weapon1</build_group>
+ <name>Mace</name>
+ <description>A short heavy club.</description>
+ <rarity>none</rarity>
+ <item_category_id>bludgeon</item_category_id>
+ <atk>6</atk>
+ <def>0</def>
+ <range>1</range>
+ <speed>8</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>2</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>bludgeon</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>6</value>
+ </row>
+<row>
+ <id>351</id>
+ <build_group>gun3</build_group>
+ <name>Medium Fire Bomb</name>
+ <description>A bomb filled with explosives.</description>
+ <rarity>none</rarity>
+ <item_category_id>bomb</item_category_id>
+ <atk>40</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>150</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>40</value>
+ </row>
+<row>
+ <id>352</id>
+ <build_group>gun3</build_group>
+ <name>Medium Poison Bomb</name>
+ <description>A bomb filled with poison.</description>
+ <rarity>none</rarity>
+ <item_category_id>bomb</item_category_id>
+ <atk>40</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>150</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>40</value>
+ </row>
+<row>
+ <id>353</id>
+ <build_group>foundry3</build_group>
+ <name>Medium Bomb Casing</name>
+ <description>A hardened metal bomb casing.</description>
+ <rarity>none</rarity>
+ <item_category_id>mbomb_casing</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>6</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>354</id>
+ <build_group>armor2</build_group>
+ <name>Medium Mount Armor</name>
+ <description>Mail armor plating for use with mounts.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>6</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-2</eva>
+ <weight>4</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>8</value>
+ </row>
+<row>
+ <id>355</id>
+ <build_group>alch3</build_group>
+ <name>Medium-grade Explosive</name>
+ <description>Moderate explosive power made from gem dust.</description>
+ <rarity>none</rarity>
+ <item_category_id>explosive</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>explosive</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>200</value>
+ </row>
+<row>
+ <id>356</id>
+ <build_group>alch3</build_group>
+ <name>Medium-grade Poison</name>
+ <description>Moderate dilution of poison made from plants.</description>
+ <rarity>none</rarity>
+ <item_category_id>poison</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>poison</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>75</value>
+ </row>
+<row>
+ <id>357</id>
+ <build_group>black1</build_group>
+ <name>Metal Arrow Head</name>
+ <description>A small metal arrow tip.</description>
+ <rarity>none</rarity>
+ <item_category_id>arrow_head</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0.25</value>
+ </row>
+<row>
+ <id>358</id>
+ <build_group>black2</build_group>
+ <name>Metal Axe Head</name>
+ <description>A sharp metal crescent blade.</description>
+ <rarity>none</rarity>
+ <item_category_id>axe_head</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>359</id>
+ <build_group>black2</build_group>
+ <name>Metal Ballista Head</name>
+ <description>A thick metal spear-head for ballista bolts.</description>
+ <rarity>none</rarity>
+ <item_category_id>ballista_head</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>2</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>360</id>
+ <build_group>black3</build_group>
+ <name>Metal Battle Axe Head</name>
+ <description>A large sharp metal crescent blade.</description>
+ <rarity>none</rarity>
+ <item_category_id>baxe_head</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>361</id>
+ <build_group>black1</build_group>
+ <name>Metal Bolt Head</name>
+ <description>Small metal bolt head.</description>
+ <rarity>none</rarity>
+ <item_category_id>bolt_head</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0.5</value>
+ </row>
+<row>
+ <id>362</id>
+ <build_group>armor1</build_group>
+ <name>Metal Boots</name>
+ <description>Boots made from metal.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>3</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-0.25</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>6</value>
+ </row>
+<row>
+ <id>363</id>
+ <build_group>armor1</build_group>
+ <name>Metal Buckler</name>
+ <description>A small metal shield</description>
+ <rarity>none</rarity>
+ <item_category_id>off_hand</item_category_id>
+ <atk>0</atk>
+ <def>6</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-2</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>364</id>
+ <build_group>armor1</build_group>
+ <name>Metal Gloves</name>
+ <description>Gloves made from metal.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>3</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-0.25</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>6</value>
+ </row>
+<row>
+ <id>365</id>
+ <build_group>black3</build_group>
+ <name>Metal Great Sword Blade</name>
+ <description>Huge sharp metal sword blade.</description>
+ <rarity>none</rarity>
+ <item_category_id>gsword_blade</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>2</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>366</id>
+ <build_group>black1</build_group>
+ <name>Metal Hammer</name>
+ <description>A shaped block of metal. Used in bludgeoning weapons.</description>
+ <rarity>none</rarity>
+ <item_category_id>hammer</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>367</id>
+ <build_group>armor1</build_group>
+ <name>Metal Helm</name>
+ <description>Helm made from metal.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>3</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-0.25</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>6</value>
+ </row>
+<row>
+ <id>368</id>
+ <build_group>black2</build_group>
+ <name>Metal Long Sword Blade</name>
+ <description>Long sharp metal sword blade.</description>
+ <rarity>none</rarity>
+ <item_category_id>lsword_blade</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>369</id>
+ <build_group>armor2</build_group>
+ <name>Metal Shield</name>
+ <description>A metal shield.</description>
+ <rarity>none</rarity>
+ <item_category_id>off_hand</item_category_id>
+ <atk>0</atk>
+ <def>12</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-4</eva>
+ <weight>2</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>370</id>
+ <build_group>black1</build_group>
+ <name>Metal Short Sword Blade</name>
+ <description>A metal short blade.</description>
+ <rarity>none</rarity>
+ <item_category_id>ssword_blade</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>4</value>
+ </row>
+<row>
+ <id>371</id>
+ <build_group>black1</build_group>
+ <name>Metal Spear Head</name>
+ <description>Metal spear tip.</description>
+ <rarity>none</rarity>
+ <item_category_id>spear_head</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>3</value>
+ </row>
+<row>
+ <id>372</id>
+ <build_group>armor3</build_group>
+ <name>Metal Tower Shield</name>
+ <description>Large heavy metal shield.</description>
+ <rarity>none</rarity>
+ <item_category_id>off_hand</item_category_id>
+ <atk>0</atk>
+ <def>20</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-6</eva>
+ <weight>3</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>20</value>
+ </row>
+<row>
+ <id>373</id>
+ <build_group>gun4</build_group>
+ <name>Mortar</name>
+ <description>A powerful and heavy handheld cannon.</description>
+ <rarity>none</rarity>
+ <item_category_id>gun_grenado</item_category_id>
+ <atk>40</atk>
+ <def>0</def>
+ <range>3</range>
+ <speed>10</speed>
+ <acc>-5</acc>
+ <eva>0</eva>
+ <weight>3</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>pierce</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>250</value>
+ </row>
+<row>
+ <id>374</id>
+ <build_group>gun2</build_group>
+ <name>Musket</name>
+ <description>A refined firearm with improved accuracy and power.</description>
+ <rarity>none</rarity>
+ <item_category_id>gun_ranged</item_category_id>
+ <atk>20</atk>
+ <def>0</def>
+ <range>3</range>
+ <speed>8</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>2</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>pierce</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>375</id>
+ <build_group>foundry3</build_group>
+ <name>Musket Barrel</name>
+ <description>The barrel of a musket rifle.</description>
+ <rarity>none</rarity>
+ <item_category_id>mus_barrel</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>2</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>30</value>
+ </row>
+<row>
+ <id>376</id>
+ <build_group>jeweler1</build_group>
+ <name>Necklace</name>
+ <description>Jewelry that is worn around the neck.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>377</id>
+ <build_group>alch2</build_group>
+ <name>Ore Balm</name>
+ <description>Small alchemical potion made with ore dust.</description>
+ <rarity>none</rarity>
+ <item_category_id>alch</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.2</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>378</id>
+ <build_group>alch3</build_group>
+ <name>Ore Poultice</name>
+ <description>Large alchemical potion made with ore dust.</description>
+ <rarity>none</rarity>
+ <item_category_id>alch</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.3</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>379</id>
+ <build_group>alch1</build_group>
+ <name>Ore Powder</name>
+ <description>Tiny alchemical potion made with ore dust.</description>
+ <rarity>none</rarity>
+ <item_category_id>alch</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>380</id>
+ <build_group>alch4</build_group>
+ <name>Ore Salve</name>
+ <description>Alchemical potion made with ore dust.</description>
+ <rarity>none</rarity>
+ <item_category_id>alch</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.4</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>20</value>
+ </row>
+<row>
+ <id>381</id>
+ <build_group>weapon2</build_group>
+ <name>Pike</name>
+ <description>Extra long spear with barbed metal hook and blade at the tip.</description>
+ <rarity>none</rarity>
+ <item_category_id>2h_pierce</item_category_id>
+ <atk>8</atk>
+ <def>0</def>
+ <range>3</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>3</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>pierce</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>382</id>
+ <build_group>alch1</build_group>
+ <name>Pipe Crystal</name>
+ <description>Alchemical smoking crystal made from gem dust.</description>
+ <rarity>none</rarity>
+ <item_category_id>alch</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>25</value>
+ </row>
+<row>
+ <id>383</id>
+ <build_group>herb1</build_group>
+ <name>Pipe Leaf</name>
+ <description>Herbal smoking leaf made from plants.</description>
+ <rarity>none</rarity>
+ <item_category_id>alch</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>25</value>
+ </row>
+<row>
+ <id>384</id>
+ <build_group>mech1</build_group>
+ <name>Piston</name>
+ <description>Mechanical pump used to drive a steam engine.</description>
+ <rarity>none</rarity>
+ <item_category_id>piston</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>20</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>pierce</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>385</id>
+ <build_group>gun1</build_group>
+ <name>Poison Bullet</name>
+ <description>Tiny hollow ball of metal filled with poison.</description>
+ <rarity>none</rarity>
+ <item_category_id>gun_ammo</item_category_id>
+ <atk>1</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>386</id>
+ <build_group>gun1</build_group>
+ <name>Poison Grenado</name>
+ <description>A small metal sphere filled with poison.</description>
+ <rarity>none</rarity>
+ <item_category_id>gren_ranged</item_category_id>
+ <atk>5</atk>
+ <def>0</def>
+ <range>2</range>
+ <speed>10</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>pierce</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>387</id>
+ <build_group>bake1</build_group>
+ <name>Porridge</name>
+ <description>A boiled grain-meal dish.</description>
+ <rarity>none</rarity>
+ <item_category_id>food</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>1</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>388</id>
+ <build_group>tailor2</build_group>
+ <name>Quilted Armor</name>
+ <description>Padded cloth armor.</description>
+ <rarity>none</rarity>
+ <item_category_id>light_armor</item_category_id>
+ <atk>0</atk>
+ <def>2</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>low_ac</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>389</id>
+ <build_group>leather2</build_group>
+ <name>Reinforced Leather Armor</name>
+ <description>Double-thick armor made from leather hide.</description>
+ <rarity>none</rarity>
+ <item_category_id>medium_armor</item_category_id>
+ <atk>0</atk>
+ <def>3</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-0.5</eva>
+ <weight>0.5</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>med_ac</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>6</value>
+ </row>
+<row>
+ <id>390</id>
+ <build_group>gun3</build_group>
+ <name>Rifle</name>
+ <description>An accurate and rapid fire weapon with deadly power.</description>
+ <rarity>none</rarity>
+ <item_category_id>gun_ranged</item_category_id>
+ <atk>30</atk>
+ <def>0</def>
+ <range>3</range>
+ <speed>6</speed>
+ <acc>5</acc>
+ <eva>0</eva>
+ <weight>2</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>pierce</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>150</value>
+ </row>
+<row>
+ <id>391</id>
+ <build_group>foundry4</build_group>
+ <name>Rifle Barrel</name>
+ <description>The barrel of a rifle.</description>
+ <rarity>none</rarity>
+ <item_category_id>rif_barrel</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>2</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>45</value>
+ </row>
+<row>
+ <id>392</id>
+ <build_group>jeweler1</build_group>
+ <name>Ring</name>
+ <description>Jewelry that is worn on the finger.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>393</id>
+ <build_group>tailor1</build_group>
+ <name>Robe </name>
+ <description>A cloth robe.</description>
+ <rarity>none</rarity>
+ <item_category_id>light_armor</item_category_id>
+ <atk>0</atk>
+ <def>1</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>low_ac</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>3</value>
+ </row>
+<row>
+ <id>394</id>
+ <build_group>leather2</build_group>
+ <name>Saddle</name>
+ <description>Leather saddle for use with mounts.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>1</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>4</acc>
+ <eva>1</eva>
+ <weight>2</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>395</id>
+ <build_group>tailor1</build_group>
+ <name>Sails</name>
+ <description>Large heavy sheets of cloth used to propel sailing ships.</description>
+ <rarity>none</rarity>
+ <item_category_id>ship_engine</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>150</value>
+ </row>
+<row>
+ <id>396</id>
+ <build_group>butcher2</build_group>
+ <name>Sausage</name>
+ <description>Minced spiced meat sausage.</description>
+ <rarity>none</rarity>
+ <item_category_id>food</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>3</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>397</id>
+ <build_group>armor2</build_group>
+ <name>Scale Mail Armor </name>
+ <description>Armor made up of scales of folded metal.</description>
+ <rarity>none</rarity>
+ <item_category_id>medium_armor</item_category_id>
+ <atk>0</atk>
+ <def>5</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-2</eva>
+ <weight>2</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>med_ac</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>8</value>
+ </row>
+<row>
+ <id>398</id>
+ <build_group>butcher3</build_group>
+ <name>Shepherd's Pie</name>
+ <description>A pastry filled with meat and vegetables.</description>
+ <rarity>none</rarity>
+ <item_category_id>food</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>5</food>
+ <build>0</build>
+ <value>25</value>
+ </row>
+<row>
+ <id>399</id>
+ <build_group>foundry1</build_group>
+ <name>Ship Plating</name>
+ <description>Thick metal plates used to protect a ship from damage.</description>
+ <rarity>none</rarity>
+ <item_category_id>ship_gear</item_category_id>
+ <atk>0</atk>
+ <def>100</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-5</eva>
+ <weight>100</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>400</id>
+ <build_group>mech2</build_group>
+ <name>Ship Steam Engine</name>
+ <description>Mechanical ship engine using boiling water and pistons.</description>
+ <rarity>none</rarity>
+ <item_category_id>ship_engine</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5000</value>
+ </row>
+<row>
+ <id>401</id>
+ <build_group>weapon1</build_group>
+ <name>Short Sword</name>
+ <description>A short sharp blade. </description>
+ <rarity>none</rarity>
+ <item_category_id>slash</item_category_id>
+ <atk>2</atk>
+ <def>0</def>
+ <range>1</range>
+ <speed>5</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>slash</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>6</value>
+ </row>
+<row>
+ <id>402</id>
+ <build_group>siege3</build_group>
+ <name>Siege Tower</name>
+ <description>Tall wooden towers that can be moved up against walls.</description>
+ <rarity>none</rarity>
+ <item_category_id>siege</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>1</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>100</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>250</value>
+ </row>
+<row>
+ <id>403</id>
+ <build_group>tailor4</build_group>
+ <name>Sky Sails</name>
+ <description>Chroma-infused airship sails. Require 2 shards per day to operate.</description>
+ <rarity>none</rarity>
+ <item_category_id>air_engine</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1000</weight>
+ <effect_amount>2</effect_amount>
+ <effect_type>reqshard</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>25000</value>
+ </row>
+<row>
+ <id>404</id>
+ <build_group>weapon2</build_group>
+ <name>Sledge</name>
+ <description>Heavy two-handed metal hammer weapon.</description>
+ <rarity>none</rarity>
+ <item_category_id>2h_bludgeon</item_category_id>
+ <atk>8</atk>
+ <def>0</def>
+ <range>2</range>
+ <speed>8</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>3</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>bludgeon</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>12</value>
+ </row>
+<row>
+ <id>405</id>
+ <build_group>foundry2</build_group>
+ <name>Small Bomb Casing</name>
+ <description>A small hardened metal bomb casing.</description>
+ <rarity>none</rarity>
+ <item_category_id>sbomb_casing</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>406</id>
+ <build_group>gun1</build_group>
+ <name>Small Cannon</name>
+ <description>A small artillery weapon.</description>
+ <rarity>none</rarity>
+ <item_category_id>siege</item_category_id>
+ <atk>50</atk>
+ <def>0</def>
+ <range>5</range>
+ <speed>10</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>50</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>150</value>
+ </row>
+<row>
+ <id>407</id>
+ <build_group>gun2</build_group>
+ <name>Small Fire Bomb</name>
+ <description>A small bomb filled with explosives.</description>
+ <rarity>none</rarity>
+ <item_category_id>bomb</item_category_id>
+ <atk>20</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>50</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>20</value>
+ </row>
+<row>
+ <id>408</id>
+ <build_group>gun2</build_group>
+ <name>Small Poison Bomb</name>
+ <description>A small bomb filled with poison.</description>
+ <rarity>none</rarity>
+ <item_category_id>bomb</item_category_id>
+ <atk>20</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>50</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>20</value>
+ </row>
+<row>
+ <id>409</id>
+ <build_group>weapon1</build_group>
+ <name>Spear </name>
+ <description>Long two-handed spear weapon.</description>
+ <rarity>none</rarity>
+ <item_category_id>2h_pierce</item_category_id>
+ <atk>4</atk>
+ <def>0</def>
+ <range>2</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>2</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>pierce</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>6</value>
+ </row>
+<row>
+ <id>410</id>
+ <build_group>brew1</build_group>
+ <name>Spirits</name>
+ <description>An alcoholic beverage made using vegetables.</description>
+ <rarity>none</rarity>
+ <item_category_id>food</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>1</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>411</id>
+ <build_group>armor3</build_group>
+ <name>Splint Mail Armor</name>
+ <description>Armor made up of large sheets of interlocking metal.</description>
+ <rarity>none</rarity>
+ <item_category_id>medium_armor</item_category_id>
+ <atk>0</atk>
+ <def>8</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-3</eva>
+ <weight>3</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>med_ac</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>412</id>
+ <build_group>butcher2</build_group>
+ <name>Steak</name>
+ <description>Large piece of cooked meat.</description>
+ <rarity>none</rarity>
+ <item_category_id>food</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>3</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>413</id>
+ <build_group>butcher2</build_group>
+ <name>Stew</name>
+ <description>Meat and vegetable stew.</description>
+ <rarity>none</rarity>
+ <item_category_id>food</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>3</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>414</id>
+ <build_group>mason1</build_group>
+ <name>Stone Arrow Head</name>
+ <description>A small stone arrow tip.</description>
+ <rarity>none</rarity>
+ <item_category_id>arrow_head</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0.25</value>
+ </row>
+<row>
+ <id>415</id>
+ <build_group>mason2</build_group>
+ <name>Stone Axe Head</name>
+ <description>A sharp stone crescent blade.</description>
+ <rarity>none</rarity>
+ <item_category_id>axe_head</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>416</id>
+ <build_group>alch2</build_group>
+ <name>Stone Balm</name>
+ <description>Small alchemical potion made with stone dust.</description>
+ <rarity>none</rarity>
+ <item_category_id>alch</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.2</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>417</id>
+ <build_group>mason3</build_group>
+ <name>Stone Battle Axe Head</name>
+ <description>A large sharp stone crescent blade.</description>
+ <rarity>none</rarity>
+ <item_category_id>baxe_head</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>418</id>
+ <build_group>mason1</build_group>
+ <name>Stone Crafts</name>
+ <description>Assorted stone crafts.</description>
+ <rarity>none</rarity>
+ <item_category_id>crafts</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>419</id>
+ <build_group>mason3</build_group>
+ <name>Stone Great Sword Blade</name>
+ <description>Huge sharp stone sword blade.</description>
+ <rarity>none</rarity>
+ <item_category_id>gsword_blade</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>2</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>420</id>
+ <build_group>mason1</build_group>
+ <name>Stone Hand Axe Head</name>
+ <description>Small crescent-shaped shard of stone. </description>
+ <rarity>none</rarity>
+ <item_category_id>haxe_head</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>2</value>
+ </row>
+<row>
+ <id>421</id>
+ <build_group>mason1</build_group>
+ <name>Stone Hammer</name>
+ <description>A carved block of stone. Used in bludgeoning weapons.</description>
+ <rarity>none</rarity>
+ <item_category_id>hammer</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>422</id>
+ <build_group>mason3</build_group>
+ <name>Stone Long Sword Blade</name>
+ <description>Long sharp stone sword blade.</description>
+ <rarity>none</rarity>
+ <item_category_id>lsword_blade</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>423</id>
+ <build_group>alch3</build_group>
+ <name>Stone Poultice</name>
+ <description>Large alchemical potion made with stone dust.</description>
+ <rarity>none</rarity>
+ <item_category_id>alch</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.3</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>424</id>
+ <build_group>alch1</build_group>
+ <name>Stone Powder</name>
+ <description>Tiny alchemical potion made with stone dust.</description>
+ <rarity>none</rarity>
+ <item_category_id>alch</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>425</id>
+ <build_group>alch4</build_group>
+ <name>Stone Salve</name>
+ <description>Alchemical potion made with stone dust.</description>
+ <rarity>none</rarity>
+ <item_category_id>alch</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.4</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>20</value>
+ </row>
+<row>
+ <id>426</id>
+ <build_group>mason1</build_group>
+ <name>Stone Short Sword Blade</name>
+ <description>A stone short blade.</description>
+ <rarity>none</rarity>
+ <item_category_id>ssword_blade</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>3</value>
+ </row>
+<row>
+ <id>427</id>
+ <build_group>mason1</build_group>
+ <name>Stone Spear Head</name>
+ <description>Stone spear tip.</description>
+ <rarity>none</rarity>
+ <item_category_id>spear_head</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>2</value>
+ </row>
+<row>
+ <id>428</id>
+ <build_group>leather3</build_group>
+ <name>Studded Leather Armor</name>
+ <description>Double-thick armor made from leather hide. Studded with metal rivets.</description>
+ <rarity>none</rarity>
+ <item_category_id>medium_armor</item_category_id>
+ <atk>0</atk>
+ <def>5</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-1</eva>
+ <weight>1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>med_ac</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>8</value>
+ </row>
+<row>
+ <id>429</id>
+ <build_group>butcher3</build_group>
+ <name>Stuffed Steak</name>
+ <description>A spiced and cooked steak cut with sliced vegetables.</description>
+ <rarity>none</rarity>
+ <item_category_id>food</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>5</food>
+ <build>0</build>
+ <value>25</value>
+ </row>
+<row>
+ <id>430</id>
+ <build_group>jeweler1</build_group>
+ <name>Torq</name>
+ <description>Jewelry that is worn around the arm or leg.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>431</id>
+ <build_group>siege3</build_group>
+ <name>Trebuchet</name>
+ <description>A large heavy catapult.</description>
+ <rarity>none</rarity>
+ <item_category_id>siege</item_category_id>
+ <atk>75</atk>
+ <def>0</def>
+ <range>5</range>
+ <speed>25</speed>
+ <acc>-10</acc>
+ <eva>0</eva>
+ <weight>150</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>siege</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>350</value>
+ </row>
+<row>
+ <id>432</id>
+ <build_group>air1</build_group>
+ <name>Troop Hold</name>
+ <description>An airship hold used to transport soldiers.</description>
+ <rarity>none</rarity>
+ <item_category_id>air_hold</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>2500</effect_amount>
+ <effect_type>unitspace</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>500</value>
+ </row>
+<row>
+ <id>433</id>
+ <build_group>ship1</build_group>
+ <name>Troop Hold</name>
+ <description>A ship hold used to transport soldiers.</description>
+ <rarity>none</rarity>
+ <item_category_id>ship_hold</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>500</effect_amount>
+ <effect_type>unitspace</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>150</value>
+ </row>
+<row>
+ <id>434</id>
+ <build_group>none</build_group>
+ <name>none</name>
+ <description>none</description>
+ <rarity>none</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>435</id>
+ <build_group>none</build_group>
+ <name>none</name>
+ <description>none</description>
+ <rarity>none</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>436</id>
+ <build_group>none</build_group>
+ <name>none</name>
+ <description>none</description>
+ <rarity>none</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>437</id>
+ <build_group>none</build_group>
+ <name>none</name>
+ <description>none</description>
+ <rarity>none</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>438</id>
+ <build_group>none</build_group>
+ <name>none</name>
+ <description>none</description>
+ <rarity>none</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>439</id>
+ <build_group>none</build_group>
+ <name>none</name>
+ <description>none</description>
+ <rarity>none</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>440</id>
+ <build_group>none</build_group>
+ <name>none</name>
+ <description>none</description>
+ <rarity>none</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>441</id>
+ <build_group>tailor1</build_group>
+ <name>Vestments</name>
+ <description>Light cloth wrappings.</description>
+ <rarity>none</rarity>
+ <item_category_id>light_armor</item_category_id>
+ <atk>0</atk>
+ <def>1</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>low_ac</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>3</value>
+ </row>
+<row>
+ <id>442</id>
+ <build_group>weapon3</build_group>
+ <name>Warhammer</name>
+ <description>Large heavy two-handed metal hammer weapon.</description>
+ <rarity>none</rarity>
+ <item_category_id>2h_bludgeon</item_category_id>
+ <atk>14</atk>
+ <def>0</def>
+ <range>2</range>
+ <speed>10</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>5</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>bludgeon</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>20</value>
+ </row>
+<row>
+ <id>443</id>
+ <build_group>leather3</build_group>
+ <name>Warhorse Raiment</name>
+ <description>Heavy leather riding harness for use with mounts.</description>
+ <rarity>none</rarity>
+ <item_category_id>gear</item_category_id>
+ <atk>0</atk>
+ <def>1</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>6</acc>
+ <eva>2</eva>
+ <weight>4</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>444</id>
+ <build_group>brew1</build_group>
+ <name>Wine</name>
+ <description>An alcoholic beverage made using fruits.</description>
+ <rarity>none</rarity>
+ <item_category_id>food</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>1</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>445</id>
+ <build_group>carp1</build_group>
+ <name>Wood Arrow Shaft</name>
+ <description>A thin wooden shaft for arrows.</description>
+ <rarity>none</rarity>
+ <item_category_id>arrow_shaft</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0.5</value>
+ </row>
+<row>
+ <id>446</id>
+ <build_group>carp1</build_group>
+ <name>Wood Bolt Shaft</name>
+ <description>A long thin metal shaft for bolts.</description>
+ <rarity>none</rarity>
+ <item_category_id>bolt_shaft</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0.75</value>
+ </row>
+<row>
+ <id>447</id>
+ <build_group>carp1</build_group>
+ <name>Wood Buckler</name>
+ <description>A small wooden shield.</description>
+ <rarity>none</rarity>
+ <item_category_id>off_hand</item_category_id>
+ <atk>0</atk>
+ <def>4</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-1</eva>
+ <weight>0.5</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>3</value>
+ </row>
+<row>
+ <id>448</id>
+ <build_group>carp1</build_group>
+ <name>Wood Club</name>
+ <description>A short wood club.</description>
+ <rarity>none</rarity>
+ <item_category_id>bludgeon</item_category_id>
+ <atk>4</atk>
+ <def>0</def>
+ <range>1</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>bludgeon</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>4</value>
+ </row>
+<row>
+ <id>449</id>
+ <build_group>carp1</build_group>
+ <name>Wood Crafts</name>
+ <description>Assorted wood crafts.</description>
+ <rarity>none</rarity>
+ <item_category_id>crafts</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>450</id>
+ <build_group>carp1</build_group>
+ <name>Wood Haft</name>
+ <description>Long carved wooden haft for use in weapons.</description>
+ <rarity>none</rarity>
+ <item_category_id>haft</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>2</value>
+ </row>
+<row>
+ <id>451</id>
+ <build_group>carp2</build_group>
+ <name>Wood Hammer</name>
+ <description>A carved block of wood. Used in bludgeoning weapons.</description>
+ <rarity>none</rarity>
+ <item_category_id>hammer</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>452</id>
+ <build_group>carp2</build_group>
+ <name>Wood Heavy Club</name>
+ <description>Heavy two-handed club made with wood.</description>
+ <rarity>none</rarity>
+ <item_category_id>2h_bludgeon</item_category_id>
+ <atk>6</atk>
+ <def>0</def>
+ <range>2</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>4</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>bludgeon</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>8</value>
+ </row>
+<row>
+ <id>453</id>
+ <build_group>carp1</build_group>
+ <name>Wood Hilt</name>
+ <description>Short carved wood hilt for use in weapons.</description>
+ <rarity>none</rarity>
+ <item_category_id>hilt</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>2</value>
+ </row>
+<row>
+ <id>454</id>
+ <build_group>carp1</build_group>
+ <name>Wood Javelin</name>
+ <description>Long thin wooden spear.</description>
+ <rarity>none</rarity>
+ <item_category_id>pierce</item_category_id>
+ <atk>2</atk>
+ <def>0</def>
+ <range>2</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>1</effect_amount>
+ <effect_type>pierce</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>4</value>
+ </row>
+<row>
+ <id>455</id>
+ <build_group>carp1</build_group>
+ <name>Wood Shaft</name>
+ <description>Long wood shaft for use in weapons.</description>
+ <rarity>none</rarity>
+ <item_category_id>shaft</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>456</id>
+ <build_group>carp2</build_group>
+ <name>Wood Shield</name>
+ <description>A wooden shield.</description>
+ <rarity>none</rarity>
+ <item_category_id>off_hand</item_category_id>
+ <atk>0</atk>
+ <def>8</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-3</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>6</value>
+ </row>
+<row>
+ <id>457</id>
+ <build_group>carp1</build_group>
+ <name>Wood Stock</name>
+ <description>Carved wood stock for use in weapons.</description>
+ <rarity>none</rarity>
+ <item_category_id>stock</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>458</id>
+ <build_group>carp3</build_group>
+ <name>Wood Tower Shield </name>
+ <description>Large heavy wooden shield.</description>
+ <rarity>none</rarity>
+ <item_category_id>off_hand</item_category_id>
+ <atk>0</atk>
+ <def>12</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>-5</eva>
+ <weight>2</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>9</value>
+ </row>
+<row>
+ <id>459</id>
+ <build_group>black1</build_group>
+ <name>Metal Shaft</name>
+ <description>Long metal shaft for use in weapons.</description>
+ <rarity>none</rarity>
+ <item_category_id>shaft</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>2</value>
+ </row>
+<row>
+ <id>460</id>
+ <build_group>ship1</build_group>
+ <name>Rowing Hold</name>
+ <description>A ship hold filled with rowers. Used to propel ships.</description>
+ <rarity>none</rarity>
+ <item_category_id>ship_engine</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>150</value>
+ </row>
+<row>
+ <id>461</id>
+ <build_group>air1</build_group>
+ <name>Slave Hold</name>
+ <description>An airship hold used to transport slaves.</description>
+ <rarity>none</rarity>
+ <item_category_id>air_hold</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>2500</effect_amount>
+ <effect_type>slavespace</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>150</value>
+ </row>
+<row>
+ <id>462</id>
+ <build_group>ship1</build_group>
+ <name>Slave Hold</name>
+ <description>A ship hold used to transport slaves.</description>
+ <rarity>none</rarity>
+ <item_category_id>ship_hold</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>500</effect_amount>
+ <effect_type>slavespace</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>50</value>
+ </row>
+<row>
+ <id>1001</id>
+ <build_group>temple1</build_group>
+ <name>Divine Mana Shard</name>
+ <description>Small glimmering shard of divine mana.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>divine_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>1002</id>
+ <build_group>temple2</build_group>
+ <name>Divine Mana Fragment</name>
+ <description>Large glimmering fragment of divine mana.</description>
+ <rarity>Scarce</rarity>
+ <item_category_id>divine_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>1003</id>
+ <build_group>temple3</build_group>
+ <name>Divine Mana Gem</name>
+ <description>Glowing crystal gem of divine mana.</description>
+ <rarity>Rare</rarity>
+ <item_category_id>divine_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10000</value>
+ </row>
+<row>
+ <id>1004</id>
+ <build_group>temple1</build_group>
+ <name>Corrupt Mana Shard</name>
+ <description>Small glimmering shard of corrupt mana.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>corrupt_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>1005</id>
+ <build_group>temple2</build_group>
+ <name>Corrupt Mana Fragment</name>
+ <description>Large glimmering fragment of corrupt mana.</description>
+ <rarity>Scarce</rarity>
+ <item_category_id>corrupt_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>1006</id>
+ <build_group>temple3</build_group>
+ <name>Corrupt Mana Gem</name>
+ <description>Glowing crystal gem of corrupt mana.</description>
+ <rarity>Rare</rarity>
+ <item_category_id>corrupt_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10000</value>
+ </row>
+<row>
+ <id>1007</id>
+ <build_group>temple1</build_group>
+ <name>Water Mana Shard</name>
+ <description>Small glimmering fragment of water mana.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>water_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>1008</id>
+ <build_group>temple2</build_group>
+ <name>Water Mana Fragment</name>
+ <description>Large glimmering fragment of water mana.</description>
+ <rarity>Scarce</rarity>
+ <item_category_id>water_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>1009</id>
+ <build_group>temple3</build_group>
+ <name>Water Mana Gem</name>
+ <description>Glowing crystal gem of water mana.</description>
+ <rarity>Rare</rarity>
+ <item_category_id>water_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10000</value>
+ </row>
+<row>
+ <id>1010</id>
+ <build_group>temple1</build_group>
+ <name>Nature Mana Shard</name>
+ <description>Small glimmering fragment of nature mana.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>nature_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>1011</id>
+ <build_group>temple2</build_group>
+ <name>Nature Mana Fragment</name>
+ <description>Large glimmering fragment of nature mana.</description>
+ <rarity>Scarce</rarity>
+ <item_category_id>nature_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>1012</id>
+ <build_group>temple3</build_group>
+ <name>Nature Mana Gem</name>
+ <description>Glowing crystal gem of nature mana.</description>
+ <rarity>Rare</rarity>
+ <item_category_id>nature_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10000</value>
+ </row>
+<row>
+ <id>1013</id>
+ <build_group>temple1</build_group>
+ <name>Fire Mana Shard</name>
+ <description>Small glimmering fragment of fire mana.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>fire_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>1014</id>
+ <build_group>temple2</build_group>
+ <name>Fire Mana Fragment</name>
+ <description>Large glimmering fragment of fire mana.</description>
+ <rarity>Scarce</rarity>
+ <item_category_id>fire_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>1015</id>
+ <build_group>temple3</build_group>
+ <name>Fire Mana Gem</name>
+ <description>Glowing crystal gem of fire mana.</description>
+ <rarity>Rare</rarity>
+ <item_category_id>fire_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10000</value>
+ </row>
+<row>
+ <id>1016</id>
+ <build_group>temple1</build_group>
+ <name>Earth Mana Shard</name>
+ <description>Small glimmering fragment of earth mana.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>earth_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>1017</id>
+ <build_group>temple2</build_group>
+ <name>Earth Mana Fragment</name>
+ <description>Large glimmering fragment of earth mana.</description>
+ <rarity>Scarce</rarity>
+ <item_category_id>earth_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>1018</id>
+ <build_group>temple3</build_group>
+ <name>Earth Mana Gem</name>
+ <description>Glowing crystal gem of earth mana.</description>
+ <rarity>Rare</rarity>
+ <item_category_id>earth_mana</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10000</value>
+ </row>
+<row>
+ <id>1019</id>
+ <build_group>res1</build_group>
+ <name>Bristlespine Pig Resource</name>
+ <description>Barely domesticated pig with a thick hide and hardened spine.</description>
+ <rarity>Common</rarity>
+ <item_category_id>res</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>none</value>
+ </row>
+<row>
+ <id>1020</id>
+ <build_group>res1</build_group>
+ <name>Chisotan Root Resource</name>
+ <description>Hardy plant with a bright orange starchy tuber.</description>
+ <rarity>Common</rarity>
+ <item_category_id>res</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>none</value>
+ </row>
+<row>
+ <id>1021</id>
+ <build_group>res1</build_group>
+ <name>Cragroot Lumber Resource</name>
+ <description>Hill-dwelling tree with deep roots and wide leaves.</description>
+ <rarity>Common</rarity>
+ <item_category_id>res</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>none</value>
+ </row>
+<row>
+ <id>1022</id>
+ <build_group>res1</build_group>
+ <name>Fletcher's Grain Resource</name>
+ <description>Golden wheat resembling arrows sticking out of the ground.</description>
+ <rarity>Common</rarity>
+ <item_category_id>res</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>none</value>
+ </row>
+<row>
+ <id>1023</id>
+ <build_group>res2</build_group>
+ <name>Husk Rice Resource</name>
+ <description>Rice that prefers to grow in dark swamps and bogs.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>res</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>none</value>
+ </row>
+<row>
+ <id>1024</id>
+ <build_group>res2</build_group>
+ <name>Tannhauser Block Resource</name>
+ <description>Building Supply. Very hard pitch black stone. Seems to absorb light.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>res</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>none</value>
+ </row>
+<row>
+ <id>1025</id>
+ <build_group>res2</build_group>
+ <name>Wirecoat Goat Resource</name>
+ <description>A goat prized for its thick, durable coat.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>res</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>none</value>
+ </row>
+<row>
+ <id>1026</id>
+ <build_group>res3</build_group>
+ <name>Flowstate Ore Resource</name>
+ <description>A magic-resistant and easily malleable silvery metal.</description>
+ <rarity>Scarce</rarity>
+ <item_category_id>res</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>none</value>
+ </row>
+<row>
+ <id>1027</id>
+ <build_group>res3</build_group>
+ <name>Lumenite Block Resource</name>
+ <description>Building Supply. Bright golden-white crystalline rock. Glows with an inner light.</description>
+ <rarity>Scarce</rarity>
+ <item_category_id>res</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>none</value>
+ </row>
+<row>
+ <id>1028</id>
+ <build_group>res4</build_group>
+ <name>Spiralstone Gem Resource</name>
+ <description>Brilliant diamond containing flecks of pure Chroma.</description>
+ <rarity>Rare</rarity>
+ <item_category_id>res</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>none</value>
+ </row>
+<row>
+ <id>1029</id>
+ <build_group>trap1</build_group>
+ <name>Bristlespine Pig</name>
+ <description>Barely domesticated pig with a thick hide and hardened spine.</description>
+ <rarity>Common</rarity>
+ <item_category_id>animal</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>10</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>5</food>
+ <build>0</build>
+ <value>5</value>
+ </row>
+<row>
+ <id>1030</id>
+ <build_group>none</build_group>
+ <name>Chisotan Tuber/Leaf</name>
+ <description>Produces tuber and leaves</description>
+ <rarity>Common</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1031</id>
+ <build_group>farm1</build_group>
+ <name>Chisotan Tuber</name>
+ <description>A round bright-orange starchy tuber.</description>
+ <rarity>Common</rarity>
+ <item_category_id>veg</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>2, 2</effect_amount>
+ <effect_type>EarthRes, FireRes</effect_type>
+ <food>1</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>1032</id>
+ <build_group>farm1</build_group>
+ <name>Chisotan Stock</name>
+ <description>Tough starchy reed useful for its plant fiber.</description>
+ <rarity>Common</rarity>
+ <item_category_id>fiber</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>2, 2</effect_amount>
+ <effect_type>EarthRes, FireRes</effect_type>
+ <food>0.25</food>
+ <build>0</build>
+ <value>0.25</value>
+ </row>
+<row>
+ <id>1033</id>
+ <build_group>none</build_group>
+ <name>Cragroot Lumber/Leaf</name>
+ <description>Hill-dwelling tree with deep roots and wide leaves.</description>
+ <rarity>Common</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1034</id>
+ <build_group>lumber1</build_group>
+ <name>Cragroot Lumber</name>
+ <description>Building Supply. Hardy lumber from the Cragroot Poplar.</description>
+ <rarity>Common</rarity>
+ <item_category_id>wood</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>5</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>1</build>
+ <value>2</value>
+ </row>
+<row>
+ <id>1035</id>
+ <build_group>lumber1</build_group>
+ <name>Cragroot Leaf</name>
+ <description>Wide, heavy leaf from the Cragroot Poplar.</description>
+ <rarity>Common</rarity>
+ <item_category_id>plant</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>5</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0.25</food>
+ <build>0</build>
+ <value>0.25</value>
+ </row>
+<row>
+ <id>1036</id>
+ <build_group>farm1</build_group>
+ <name>Fletcher's Grain</name>
+ <description>Golden husks of fine wheat grain.</description>
+ <rarity>Common</rarity>
+ <item_category_id>grain</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>5</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>2</effect_amount>
+ <effect_type>CorruptRes</effect_type>
+ <food>0.25</food>
+ <build>0</build>
+ <value>0.25</value>
+ </row>
+<row>
+ <id>1037</id>
+ <build_group>mine2</build_group>
+ <name>Flowstate Ore</name>
+ <description>A magic-resistant and easily malleable silvery metal.</description>
+ <rarity>Scarce</rarity>
+ <item_category_id>ore</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>2</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>MagicRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>1038</id>
+ <build_group>none</build_group>
+ <name>Husk Rice/Blossom</name>
+ <description>Rice that prefers to grow in dark swamps and bogs.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1039</id>
+ <build_group>farm1</build_group>
+ <name>Husk Rice</name>
+ <description>A hardy dark brown rice within a chitinous outer shell.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>grain</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>2</acc>
+ <eva>2</eva>
+ <weight>0.5</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0.5</food>
+ <build>0</build>
+ <value>0.75</value>
+ </row>
+<row>
+ <id>1040</id>
+ <build_group>farm1</build_group>
+ <name>Husk Blossom</name>
+ <description>Foul-smelling small purple blossoms.   </description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>plant</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>5</speed>
+ <acc>1</acc>
+ <eva>1</eva>
+ <weight>0.1</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>DivineRes</effect_type>
+ <food>0.1</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>1041</id>
+ <build_group>quarry2</build_group>
+ <name>Lumenite Block</name>
+ <description>Building Supply. Bright golden-white crystalline rock. Glows with an inner light.</description>
+ <rarity>Scarce</rarity>
+ <item_category_id>stone</item_category_id>
+ <atk>0</atk>
+ <def>2</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>5</acc>
+ <eva>0</eva>
+ <weight>3</weight>
+ <effect_amount>10</effect_amount>
+ <effect_type>CorruptRes</effect_type>
+ <food>0</food>
+ <build>3</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>1042</id>
+ <build_group>quarry1</build_group>
+ <name>Tannhauser Block</name>
+ <description>Building Supply. Very hard pitch black stone. Seems to absorb light.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>stone</item_category_id>
+ <atk>2</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>2</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>5</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>DivineRes</effect_type>
+ <food>0</food>
+ <build>5</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>1043</id>
+ <build_group>trap1</build_group>
+ <name>Wirecoat Goat</name>
+ <description>A goat prized for its thick, durable coat.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>animal</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>15</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>6</food>
+ <build>0</build>
+ <value>10</value>
+ </row>
+<row>
+ <id>1044</id>
+ <build_group>mine3</build_group>
+ <name>Spiralstone Gem</name>
+ <description>Brilliant diamond containing flecks of pure Chroma.</description>
+ <rarity>Rare</rarity>
+ <item_category_id>gem</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>10</effect_amount>
+ <effect_type>MagicMultiplier</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>200</value>
+ </row>
+<row>
+ <id>1045</id>
+ <build_group>butcher1</build_group>
+ <name>Bristlespine Blood/Bone/Hide/Pork</name>
+ <description>Barely domesticated pig with a thick hide and hardened spine.</description>
+ <rarity>Common</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1046</id>
+ <build_group>butcher1</build_group>
+ <name>Bristlespine Blood</name>
+ <description>Blood from a Bristlespine Pig.</description>
+ <rarity>Common</rarity>
+ <item_category_id>blood</item_category_id>
+ <atk>2</atk>
+ <def>1</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>2</effect_amount>
+ <effect_type>FireRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0.25</value>
+ </row>
+<row>
+ <id>1047</id>
+ <build_group>butcher1</build_group>
+ <name>Bristlespine Bone</name>
+ <description>Hardened bone studded with quills.</description>
+ <rarity>Common</rarity>
+ <item_category_id>bone</item_category_id>
+ <atk>2</atk>
+ <def>1</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>2</effect_amount>
+ <effect_type>FireRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0.5</value>
+ </row>
+<row>
+ <id>1048</id>
+ <build_group>butcher1</build_group>
+ <name>Bristlespine Hide</name>
+ <description>A simple tough pig hide.</description>
+ <rarity>Common</rarity>
+ <item_category_id>hide</item_category_id>
+ <atk>0</atk>
+ <def>2</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>2</effect_amount>
+ <effect_type>FireRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>1049</id>
+ <build_group>butcher1</build_group>
+ <name>Bristlespine Pork</name>
+ <description>Meat from a Bristlespine Pig. </description>
+ <rarity>Common</rarity>
+ <item_category_id>meat</item_category_id>
+ <atk>2</atk>
+ <def>1</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>2</effect_amount>
+ <effect_type>FireRes</effect_type>
+ <food>3</food>
+ <build>0</build>
+ <value>0.25</value>
+ </row>
+<row>
+ <id>1050</id>
+ <build_group>butcher1</build_group>
+ <name>Wirecoat Blood/Bone/Mutton/Wool</name>
+ <description>A goat prized for its thick, durable coat.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1051</id>
+ <build_group>butcher1</build_group>
+ <name>Wirecoat Blood</name>
+ <description>Blood from a Wirecoat Goat.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>blood</item_category_id>
+ <atk>0</atk>
+ <def>2</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>EarthRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0.25</value>
+ </row>
+<row>
+ <id>1052</id>
+ <build_group>butcher1</build_group>
+ <name>Wirecoat Bone</name>
+ <description>Bone from a Wirecoat Goat.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>bone</item_category_id>
+ <atk>0</atk>
+ <def>2</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>EarthRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0.25</value>
+ </row>
+<row>
+ <id>1053</id>
+ <build_group>butcher1</build_group>
+ <name>Wirecoat Mutton</name>
+ <description>Meat from a Wirecoat Goat.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>meat</item_category_id>
+ <atk>0</atk>
+ <def>2</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>EarthRes</effect_type>
+ <food>4</food>
+ <build>0</build>
+ <value>0.25</value>
+ </row>
+<row>
+ <id>1054</id>
+ <build_group>butcher1</build_group>
+ <name>Wirecoat Wool</name>
+ <description>A dense and very tough slate-gray wool.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>fiber</item_category_id>
+ <atk>0</atk>
+ <def>2</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>5</eva>
+ <weight>0.5</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>EarthRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>2</value>
+ </row>
+<row>
+ <id>1055</id>
+ <build_group>ingot3</build_group>
+ <name>Flowstate Ingot</name>
+ <description>Bright silvery metal whose surface almost seems to ripple and flow.  </description>
+ <rarity>Scarce</rarity>
+ <item_category_id>ingot</item_category_id>
+ <atk>2</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>1</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>MagicRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>15</value>
+ </row>
+<row>
+ <id>1056</id>
+ <build_group>dust3</build_group>
+ <name>Flowstate Dust</name>
+ <description>Magic-resistant silver dust commonly used in wards and charms.</description>
+ <rarity>Scarce</rarity>
+ <item_category_id>dust</item_category_id>
+ <atk>0</atk>
+ <def>2</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>MagicRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>8</value>
+ </row>
+<row>
+ <id>1057</id>
+ <build_group>shard3</build_group>
+ <name>Lumenite Shards</name>
+ <description>Bright white crystalline rock. Glows with an inner light.</description>
+ <rarity>Scarce</rarity>
+ <item_category_id>shard</item_category_id>
+ <atk>2</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>5</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>10</effect_amount>
+ <effect_type>CorruptRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>1058</id>
+ <build_group>shard2</build_group>
+ <name>Tannhauser Shards</name>
+ <description>A very sharp dark stone, almost translucent blue at the edges.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>shard</item_category_id>
+ <atk>2</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>2</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>DivineRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0.25</value>
+ </row>
+<row>
+ <id>1059</id>
+ <build_group>leather1</build_group>
+ <name>Bristlespine Leather</name>
+ <description>Tough leather from a Bristlespine Pig.</description>
+ <rarity>Common</rarity>
+ <item_category_id>leather</item_category_id>
+ <atk>0</atk>
+ <def>2</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>2</effect_amount>
+ <effect_type>FireRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>2</value>
+ </row>
+<row>
+ <id>1060</id>
+ <build_group>cloth1</build_group>
+ <name>Chisotan Cloth</name>
+ <description>Fibrous cloth made from Chisotan Stock.</description>
+ <rarity>Common</rarity>
+ <item_category_id>cloth</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>2, 2</effect_amount>
+ <effect_type>EarthRes, FireRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>1</value>
+ </row>
+<row>
+ <id>1061</id>
+ <build_group>cloth2</build_group>
+ <name>Wirecoat Cloth</name>
+ <description>Dense and very tough slate-gray wool cloth.</description>
+ <rarity>Uncommon</rarity>
+ <item_category_id>cloth</item_category_id>
+ <atk>0</atk>
+ <def>2</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>5</eva>
+ <weight>0.5</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>EarthRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>3</value>
+ </row>
+<row>
+ <id>1062</id>
+ <build_group>dust4</build_group>
+ <name>Spiralstone Dust</name>
+ <description>Diamond dust containing flecks of pure Chroma.</description>
+ <rarity>Rare</rarity>
+ <item_category_id>dust</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.1</weight>
+ <effect_amount>10</effect_amount>
+ <effect_type>MagicMulti</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>200</value>
+ </row>
+<row>
+ <id>1063</id>
+ <build_group>none</build_group>
+ <name>Human</name>
+ <description>A Human.</description>
+ <rarity>Common</rarity>
+ <item_category_id>citizen</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>10</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>WaterRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>1064</id>
+ <build_group>temple1</build_group>
+ <name>Human Blood/Bone</name>
+ <description>A Human.</description>
+ <rarity>Common</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1065</id>
+ <build_group>temple1</build_group>
+ <name>Human Blood</name>
+ <description>Blood from a Human.</description>
+ <rarity>Common</rarity>
+ <item_category_id>blood</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>WaterRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1066</id>
+ <build_group>temple1</build_group>
+ <name>Human Bone</name>
+ <description>Bones from a Human.</description>
+ <rarity>Common</rarity>
+ <item_category_id>bone</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>WaterRes</effect_type>
+ <food>0</food>
+ <build>0.25</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1067</id>
+ <build_group>none</build_group>
+ <name>Elf</name>
+ <description>An Elf.</description>
+ <rarity>Common</rarity>
+ <item_category_id>citizen</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>10</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>NatureRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>1068</id>
+ <build_group>temple1</build_group>
+ <name>Elf Blood/Bone</name>
+ <description>An Elf.</description>
+ <rarity>Common</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1069</id>
+ <build_group>temple1</build_group>
+ <name>Elf Blood</name>
+ <description>Blood from an Elf..</description>
+ <rarity>Common</rarity>
+ <item_category_id>blood</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>NatureRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1070</id>
+ <build_group>temple1</build_group>
+ <name>Elf Bone</name>
+ <description>Bones from an Elf.</description>
+ <rarity>Common</rarity>
+ <item_category_id>bone</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>NatureRes</effect_type>
+ <food>0</food>
+ <build>0.25</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1071</id>
+ <build_group>none</build_group>
+ <name>Goblin</name>
+ <description>A Goblin.</description>
+ <rarity>Common</rarity>
+ <item_category_id>citizen</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>10</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>FireRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>1072</id>
+ <build_group>temple1</build_group>
+ <name>Goblin Blood/Bone</name>
+ <description>A Goblin.</description>
+ <rarity>Common</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1073</id>
+ <build_group>temple1</build_group>
+ <name>Goblin Blood</name>
+ <description>Blood from a Goblin.</description>
+ <rarity>Common</rarity>
+ <item_category_id>blood</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>FireRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1074</id>
+ <build_group>temple1</build_group>
+ <name>Goblin Bone</name>
+ <description>Bones from a Goblin.</description>
+ <rarity>Common</rarity>
+ <item_category_id>bone</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>FireRes</effect_type>
+ <food>0</food>
+ <build>0.25</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1075</id>
+ <build_group>none</build_group>
+ <name>Dwarf</name>
+ <description>A Dwarf.</description>
+ <rarity>Common</rarity>
+ <item_category_id>citizen</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>10</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>EarthRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>1076</id>
+ <build_group>temple1</build_group>
+ <name> Dwarf Blood/Bone</name>
+ <description>A Dwarf.</description>
+ <rarity>Common</rarity>
+ <item_category_id>none</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0</weight>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1077</id>
+ <build_group>temple1</build_group>
+ <name>Dwarf Blood</name>
+ <description>Blood from a Dwarf.</description>
+ <rarity>Common</rarity>
+ <item_category_id>blood</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>EarthRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1077</id>
+ <build_group>temple1</build_group>
+ <name>Dwarf Bone</name>
+ <description>Bones from a Dwarf.</description>
+ <rarity>Common</rarity>
+ <item_category_id>bone</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>5</effect_amount>
+ <effect_type>EarthRes</effect_type>
+ <food>0</food>
+ <build>0.25</build>
+ <value>0</value>
+ </row>
+<row>
+ <id>1079</id>
+ <build_group>temple1</build_group>
+ <name>King's Blood</name>
+ <description>Rare, magically imbued-blood. Makes very potent herbals.</description>
+ <rarity>Scarce</rarity>
+ <item_category_id>blood</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.25</weight>
+ <effect_amount>2, 5</effect_amount>
+ <effect_type>MagicMulti, MagicRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+<row>
+ <id>1080</id>
+ <build_group>temple1</build_group>
+ <name>Bone of Heroes</name>
+ <description>Rare, magically imbued-bones. Makes very potent alchemicals.</description>
+ <rarity>Scarce</rarity>
+ <item_category_id>bone</item_category_id>
+ <atk>0</atk>
+ <def>0</def>
+ <range>0</range>
+ <speed>0</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <weight>0.5</weight>
+ <effect_amount>2, 5</effect_amount>
+ <effect_type>MagicMulti, MagicRes</effect_type>
+ <food>0</food>
+ <build>0</build>
+ <value>100</value>
+ </row>
+</item_stats>

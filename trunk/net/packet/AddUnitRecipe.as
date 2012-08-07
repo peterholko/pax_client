@@ -1,0 +1,1 @@
+﻿package net.packet {		public class AddUnitRecipe	{		public var templateId:int;		public var playerId:int;		public var unitName:String;		public var defaultSize:int;		public var gear:Array;		public function AddUnitRecipe() 		{			// constructor code		}	}	}

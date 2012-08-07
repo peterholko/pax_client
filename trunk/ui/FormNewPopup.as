@@ -1,0 +1,1 @@
+﻿package ui {		import flash.display.MovieClip;	import fl.text.TLFTextField;	import flash.text.TextField;			public class FormNewPopup extends MovieClip {				public var cityName:TLFTextField;		public var armyName:TextField;		public var confirmButton:MovieClip;		public var cancelButton:MovieClip;				public function FormNewPopup() {			// constructor code		}	}	}

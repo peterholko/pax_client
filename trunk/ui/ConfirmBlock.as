@@ -1,0 +1,1 @@
+﻿package ui {		import flash.display.MovieClip;			public class ConfirmBlock extends MovieClip 	{						public function ConfirmBlock() {			// constructor code		}	}	}

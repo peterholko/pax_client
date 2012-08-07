@@ -1,0 +1,1 @@
+﻿package net.packet {		public class RecipePacket implements IPacket	{		public var typeId:int;		public var templateId:int;		public var playerId:int;		public var itemName:String;		public var flavourText:String;		public var materialAmount:Array;		public var materialType:Array;		public function RecipePacket() 		{		}	}	}

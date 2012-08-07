@@ -1,18 +1,1 @@
-﻿package ui 
-{
-	
-	import flash.display.MovieClip;	
-	import fl.text.TLFTextField;
-	
-	public class ArmyTab extends MovieClip 
-	{
-		public var armyNameText:TLFTextField;
-		public var kingdomNameText:TLFTextField;
-		public var numSoldiersText:TLFTextField;
-		
-		public function ArmyTab() 
-		{			
-		}
-	}
-	
-}
+﻿package ui {		import flash.display.MovieClip;		import fl.text.TLFTextField;		public class ArmyTab extends MovieClip 	{		public var armyName:TLFTextField;		public var kingdomName:TLFTextField;		public var numSoldiers:TLFTextField;		public var movement:TLFTextField				public function ArmyTab() 		{					}	}	}

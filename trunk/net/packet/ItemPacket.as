@@ -1,17 +1,1 @@
-﻿package net.packet
-{
-	public class ItemPacket implements IPacket
-	{
-		public var id:int;
-		public var entityId:int;
-		public var playerId:int;
-		public var type:int;
-		public var value:int;
-		
-		public function ItemPacket() 
-		{			
-		}
-
-	}
-	
-}
+﻿package net.packet{	public class ItemPacket implements IPacket	{		public var id:int;		public var ownerType:int;		public var ownerId:int;		public var playerId:int;		public var type:int;		public var template:int;		public var volume:int;				public function ItemPacket() 		{					}	}	}

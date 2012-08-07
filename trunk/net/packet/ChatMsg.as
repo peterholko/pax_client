@@ -1,0 +1,1 @@
+﻿package net.packet{	public class ChatMsg implements IPacket	{		public var playerId:int;		public var playerName:String;		public var msg:String;				public function ChatMsg() : void		{				}	}	}

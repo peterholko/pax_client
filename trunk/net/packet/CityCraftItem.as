@@ -1,0 +1,1 @@
+﻿package net.packet{		public class CityCraftItem implements IPacket	{		public var cityId:int;		public var sourceId:int;		public var sourceType:int;		public var itemType:int;		public var itemSize:int;				public function CityCraftItem() : void		{			// constructor code		}	}	}

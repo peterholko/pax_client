@@ -1,0 +1,1 @@
+﻿package ui {		import flash.display.MovieClip;			public class UnitDetailGear extends MovieClip 	{				public function UnitDetailGear() 		{			// constructor code		}	}	}

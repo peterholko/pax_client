@@ -1,73 +1,1 @@
-﻿package game
-{
-	import flash.display.BitmapData;
-	
-	public class Building
-	{
-		public static const TYPE:int = 3;
-		
-		public static const BARRACKS:int = 1;
-		public static const MARKET:int = 2;
-		public static const TEMPLE:int = 3;
-		
-		public var id:int = -1;
-		public var hp:int;
-		public var type:int;
-		
-		public function Building () : void
-		{
-		}
-		
-		public static function getNameByType(type:int) : String
-		{
-			switch(type)
-			{
-				case BARRACKS:
-					return "Barracks";
-				case MARKET:
-					return "Market";
-				case TEMPLE:
-					return "Temple";
-			}
-			
-			return "None";
-		}
-		
-		public function getName() : String
-		{
-			return getNameByType(type);
-		}
-		
-		public function getImage() : BitmapData
-		{			
-			trace("Building - GetImage() type: " + type);
-		
-			switch(type)
-			{
-				case BARRACKS:
-					return new BarracksImage;
-				case MARKET:
-					return new MarketImage;
-				case TEMPLE:
-					return new TempleImage;
-			}
-			
-			return null;
-		}						
-		
-		public function getProductionCost() : int
-		{
-			switch(type)
-			{
-				case BARRACKS:
-					return 100;
-				case TEMPLE:
-					return 150;
-				case MARKET:
-					return 200;
-			}
-			
-			return Number.MAX_VALUE;
-		}
-	}
-}
+﻿package game{	import flash.display.BitmapData;	import stats.BuildingStat;		public class Building	{		public static const TYPE:int = 3;				public static const NONE:int = -1;		public static const BARRACKS:int = 1;		public static const MARKET:int = 2;		public static const TEMPLE:int = 3;				public var id:int = -1;		public var hp:int;		public var type:int;				private var buildingStat:BuildingStat;				public function Building () : void		{		}				public function setBuildingStat() : void		{			buildingStat = Stats.INSTANCE.getBuilding(type);		}				public static function getNameByType(type:int) : String		{			var buildingStat:BuildingStat = Stats.INSTANCE.getBuilding(type);						return buildingStat.type;		}				public function getName() : String		{			return getNameByType(type);		}				public function getImage() : BitmapData		{						trace("Building - GetImage() type: " + type);						var buildingStat:BuildingStat = Stats.INSTANCE.getBuilding(type);			var image:BitmapData = Images.INSTANCE.getImage(buildingStat.image48);						return image;		}										public function getProductionCost() : int		{			switch(type)			{				case BARRACKS:					return 100;				case TEMPLE:					return 150;				case MARKET:					return 200;			}						return Number.MAX_VALUE;		}	}}

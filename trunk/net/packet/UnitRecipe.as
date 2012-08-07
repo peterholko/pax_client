@@ -1,0 +1,1 @@
+﻿package net.packet {		public class UnitRecipe implements IPacket	{		public var typeId:int;		public var templateId:int;		public var playerId:int;		public var unitName:String;		public var defaultSize:int;		public var gear:Array;		public function UnitRecipe() 		{		}	}	}

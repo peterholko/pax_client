@@ -1,0 +1,1 @@
+﻿package net.packet {		public class AddRecipe	{		public var templateId:int;		public var playerId:int;		public var itemName:String;		public var flavourText:String;		public var materialType:Array;		public function AddRecipe() 		{			// constructor code		}	}	}

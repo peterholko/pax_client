@@ -1,0 +1,1 @@
+﻿package ui {		import flash.display.MovieClip;	import fl.text.TLFTextField;			public class CombatLog extends MovieClip 	{		public var combatLogText:TLFTextField;		public var pagination:Pagination;				public function CombatLog() 		{		}	}	}

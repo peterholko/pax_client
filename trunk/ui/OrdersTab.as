@@ -1,0 +1,1 @@
+﻿package ui {		import flash.display.MovieClip;	import fl.text.TLFTextField;			public class OrdersTab extends MovieClip {				public var currentOrders:TLFTextField;				public function OrdersTab() {			// constructor code		}	}	}

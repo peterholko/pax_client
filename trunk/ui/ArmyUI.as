@@ -1,312 +1,1 @@
-﻿package ui 
-{
-	import flash.display.MovieClip;
-	import flash.events.MouseEvent;
-	import fl.text.TLFTextField;
-	import flash.utils.Dictionary;
-	
-	import game.Game;
-	import game.entity.Army;
-	import game.unit.Unit;
-	import game.unit.events.UnitDamageEvent;
-	import game.unit.events.UnitDestroyEvent;
-	import game.battle.BattleEventDispatcher;
-	import game.unit.events.UnitEvent;
-	import game.Item;
-	
-	public class ArmyUI extends MovieClip 
-	{
-		public static var ARMY_TAB:int = 0;
-		public static var SOCKETS_TAB:int = 1;
-		public static var ABILITIES_TAB:int = 2;
-		public static var HERO_TAB:int = 3;
-		
-		public static var COMMAND_TAB:int = 0;
-		public static var INVENTORY_TAB:int = 1;
-		
-		public static var UNIT_SPACER_X:int = 4;
-		
-		public var army:Army;
-		
-		public var closeButton:MovieClip;
-		
-		public var armyTab:ArmyTab;
-		public var socketsTab:MovieClip;
-		public var abilitiesTab:MovieClip;
-		public var heroTab:MovieClip;
-		
-		public var commandTab:MovieClip;
-		public var inventoryTab:MovieClip;		
-
-		public var unitLayer:MovieClip;
-		
-		private var iconUnits:Dictionary;
-		private var iconItems:Array;
-		
-		public function ArmyUI() 
-		{		
-			iconUnits = new Dictionary();
-			iconItems = new Array();
-			
-			addEventListener(MouseEvent.MOUSE_DOWN, mouseDown);	
-			addEventListener(MouseEvent.MOUSE_UP, mouseUp);			
-						
-			BattleEventDispatcher.INSTANCE.addEventListener(UnitEvent.DESTROYED, unitDestroyed);
-            BattleEventDispatcher.INSTANCE.addEventListener(UnitEvent.DAMAGED, unitDamaged);					
-		}
-		
-		public function setArmy(army:Army) : void
-		{						
-			this.army = army;			
-			
-			removeUnits();
-			removeItems();
-			
-			setUnits();
-			setItems();
-			
-			armyTab.armyNameText.htmlText = army.armyName;
-			armyTab.kingdomNameText.htmlText = army.kingdomName;
-			armyTab.numSoldiersText.htmlText = army.getNumSoldiers().toString();
-		}
-		
-		public function showPanel() : void
-		{
-			this.parent.setChildIndex(this, this.parent.numChildren - 1);	
-			showTab(ARMY_TAB);
-			showCommandInventoryTab(INVENTORY_TAB);
-		}
-		
-		public function setTopDisplayOrder() : void
-		{
-			this.parent.setChildIndex(this, this.parent.numChildren - 1);
-		}
-		
-		private function setUnits() : void
-		{
-			var numUnits:int = 0;
-			
-			for each (var unit:Unit in army.units)
-			{				
-				var iconUnit:IconUnit = new IconUnit();
-				iconUnit.setUnit(unit);		
-				iconUnit.x = numUnits * (iconUnit.width + UNIT_SPACER_X);
-				iconUnit.y = 0				
-				//iconUnit.addEventListener(MouseEvent.CLICK, unitClick);
-				iconUnit.addEventListener(MouseEvent.MOUSE_DOWN, unitMouseDown);
-				iconUnit.addEventListener(MouseEvent.MOUSE_UP, unitMouseUp);
-
-				unitLayer.addChild(iconUnit);
-				iconUnits[unit.id] = iconUnit;
-				numUnits++;
-			}			
-		}
-		
-		private function removeUnits() : void
-		{
-			for each (var iconUnit:IconUnit in iconUnits)
-			{
-				if(unitLayer.contains(iconUnit))
-					unitLayer.removeChild(iconUnit);
-			}					
-			
-			iconUnits = new Dictionary();
-		}
-		
-		private function unitMouseDown(e:MouseEvent) : void
-		{
-			trace("unitMouseDown");
-			this.parent.setChildIndex(this, this.parent.numChildren - 1);	
-			e.stopPropagation();
-			
-			var iconUnit:IconUnit = IconUnit(e.target);
-			
-			iconUnit.anchorX = x;
-			iconUnit.anchorY = y;
-						
-			iconUnit.startDrag();			
-		}
-		
-		private function unitMouseUp(e:MouseEvent) : void
-		{
-			trace("unitMouseUp");
-			this.parent.setChildIndex(this, this.parent.numChildren - 1);	
-			e.stopPropagation();
-			
-			var iconUnit:IconUnit = IconUnit(e.target);
-			
-			iconUnit.stopDrag()
-			iconUnit.visible = false;
-			
-			var parameters:Object = {sourceUnitId: iconUnit.unit.id,
-									 sourceUI: this,
-									 sourceType: Army.TYPE,
-									 targetUI: iconUnit.dropTarget};
-			
-			var pEvent:ParamEvent = new ParamEvent(Game.transferUnitEvent);
-			pEvent.params = parameters;
-
-			Game.INSTANCE.dispatchEvent(pEvent);						
-		}
-		
-		public function setItems() : void
-		{
-			if(iconItems != null)
-			{			
-				for(var i = 0; i < army.items.length; i++)
-				{
-					var item:Item = Item(army.items[i]);
-					var iconItem:IconItem = new IconItem();
-					iconItem.setItem(item);
-					iconItem.x = i * (iconItem.width + UNIT_SPACER_X);
-					iconItem.y = 0;
-					iconItem.anchorX = iconItem.x;
-					iconItem.anchorY = iconItem.y;					
-					iconItem.addEventListener(MouseEvent.MOUSE_DOWN, itemMouseDown);
-					iconItem.addEventListener(MouseEvent.MOUSE_UP, itemMouseUp);							
-					
-					inventoryTab.addChild(iconItem);
-					
-					iconItems.push(iconItem);
-				}
-			}
-		}		
-		
-		private function removeItems() : void
-		{
-			if(iconItems != null)
-			{
-				for(var i = 0; i < iconItems.length; i++)
-				{
-					var iconItem:IconItem = iconItems[i];
-					
-					if(inventoryTab.contains(iconItem))		
-					{
-						iconItem.stackSize = null;
-						iconItem.item = null;						
-						inventoryTab.removeChild(iconItem);
-					}
-				}
-			}
-			
-			iconItems = new Array();
-		}
-		
-		private function itemMouseDown(e:MouseEvent) : void
-		{
-			trace("itemMouseDown");
-			this.parent.setChildIndex(this, this.parent.numChildren - 1);	
-			e.stopPropagation();
-			
-			var iconItem:IconItem = IconItem(e.target);
-			
-			iconItem.anchorX = x;
-			iconItem.anchorY = y;
-						
-			iconItem.startDrag();						
-		
-		}
-		
-		private function itemMouseUp(e:MouseEvent) : void
-		{
-			trace("itemMouseUp");
-			this.parent.setChildIndex(this, this.parent.numChildren - 1);	
-			e.stopPropagation();
-			
-			var iconItem:IconItem = IconItem(e.target);
-			
-			iconItem.stopDrag()
-			iconItem.visible = false;		
-			
-			iconItem.x = iconItem.anchorX;
-			iconItem.y = iconItem.anchorY;			
-			
-			var parameters:Object = {itemId: iconItem.item.id,
-									 sourceUI: this,
-									 sourceType: Army.TYPE,
-									 targetUI: iconItem.dropTarget};
-			
-			var pEvent:ParamEvent = new ParamEvent(Game.transferItemEvent);
-			pEvent.params = parameters;
-
-			Game.INSTANCE.dispatchEvent(pEvent);										
-		}
-				
-		private function mouseDown(e:MouseEvent) : void
-		{	
-			this.parent.setChildIndex(this, this.parent.numChildren - 1);	
-			startDrag();			
-		}		
-		
-		private function mouseUp(e:MouseEvent) : void
-		{
-			trace("MouseUp: " + parent);			
-			stopDrag();
-		}		
-		
-		private function showTab(tab:int) : void
-		{
-			armyTab.visible = false;
-			socketsTab.visible = false;
-			abilitiesTab.visible = false;		
-			heroTab.visible = false;
-			
-			switch(tab)
-			{
-				case ARMY_TAB:
-					armyTab.visible = true;				
-					break;
-				case SOCKETS_TAB:					
-					socketsTab.visible = true;
-					break;
-				case ABILITIES_TAB:
-					abilitiesTab.visible = true;
-					break;
-				case HERO_TAB:
-					heroTab.visible = true;
-					break;					
-			}			
-		}
-		
-		private function showCommandInventoryTab(tab:int) : void
-		{
-			commandTab.visible = false;
-			inventoryTab.visible = false;
-			
-			switch(tab)
-			{
-				case COMMAND_TAB:
-					commandTab.visible = true;
-					break;
-				case INVENTORY_TAB:
-					inventoryTab.visible = true;
-					break;
-			}
-		}
-		
-		private function unitClick(e:MouseEvent) : void
-		{
-			
-		}
-		
-		private function unitDamaged(e:UnitDamageEvent) : void
-		{			
-			trace("ArmyUI - unitDamaged");		
-			var iconUnit:IconUnit = iconUnits[e.unitId];
-			
-			if(iconUnit != null)
-				iconUnit.updateStackSize();
-		}
-		
-		private function unitDestroyed(e:UnitDestroyEvent) : void
-		{
-			trace("ArmyUI - unitDestroyed");
-            var iconUnit:IconUnit = iconUnits[e.unitId];
-
-            if(iconUnit != null)
-                if (unitLayer.contains(iconUnit))
-                    unitLayer.removeChild(iconUnit);			
-		}		
-	}
-	
-}
+﻿package ui {	import flash.display.MovieClip;	import flash.events.MouseEvent;	import fl.text.TLFTextField;	import flash.utils.Dictionary;		import game.Game;	import game.entity.Army;	import game.unit.Unit;	import game.unit.events.UnitDamageEvent;	import game.unit.events.UnitDestroyEvent;	import game.battle.BattleEventDispatcher;	import game.unit.events.UnitEvent;	import game.Item;	import game.entity.Entity;	import ui.events.GameEvents;	import game.Kingdom;	import stats.UnitRecipe;	import game.KingdomManager;		public class ArmyUI extends MovieClip 	{		public static var ARMY_TAB:int = 0;		public static var SOCKETS_TAB:int = 1;		public static var ABILITIES_TAB:int = 2;		public static var HERO_TAB:int = 3;				public static var COMMAND_TAB:int = 0;		public static var INVENTORY_TAB:int = 1;				public static var UNIT_SPACER_X:int = 4;				public var army:Army;				public var closeButton:MovieClip;				public var armyTab:ArmyTab;		public var ordersTab:OrdersTab;		public var commandTab:MovieClip;			public var armyName:TLFTextField;		public var unitName:TLFTextField;		public var armyTabText:TLFTextField;		public var ordersTabText:TLFTextField;		public var commandTabText:TLFTextField;				public var unitLayer:MovieClip;		public var itemLayer:MovieClip;				public var smallLeftArrow:SmallLeftArrow;		public var smallRightArrow:SmallRightArrow;		public var pagination:Pagination;				private var selectedUnit:Unit;		private var selectedUnitIndex:int = 0;				private var iconUnits:Dictionary;		private var iconItems:Array;				private var unitList:Array;				public function ArmyUI() 		{					iconUnits = new Dictionary();			iconItems = new Array();			unitList = new Array();						addEventListener(MouseEvent.MOUSE_DOWN, mouseDown);				addEventListener(MouseEvent.MOUSE_UP, mouseUp);									smallLeftArrow.addEventListener(MouseEvent.CLICK, smallLeftClick);			smallRightArrow.addEventListener(MouseEvent.CLICK, smallRightClick);									BattleEventDispatcher.INSTANCE.addEventListener(UnitEvent.DESTROYED, unitDestroyed);            BattleEventDispatcher.INSTANCE.addEventListener(UnitEvent.DAMAGED, unitDamaged);								UIEventDispatcher.INSTANCE.addEventListener(GameEvents.SuccessTransferItem, itemTransfered);			UIEventDispatcher.INSTANCE.addEventListener(GameEvents.SuccessTransferUnit, unitTransfered);		}				public function setArmy(army:Army) : void		{									this.army = army;									removeUnits();			removeItems();						setUnits();			setItems();						armyName.text = army.armyName;						armyTab.armyName.text = army.armyName;			armyTab.kingdomName.text = army.kingdomName;			armyTab.numSoldiers.text = army.getNumSoldiers().toString();			armyTab.movement.text = "";		}				public function showPanel() : void		{			this.parent.setChildIndex(this, this.parent.numChildren - 1);				//showTab(ARMY_TAB);			//showCommandInventoryTab(INVENTORY_TAB);		}				public function setTopDisplayOrder() : void		{			this.parent.setChildIndex(this, this.parent.numChildren - 1);		}				public function getSelectedUnitId() : int		{			return selectedUnit.id;		}				private function setUnits() : void		{			var numUnits:int = 0;			unitList = new Array();						for each (var unit:Unit in army.units)			{								var iconUnit:IconUnit = new IconUnit();				iconUnit.setUnit(unit);						iconUnit.x = numUnits * (iconUnit.width + UNIT_SPACER_X);				iconUnit.y = 0;				iconUnit.addEventListener(MouseEvent.MOUSE_DOWN, unitMouseDown);				iconUnit.addEventListener(MouseEvent.MOUSE_UP, unitMouseUp);				unitLayer.addChild(iconUnit);				iconUnits[unit.id] = iconUnit;								unitList.push(unit);								numUnits++;			}					}				private function removeUnits() : void		{			for each (var iconUnit:IconUnit in iconUnits)			{				if(unitLayer.contains(iconUnit))					unitLayer.removeChild(iconUnit);			}											iconUnits = new Dictionary();		}				private function unitMouseDown(e:MouseEvent) : void		{			trace("unitMouseDown");						var iconUnit:IconUnit = IconUnit(e.currentTarget);						iconUnit.anchorX = iconUnit.x;			iconUnit.anchorY = iconUnit.y;									iconUnit.dragging = true;						//Set ArmyUI, UnitLayer, IconUnit on top			this.parent.setChildIndex(this, this.parent.numChildren - 1);			this.setChildIndex(unitLayer, this.numChildren - 1);			iconUnit.parent.setChildIndex(iconUnit, iconUnit.parent.numChildren - 1);							trace("unitLayer: " + this.getChildAt(this.numChildren - 1));									iconUnit.startDrag();				e.stopPropagation();		}				private function unitMouseUp(e:MouseEvent) : void		{			trace("unitMouseUp");			this.parent.setChildIndex(this, this.parent.numChildren - 1);				e.stopPropagation();						var iconUnit:IconUnit = IconUnit(e.currentTarget);						iconUnit.stopDrag()			iconUnit.dragging = false;						iconUnit.x = iconUnit.anchorX;			iconUnit.y = iconUnit.anchorY;									if(!this.contains(iconUnit.dropTarget))			{							var parameters:Object = {unitId: iconUnit.unit.id,										 sourceId: army.id,										 sourceType: Entity.ARMY,										 sourceUI: this,										 targetUI: iconUnit.dropTarget};								var pEvent:ParamEvent = new ParamEvent(Game.transferUnitEvent);				pEvent.params = parameters;					Game.INSTANCE.dispatchEvent(pEvent);						}		}				public function setItems() : void		{					if(unitList.length > 0)			{				var unit:Unit = unitList[selectedUnitIndex];				selectedUnit = unit;								var kingdom:Kingdom = KingdomManager.INSTANCE.getKingdom(Game.INSTANCE.player.id);				var unitRecipe:UnitRecipe = kingdom.getUnitRecipe(unit.recipeId);										if(unitRecipe != null)					unitName.text = unitRecipe.unitName;								for(var i = 0; i < unit.items.length; i++)				{					var item:Item = Item(unit.items[i]);					var iconItem:IconItem = new IconItem();					iconItem.setItem(item);					iconItem.x = i * (iconItem.width + UNIT_SPACER_X);					iconItem.y = 0;					iconItem.anchorX = iconItem.x;					iconItem.anchorY = iconItem.y;										iconItem.addEventListener(MouseEvent.MOUSE_DOWN, itemMouseDown);					iconItem.addEventListener(MouseEvent.MOUSE_UP, itemMouseUp);																	itemLayer.addChild(iconItem);										iconItems.push(iconItem);				}			}		}					private function removeItems() : void		{			if(iconItems != null)			{				for(var i = 0; i < iconItems.length; i++)				{					var iconItem:IconItem = iconItems[i];										if(itemLayer.contains(iconItem))							{						iconItem.stackSize = null;						iconItem.item = null;												itemLayer.removeChild(iconItem);					}				}			}						iconItems = new Array();		}				private function itemMouseDown(e:MouseEvent) : void		{			trace("itemMouseDown");						e.stopPropagation();						var iconItem:IconItem = IconItem(e.currentTarget);						iconItem.anchorX = iconItem.x;			iconItem.anchorY = iconItem.y;									//Set ArmyUI, ItemLayer, IconItem on top			this.parent.setChildIndex(this, this.parent.numChildren - 1);					this.setChildIndex(itemLayer, this.numChildren - 1);			iconItem.parent.setChildIndex(iconItem, iconItem.parent.numChildren - 1);										iconItem.startDrag();				iconItem.dragging = true;		}				private function itemMouseUp(e:MouseEvent) : void		{			trace("itemMouseUp");			this.parent.setChildIndex(this, this.parent.numChildren - 1);				e.stopPropagation();						var iconItem:IconItem = IconItem(e.currentTarget);						iconItem.stopDrag()				iconItem.dragging = false;						iconItem.x = iconItem.anchorX;			iconItem.y = iconItem.anchorY;							trace("iconItem.dropTarget: " + iconItem.dropTarget);			trace("this.contains(iconItem.dropTarget): " + this.contains(iconItem.dropTarget));			if(!this.contains(iconItem.dropTarget))			{							var parameters:Object = {itemId: iconItem.item.id,										 sourceId: selectedUnit.id,										 sourceUI: this,										 sourceType: Entity.UNIT,										 targetUI: iconItem.dropTarget};								var pEvent:ParamEvent = new ParamEvent(Game.transferItemEvent);				pEvent.params = parameters;					Game.INSTANCE.dispatchEvent(pEvent);							}		}				private function smallLeftClick(e:MouseEvent) : void		{			trace("smallLeftClick");			if(unitList.length > 0)			{				selectedUnitIndex = selectedUnitIndex - 1;								if(selectedUnitIndex < 0)					selectedUnitIndex = unitList.length - 1;									removeItems();				setItems();			}		}				private function smallRightClick(e:MouseEvent) : void		{			trace("smallRightClick");			if(unitList.length > 0)			{				selectedUnitIndex = selectedUnitIndex + 1;								if(selectedUnitIndex == unitList.length)					selectedUnitIndex = 0;									removeItems();				setItems();			}					}								private function mouseDown(e:MouseEvent) : void		{				this.parent.setChildIndex(this, this.parent.numChildren - 1);				startDrag();					}						private function mouseUp(e:MouseEvent) : void		{			trace("MouseUp: " + parent);						stopDrag();		}						/*private function showTab(tab:int) : void		{			armyTab.visible = false;						switch(tab)			{				case ARMY_TAB:					armyTab.visible = true;									break;				case SOCKETS_TAB:										socketsTab.visible = true;					break;				case ABILITIES_TAB:					abilitiesTab.visible = true;					break;				case HERO_TAB:					heroTab.visible = true;					break;								}					}				private function showCommandInventoryTab(tab:int) : void		{			commandTab.visible = false;			inventoryTab.visible = false;						switch(tab)			{				case COMMAND_TAB:					commandTab.visible = true;					break;				case INVENTORY_TAB:					inventoryTab.visible = true;					break;			}		}*/				private function unitClick(e:MouseEvent) : void		{					}				private function unitDamaged(e:UnitDamageEvent) : void		{						trace("ArmyUI - unitDamaged");					var iconUnit:IconUnit = iconUnits[e.unitId];						if(iconUnit != null)				iconUnit.updateStackSize();		}				private function unitDestroyed(e:UnitDestroyEvent) : void		{			trace("ArmyUI - unitDestroyed");            var iconUnit:IconUnit = iconUnits[e.unitId];            if(iconUnit != null)                if (unitLayer.contains(iconUnit))                    unitLayer.removeChild(iconUnit);					}						private function itemTransfered(e:ParamEvent) : void		{			trace("ArmyUI itemTransfered");			if(this == Game.INSTANCE.lastTransferItem.sourceUI ||			   this.contains(Game.INSTANCE.lastTransferItem.targetUI))			{				trace("Refresh Army UI");				Game.INSTANCE.requestInfo(Entity.ARMY, army.id);			}		}				private function unitTransfered(e:ParamEvent) : void		{			trace("ArmyUI unitTransfered");			if(this == Game.INSTANCE.lastTransferUnit.sourceUI ||			   this.contains(Game.INSTANCE.lastTransferUnit.targetUI))			{				trace("Refresh Army UI");				Game.INSTANCE.requestInfo(Entity.ARMY, army.id);			}		}			}	}

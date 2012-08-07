@@ -8,26 +8,26 @@ Metadata
 --------
 Bytes         Value
 ----------    -----
-      1282    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2011-09-19T12:04:41+02:00</xmp:MetadataDate> <xmp:ModifyDate>2011-09-19T12:04:41+02:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:F77F1174072068118083C81B098CA94F</stRef:instanceID> <stRef:documentID>xmp.did:F77F1174072068118309C4B274567D08</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:F9B64C0B542068118083C81B098CA94F</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:F9B64C0B542068118083C81B098CA94F</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+      1286    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2012-07-08T17:27:12-06:00</xmp:MetadataDate> <xmp:ModifyDate>2012-07-08T17:27:12-06:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:F77F1174072068119109CC2176AD9FDB</stRef:instanceID> <stRef:documentID>xmp.did:F77F1174072068118309C4B274567D08</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:F97F1174072068119109CC2176AD9FDB</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:F97F1174072068119109CC2176AD9FDB</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
 
 Frame #    Frame Bytes    Total Bytes    Scene
 -------    -----------    -----------    -----
-      1          10753          10753    Scene 1
-      2         602467         613220    Scene 1 (AS 3.0 Classes Export Frame)
+      1          10795          10795    Scene 1
+      2        1414460        1425255    Scene 1 (AS 3.0 Classes Export Frame)
 
 Scene      Shape Bytes    Text Bytes    ActionScript Bytes
 -------    -----------    ----------    ------------------
-Scene 1             48             0                  9677
+Scene 1             48             0                  9714
 
 ActionScript Bytes    Location
 ------------------    --------
-              9384    Scene 1:Frame 1
-               293    Scene 1:Frame 2
+              9420    Scene 1:Frame 1
+               294    Scene 1:Frame 2
 
 Binary Data              Bytes         Location
 ---------------------    ----------    --------
-Loading Animation SWF          1257    Scene 1:Frame 1
-Content SWF                  602146    Scene 1:Frame 2
+Loading Animation SWF          1262    Scene 1:Frame 1
+Content SWF                 1414138    Scene 1:Frame 2
 
 
 Content SWF
@@ -37,59 +37,74 @@ Metadata
 --------
 Bytes         Value
 ----------    -----
-       537    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2011-09-19T12:04:36+02:00</xmp:MetadataDate> <xmp:ModifyDate>2011-09-19T12:04:36+02:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:F77F1174072068118083C81B098CA94F</stRef:instanceID> <stRef:documentID>xmp.did:F77F1174072068118309C4B274567D08</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:F8B64C0B542068118083C81B098CA94F</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:F8B64C0B542068118083C81B098CA94F</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+       728    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2012-07-08T17:27:01-06:00</xmp:MetadataDate> <xmp:ModifyDate>2012-07-08T17:27:01-06:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:F77F1174072068119109CC2176AD9FDB</stRef:instanceID> <stRef:documentID>xmp.did:F77F1174072068118309C4B274567D08</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:F87F1174072068119109CC2176AD9FDB</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:F87F1174072068119109CC2176AD9FDB</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
 
 Frame #    Frame Bytes    Total Bytes    Scene
 -------    -----------    -----------    -----
-      1         605777         605777    Scene 1 (AS 3.0 Classes Export Frame)
-      2              0         605777    
-      3              0         605777    
-      4              0         605777    
-      5              0         605777    
-      6              0         605777    
-      7              0         605777    
-      8             82         605859    
-      9              0         605859    
-     10              0         605859    
-     11              0         605859    
-     12              7         605866    
-     13              0         605866    
-     14              0         605866    
-     15              0         605866    
-     16              0         605866    
-     17              0         605866    
-     18              0         605866    
-     19              0         605866    
-     20              0         605866    
-     21              0         605866    
-     22              0         605866    
-     23              0         605866    
-     24              0         605866    
-     25              0         605866    
-     26              0         605866    
-     27              0         605866    
-     28              0         605866    
-     29              0         605866    
+      1        1417299        1417299    Scene 1 (AS 3.0 Classes Export Frame)
+      2              1        1417300    
+      3              1        1417301    
+      4              1        1417302    
+      5              1        1417303    
+      6              1        1417304    
+      7              1        1417305    
+      8            130        1417435    
+      9              1        1417436    
+     10              1        1417437    
+     11              1        1417438    
+     12              9        1417447    
+     13              1        1417448    
+     14              1        1417449    
+     15              1        1417450    
+     16              1        1417451    
+     17              1        1417452    
+     18              1        1417453    
+     19              1        1417454    
+     20              1        1417455    
+     21              1        1417456    
+     22              1        1417457    
+     23              1        1417458    
+     24              1        1417459    
+     25              1        1417460    
+     26              1        1417461    
+     27              1        1417462    
+     28              1        1417463    
+     29              1        1417464    
 
 Scene      Shape Bytes    Text Bytes    ActionScript Bytes
 -------    -----------    ----------    ------------------
-Scene 1              0             0                332555
+Scene 1              0             0                619794
 
 Symbol                                 Shape Bytes    Text Bytes    ActionScript Bytes
 -----------------------------------    -----------    ----------    ------------------
-actionButton                                    94             0                     0
+actionButton                                   129             0                     0
 AbilitiesTab                                     0             0                     0
-ArmyTab                                          0             0                     0
+ArmyOverviewUI                                   0             0                     0
+ContractButton                                   0             0                     0
+FormNewPopup                                     0           105                     0
+DisbandPopup                                     0             0                     0
+DisableLayer                                     0             0                     0
+FormNew                                          0             0                     0
+Pagination                                       0             0                     0
+entryLayer                                       0             0                     0
+CloseButton                                      0             0                     0
+ArmyEntry                                        0             0                     0
+CancelButton                                     0             0                     0
+ConfirmButton                                    0             0                     0
+CancelButton                                     0             0                     0
+ConfirmButton                                    0             0                     0
 ArmyTabOld                                       0             0                     0
 ArmyUI                                           0             0                     0
-Abilities                                        0             0                     0
-Sockets                                          0             0                     0
-HeroTab                                          0             0                     0
-CommandTab                                       0             0                     0
-InventoryTab                                     0             0                     0
+ItemLayer                                        0             0                     0
+ArmyTab                                          0             0                     0
+OrdersTab                                        0             0                     0
+SmallRightArrow                                  0             0                     0
+SmallLeftArrow                                   0             0                     0
 UnitLayer                                        0             0                     0
-CloseButton                                      0             0                     0
 ArmyUIOld                                        0             0                     0
+Abilities                                        0             0                     0
+HeroTab                                          0             0                     0
+Sockets                                          0             0                     0
 AssignPopCancelButton                            0             0                     0
 AssignPopConfirmButton                           0             0                     0
 AttackReticule                                   0             0                     0
@@ -100,10 +115,9 @@ BattleHeroTab                                    0             0                
 BattleInventoryTab                               0             0                     0
 BattleMap                                        0             0                     0
 BattleSocketsTab                                 0             0                     0
-BattleUI                                         0             0                     0
+BattleUIOld                                      0             0                     0
 TextArea                                         0             0                     0
 BuildContract                                    0             0                     0
-ContractButton                                   0             0                     0
 StructureEntry                                   0             0                     0
 SelectSource                                     0             0                     0
 SelectBlock                                      0             0                     0
@@ -112,53 +126,64 @@ BuildingDetailCard                               0             0                
 BuildingsInfo                                    0             0                     0
 BuildSelector                                    0             0                     0
 BuildSelectorConfirmPopup                        0             0                     0
-CancelButton                                     0             0                     0
+ClaimButton                                      0             0                     0
 BuildButton                                      0             0                     0
 BuildButton                                      0             0                     0
 CancelButton                                     0             0                     0
 BuildSelectorEntry                               0             0                     0
 Button                                           0             0                     0
-Button_disabledSkin                             70             0                     0
-Button_downSkin                                148             0                     0
-Button_emphasizedSkin                           76             0                     0
-Button_overSkin                                138             0                     0
-Button_selectedDisabledSkin                    114             0                     0
-Button_selectedDownSkin                        112             0                     0
-Button_selectedOverSkin                        113             0                     0
-Button_selectedUpSkin                          113             0                     0
-Button_upSkin                                  153             0                     0
-focusRectSkin                                   53             0                     0
-Component_avatar                                17             0                     0
+Button_disabledSkin                             95             0                     0
+Button_downSkin                                201             0                     0
+Button_emphasizedSkin                          103             0                     0
+Button_overSkin                                187             0                     0
+Button_selectedDisabledSkin                    154             0                     0
+Button_selectedDownSkin                        152             0                     0
+Button_selectedOverSkin                        153             0                     0
+Button_selectedUpSkin                          154             0                     0
+Button_upSkin                                  207             0                     0
+focusRectSkin                                   72             0                     0
+Component_avatar                                23             0                     0
 CancelButton                                     0             0                     0
 CityEntry                                        0             0                     0
-CityUI                                           0             0                     0
 CityUI_Popups.psd                                0             0                     0
-Assign Pop UI                                    0             0                     0
-ConfirmButton                                    0             0                     0
-CancelButton                                     0             0                     0
+Assign Pop UI                                    0            99                     0
+CityUIR2                                         0             0                     0
 BuildingsInfo                                    0             0                     0
 ImprovementsInfo                                 0             0                     0
 FinancesUI                                       0             0                     0
 InventoryUI                                      0             0                     0
 PopulationUI                                     0             0                     0
-LeftArrowSmall                                   0             0                     0
-RightArrowSmall                                  0             0                     0
 ThroneUI                                         0             0                     0
 MarketInfo                                       0             0                     0
 QueueInfo                                        0             0                     0
-QueueMarketUI                                    0             0                     0
-CityUIR2                                         0             0                     0
+CityUIR3                                         0             0                     0
+UnitBuilder                                      0           105                     0
+Item_Builder                                     0           107                     0
 CraftContract                                    0             0                     0
 TrainContract                                    0             0                     0
-QueuePopUp                                       0             0                     0
-DisableBackground                               25             0                     0
-CityUnitContainer                               25             0                     0
-ClaimButton                                      0             0                     0
+DisableBackground                               34             0                     0
+QueueMarketUI                                    0             0                     0
+ImprovementsInfo                                 0             0                     0
+BuildingsInfo                                    0             0                     0
+StructurePanel                                   0             0                     0
+UnitsUI                                          0             0                     0
+InventoryUI                                      0             0                     0
+FinancesUI                                       0             0                     0
+PopulationUI                                     0             0                     0
+ThroneUI                                         0             0                     0
+LeftSmallArrow                                   0             0                     0
+PopCloseButton                                   0             0                     0
+PopOpenButton                                    0             0                     0
+PopulationHeader                                 0             0                     0
+RightSmallArrow                                  0             0                     0
+CityUnitContainer                               33             0                     0
 ClaimCityEntry                                   0             0                     0
 ClaimLand                                        0             0                     0
-CommonersHeader                                  0             0                     0
-PopOpenButton                                    0             0                     0
-PopCloseButton                                   0             0                     0
+CombatUI                                         0             0                     0
+BattleMap                                        0             0                     0
+CombatLog                                        0             0                     0
+Battlefield Items                                0             0                     0
+CommandTab                                       0             0                     0
 CellRenderer                                     0             0                     0
 CellRenderer_disabledSkin                        0             0                     0
 CellRenderer_downSkin                            0             0                     0
@@ -196,30 +221,33 @@ ProgressBar_barSkin                              0             0                
 ProgressBar_indeterminateSkin                    0             0                     0
 ProgressBar_trackSkin                            0             0                     0
 ScrollBar                                        0             0                     0
-ScrollTrack_skin                                59             0                     0
-ScrollArrowUp_downSkin                          58             0                     0
-ScrollArrowDown_downSkin                        57             0                     0
-ScrollThumb_downSkin                            85             0                     0
-ScrollArrowDown_overSkin                        57             0                     0
-ScrollThumb_overSkin                            84             0                     0
-ScrollArrowUp_overSkin                          57             0                     0
+ScrollTrack_skin                                80             0                     0
+ScrollArrowUp_downSkin                          79             0                     0
+ScrollArrowDown_downSkin                        78             0                     0
+ScrollThumb_downSkin                           115             0                     0
+ScrollArrowDown_overSkin                        78             0                     0
+ScrollThumb_overSkin                           114             0                     0
+ScrollArrowUp_overSkin                          78             0                     0
 ScrollArrowUp_upSkin                             0             0                     0
-ScrollThumb_upSkin                              85             0                     0
-ScrollArrowDown_upSkin                          29             0                     0
+ScrollThumb_upSkin                             115             0                     0
+ScrollArrowDown_upSkin                          39             0                     0
 ScrollArrowDown_disabledSkin                     0             0                     0
-ScrollArrowUp_disabledSkin                      58             0                     0
-ScrollBar_thumbIcon                             39             0                     0
+ScrollArrowUp_disabledSkin                      79             0                     0
+ScrollBar_thumbIcon                             53             0                     0
 ScrollArrowDown_icon                             0             0                     0
-arrowIcon                                       17             0                     0
+arrowIcon                                       24             0                     0
 ScrollArrowUp_icon                               0             0                     0
-TextArea_disabledSkin                           58             0                     0
-TextArea_upSkin                                 51             0                     0
+TextArea_disabledSkin                           79             0                     0
+TextArea_upSkin                                 70             0                     0
 TextInput_disabledSkin                           0             0                     0
 TextInput_upSkin                                 0             0                     0
 ConfirmButton                                    0             0                     0
 ContractEntry                                    0             0                     0
 SelectBlock                                      0             0                     0
 ItemQuantitySlider                               0             0                     0
+CreateNew                                        0             0                     0
+ItemQuantitySliderOld                            0             0                     0
+CraftContractOld                                 0             0                     0
 darkBackground                                   0             0                     0
 DarkSquare                                       0             0                     0
 HeroTab                                          0             0                     0
@@ -227,17 +255,26 @@ icon_unit.psd                                    0             0                
 infrastructureInfo                               0             0                     0
 IconBuilding                                     0             0                     0
 IconCaste                                        0             0                     0
-IconContainer                                   20             0                     0
-StackSize                                       37             0                     0
-IconLayer                                       15             0                     0
+IconContainer                                   28             0                     0
+StackSize                                       51             0                     0
+IconLayer                                       20             0                     0
 IconContainerSmall                               0             0                     0
-IconEntity                                      24             0                     0
+IconEntity                                      33             0                     0
 IconItem                                         0             0                     0
-IconTile                                         0             0                     0
+ImageLayer                                       0             0                     0
 IconUnit                                         0             0                     0
+IconTile                                         0             0                     0
+IconUnitOld                                      0             0                     0
 ImprovementsInfo                                 0             0                     0
 InfoPop                                          0             0                     0
-InventoryUI                                      0             0                     0
+InventoryTab                                     0             0                     0
+DropDownList                                     0             0                     0
+DropDown                                         0             0                     0
+LevelDropDown                                    0             0                     0
+ItemBuilderStats                                 0           111                     0
+ItemBuilderMaterials                            22             0                     0
+MaterialEntry                                    0             0                     0
+Item_Detail                                      0             0                     0
 Label                                            0             0                     0
 LandDetailCard                                   0             0                     0
 LandDetailStatsPanel                             0             0                     0
@@ -252,21 +289,23 @@ TextInput                                        0             0                
 SelectedBlockArmy                                0             0                     0
 SelectedBlockCity                                0             0                     0
 SelectedBlockLand                                0             0                     0
-MainUI                                           0             0                     0
+MainUI                                           0            42                     0
 SelectedHero                                     0             0                     0
 MarketDetailsUI                                  0             0                     0
 MarketInfo                                       0             0                     0
 MoveReticule                                     0             0                     0
-NoblesHeader                                     0             0                     0
-PopulationUI                                     0             0                     0
+LeftArrow                                        0             0                     0
+RightArrow                                       0             0                     0
+PopCloseButton                                   0             0                     0
+PopOpenButton                                    0             0                     0
 ProductionUI                                     0             0                     0
-QueueEntryUI                                     0             0                     0
+QueueEntryUI                                    70             0                     0
 QueueInfo                                        0             0                     0
 QueueMarketUI                                    0             0                     0
+QueuePopUp                                       0             0                     0
 QueueProgressIcon                                0             0                     0
-SlavesHeader                                     0             0                     0
+RightArrowSmall                                  0             0                     0
 SocketsTab                                       0             0                     0
-SoldiersHeader                                   0             0                     0
 Symbol 121                                       0             0                     0
 Symbol 122                                       0             0                     0
 Symbol 165                                       0             0                     0
@@ -274,606 +313,674 @@ Symbol 166                                       0             0                
 Symbol 167                                       0             0                     0
 Symbol 214                                       0             0                     0
 Symbol 215                                       0             0                     0
+Symbol 266                                       0             0                     0
+Symbol 294                                       0             0                     0
 UIScrollBar                                      0             0                     0
 TextBackground                                   0             0                     0
 ThroneUI                                         0             0                     0
+AddPop                                           0            96                     0
+DisableLayer                                     0             0                     0
 SelectSource                                     0             0                     0
 CreateNew                                        0             0                     0
+PopEntry                                         0             0                     0
+DropDownList                                     0             0                     0
+Gear                                             0             0                     0
+UnitBuilderGear                                  0             0                     0
+UnitBuilderStats                                 0             0                     0
+UnitBuilderOld                                   0             0                     0
+UnitBuilderStatsOld                              0             0                     0
+UnitDetail                                       0             0                     0
+UnitDetailStats                                  0             0                     0
+UnitDetailGear                                   0             0                     0
+UnitDetailInventory                              0             0                     0
+WideDropDown                                     0             0                     0
 fl.core.ComponentShim                            0             0                     0
 
 Font Name                Bytes         Characters
 ---------------------    ----------    ----------
-Verdana-Italic Italic          2458    (Click todesgnawu)Drpmvbh 
-Verdana-Bold Bold              2461    Imperial Dc:[1.Lo]Jh(Pvt)SnMusHb923/VTdyR+ 
-Verdana                       21170     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƏƒƠơƯưǺǻǼǽǾǿȘșȚțˆˇˉ˘˙˚˛˜˝;΄΅Ά·ΈΉΊΌΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяёђѓєѕіїјљњћќѝўџҐґҒғҖҗҚқҜҝҢңҮүҰұҲҳҸҹҺһդր฿ẀẁẂẃẄẅẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹ‒–—―‗‘’‚‛“”„‟†‡•…‰′″‴‹›‼‾⁄⁴ⁿ₠₡₢₣₤₥₦₧₨₩₪₫€₭₮₯₰₱₲₳₴₵℅ℓ№℠™Ω℮⅛⅜⅝⅞∂∏∑∕√∞∫≠≡≤≥─│┌┐└┘□●♪￥￦ 
+Verdana-Italic Italic          3494    (Drop imventbuldgch)CksawfyH’OL 
+Verdana-Bold Bold              3456    9M123/ VacntThroedys+084NgAm56BkGiR 
+Verdana                       30199     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƏƒƠơƯưǺǻǼǽǾǿȘșȚțˆˇˉ˘˙˚˛˜˝;΄΅Ά·ΈΉΊΌΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяёђѓєѕіїјљњћќѝўџѸѹѼѽ҇ҐґҒғҖҗҚқҜҝҢңҨҩҮүҰұҲҳҸҹҺһҼҽҾҿդր฿ẀẁẂẃẄẅẞẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹ‒–—―‗‘’‚‛“”„‟†‡•… ‰′″‴‹›‼‾⁄⁴ⁿ₠₡₢₣₤₥₦₧₨₩₪₫€₭₮₯₰₱₲₳₴₵℅ℓ№℠™Ω℮⅛⅜⅝⅞∂∏∑∕√∞∫≠≡≤≥─│┌┐└┘□●♪ꜛꜜꜝꜞꜟꞈ꞉꞊Ꞌꞌ￥￦ 
+Verdana                       61419     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƏƒƠơƯưǺǻǼǽǾǿȘșȚțˆˇˉ˘˙˚˛˜˝;΄΅Ά·ΈΉΊΌΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяёђѓєѕіїјљњћќѝўџѸѹѼѽ҇ҐґҒғҖҗҚқҜҝҢңҨҩҮүҰұҲҳҸҹҺһҼҽҾҿդր฿ẀẁẂẃẄẅẞẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹ‒–—―‗‘’‚‛“”„‟†‡•… ‰′″‴‹›‼‾⁄⁴ⁿ₠₡₢₣₤₥₦₧₨₩₪₫€₭₮₯₰₱₲₳₴₵℅ℓ№℠™Ω℮⅛⅜⅝⅞∂∏∑∕√∞∫≠≡≤≥─│┌┐└┘□●♪ꜛꜜꜝꜞꜟꞈ꞉꞊Ꞌꞌ￥￦
 
 ActionScript Bytes    Location
 ------------------    --------
-            332555    Scene 1:Frame 1
+            619794    Scene 1:Frame 1
 
 Bitmap                                                     Compressed    Original      Compression
 -------------------------------------------------------    ----------    ----------    -----------
-trapper.png                                                      1149          9216    JPEG Quality=100
-TestTiles                                                       10184         36864    Lossless
-temple.png                                                       1189          9216    JPEG Quality=100
-quarry.png                                                       1073          9216    JPEG Quality=100
-plant.png                                                        1216          9216    Lossless
-placeholder_enemy.png                                             881          9216    Lossless
-placeholder_city.png                                             1872          9216    Lossless
-placeholder_battle.png                                           1933          9216    JPEG Quality=100
-placeholder_army.png                                              835          9216    Lossless
-mine.png                                                         1094          9216    JPEG Quality=100
-market.png                                                       1379          9216    JPEG Quality=100
-lumbermill.png                                                   1421          9216    JPEG Quality=100
-Human Icon                                                        587          1600    Lossless
-Goblin Icon                                                       576          1680    Lossless
-footsoldier.png                                                   510          9216    Lossless
-farm.png                                                         1279          9216    JPEG Quality=100
-Elf Icon                                                          569          1600    Lossless
-Dwarf Icon                                                        584          1600    Lossless
-CharacterImage                                                    830          3712    Lossless
-barracks.png                                                     1302          9216    JPEG Quality=100
-archer.png                                                        565          9216    Lossless
-Open Button                                                        16           256    Lossless
-Close Button                                                       10            64    Lossless
-10%                                                                11           256    Lossless
-Percentage Bar                                                     29          6432    Lossless
-Sample Tile Size                                                   20          9216    Lossless
-Population BG                                                     198        450840    Lossless
-Right Arrow                                                        27           120    Lossless
-Left Arrow                                                         30           120    Lossless
-Control_Bar_BG                                                     27         28080    Lossless
-Filter Arrow                                                       27           100    Lossless
-Pane_BG                                                           147        323440    Lossless
-Layer 2                                                           193        360760    Lossless
-Close_Rest.png                                                    203          1156    Lossless
-Close_Roll.png                                                    235          1156    Lossless
-Close_Click.png                                                   245          1156    Lossless
-Bottom BG                                                         206        245220    Lossless
-Right Arrow                                                        27           120    Lossless
-Left Arrow                                                         30           120    Lossless
-Sell BG                                                            17          3744    Lossless
-Button BG                                                          23         17056    Lossless
-Filter Arrow                                                       27           100    Lossless
-Order BG                                                           17          3744    Lossless
-Details BG                                                         17          3744    Lossless
-Poor                                                              227          2904    Lossless
-Background with Icons                                              23         16700    Lossless
-Header BG                                                          84         45552    Lossless
-Stone Marker                                                      170          1020    Lossless
-Weight in Stone                                                   265          7144    Lossless
-Flag Border                                                        70         27200    Lossless
-Background                                                         54         94000    Lossless
-Background_Icons                                                  944         17368    Lossless
-Layer 2                                                          1278          9216    Lossless
-Wild Lands                                                         31          6912    Lossless
-Empire Icon space                                                  68         27200    Lossless
-Land Claim BG                                                      37         51800    Lossless
-Land Gear BG                                                      172         51800    JPEG Quality=100
-Improvement BG                                                     37         51800    Lossless
-Population Icon                                                   199           952    Lossless
-Income Icon                                                       205           960    Lossless
-Icon BG                                                           220          9216    JPEG Quality=100
-pane_background                                                   181        408668    Lossless
-Header_Footer_Bars                                                225        441188    Lossless
-Minimize_Rest                                                     125          1156    Lossless
-Land Card BG                                                      295        398364    Lossless
-Details BG                                                         22         16020    Lossless
-Status Effect Icon Space                                           44         12640    Lossless
-Control BG                                                         23         17368    Lossless
+TestTiles                                                       13794         36864    Lossless
+temple.png                                                       1611          9216    JPEG Quality=100
+placeholder_enemy.png                                            1194          9216    Lossless
+placeholder_city.png                                             2536          9216    Lossless
+placeholder_battle.png                                           2619          9216    JPEG Quality=100
+placeholder_army.png                                             1132          9216    Lossless
+market.png                                                       1867          9216    JPEG Quality=100
+lumbermill.png                                                   1925          9216    JPEG Quality=100
+Human Icon                                                        795          1600    Lossless
+Goblin Icon                                                       780          1680    Lossless
+footsoldier.png                                                   691          9216    Lossless
+Elf Icon                                                          771          1600    Lossless
+Dwarf Icon                                                        791          1600    Lossless
+CharacterImage                                                   1124          3712    Lossless
+archer.png                                                        765          9216    Lossless
+48Tiles.png                                                    378327       3686400    Lossless
+10%                                                                15           256    Lossless
+Controls BG                                                        47         47000    Lossless
+Header BG                                                         211         94000    Lossless
+Cancel BG                                                          23          2860    Lossless
+Confirm_Edit BG                                                    23          2860    Lossless
+Repeat BG                                                          23          2860    Lossless
+Repeat Button On                                                   31           196    Lossless
+Repeat Button Off                                                  15           100    Lossless
+Materials Used Space                                               59         12640    Lossless
+Background with Icons                                              32         17368    Lossless
+Percentage Bar                                                     41          6432    Lossless
+Percentage Bar                                                     40          6432    Lossless
+Pane_BG                                                           199        323440    Lossless
+Layer 2                                                           262        360760    Lossless
+Close_Rest.png                                                    275          1156    Lossless
+Close_Roll.png                                                    319          1156    Lossless
+Close_Click.png                                                   333          1156    Lossless
+Bottom BG                                                         280        245220    Lossless
+Right Arrow                                                        37           120    Lossless
+Left Arrow                                                         41           120    Lossless
+Sell BG                                                            24          3744    Lossless
+Button BG                                                          31         17056    Lossless
+Filter Arrow                                                       36           100    Lossless
+Order BG                                                           24          3744    Lossless
+Details BG                                                         24          3744    Lossless
+Poor                                                              307          2904    Lossless
+Background with Icons                                              31         16700    Lossless
+Header BG                                                         114         45552    Lossless
+Stone Marker                                                      230          1020    Lossless
+Weight in Stone                                                   359          7144    Lossless
+Flag Border                                                        95         27200    Lossless
+Background                                                         73         94000    Lossless
+Background_Icons                                                 1278         17368    Lossless
+Layer 2                                                          1731          9216    Lossless
+Wild Lands                                                         42          6912    Lossless
+Empire Icon space                                                  93         27200    Lossless
+Land Claim BG                                                      50         51800    Lossless
+Land Gear BG                                                      233         51800    JPEG Quality=100
+Improvement BG                                                     50         51800    Lossless
+Population Icon                                                   269           952    Lossless
+Income Icon                                                       278           960    Lossless
+Icon BG                                                           298          9216    JPEG Quality=100
+pane_background                                                   245        408668    Lossless
+Header_Footer_Bars                                                305        441188    Lossless
+Minimize_Rest                                                     169          1156    Lossless
+Land Card BG                                                      400        398364    Lossless
+Details BG                                                         31         16020    Lossless
+Status Effect Icon Space                                           59         12640    Lossless
+Control BG                                                         32         17368    Lossless
+Info Block BG                                                      54         23472    Lossless
+Land Icon (96x96)                                               16328         36864    Lossless
+Stone Marker                                                      258          1020    Lossless
+Assigned BG copy 3                                                 53         17680    Lossless
+Layer 11                                                          103         22784    Lossless
+Assigned BG copy                                                   32         17680    Lossless
+Layer 18                                                           58         19224    Lossless
+3 Lines BG                                                         38         28560    Lossless
+3 Lines BG_1                                                       74         30616    Lossless
+Assigned BG                                                        32         17680    Lossless
+Layer 16                                                           58         19224    Lossless
+Attack Icon                                                       222          1680    Lossless
+Masterwork.png                                                    116           528    Lossless
+Assigned BG copy 2                                                 37         26520    Lossless
+Layer 15                                                          108         29904    Lossless
+Item Icon                                                        1731          9216    Lossless
+IconItemBG                                                         27          9216    Lossless
+rest                                                              197          5184    JPEG Quality=100
+roll                                                              464          5184    JPEG Quality=100
+click                                                             710          5184    JPEG Quality=100
+disabled                                                          197          5184    JPEG Quality=100
+Grey.png                                                           47         10816    Lossless
+Grey                                                              483         10816    JPEG Quality=100
+White                                                              45         10816    Lossless
+White                                                             491         10816    JPEG Quality=100
+Blue                                                               47         10816    Lossless
+Layer 1                                                           840         10816    JPEG Quality=100
+Race BG                                                            29         12576    Lossless
+Background                                                        229         51800    JPEG Quality=100
+Purchase Cost Icons (X Gold, X Building Supplies, etc.)           175          1600    JPEG Quality=100
+On-click Border                                                  1535         56808    JPEG Quality=100
+Mouseover Border                                                 1586         56808    JPEG Quality=100
+Settlement BG                                                      50         51800    Lossless
+City Rating Icon                                                  163           572    Lossless
+Population Icon                                                   269           952    Lossless
+Income Icon                                                       278           960    Lossless
+Icon                                                             3810          9408    Lossless
+On-click Border                                                   343         56808    Lossless
+Mouseover Border                                                  160         56808    Lossless
+Close Button                                                       14            64    Lossless
+Open Button                                                        22           256    Lossless
+Background                                                         50         51800    Lossless
+Purchase Cost Icons (X Gold, X Building Supplies, etc.)            50          8960    Lossless
+pane_background                                                  1090       1266528    Lossless
+Header_Footer_Bars                                                815       1346688    Lossless
+Target_Pane copy                                                   47         36000    Lossless
+Down Arrow                                                         62           320    Lossless
+Up Arrow                                                           84           520    Lossless
+Enemy Mini-flags                                                   98         46656    Lossless
+Down Arrow                                                         62           320    Lossless
+Up Arrow                                                           84           520    Lossless
+Allied Mini-flags                                                  88         46656    Lossless
+Minimize_Rest                                                     169          1156    Lossless
+Shape 1                                                           396        676800    Lossless
+background                                                       8856        672000    Lossless
+Target_Pane                                                       187        134232    Lossless
+Button_BG                                                          26          7620    Lossless
+Battle Bar                                                         26         11008    Lossless
+Background                                                        182        109040    Lossless
+Class                                                              21          1600    Lossless
+Race                                                               21          1600    Lossless
+Level                                                              21          1600    Lossless
+Background_Icons                                                 1278         17368    Lossless
+Background with Icons                                             533         17368    Lossless
+Status Effect Icon Space                                           59         12640    Lossless
+Target_Pane                                                        71         82592    Lossless
+Army Border                                                        95         27200    Lossless
+Inventory Tile Space                                              153         46096    Lossless
+Slider Disabled                                                    15            72    Lossless
+Slider Bar                                                         17           656    Lossless
+Slider Disabled                                                    15            72    Lossless
+Slider Bar                                                         17           656    Lossless
+Slider - Disabled                                                  15            72    Lossless
+Slider Bar                                                         17           656    Lossless
+Battle Plan Tile Space                                             87         22016    Lossless
+Right Arrow                                                        37           120    Lossless
+Left Arrow                                                         41           120    Lossless
+Background                                                        182        109040    Lossless
+Main Socket                                                        31          2704    Lossless
+Training Tier 3                                                    98          1024    Lossless
+Training Tier 2                                                    94          1024    Lossless
+Training Tier 1                                                    94          1024    Lossless
+Main Socket                                                        60          2704    Lossless
+Training Tier 3                                                    94          1024    Lossless
+Training Tier 2                                                    94          1024    Lossless
+Training Tier 1                                                    94          1024    Lossless
+Main Socket                                                        59          2704    Lossless
+Training Tier 3                                                    94          1024    Lossless
+Training Tier 2                                                   102          1024    Lossless
+Training Tier 1                                                    94          1024    Lossless
+Main Socket                                                        63          2704    Lossless
+Training Tier 3                                                    96          1024    Lossless
+Training Tier 2                                                    94          1024    Lossless
+Training Tier 1                                                    94          1024    Lossless
+Main Socket                                                        62          2704    Lossless
+Training Tier 3                                                   101          1024    Lossless
+Training Tier 2                                                   100          1024    Lossless
+Training Tier 1                                                    94          1024    Lossless
+Main Socket                                                        23          2704    Lossless
+Training Tier 3                                                    94          1024    Lossless
+Training Tier 2                                                    93          1024    Lossless
+Training Tier 1                                                    92          1024    Lossless
+Main Socket                                                        23          2704    Lossless
+Training Tier 3                                                    92          1024    Lossless
+Training Tier 2                                                    94          1024    Lossless
+Training Tier 1                                                    92          1024    Lossless
+Main Socket                                                        23          2704    Lossless
+Training Tier 3                                                    92          1024    Lossless
+Training Tier 2                                                    95          1024    Lossless
+Training Tier 1                                                    92          1024    Lossless
+Main Socket                                                        23          2704    Lossless
+Training Tier 3                                                    93          1024    Lossless
+Training Tier 2                                                    93          1024    Lossless
+Training Tier 1                                                    92          1024    Lossless
+Main Socket                                                        28          2704    Lossless
+Training Tier 3                                                    97          1024    Lossless
+Training Tier 2                                                    94          1024    Lossless
+Training Tier 1                                                    92          1024    Lossless
+Army Border                                                        95         27200    Lossless
+Victory Message                                                   833         10048    Lossless
+Defeat Message                                                   1021         13376    Lossless
+Retreat Countdown Message                                        1339         16620    Lossless
+Allied Reinforcements Message                                    1569         19840    Lossless
+Enemy Reinforcements Message                                     1669         19776    Lossless
+Retreat Marker                                                    491          2304    Lossless
+Attack Marker                                                     393          2400    Lossless
+Battle Start Message                                              878          8820    Lossless
+Battle Countdown Message                                         1087         14460    Lossless
+Background with Icons                                             533         17368    Lossless
+Status Effect Icon Space                                           59         12640    Lossless
+Army Border                                                       115         27200    Lossless
+Bitmap 1674                                                        73         94000    Lossless
+Layer 1 copy 2                                                    127         40320    Lossless
+Layer 2                                                            42          1008    Lossless
+Layer 1                                                            41          1008    Lossless
+Layer 1                                                            46          1008    Lossless
+Layer 2                                                            49          1008    Lossless
+Layer 1 copy 15                                                   230         80640    Lossless
+pane_background                                                   456        467544    Lossless
+Header_Footer_Bars                                                356        525504    Lossless
+Minimize_Rest                                                     169          1156    Lossless
+Background                                                        121        172960    Lossless
+RightArrow_Rest                                                   106          1872    Lossless
+LeftArrow_Rest                                                    108          1872    Lossless
+Layer 4                                                           137        172960    Lossless
+Vacant Throne BG                                                   67         34080    Lossless
+Background                                                         47         47000    Lossless
+Layer 1 copy 3                                                    339        127680    Lossless
+LeftArrow_Rest                                                    359           660    JPEG Quality=100
+LeftArrow_Roll                                                    199           660    Lossless
+RightArrow_Rest                                                   357           660    JPEG Quality=100
+RightArrow_Roll                                                   194           660    Lossless
+Background                                                         50         51800    Lossless
+Status Effect Icons                                                50          8960    Lossless
+Race BG                                                            29         12576    Lossless
+Resist Icon                                                        21          1600    Lossless
+Resist BG                                                          29         12576    Lossless
+Resist BG                                                          93         90072    Lossless
+Bitmap 1831                                                       171        273408    Lossless
+Resist Icon                                                        21          1600    Lossless
+Resist BG                                                          29         12576    Lossless
+Stats BG                                                           73         75168    Lossless
+Upkeep BG                                                          31         17760    Lossless
+Elite III                                                         669          4128    Lossless
+Elite II                                                          667          4128    Lossless
+Elite I                                                           667          4128    Lossless
+Race Icon                                                          21          1600    Lossless
+Race BG                                                            28         10752    Lossless
+Land Gear BG                                                      170        263000    Lossless
+Bag Icon (48x48)                                                 1731          9216    Lossless
+Layer 7 copy 2                                                   1731          9216    Lossless
+Bag Icon (48x48)                                                 1731          9216    Lossless
+Layer 7 copy                                                     1732          9216    Lossless
+Layer 7                                                          1731          9216    Lossless
+Layer 1 copy 3                                                    339        127680    Lossless
+Right Arrow                                                        37           120    Lossless
+Left Arrow                                                         41           120    Lossless
+Stone Marker                                                      225          1020    Lossless
+pane_background                                                   245        408668    Lossless
+Header_Footer_Bars                                                305        441188    Lossless
+Minimize_Rest                                                     169          1156    Lossless
+Unit Card BG                                                      400        398364    Lossless
+Details BG                                                         31         16020    Lossless
+Background Stat Layer with Icons                                 1045         17368    Lossless
+Dwarf_inf_example                                                  36          3440    Lossless
 Info Block BG                                                      40         23472    Lossless
-Land Icon (96x96)                                               12054         36864    Lossless
-rest                                                              145          5184    JPEG Quality=100
-roll                                                              343          5184    JPEG Quality=100
-click                                                             524          5184    JPEG Quality=100
-disabled                                                          145          5184    JPEG Quality=100
-Grey                                                              356         10816    JPEG Quality=100
-White                                                             362         10816    JPEG Quality=100
-Layer 1                                                           620         10816    JPEG Quality=100
-Mouseover Border                                                   35         12576    Lossless
-Race Icon                                                          15          1600    Lossless
-Race BG                                                            21         12576    Lossless
-Grey                                                              356         10816    JPEG Quality=100
-White                                                             362         10816    JPEG Quality=100
-Layer 1                                                           620         10816    JPEG Quality=100
-Settlement BG                                                     169         51800    JPEG Quality=100
-City Rating Icon                                                  243           572    JPEG Quality=100
-Population Icon                                                   271           952    JPEG Quality=100
-Income Icon                                                       252           960    JPEG Quality=100
-Icon                                                             1330          9408    JPEG Quality=100
-On-click Border                                                   881         56808    JPEG Quality=100
-Mouseover Border                                                 1152         56808    JPEG Quality=100
-Background                                                         37         51800    Lossless
-Purchase Cost Icons (X Gold, X Building Supplies, etc.)            37          8960    Lossless
-Race BG                                                            21         12576    Lossless
-Slider                                                             10            72    Lossless
-Slider Bar                                                         13           912    Lossless
-Slider                                                             10            72    Lossless
-Slider Bar                                                         13           912    Lossless
-Slider                                                             10            72    Lossless
-Slider Bar                                                         13           912    Lossless
-Layer 1 copy 2                                                     93         40320    Lossless
-Layer 1 copy                                                      172         84000    Lossless
-Right Arrow                                                        27           120    Lossless
-Left Arrow                                                         30           120    Lossless
-Layer 1 copy 15                                                   170         80640    Lossless
-pane_background                                                   283        390264    Lossless
-Header_Footer_Bars                                                232        448224    Lossless
-Minimize_Rest                                                     125          1156    Lossless
-Background copy                                                    74        135360    Lossless
-Claim Icon                                                        203           784    Lossless
-Claim Land Roll                                                    20          1600    Lossless
-Claim Land Rest                                                    19          1600    Lossless
-Layer 1                                                           132           504    Lossless
-Message Ruler Roll                                                 20          1600    Lossless
-Message Ruler Rest                                                 20          1600    Lossless
-Home Icon                                                         169           832    Lossless
-Thone Room Rest                                                    20          1600    Lossless
-Claim Icon                                                        203           784    Lossless
-Claim Land Rest                                                    19          1600    Lossless
-Patrol Icon                                                       197           900    Lossless
-Claim Land Rest                                                    19          1600    Lossless
-RightArrow_Rest                                                    78          1872    Lossless
-LeftArrow_Rest                                                     80          1872    Lossless
-Background                                                        134        109040    Lossless
-Background_Icons                                                  944         17368    Lossless
-Main Socket                                                        22          2704    Lossless
-Training Tier 3                                                    74          1024    Lossless
-Training Tier 2                                                    70          1024    Lossless
-Training Tier 1                                                    69          1024    Lossless
-Main Socket                                                        45          2704    Lossless
-Training Tier 3                                                    72          1024    Lossless
-Training Tier 2                                                    70          1024    Lossless
-Training Tier 1                                                    69          1024    Lossless
-Main Socket                                                        44          2704    Lossless
-Training Tier 3                                                    69          1024    Lossless
-Training Tier 2                                                    75          1024    Lossless
-Training Tier 1                                                    69          1024    Lossless
-Main Socket                                                        46          2704    Lossless
-Training Tier 3                                                    71          1024    Lossless
-Training Tier 2                                                    70          1024    Lossless
-Training Tier 1                                                    69          1024    Lossless
-Main Socket                                                        46          2704    Lossless
-Training Tier 3                                                    75          1024    Lossless
-Training Tier 2                                                    74          1024    Lossless
-Training Tier 1                                                    69          1024    Lossless
-Main Socket                                                        17          2704    Lossless
-Training Tier 3                                                    68          1024    Lossless
-Training Tier 2                                                    69          1024    Lossless
-Training Tier 1                                                    68          1024    Lossless
-Main Socket                                                        17          2704    Lossless
-Training Tier 3                                                    70          1024    Lossless
-Training Tier 2                                                    69          1024    Lossless
-Training Tier 1                                                    68          1024    Lossless
-Main Socket                                                        17          2704    Lossless
-Training Tier 3                                                    68          1024    Lossless
-Training Tier 2                                                    70          1024    Lossless
-Training Tier 1                                                    68          1024    Lossless
-Main Socket                                                        17          2704    Lossless
-Training Tier 3                                                    68          1024    Lossless
-Training Tier 2                                                    69          1024    Lossless
-Training Tier 1                                                    68          1024    Lossless
-Main Socket                                                        20          2704    Lossless
-Training Tier 3                                                    71          1024    Lossless
-Training Tier 2                                                    70          1024    Lossless
-Training Tier 1                                                    68          1024    Lossless
-Army Border                                                        70         27200    Lossless
-Main Socket                                                        17          2704    Lossless
-Training Tier 3                                                    68          1024    Lossless
-Training Tier 2                                                    69          1024    Lossless
-Training Tier 1                                                    68          1024    Lossless
-Main Socket                                                        17          2704    Lossless
-Training Tier 3                                                    70          1024    Lossless
-Training Tier 2                                                    69          1024    Lossless
-Training Tier 1                                                    68          1024    Lossless
-Main Socket                                                        17          2704    Lossless
-Training Tier 3                                                    68          1024    Lossless
-Training Tier 2                                                    70          1024    Lossless
-Training Tier 1                                                    68          1024    Lossless
-Main Socket                                                        17          2704    Lossless
-Training Tier 3                                                    68          1024    Lossless
-Training Tier 2                                                    69          1024    Lossless
-Training Tier 1                                                    68          1024    Lossless
-Main Socket                                                        20          2704    Lossless
-Training Tier 3                                                    71          1024    Lossless
-Training Tier 2                                                    70          1024    Lossless
-Training Tier 1                                                    68          1024    Lossless
-Left Button BG                                                    137         11264    JPEG Quality=100
-Left Button Mouseover Border                                      672         11264    JPEG Quality=100
-pane_background                                                   409        368560    JPEG Quality=100
-Header_Footer_Bars                                                985        401080    JPEG Quality=100
-Minimize_Rest                                                     302          1156    JPEG Quality=100
-Build Selector BG                                                 328        315060    JPEG Quality=100
-Details BG                                                        137         16020    JPEG Quality=100
-Select Block BG                                                   328        315060    JPEG Quality=100
-Header BG                                                         136        114840    Lossless
-Background Overlay                                                311        315060    Lossless
-Cancel Button BG Rest                                              17          2860    Lossless
-Cancel BG                                                          17          3420    Lossless
-Confirm BG Rest                                                    17          2860    Lossless
-Confirm BG                                                         17          3420    Lossless
-Assign BG                                                          23         17680    Lossless
-pane_background                                                   165        368560    Lossless
-Header_Footer_Bars                                                209        401080    Lossless
-Minimize_Rest                                                     125          1156    Lossless
-Build Selector BG                                                 143        315060    Lossless
-Bitmap 986                                                        137         11264    JPEG Quality=100
-Details BG                                                         22         16020    Lossless
-RightArrow_Rest                                                   142           660    Lossless
-LeftArrow_Rest                                                    143           660    Lossless
-Left_Arrow_Click copy                                             812         13688    JPEG Quality=100
-Shape 1                                                          2200         18768    JPEG Quality=100
-Left_Arrow_Click copy                                             822         13688    JPEG Quality=100
-Shape 1                                                          2228         18768    JPEG Quality=100
-Main Socket                                                        17          2704    Lossless
-Training Tier 3                                                    70          1024    Lossless
-Training Tier 2                                                    69          1024    Lossless
-Training Tier 1                                                    68          1024    Lossless
-Main Socket                                                        17          2704    Lossless
-Training Tier 3                                                    68          1024    Lossless
-Training Tier 2                                                    69          1024    Lossless
-Training Tier 1                                                    68          1024    Lossless
-Main Socket                                                        17          2704    Lossless
-Training Tier 3                                                    68          1024    Lossless
-Training Tier 2                                                    70          1024    Lossless
-Training Tier 1                                                    68          1024    Lossless
-Main Socket                                                        17          2704    Lossless
-Training Tier 3                                                    68          1024    Lossless
-Training Tier 2                                                    69          1024    Lossless
-Training Tier 1                                                    68          1024    Lossless
-Main Socket                                                        20          2704    Lossless
-Training Tier 3                                                    71          1024    Lossless
-Training Tier 2                                                    70          1024    Lossless
-Training Tier 1                                                    68          1024    Lossless
-Main Socket                                                        22          2704    Lossless
-Training Tier 3                                                    72          1024    Lossless
-Training Tier 2                                                    70          1024    Lossless
-Training Tier 1                                                    69          1024    Lossless
-Main Socket                                                        45          2704    Lossless
-Training Tier 3                                                    69          1024    Lossless
-Training Tier 2                                                    70          1024    Lossless
-Training Tier 1                                                    69          1024    Lossless
-Main Socket                                                        44          2704    Lossless
-Training Tier 3                                                    69          1024    Lossless
-Training Tier 2                                                    75          1024    Lossless
-Training Tier 1                                                    69          1024    Lossless
-Main Socket                                                        46          2704    Lossless
-Training Tier 3                                                    71          1024    Lossless
-Training Tier 2                                                    70          1024    Lossless
-Training Tier 1                                                    69          1024    Lossless
-Main Socket                                                        46          2704    Lossless
-Training Tier 3                                                    75          1024    Lossless
-Training Tier 2                                                    74          1024    Lossless
-Training Tier 1                                                    69          1024    Lossless
-Slider Disabled                                                    11            72    Lossless
-Slider Bar                                                         12           656    Lossless
-Slider Disabled                                                    11            72    Lossless
-Slider Bar                                                         12           656    Lossless
-Slider - Disabled                                                  11            72    Lossless
-Slider Bar                                                         12           656    Lossless
-Battle Plan Tile Space                                             64         22016    Lossless
-Inventory Tile Space                                              113         46096    Lossless
-Background with Icons                                             393         17368    Lossless
-Status Effect Icon Space                                           44         12640    Lossless
-Class                                                              15          1600    Lossless
-Race                                                               15          1600    Lossless
-Level                                                              15          1600    Lossless
-Background_Icons                                                  944         17368    Lossless
-background                                                       6538        672000    Lossless
-pane_background                                                   805       1266528    Lossless
-Header_Footer_Bars                                                602       1346688    Lossless
-Target_Pane copy                                                   35         36000    Lossless
-Down Arrow                                                         45           320    Lossless
-Up Arrow                                                           62           520    Lossless
-Enemy Mini-flags                                                   72         46656    Lossless
-Down Arrow                                                         45           320    Lossless
-Up Arrow                                                           62           520    Lossless
-Allied Mini-flags                                                  65         46656    Lossless
-Minimize_Rest                                                     125          1156    Lossless
-Shape 1                                                           293        676800    Lossless
-Target_Pane                                                       138        134232    Lossless
-Button_BG                                                          19          7620    Lossless
-Battle Bar                                                         19         11008    Lossless
-Background                                                        134        109040    Lossless
-Target_Pane                                                        52         82592    Lossless
-Army Border                                                        70         27200    Lossless
-Right Arrow                                                        27           120    Lossless
-Left Arrow                                                         30           120    Lossless
-Background                                                        134        109040    Lossless
-Army Border                                                        70         27200    Lossless
-Victory Message                                                   615         10048    Lossless
-Defeat Message                                                    754         13376    Lossless
-Retreat Countdown Message                                         989         16620    Lossless
-Allied Reinforcements Message                                    1158         19840    Lossless
-Enemy Reinforcements Message                                     1232         19776    Lossless
-Retreat Marker                                                    363          2304    Lossless
-Attack Marker                                                     290          2400    Lossless
-Battle Start Message                                              648          8820    Lossless
-Battle Countdown Message                                          802         14460    Lossless
-Slider                                                            176           240    JPEG Quality=100
-pane_background                                                   448        433600    JPEG Quality=100
-Header_Footer_Bars                                               1024        466120    JPEG Quality=100
-Minimize_Rest                                                     302          1156    JPEG Quality=100
-Left Button BG                                                    137         11264    JPEG Quality=100
-Left Button Mouseover Border                                      672         11264    JPEG Quality=100
-Confirm Block BG                                                  664        315060    JPEG Quality=100
-70%                                                               129           256    JPEG Quality=100
-60%                                                               129           256    JPEG Quality=100
-50%                                                               129           256    JPEG Quality=100
-40%                                                               129           256    JPEG Quality=100
-30%                                                               129           256    JPEG Quality=100
-20%                                                               129           256    JPEG Quality=100
-10%                                                               129           256    JPEG Quality=100
-Percentage Bar                                                    617          6432    JPEG Quality=100
-Slider Bar                                                        131           808    JPEG Quality=100
-Slider copy                                                       176           240    JPEG Quality=100
-Slider Bar copy                                                   130           520    JPEG Quality=100
-Select Block BG                                                   328        315060    JPEG Quality=100
-RightArrow_Roll                                                   304           660    JPEG Quality=100
-RightArrow_Rest                                                   263           660    JPEG Quality=100
-LeftArrow_Roll                                                    301           660    JPEG Quality=100
-LeftArrow_Rest                                                    265           660    JPEG Quality=100
-Details BG                                                        137         16020    JPEG Quality=100
-Source BG                                                         169         61944    JPEG Quality=100
-Land Gear BG                                                      169         51800    JPEG Quality=100
-pane_background                                                   448        433600    JPEG Quality=100
-Header_Footer_Bars                                               1024        466120    JPEG Quality=100
-Minimize_Rest                                                     302          1156    JPEG Quality=100
-Repeat BG                                                         129          2860    JPEG Quality=100
-Confirm Block BG                                                  664        315060    JPEG Quality=100
-Repeat Button Off                                                 127           100    JPEG Quality=100
-Select Block BG                                                   328        315060    JPEG Quality=100
-RightArrow_Roll                                                   304           660    JPEG Quality=100
-RightArrow_Rest                                                   263           660    JPEG Quality=100
-LeftArrow_Roll                                                    301           660    JPEG Quality=100
-LeftArrow_Rest                                                    265           660    JPEG Quality=100
-Details BG                                                        137         16020    JPEG Quality=100
-Filter Arrow                                                      167           100    JPEG Quality=100
-Source BG                                                         169         61944    JPEG Quality=100
-Background                                                        169         51800    JPEG Quality=100
-Purchase Cost Icons (X Gold, X Building Supplies, etc.)           129          1600    JPEG Quality=100
-On-click Border                                                  1133         56808    JPEG Quality=100
-Mouseover Border                                                 1170         56808    JPEG Quality=100
-pane_background                                                   448        433600    JPEG Quality=100
-Header_Footer_Bars                                               1024        466120    JPEG Quality=100
-Minimize_Rest                                                     302          1156    JPEG Quality=100
-Right Button BG                                                   137         11264    JPEG Quality=100
-Left Button BG                                                    137         11264    JPEG Quality=100
-Select Block BG                                                   328        315060    JPEG Quality=100
-Background                                                        169         51800    JPEG Quality=100
-RightArrow_Rest                                                   263           660    JPEG Quality=100
-LeftArrow_Rest                                                    265           660    JPEG Quality=100
-Purchase Cost Icons (X Gold, X Building Supplies, etc.)           210          8960    JPEG Quality=100
-Layer 25 copy                                                     651          2916    JPEG Quality=100
-Layer 11 copy                                                     220          9216    JPEG Quality=100
-Background                                                        169         51800    JPEG Quality=100
-Details BG                                                        137         16020    JPEG Quality=100
-Source BG                                                         169         61944    JPEG Quality=100
-Land Gear BG                                                      169         51800    JPEG Quality=100
-Cancel Button BG Roll                                             129          2860    JPEG Quality=100
-Cancel Button BG Rest                                             129          2860    JPEG Quality=100
-Cancel BG                                                         129          3420    JPEG Quality=100
-Header BG                                                         839         50112    JPEG Quality=100
-Pop-up Underlay                                                 15696        433600    JPEG Quality=100
-Confirm BG Roll                                                   129          2860    JPEG Quality=100
-Confirm BG Rest                                                   129          2860    JPEG Quality=100
-Confirm BG                                                        129          3420    JPEG Quality=100
-Slider                                                            176           240    JPEG Quality=100
-Slider Bar                                                        132          1080    JPEG Quality=100
-Assign BG                                                         140         17680    JPEG Quality=100
-Mouseover Border                                                 1170         56808    JPEG Quality=100
-pane_background                                                   185        419508    Lossless
-Header_Footer_Bars                                                229        452028    Lossless
-Minimize_Rest                                                     125          1156    Lossless
-Assigned BG                                                        66         82844    Lossless
-Unit Card BG                                                      300        409044    Lossless
-Upgrade_Repair BG                                                  20          9120    Lossless
-Upgrade_Repair BG                                                  20          9120    Lossless
-Upgrade_Repair BG                                                  20          9120    Lossless
-Slider Disabled                                                    10            72    Lossless
-Slider Bar                                                         12           464    Lossless
-Example Icons                                                      44         12640    Lossless
-Effects BG                                                         26         24864    Lossless
-Details BG                                                         22         16020    Lossless
-Strenuous                                                         155          3196    Lossless
-Work Level BG                                                      39         17160    Lossless
-Background Stat                                                    23         17368    Lossless
-Layer 8                                                         11615         36864    Lossless
-80%-120% Capacity                                                 334          2100    Lossless
-Bitmap 932                                                        169         51800    JPEG Quality=100
-Header BG                                                          40         58464    Lossless
-Cancel Button BG Rest                                              17          2860    Lossless
-Cancel BG                                                          17          3420    Lossless
-Confirm BG Rest                                                    17          2860    Lossless
-Confirm BG                                                         17          3420    Lossless
-Strenuous                                                         152          3196    Lossless
-Work Level BG                                                      39         17680    Lossless
-80%-120% Capacity                                                 323          2100    Lossless
-Assigned BG                                                        23         17680    Lossless
-Assign BG                                                          23         17680    Lossless
-Controls BG                                                        35         47000    Lossless
-Header BG                                                         155         94000    Lossless
-Cancel BG                                                          17          2860    Lossless
-Confirm_Edit BG                                                    17          2860    Lossless
-Repeat BG                                                          17          2860    Lossless
-Repeat Button On                                                   23           196    Lossless
-Repeat Button Off                                                  11           100    Lossless
-Materials Used Space                                               44         12640    Lossless
-Background with Icons                                              23         17368    Lossless
-Percentage Bar                                                     30          6432    Lossless
-Queue BG                                                          299        257744    JPEG Quality=100
-Header Bar                                                        142         12816    JPEG Quality=100
-Header Bar                                                        142         12816    JPEG Quality=100
-Control_Bar_BG                                                    158         28080    JPEG Quality=100
-Population BG                                                     423        450840    JPEG Quality=100
-Right Arrow                                                       170           120    JPEG Quality=100
-Left Arrow                                                        168           120    JPEG Quality=100
-Taxes BG                                                          394        144096    JPEG Quality=100
-Finances BG                                                       423        450840    JPEG Quality=100
-Cancel BG                                                         129          2860    JPEG Quality=100
-Confirm_Edit BG                                                   129          2860    JPEG Quality=100
-Slider Disabled                                                   200          2952    JPEG Quality=100
-Slider Bar                                                        134          1456    JPEG Quality=100
-Slider Disabled                                                   126            72    JPEG Quality=100
-Slider Bar                                                        134          1456    JPEG Quality=100
-Slider Disabled                                                   126            72    JPEG Quality=100
-Slider Bar                                                        134          1456    JPEG Quality=100
-Population BG                                                     354        156792    JPEG Quality=100
-Close Button                                                      127            64    JPEG Quality=100
-Open Button                                                       152           256    JPEG Quality=100
-Right Arrow                                                       170           120    JPEG Quality=100
-Left Arrow                                                        169           120    JPEG Quality=100
-Cancel Button Roll                                                494          1520    JPEG Quality=100
-Cancel Button Rest                                                347          1520    JPEG Quality=100
-Route BG                                                          138         12576    JPEG Quality=100
-Cancel Button Roll                                                494          1520    JPEG Quality=100
-Cancel Button Rest                                                347          1520    JPEG Quality=100
-Route BG                                                          138         12576    JPEG Quality=100
-Close Button                                                      127            64    JPEG Quality=100
-Open Button                                                       152           256    JPEG Quality=100
-Cancel Button Roll                                                494          1520    JPEG Quality=100
-Cancel Button Rest                                                347          1520    JPEG Quality=100
-Route BG                                                          138         12576    JPEG Quality=100
-Cancel Button Roll                                                494          1520    JPEG Quality=100
-Cancel Button Rest                                                347          1520    JPEG Quality=100
-Route BG                                                          138         12576    JPEG Quality=100
-Close Button                                                      127            64    JPEG Quality=100
-Open Button                                                       152           256    JPEG Quality=100
-Details BG                                                        372        110916    JPEG Quality=100
-Example Income Icons                                              264         12640    JPEG Quality=100
-Income Symbol                                                     190           256    JPEG Quality=100
-Income BG                                                         144         20832    JPEG Quality=100
-Example Expenditure Icons                                         264         12640    JPEG Quality=100
-Expenditure Symbol                                                129            64    JPEG Quality=100
-Expenditure BG                                                    144         20832    JPEG Quality=100
-Left Arrow                                                         30           120    Lossless
-Food Active BG                                                    444        144096    JPEG Quality=100
-Population BG                                                     423        450840    JPEG Quality=100
-Bag of Food Icon                                                  240           480    JPEG Quality=100
-Bag of Food Icon                                                  240           480    JPEG Quality=100
-Example Production Icons                                          264         12640    JPEG Quality=100
-Production Symbol                                                 190           256    JPEG Quality=100
-Production BG                                                     144         20832    JPEG Quality=100
-Example Consumption Icons                                         264         12640    JPEG Quality=100
-Consumption Symbol                                                129            64    JPEG Quality=100
-Consumption BG                                                    144         20832    JPEG Quality=100
-Mouseover BG                                                      891         26680    JPEG Quality=100
-Religion Block BG                                                 426        144096    JPEG Quality=100
-Food Block BG                                                     159          3864    JPEG Quality=100
-Mouseover BG                                                      891         26680    JPEG Quality=100
-Mouseover BG                                                      891         26680    JPEG Quality=100
-Mouseover BG                                                      891         26680    JPEG Quality=100
-Population BG                                                     354        156792    JPEG Quality=100
-Right Arrow                                                        27           120    Lossless
-5 Stars                                                          1241          8256    JPEG Quality=100
-4 and a half Stars                                               1182          7744    JPEG Quality=100
-4 Stars                                                          1043          6464    JPEG Quality=100
-3 and a half Stars                                                969          5952    JPEG Quality=100
-3 Stars                                                           792          4672    JPEG Quality=100
-2 and a half Stars                                                708          4160    JPEG Quality=100
-2 Stars                                                           562          2880    JPEG Quality=100
-1 and a half Stars                                                503          2368    JPEG Quality=100
-1 Star                                                            312          1088    JPEG Quality=100
-Half Star                                                         197           576    JPEG Quality=100
-5 Stars                                                          1241          8256    JPEG Quality=100
-4 and a half Stars                                               1182          7744    JPEG Quality=100
-4 Stars                                                          1043          6464    JPEG Quality=100
-3 and a half Stars                                                969          5952    JPEG Quality=100
-3 Stars                                                           792          4672    JPEG Quality=100
-2 and a half Stars                                                708          4160    JPEG Quality=100
-2 Stars                                                           562          2880    JPEG Quality=100
-1 and a half Stars                                                503          2368    JPEG Quality=100
-1 Star                                                            312          1088    JPEG Quality=100
-Half Star                                                         197           576    JPEG Quality=100
-5 Stars                                                          1241          8256    JPEG Quality=100
-4 and a half Stars                                               1182          7744    JPEG Quality=100
-4 Stars                                                          1043          6464    JPEG Quality=100
-3 and a half Stars                                                969          5952    JPEG Quality=100
-3 Stars                                                           792          4672    JPEG Quality=100
-2 and a half Stars                                                708          4160    JPEG Quality=100
-2 Stars                                                           562          2880    JPEG Quality=100
-1 and a half Stars                                                503          2368    JPEG Quality=100
-1 Star                                                            312          1088    JPEG Quality=100
-Half Star                                                         197           576    JPEG Quality=100
-Details BG                                                        372        110916    JPEG Quality=100
-Stats Active BG                                                   444        144096    JPEG Quality=100
-Throne BG                                                         423        450840    JPEG Quality=100
-Example Production Icons                                          264         12640    JPEG Quality=100
-Production BG                                                     144         20832    JPEG Quality=100
-Vacant Throne BG                                                  515         34080    JPEG Quality=100
-Throne BG                                                         372        110916    JPEG Quality=100
-Example Hero Card                                                5913         94000    JPEG Quality=100
-Council BG                                                        374        156792    JPEG Quality=100
-Right Arrow                                                       170           120    JPEG Quality=100
-Left Arrow                                                        169           120    JPEG Quality=100
-Class                                                             129          1600    JPEG Quality=100
-Race                                                              129          1600    JPEG Quality=100
-Level                                                             129          1600    JPEG Quality=100
-Icon Space                                                        132          5184    JPEG Quality=100
-Class                                                             129          1600    JPEG Quality=100
-Race                                                              129          1600    JPEG Quality=100
-Level                                                             129          1600    JPEG Quality=100
-Icon Space                                                        132          5184    JPEG Quality=100
-Alternate BG                                                      143         22240    JPEG Quality=100
-pane_background                                                  2540       1185840    JPEG Quality=100
-City_Icon                                                         458          1900    JPEG Quality=100
-Header_Footer_Bars                                               1980       1283040    JPEG Quality=100
-Refresh Button                                                    307          1156    JPEG Quality=100
-Minimize Button                                                   305          1156    JPEG Quality=100
-Control_Bar_Closed                                                158         28080    JPEG Quality=100
-RightArrow_Rest                                                   416          1872    JPEG Quality=100
-LeftArrow_Rest                                                    457          1872    JPEG Quality=100
-Army Border (Reputation Colors)                                   385         10816    JPEG Quality=100
-Army and Unit Icons                                               372         61056    JPEG Quality=100
-Background with Icons                                             140         17368    JPEG Quality=100
-Status Effect Icon Space                                          264         12640    JPEG Quality=100
-Info Block BG                                                     401         94000    JPEG Quality=100
-City Rating Icon                                                  323          1512    JPEG Quality=100
-Building Block BG                                                 286        245340    JPEG Quality=100
-Header Bar                                                        145         16920    JPEG Quality=100
-Header Bar                                                        145         16920    JPEG Quality=100
-Status Effect Icon Space                                           44         12640    Lossless
-Control BG                                                         23         17368    Lossless
-Info Block BG                                                      40         23472    Lossless
-Border                                                             70         27200    Lossless
-Background                                                         54         94000    Lossless
-Background with Icons                                             393         17368    Lossless
-Status Effect Icon Space                                           44         12640    Lossless
-Army Border                                                        70         27200    Lossless
-Background copy                                                    54         94000    Lossless
-Income Icon                                                       205           960    Lossless
-Population Icon                                                   199           952    Lossless
-City Rating Icon                                                  125          1512    Lossless
-Background Bar                                                     26         24048    Lossless
-Status Effect Icon Space                                           44         12640    Lossless
-Info Block BG                                                     155         94000    Lossless
-Pane BG                                                           271        631928    Lossless
-Selected Object Border                                            112         99424    Lossless
-RightArrow_Rest                                                    78          1872    Lossless
-LeftArrow_Rest                                                     80          1872    Lossless
-Entry Bar                                                          27         30160    Lossless
-Chat_Pane                                                         101        209612    Lossless
-Mouse-over _ Selected Border                                       34          9216    Lossless
-Sample Hero Detail Card                                          3043          9216    Lossless
-Empty Hotkeys                                                     308         62000    Lossless
-Minimize                                                          115          1156    Lossless
-Header Bar BG                                                      47         76000    Lossless
-|_1                                                                18           112    Lossless
-|                                                                  18           112    Lossless
-Income Icon                                                       224           960    Lossless
-Population Icon                                                   209           952    Lossless
-|                                                                  18           112    Lossless
-Header BG                                                          47         76800    Lossless
-Spell Research                                                    117          1248    Lossless
-Message                                                           103          1472    Lossless
-Trade                                                             149          1564    Lossless
-Chat                                                              118          1728    Lossless
-Minimized Window Example                                           43          5476    Lossless
-Open Windows copy                                                  96         23236    Lossless
-Overlay Control Rest                                              148          1024    Lossless
-Zoom Control Rest                                                 218          1024    Lossless
-Layer 1                                                          5505        320000    JPEG Quality=100
-Layer 3                                                          1392         12032    JPEG Quality=100
+Background Stat                                                    32         17368    Lossless
+Unit Icon (96x96)                                               14556         36864    Lossless
+Left Button BG                                                     28         11264    Lossless
+Claim & Build Mouse Over                                           44         11264    Lossless
+Claim & Build Mouse Click                                          44         11264    Lossless
+pane_background                                                   224        368560    Lossless
+Header_Footer_Bars                                                283        401080    Lossless
+Minimize_Rest                                                     169          1156    Lossless
+Build Selector BG                                                 194        315060    Lossless
+Details BG                                                         31         16020    Lossless
+Select Block BG                                                   194        315060    Lossless
+Header BG                                                         185        114840    Lossless
+Background Overlay                                                421        315060    Lossless
+Cancel Button BG Rest                                              23          2860    Lossless
+Cancel BG                                                          24          3420    Lossless
+Confirm BG Rest                                                    23          2860    Lossless
+Confirm BG                                                         24          3420    Lossless
+Assign BG                                                          32         17680    Lossless
+pane_background                                                   224        368560    Lossless
+Header_Footer_Bars                                                283        401080    Lossless
+Minimize_Rest                                                     169          1156    Lossless
+Details BG                                                         31         16020    Lossless
+Left_Arrow_Click copy                                            1101         13688    JPEG Quality=100
+Shape 1                                                          2980         18768    JPEG Quality=100
+Left_Arrow_Click copy                                            1113         13688    JPEG Quality=100
+Shape 1                                                          3017         18768    JPEG Quality=100
+Combat Log BG                                                     211        345280    Lossless
+Background                                                         47         47000    Lossless
+Hero Icon                                                        3901          9408    Lossless
+Vacant Throne BG                                                   67         34080    Lossless
+pane_background                                                  1082       1289832    Lossless
+Header_Footer_Bars                                                831       1376592    Lossless
+Minimize_Rest                                                     169          1156    Lossless
+Change Target BG                                                   28         11264    Lossless
+Retreat BG                                                         28         11264    Lossless
+Attack BG                                                          28         11264    Lossless
+Left Button BG                                                    185         11264    JPEG Quality=100
+Left Button Mouseover Border                                      911         11264    JPEG Quality=100
+Background                                                        390        672000    Lossless
+battle_map_squares.png                                           2735        628320    Lossless
+Bitmap 1704                                                      8856        672000    Lossless
+Target_Pane copy                                                   47         36000    Lossless
+Retreat Marker                                                    478          2304    Lossless
+Attack Marker                                                     407          2400    Lossless
+RightArrow_Rest                                                   139          1872    Lossless
+LeftArrow_Rest                                                    139          1872    Lossless
+Hero Icon placement example                                        61         50112    Lossless
+Own Army Border                                                    50         10816    Lossless
+RightArrow_Rest                                                   139          1872    Lossless
+LeftArrow_Rest                                                    139          1872    Lossless
+Layer 1 copy 15                                                    27          9216    Lossless
+Layer 1 copy 13                                                    27          9216    Lossless
+Layer 1 copy 12                                                    27          9216    Lossless
+Layer 1 copy 11                                                    27          9216    Lossless
+Layer 1 copy 10                                                    27          9216    Lossless
+Background with Icons                                             533         17368    Lossless
+Status Effect Icon Space                                           59         12640    Lossless
+Army Border                                                        95         27200    Lossless
+Background                                                         86        109040    Lossless
+Empty Hotkeys                                                     611         83200    Lossless
+Background with Icons                                             533         17368    Lossless
+Status Effect Icon Space                                           59         12640    Lossless
+Army Border                                                       115         27200    Lossless
+Background                                                         86        109040    Lossless
+Header BG                                                         228         50112    Lossless
+Assign BG                                                          32         17680    Lossless
+Cancel Button BG Rest                                              23          2860    Lossless
+Cancel BG                                                          24          3420    Lossless
+Confirm BG Rest                                                    23          2860    Lossless
+Confirm BG                                                         24          3420    Lossless
+Header BG                                                         238         50112    Lossless
+Assign BG                                                          32         17680    Lossless
+Confirm BG Rest                                                    23          2860    Lossless
+Confirm BG                                                         24          3420    Lossless
+Cancel Button BG Rest                                              23          2860    Lossless
+Cancel BG                                                          24          3420    Lossless
+pane_background                                                   210        343628    Lossless
+Header_Footer_Bars                                                270        376148    Lossless
+Minimize_Rest                                                     169          1156    Lossless
+Select Block BG                                                   194        315060    Lossless
+Background                                                         50         51800    Lossless
+City Select Bar BG                                                 31         16020    Lossless
+Pop-up Underlay                                                   210        343628    Lossless
+Drop Down BG                                                       28         10432    Lossless
+Unit Type Arrow                                                    39           120    Lossless
+Resist Icon                                                        21          1600    Lossless
+Resist BG                                                          29         12576    Lossless
+Resist BG                                                          93         90072    Lossless
+Resist Icon                                                        21          1600    Lossless
+Resist BG                                                          29         12576    Lossless
+Stats BG                                                           66         75168    Lossless
+Race BG (Base)                                                     27         10304    Lossless
+Elite III                                                         674          4128    Lossless
+Elite II                                                          660          4128    Lossless
+Elite I                                                           666          4128    Lossless
+Upkeep BG                                                          31         17760    Lossless
+Stone Marker                                                      246          1020    Lossless
+pane_background                                                   259        434684    Lossless
+Header_Footer_Bars                                                319        467204    Lossless
+Minimize_Rest                                                     169          1156    Lossless
+Unit Card BG                                                      400        398364    Lossless
+Details BG                                                         31         16020    Lossless
+Background Stat Layer with Icons                                 1045         17368    Lossless
+Dwarf_inf_example                                                  36          3440    Lossless
+Info Block BG                                                      28         11736    Lossless
+Background Stat                                                    32         17368    Lossless
+Unit Icon (96x96)                                               14556         36864    Lossless
+Layer 15                                                           24          5120    Lossless
+Unit Type Arrow                                                    39           120    Lossless
+Unit Level Arrow                                                   39           120    Lossless
+Layer 16                                                           24          5120    Lossless
+Layer 14                                                           40         33396    Lossless
+Resist BG                                                          70         46704    Lossless
+Resist Icon                                                        21          1600    Lossless
+Resist BG                                                          29         12576    Lossless
+Resist BG                                                          93         90072    Lossless
+Resist Icon                                                        21          1600    Lossless
+Resist BG                                                          29         12576    Lossless
+Resist Icon                                                        21          1600    Lossless
+Resist BG                                                          29         12576    Lossless
+Stats BG                                                           84         75168    Lossless
+pane_background                                                   259        434684    Lossless
+Header_Footer_Bars                                                319        467204    Lossless
+Minimize_Rest                                                     169          1156    Lossless
+Unit Card BG                                                      400        398364    Lossless
+Details BG                                                         31         16020    Lossless
+Status Effect Icon Space                                           59         12640    Lossless
+Background Stat                                                    32         17368    Lossless
+Info Block BG                                                      28         11736    Lossless
+Attack Icon                                                       206          1680    Lossless
+Item Icon                                                       12931         36864    Lossless
+Slider                                                             49           240    Lossless
+pane_background                                                   259        433600    Lossless
+Header_Footer_Bars                                                319        466120    Lossless
+Minimize_Rest                                                     169          1156    Lossless
+Confirm Block BG                                                  203        315060    Lossless
+Slider Bar                                                         18           808    Lossless
+Slider copy                                                        46           240    Lossless
+Slider Bar copy                                                    16           520    Lossless
+Layer 29                                                          140          2464    Lossless
+Layer 13                                                          103          9408    Lossless
+Background                                                         50         51800    Lossless
+Purchase Cost Icons (X Gold, X Building Supplies, etc.)            50          8960    Lossless
+Select Block BG                                                   194        315060    Lossless
+Background                                                         50         51800    Lossless
+Details BG                                                         31         16020    Lossless
+Source BG                                                          56         61944    Lossless
+Land Gear BG                                                      229         51800    JPEG Quality=100
+Header BG                                                          95         50112    Lossless
+Assign BG                                                          32         17680    Lossless
+pane_background                                                   606        433600    JPEG Quality=100
+Header_Footer_Bars                                               1387        466120    JPEG Quality=100
+Minimize_Rest                                                     409          1156    JPEG Quality=100
+Repeat BG                                                          23          2860    Lossless
+Confirm Block BG                                                  203        315060    Lossless
+Repeat Button On                                                   45           196    Lossless
+Repeat Button Off                                                  15           100    Lossless
+100%                                                               15           256    Lossless
+90%                                                                15           256    Lossless
+80%                                                                15           256    Lossless
+70%                                                                15           256    Lossless
+60%                                                                15           256    Lossless
+50%                                                                15           256    Lossless
+40%                                                                15           256    Lossless
+30%                                                                15           256    Lossless
+20%                                                                15           256    Lossless
+10%                                                                15           256    Lossless
+Percentage Bar                                                     40          6432    Lossless
+Race BG (Base)                                                     29         12576    Lossless
+Slider copy                                                        46           240    Lossless
+Slider Bar copy                                                    16           520    Lossless
+Details BG                                                        186         16020    JPEG Quality=100
+Source BG                                                         229         61944    JPEG Quality=100
+Land Gear BG                                                      229         51800    JPEG Quality=100
+Pop-up Underlay                                                   259        433600    Lossless
+pane_background                                                   606        433600    JPEG Quality=100
+Header_Footer_Bars                                               1387        466120    JPEG Quality=100
+Minimize_Rest                                                     409          1156    JPEG Quality=100
+Repeat BG                                                         175          2860    JPEG Quality=100
+Confirm Block BG                                                  900        315060    JPEG Quality=100
+Repeat Button Off                                                 172           100    JPEG Quality=100
+Select Block BG                                                   445        315060    JPEG Quality=100
+Details BG                                                        186         16020    JPEG Quality=100
+Filter Arrow                                                      227           100    JPEG Quality=100
+Source BG                                                         229         61944    JPEG Quality=100
+pane_background                                                   251        419508    Lossless
+Header_Footer_Bars                                                311        452028    Lossless
+Minimize_Rest                                                     169          1156    Lossless
+Assigned BG                                                        89         82844    Lossless
+Unit Card BG                                                      407        409044    Lossless
+Upgrade_Repair BG                                                  27          9120    Lossless
+Upgrade_Repair BG                                                  27          9120    Lossless
+Upgrade_Repair BG                                                  27          9120    Lossless
+Slider Disabled                                                    14            72    Lossless
+Slider Bar                                                         16           464    Lossless
+Example Icons                                                      59         12640    Lossless
+Effects BG                                                         36         24864    Lossless
+Details BG                                                         31         16020    Lossless
+Strenuous                                                         211          3196    Lossless
+Work Level BG                                                      53         17160    Lossless
+Background Stat                                                    32         17368    Lossless
+Layer 8                                                         15732         36864    Lossless
+80%-120% Capacity                                                 453          2100    Lossless
+Bitmap 932                                                        229         51800    JPEG Quality=100
+Header BG                                                          54         58464    Lossless
+Strenuous                                                         207          3196    Lossless
+Work Level BG                                                      53         17680    Lossless
+80%-120% Capacity                                                 438          2100    Lossless
+Assigned BG                                                        32         17680    Lossless
+Assign BG                                                          32         17680    Lossless
+Queue BG                                                          405        257744    JPEG Quality=100
+Header Bar                                                        192         12816    JPEG Quality=100
+Header Bar                                                        192         12816    JPEG Quality=100
+Population BG                                                     269        450840    Lossless
+Control_Bar_BG                                                     37         28080    Lossless
+Right Arrow                                                        37           120    Lossless
+Left Arrow                                                         47           120    Lossless
+Filter Arrow                                                       36           100    Lossless
+Taxes BG                                                          124        144096    Lossless
+Finances BG                                                       269        450840    Lossless
+Cancel BG                                                          23          2860    Lossless
+Confirm_Edit BG                                                    23          2860    Lossless
+Slider Disabled                                                    40          2952    Lossless
+Slider Bar                                                         20          1456    Lossless
+Slider Disabled                                                    15            72    Lossless
+Slider Bar                                                         20          1456    Lossless
+Slider Disabled                                                    15            72    Lossless
+Slider Bar                                                         20          1456    Lossless
+Population BG                                                     130        156792    Lossless
+Close Button                                                       14            64    Lossless
+Open Button                                                        22           256    Lossless
+Right Arrow                                                        37           120    Lossless
+Left Arrow                                                         41           120    Lossless
+Cancel Button Roll                                                368          1520    Lossless
+Cancel Button Rest                                                222          1520    Lossless
+Route BG                                                           29         12576    Lossless
+Cancel Button Roll                                                368          1520    Lossless
+Cancel Button Rest                                                222          1520    Lossless
+Route BG                                                           29         12576    Lossless
+Close Button                                                       14            64    Lossless
+Open Button                                                        22           256    Lossless
+Cancel Button Roll                                                368          1520    Lossless
+Cancel Button Rest                                                222          1520    Lossless
+Route BG                                                           29         12576    Lossless
+Cancel Button Roll                                                368          1520    Lossless
+Cancel Button Rest                                                222          1520    Lossless
+Route BG                                                           29         12576    Lossless
+Close Button                                                       14            64    Lossless
+Open Button                                                        22           256    Lossless
+Details BG                                                        107        110916    Lossless
+Example Income Icons                                               59         12640    Lossless
+Income Symbol                                                      21           256    Lossless
+Income BG                                                          33         20832    Lossless
+Example Expenditure Icons                                          59         12640    Lossless
+Expenditure Symbol                                                 15            64    Lossless
+Expenditure BG                                                     33         20832    Lossless
+Right Arrow                                                        37           120    Lossless
+Food Active BG                                                    140        144096    Lossless
+Population BG                                                     269        450840    Lossless
+Bag of Food Icon                                                  242           480    Lossless
+Bag of Food Icon                                                  242           480    Lossless
+Example Production Icons                                           59         12640    Lossless
+Production Symbol                                                  21           256    Lossless
+Production BG                                                      33         20832    Lossless
+Example Consumption Icons                                          59         12640    Lossless
+Consumption Symbol                                                 15            64    Lossless
+Consumption BG                                                     33         20832    Lossless
+Population BG                                                     130        156792    Lossless
+Left Arrow                                                         41           120    Lossless
+5 Stars                                                           621          8256    Lossless
+4 and a half Stars                                                603          7744    Lossless
+4 Stars                                                           540          6464    Lossless
+3 and a half Stars                                                503          5952    Lossless
+3 Stars                                                           438          4672    Lossless
+2 and a half Stars                                                394          4160    Lossless
+2 Stars                                                           315          2880    Lossless
+1 and a half Stars                                                260          2368    Lossless
+1 Star                                                            166          1088    Lossless
+Half Star                                                          89           576    Lossless
+5 Stars                                                           621          8256    Lossless
+4 and a half Stars                                                603          7744    Lossless
+4 Stars                                                           540          6464    Lossless
+3 and a half Stars                                                503          5952    Lossless
+3 Stars                                                           438          4672    Lossless
+2 and a half Stars                                                394          4160    Lossless
+2 Stars                                                           315          2880    Lossless
+1 and a half Stars                                                260          2368    Lossless
+1 Star                                                            166          1088    Lossless
+Half Star                                                          89           576    Lossless
+5 Stars                                                           621          8256    Lossless
+4 and a half Stars                                                603          7744    Lossless
+4 Stars                                                           540          6464    Lossless
+3 and a half Stars                                                503          5952    Lossless
+3 Stars                                                           438          4672    Lossless
+2 and a half Stars                                                394          4160    Lossless
+2 Stars                                                           315          2880    Lossless
+1 and a half Stars                                                260          2368    Lossless
+1 Star                                                            166          1088    Lossless
+Half Star                                                          89           576    Lossless
+Details BG                                                        107        110916    Lossless
+Stats Active BG                                                   140        144096    Lossless
+Throne BG                                                         269        450840    Lossless
+Example Production Icons                                           59         12640    Lossless
+Production BG                                                      33         20832    Lossless
+Vacant Throne BG                                                   67         34080    Lossless
+Throne BG                                                         107        110916    Lossless
+Example Hero Card                                                2944         94000    Lossless
+Council BG                                                        140        156792    Lossless
+Right Arrow                                                        37           120    Lossless
+Left Arrow                                                         41           120    Lossless
+Class                                                              21          1600    Lossless
+Race                                                               21          1600    Lossless
+Level                                                              21          1600    Lossless
+Icon Space                                                         25          5184    Lossless
+Class                                                              21          1600    Lossless
+Race                                                               21          1600    Lossless
+Level                                                              21          1600    Lossless
+Icon Space                                                         25          5184    Lossless
+Alternate BG                                                       34         22240    Lossless
+pane_background                                                   937       1185840    Lossless
+City_Icon                                                         400          1900    Lossless
+Header_Footer_Bars                                                784       1283040    Lossless
+Refresh Button                                                    192          1156    Lossless
+Minimize Button                                                   155          1156    Lossless
+Control_Bar_Closed                                                 37         28080    Lossless
+Background with Icons                                              32         17368    Lossless
+Status Effect Icon Space                                           59         12640    Lossless
+Info Block BG                                                     211         94000    Lossless
+RightArrow_Rest                                                   106          1872    Lossless
+LeftArrow_Rest                                                    108          1872    Lossless
+Army Border (Reputation Colors)                                    50         10816    Lossless
+Army and Unit Icons                                               173         61056    Lossless
+City Rating Icon                                                  169          1512    Lossless
+Building Block BG                                                 156        245340    Lossless
+Header Bar                                                         31         16920    Lossless
+Header Bar                                                         31         16920    Lossless
+Grey                                                              483         10816    JPEG Quality=100
+White                                                             491         10816    JPEG Quality=100
+Layer 1                                                           840         10816    JPEG Quality=100
+Status Effect Icon Space                                           59         12640    Lossless
+Control BG                                                         32         17368    Lossless
+Info Block BG                                                      54         23472    Lossless
+Border                                                             95         27200    Lossless
+Background                                                         73         94000    Lossless
+Background with Icons                                             533         17368    Lossless
+Status Effect Icon Space                                           59         12640    Lossless
+Army Border                                                        95         27200    Lossless
+Background copy                                                    73         94000    Lossless
+Income Icon                                                       278           960    Lossless
+Population Icon                                                   269           952    Lossless
+City Rating Icon                                                  169          1512    Lossless
+Background Bar                                                     35         24048    Lossless
+Status Effect Icon Space                                           59         12640    Lossless
+Info Block BG                                                     211         94000    Lossless
+Pane BG                                                           368        631928    Lossless
+Selected Object Border                                            151         99424    Lossless
+RightArrow_Rest                                                   106          1872    Lossless
+LeftArrow_Rest                                                    108          1872    Lossless
+Entry Bar                                                          37         30160    Lossless
+Chat_Pane                                                         137        209612    Lossless
+Mouse-over _ Selected Border                                       46          9216    Lossless
+Sample Hero Detail Card                                          4122          9216    Lossless
+Empty Hotkeys                                                     417         62000    Lossless
+Minimize                                                          156          1156    Lossless
+Header Bar BG                                                      64         76000    Lossless
+|_1                                                                25           112    Lossless
+|                                                                  25           112    Lossless
+Income Icon                                                       303           960    Lossless
+Population Icon                                                   283           952    Lossless
+|                                                                  25           112    Lossless
+Header BG                                                          64         76800    Lossless
+Spell Research                                                    159          1248    Lossless
+Message                                                           140          1472    Lossless
+Trade                                                             202          1564    Lossless
+Chat                                                              160          1728    Lossless
+Minimized Window Example                                           59          5476    Lossless
+Open Windows copy                                                 130         23236    Lossless
+Overlay Control Rest                                              201          1024    Lossless
+Zoom Control Rest                                                 296          1024    Lossless
+Layer 1                                                          7457        320000    JPEG Quality=100
+Layer 3                                                          1886         12032    JPEG Quality=100
 
 
 
