@@ -8,26 +8,26 @@ Metadata
 --------
 Bytes         Value
 ----------    -----
-      1286    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2013-02-13T21:54:24-07:00</xmp:MetadataDate> <xmp:ModifyDate>2013-02-13T21:54:24-07:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:9566B20EE72068119109B5531339FEF8</stRef:instanceID> <stRef:documentID>xmp.did:F77F1174072068118309C4B274567D08</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:6E01DDF8852268119109B5531339FEF8</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:6E01DDF8852268119109B5531339FEF8</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+      1280    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2013-02-27T23:44-07:00</xmp:MetadataDate> <xmp:ModifyDate>2013-02-27T23:44-07:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:F77F117407206811871FBF3E9D06D793</stRef:instanceID> <stRef:documentID>xmp.did:F77F1174072068118309C4B274567D08</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:25CF89938D216811871FBF3E9D06D793</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:25CF89938D216811871FBF3E9D06D793</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
 
 Frame #    Frame Bytes    Total Bytes    Scene
 -------    -----------    -----------    -----
-      1          10794          10794    Scene 1
-      2        1416268        1427062    Scene 1 (AS 3.0 Classes Export Frame)
+      1          10793          10793    Scene 1
+      2        1417008        1427801    Scene 1 (AS 3.0 Classes Export Frame)
 
 Scene      Shape Bytes    Text Bytes    ActionScript Bytes
 -------    -----------    ----------    ------------------
-Scene 1             48             0                  9714
+Scene 1             48             0                  9713
 
 ActionScript Bytes    Location
 ------------------    --------
-              9420    Scene 1:Frame 1
+              9419    Scene 1:Frame 1
                294    Scene 1:Frame 2
 
 Binary Data              Bytes         Location
 ---------------------    ----------    --------
 Loading Animation SWF          1261    Scene 1:Frame 1
-Content SWF                 1415945    Scene 1:Frame 2
+Content SWF                 1416686    Scene 1:Frame 2
 
 
 Content SWF
@@ -37,46 +37,47 @@ Metadata
 --------
 Bytes         Value
 ----------    -----
-       741    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2013-02-13T21:54:17-07:00</xmp:MetadataDate> <xmp:ModifyDate>2013-02-13T21:54:17-07:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:9566B20EE72068119109B5531339FEF8</stRef:instanceID> <stRef:documentID>xmp.did:F77F1174072068118309C4B274567D08</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:6D01DDF8852268119109B5531339FEF8</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:6D01DDF8852268119109B5531339FEF8</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
+       741    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"> <rdf:Description rdf:about="" xmlns:xmp="http://ns.adobe.com/xap/1.0/"> <xmp:CreatorTool>Adobe Flash CS4 Professional</xmp:CreatorTool> <xmp:CreateDate>2009-01-04T16:23:45-07:00</xmp:CreateDate> <xmp:MetadataDate>2013-02-27T23:43:54-07:00</xmp:MetadataDate> <xmp:ModifyDate>2013-02-27T23:43:54-07:00</xmp:ModifyDate> </rdf:Description> <rdf:Description rdf:about="" xmlns:dc="http://purl.org/dc/elements/1.1/"> <dc:format>application/x-shockwave-flash</dc:format> </rdf:Description> <rdf:Description rdf:about="" xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" xmlns:stRef="http://ns.adobe.com/xap/1.0/sType/ResourceRef#"> <xmpMM:DerivedFrom rdf:parseType="Resource"> <stRef:instanceID>xmp.iid:F77F117407206811871FBF3E9D06D793</stRef:instanceID> <stRef:documentID>xmp.did:F77F1174072068118309C4B274567D08</stRef:documentID> <stRef:originalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</stRef:originalDocumentID> </xmpMM:DerivedFrom> <xmpMM:DocumentID>xmp.did:24CF89938D216811871FBF3E9D06D793</xmpMM:DocumentID> <xmpMM:InstanceID>xmp.iid:24CF89938D216811871FBF3E9D06D793</xmpMM:InstanceID> <xmpMM:OriginalDocumentID>xmp.did:234A9A1EB7DADD11B7A9AB32E7409597</xmpMM:OriginalDocumentID> </rdf:Description> </rdf:RDF> 
 
 Frame #    Frame Bytes    Total Bytes    Scene
 -------    -----------    -----------    -----
-      1        1419180        1419180    Scene 1 (AS 3.0 Classes Export Frame)
-      2              1        1419181    
-      3              1        1419182    
-      4              1        1419183    
-      5              1        1419184    
-      6              1        1419185    
-      7              1        1419186    
-      8            133        1419319    
-      9              1        1419320    
-     10              1        1419321    
-     11              1        1419322    
-     12              9        1419331    
-     13              1        1419332    
-     14              1        1419333    
-     15              1        1419334    
-     16              1        1419335    
-     17              1        1419336    
-     18              1        1419337    
-     19              1        1419338    
-     20              1        1419339    
-     21              1        1419340    
-     22              1        1419341    
-     23              1        1419342    
-     24              1        1419343    
-     25              1        1419344    
-     26              1        1419345    
-     27              1        1419346    
-     28              1        1419347    
-     29              1        1419348    
+      1        1420094        1420094    Scene 1 (AS 3.0 Classes Export Frame)
+      2              1        1420095    
+      3              1        1420096    
+      4              1        1420097    
+      5              1        1420098    
+      6              1        1420099    
+      7              1        1420100    
+      8            133        1420233    
+      9              1        1420234    
+     10              1        1420235    
+     11              1        1420236    
+     12              9        1420245    
+     13              1        1420246    
+     14              1        1420247    
+     15              1        1420248    
+     16              1        1420249    
+     17              1        1420250    
+     18              1        1420251    
+     19              1        1420252    
+     20              1        1420253    
+     21              1        1420254    
+     22              1        1420255    
+     23              1        1420256    
+     24              1        1420257    
+     25              1        1420258    
+     26              1        1420259    
+     27              1        1420260    
+     28              1        1420261    
+     29              1        1420262    
 
 Scene      Shape Bytes    Text Bytes    ActionScript Bytes
 -------    -----------    ----------    ------------------
-Scene 1              0             0                607637
+Scene 1              0             0                608462
 
 Symbol                                 Shape Bytes    Text Bytes    ActionScript Bytes
 -----------------------------------    -----------    ----------    ------------------
+FoodPopup                                        0             0                     0
 actionButton                                   130             0                     0
 AbilitiesTab                                     0             0                     0
 ArmyOverviewUI                                   0             0                     0
@@ -340,24 +341,24 @@ fl.core.ComponentShim                            0             0                
 Font Name                Bytes         Characters
 ---------------------    ----------    ----------
 Verdana-Italic Italic          3556    (Drop imventbuldgch)CksawfyH’OL 
-Verdana-Bold Bold              3516    9M123/ VacntThroedys+084NgAm56BkGiR 
-Verdana                       30730     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƏƒƠơƯưǺǻǼǽǾǿȘșȚțˆˇˉ˘˙˚˛˜˝;΄΅Ά·ΈΉΊΌΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяёђѓєѕіїјљњћќѝўџѸѹѼѽ҇ҐґҒғҖҗҚқҜҝҢңҨҩҮүҰұҲҳҸҹҺһҼҽҾҿդր฿ẀẁẂẃẄẅẞẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹ‒–—―‗‘’‚‛“”„‟†‡•… ‰′″‴‹›‼‾⁄⁴ⁿ₠₡₢₣₤₥₦₧₨₩₪₫€₭₮₯₰₱₲₳₴₵℅ℓ№℠™Ω℮⅛⅜⅝⅞∂∏∑∕√∞∫≠≡≤≥─│┌┐└┘□●♪ꜛꜜꜝꜞꜟꞈ꞉꞊Ꞌꞌ￥￦ 
-Verdana                       62500     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƏƒƠơƯưǺǻǼǽǾǿȘșȚțˆˇˉ˘˙˚˛˜˝;΄΅Ά·ΈΉΊΌΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяёђѓєѕіїјљњћќѝўџѸѹѼѽ҇ҐґҒғҖҗҚқҜҝҢңҨҩҮүҰұҲҳҸҹҺһҼҽҾҿդր฿ẀẁẂẃẄẅẞẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹ‒–—―‗‘’‚‛“”„‟†‡•… ‰′″‴‹›‼‾⁄⁴ⁿ₠₡₢₣₤₥₦₧₨₩₪₫€₭₮₯₰₱₲₳₴₵℅ℓ№℠™Ω℮⅛⅜⅝⅞∂∏∑∕√∞∫≠≡≤≥─│┌┐└┘□●♪ꜛꜜꜝꜞꜟꞈ꞉꞊Ꞌꞌ￥￦
+Verdana-Bold Bold              3517    9M123/ VacntThroedys+084NgAm56BkGiR 
+Verdana                       30736     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƏƒƠơƯưǺǻǼǽǾǿȘșȚțˆˇˉ˘˙˚˛˜˝;΄΅Ά·ΈΉΊΌΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяёђѓєѕіїјљњћќѝўџѸѹѼѽ҇ҐґҒғҖҗҚқҜҝҢңҨҩҮүҰұҲҳҸҹҺһҼҽҾҿդր฿ẀẁẂẃẄẅẞẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹ‒–—―‗‘’‚‛“”„‟†‡•… ‰′″‴‹›‼‾⁄⁴ⁿ₠₡₢₣₤₥₦₧₨₩₪₫€₭₮₯₰₱₲₳₴₵℅ℓ№℠™Ω℮⅛⅜⅝⅞∂∏∑∕√∞∫≠≡≤≥─│┌┐└┘□●♪ꜛꜜꜝꜞꜟꞈ꞉꞊Ꞌꞌ￥￦ 
+Verdana                       62510     !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿĀāĂăĄąĆćĈĉĊċČčĎďĐđĒēĔĕĖėĘęĚěĜĝĞğĠġĢģĤĥĦħĨĩĪīĬĭĮįİıĲĳĴĵĶķĸĹĺĻļĽľĿŀŁłŃńŅņŇňŉŊŋŌōŎŏŐőŒœŔŕŖŗŘřŚśŜŝŞşŠšŢţŤťŦŧŨũŪūŬŭŮůŰűŲųŴŵŶŷŸŹźŻżŽžſƏƒƠơƯưǺǻǼǽǾǿȘșȚțˆˇˉ˘˙˚˛˜˝;΄΅Ά·ΈΉΊΌΎΏΐΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩΪΫάέήίΰαβγδεζηθικλμνξοπρςστυφχψωϊϋόύώЁЂЃЄЅІЇЈЉЊЋЌЍЎЏАБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдежзийклмнопрстуфхцчшщъыьэюяёђѓєѕіїјљњћќѝўџѸѹѼѽ҇ҐґҒғҖҗҚқҜҝҢңҨҩҮүҰұҲҳҸҹҺһҼҽҾҿդր฿ẀẁẂẃẄẅẞẠạẢảẤấẦầẨẩẪẫẬậẮắẰằẲẳẴẵẶặẸẹẺẻẼẽẾếỀềỂểỄễỆệỈỉỊịỌọỎỏỐốỒồỔổỖỗỘộỚớỜờỞởỠỡỢợỤụỦủỨứỪừỬửỮữỰựỲỳỴỵỶỷỸỹ‒–—―‗‘’‚‛“”„‟†‡•… ‰′″‴‹›‼‾⁄⁴ⁿ₠₡₢₣₤₥₦₧₨₩₪₫€₭₮₯₰₱₲₳₴₵℅ℓ№℠™Ω℮⅛⅜⅝⅞∂∏∑∕√∞∫≠≡≤≥─│┌┐└┘□●♪ꜛꜜꜝꜞꜟꞈ꞉꞊Ꞌꞌ￥￦
 
 ActionScript Bytes    Location
 ------------------    --------
-            607637    Scene 1:Frame 1
+            608462    Scene 1:Frame 1
 
 Bitmap                                                     Compressed    Original      Compression
 -------------------------------------------------------    ----------    ----------    -----------
-TestTiles                                                       14036         36864    Lossless
-temple.png                                                       1639          9216    JPEG Quality=100
+TestTiles                                                       14039         36864    Lossless
+temple.png                                                       1640          9216    JPEG Quality=100
 placeholder_enemy.png                                            1215          9216    Lossless
-placeholder_city.png                                             2580          9216    Lossless
+placeholder_city.png                                             2581          9216    Lossless
 placeholder_battle.png                                           2665          9216    JPEG Quality=100
 placeholder_army.png                                             1152          9216    Lossless
-market.png                                                       1900          9216    JPEG Quality=100
-lumbermill.png                                                   1959          9216    JPEG Quality=100
+market.png                                                       1901          9216    JPEG Quality=100
+lumbermill.png                                                   1960          9216    JPEG Quality=100
 Human Icon                                                        809          1600    Lossless
 Goblin Icon                                                       794          1680    Lossless
 footsoldier.png                                                   703          9216    Lossless
@@ -365,7 +366,7 @@ Elf Icon                                                          784          1
 Dwarf Icon                                                        805          1600    Lossless
 CharacterImage                                                   1144          3712    Lossless
 archer.png                                                        779          9216    Lossless
-48Tiles.png                                                    384985       3686400    Lossless
+48Tiles.png                                                    385050       3686400    Lossless
 10%                                                                16           256    Lossless
 Controls BG                                                        48         47000    Lossless
 Header BG                                                         214         94000    Lossless
@@ -382,8 +383,8 @@ Pane_BG                                                           202        323
 Layer 2                                                           267        360760    Lossless
 Close_Rest.png                                                    280          1156    Lossless
 Close_Roll.png                                                    325          1156    Lossless
-Close_Click.png                                                   338          1156    Lossless
-Bottom BG                                                         284        245220    Lossless
+Close_Click.png                                                   339          1156    Lossless
+Bottom BG                                                         285        245220    Lossless
 Right Arrow                                                        38           120    Lossless
 Left Arrow                                                         41           120    Lossless
 Sell BG                                                            24          3744    Lossless
@@ -394,7 +395,7 @@ Details BG                                                         24          3
 Poor                                                              313          2904    Lossless
 Background with Icons                                              32         16700    Lossless
 Header BG                                                         116         45552    Lossless
-Stone Marker                                                      234          1020    Lossless
+Stone Marker                                                      235          1020    Lossless
 Weight in Stone                                                   366          7144    Lossless
 Flag Border                                                        97         27200    Lossless
 Background                                                         75         94000    Lossless
@@ -411,12 +412,12 @@ Icon BG                                                           303          9
 pane_background                                                   249        408668    Lossless
 Header_Footer_Bars                                                310        441188    Lossless
 Minimize_Rest                                                     172          1156    Lossless
-Land Card BG                                                      407        398364    Lossless
+Land Card BG                                                      408        398364    Lossless
 Details BG                                                         31         16020    Lossless
 Status Effect Icon Space                                           60         12640    Lossless
 Control BG                                                         32         17368    Lossless
 Info Block BG                                                      55         23472    Lossless
-Land Icon (96x96)                                               16615         36864    Lossless
+Land Icon (96x96)                                               16618         36864    Lossless
 Stone Marker                                                      262          1020    Lossless
 Assigned BG copy 3                                                 54         17680    Lossless
 Layer 11                                                          105         22784    Lossless
@@ -441,17 +442,17 @@ Grey                                                              491         10
 White                                                              45         10816    Lossless
 White                                                             499         10816    JPEG Quality=100
 Blue                                                               48         10816    Lossless
-Layer 1                                                           854         10816    JPEG Quality=100
+Layer 1                                                           855         10816    JPEG Quality=100
 Race BG                                                            29         12576    Lossless
 Background                                                        233         51800    JPEG Quality=100
 Purchase Cost Icons (X Gold, X Building Supplies, etc.)           178          1600    JPEG Quality=100
-On-click Border                                                  1562         56808    JPEG Quality=100
-Mouseover Border                                                 1613         56808    JPEG Quality=100
+On-click Border                                                  1563         56808    JPEG Quality=100
+Mouseover Border                                                 1614         56808    JPEG Quality=100
 Settlement BG                                                      51         51800    Lossless
 City Rating Icon                                                  166           572    Lossless
 Population Icon                                                   274           952    Lossless
 Income Icon                                                       283           960    Lossless
-Icon                                                             3877          9408    Lossless
+Icon                                                             3878          9408    Lossless
 On-click Border                                                   349         56808    Lossless
 Mouseover Border                                                  163         56808    Lossless
 Close Button                                                       14            64    Lossless
@@ -469,7 +470,7 @@ Up Arrow                                                           86           
 Allied Mini-flags                                                  89         46656    Lossless
 Minimize_Rest                                                     172          1156    Lossless
 Shape 1                                                           403        676800    Lossless
-background                                                       9012        672000    Lossless
+background                                                       9013        672000    Lossless
 Target_Pane                                                       190        134232    Lossless
 Button_BG                                                          27          7620    Lossless
 Battle Bar                                                         27         11008    Lossless
@@ -503,7 +504,7 @@ Training Tier 2                                                    96          1
 Training Tier 1                                                    95          1024    Lossless
 Main Socket                                                        60          2704    Lossless
 Training Tier 3                                                    95          1024    Lossless
-Training Tier 2                                                   103          1024    Lossless
+Training Tier 2                                                   104          1024    Lossless
 Training Tier 1                                                    95          1024    Lossless
 Main Socket                                                        64          2704    Lossless
 Training Tier 3                                                    98          1024    Lossless
@@ -535,7 +536,7 @@ Training Tier 2                                                    96          1
 Training Tier 1                                                    94          1024    Lossless
 Army Border                                                        97         27200    Lossless
 Victory Message                                                   848         10048    Lossless
-Defeat Message                                                   1039         13376    Lossless
+Defeat Message                                                   1040         13376    Lossless
 Retreat Countdown Message                                        1363         16620    Lossless
 Allied Reinforcements Message                                    1597         19840    Lossless
 Enemy Reinforcements Message                                     1698         19776    Lossless
@@ -587,7 +588,7 @@ Land Gear BG                                                      173        263
 Bag Icon (48x48)                                                 1761          9216    Lossless
 Layer 7 copy 2                                                   1761          9216    Lossless
 Bag Icon (48x48)                                                 1762          9216    Lossless
-Layer 7 copy                                                     1762          9216    Lossless
+Layer 7 copy                                                     1763          9216    Lossless
 Layer 7                                                          1761          9216    Lossless
 Layer 1 copy 3                                                    345        127680    Lossless
 Right Arrow                                                        38           120    Lossless
@@ -596,13 +597,13 @@ Stone Marker                                                      229          1
 pane_background                                                   249        408668    Lossless
 Header_Footer_Bars                                                310        441188    Lossless
 Minimize_Rest                                                     172          1156    Lossless
-Unit Card BG                                                      407        398364    Lossless
+Unit Card BG                                                      408        398364    Lossless
 Details BG                                                         31         16020    Lossless
 Background Stat Layer with Icons                                 1063         17368    Lossless
 Dwarf_inf_example                                                  36          3440    Lossless
 Info Block BG                                                      40         23472    Lossless
 Background Stat                                                    32         17368    Lossless
-Unit Icon (96x96)                                               14813         36864    Lossless
+Unit Icon (96x96)                                               14815         36864    Lossless
 Left Button BG                                                     28         11264    Lossless
 Claim & Build Mouse Over                                           45         11264    Lossless
 Claim & Build Mouse Click                                          45         11264    Lossless
@@ -624,7 +625,7 @@ Header_Footer_Bars                                                288        401
 Minimize_Rest                                                     172          1156    Lossless
 Details BG                                                         31         16020    Lossless
 Left_Arrow_Click copy                                            1120         13688    JPEG Quality=100
-Shape 1                                                          3032         18768    JPEG Quality=100
+Shape 1                                                          3033         18768    JPEG Quality=100
 Left_Arrow_Click copy                                            1133         13688    JPEG Quality=100
 Shape 1                                                          3071         18768    JPEG Quality=100
 Combat Log BG                                                     214        345280    Lossless
@@ -641,7 +642,7 @@ Left Button BG                                                    189         11
 Left Button Mouseover Border                                      927         11264    JPEG Quality=100
 Background                                                        397        672000    Lossless
 battle_map_squares.png                                           2783        628320    Lossless
-Bitmap 1704                                                      9012        672000    Lossless
+Bitmap 1704                                                      9013        672000    Lossless
 Target_Pane copy                                                   48         36000    Lossless
 Retreat Marker                                                    487          2304    Lossless
 Attack Marker                                                     414          2400    Lossless
@@ -701,13 +702,13 @@ Stone Marker                                                      250          1
 pane_background                                                   264        434684    Lossless
 Header_Footer_Bars                                                325        467204    Lossless
 Minimize_Rest                                                     172          1156    Lossless
-Unit Card BG                                                      407        398364    Lossless
+Unit Card BG                                                      408        398364    Lossless
 Details BG                                                         31         16020    Lossless
 Background Stat Layer with Icons                                 1063         17368    Lossless
 Dwarf_inf_example                                                  36          3440    Lossless
 Info Block BG                                                      29         11736    Lossless
 Background Stat                                                    32         17368    Lossless
-Unit Icon (96x96)                                               14813         36864    Lossless
+Unit Icon (96x96)                                               14815         36864    Lossless
 Layer 15                                                           25          5120    Lossless
 Unit Type Arrow                                                    40           120    Lossless
 Unit Level Arrow                                                   40           120    Lossless
@@ -725,13 +726,13 @@ Stats BG                                                           86         75
 pane_background                                                   264        434684    Lossless
 Header_Footer_Bars                                                325        467204    Lossless
 Minimize_Rest                                                     172          1156    Lossless
-Unit Card BG                                                      407        398364    Lossless
+Unit Card BG                                                      408        398364    Lossless
 Details BG                                                         31         16020    Lossless
 Status Effect Icon Space                                           60         12640    Lossless
 Background Stat                                                    32         17368    Lossless
 Info Block BG                                                      29         11736    Lossless
 Attack Icon                                                       210          1680    Lossless
-Item Icon                                                       13158         36864    Lossless
+Item Icon                                                       13161         36864    Lossless
 Slider                                                             49           240    Lossless
 pane_background                                                   264        433600    Lossless
 Header_Footer_Bars                                                324        466120    Lossless
@@ -802,7 +803,7 @@ Details BG                                                         31         16
 Strenuous                                                         214          3196    Lossless
 Work Level BG                                                      54         17160    Lossless
 Background Stat                                                    32         17368    Lossless
-Layer 8                                                         16009         36864    Lossless
+Layer 8                                                         16011         36864    Lossless
 80%-120% Capacity                                                 461          2100    Lossless
 Bitmap 932                                                        233         51800    JPEG Quality=100
 Header BG                                                          55         58464    Lossless
@@ -819,7 +820,7 @@ Control_Bar_BG                                                     37         28
 Right Arrow                                                        38           120    Lossless
 Left Arrow                                                         48           120    Lossless
 Filter Arrow                                                       37           100    Lossless
-Taxes BG                                                          126        144096    Lossless
+Taxes BG                                                          127        144096    Lossless
 Finances BG                                                       274        450840    Lossless
 Cancel BG                                                          24          2860    Lossless
 Confirm_Edit BG                                                    24          2860    Lossless
@@ -862,7 +863,6 @@ Food Active BG                                                    143        144
 Population BG                                                     274        450840    Lossless
 Bag of Food Icon                                                  246           480    Lossless
 Bag of Food Icon                                                  246           480    Lossless
-Example Production Icons                                           60         12640    Lossless
 Production Symbol                                                  21           256    Lossless
 Production BG                                                      34         20832    Lossless
 Example Consumption Icons                                          60         12640    Lossless
@@ -939,7 +939,7 @@ Header Bar                                                         32         16
 Header Bar                                                         32         16920    Lossless
 Grey                                                              491         10816    JPEG Quality=100
 White                                                             499         10816    JPEG Quality=100
-Layer 1                                                           854         10816    JPEG Quality=100
+Layer 1                                                           855         10816    JPEG Quality=100
 Status Effect Icon Space                                           60         12640    Lossless
 Control BG                                                         32         17368    Lossless
 Info Block BG                                                      55         23472    Lossless
@@ -962,7 +962,7 @@ LeftArrow_Rest                                                    110          1
 Entry Bar                                                          38         30160    Lossless
 Chat_Pane                                                         140        209612    Lossless
 Mouse-over _ Selected Border                                       47          9216    Lossless
-Sample Hero Detail Card                                          4195          9216    Lossless
+Sample Hero Detail Card                                          4196          9216    Lossless
 Empty Hotkeys                                                     425         62000    Lossless
 Minimize                                                          159          1156    Lossless
 Header Bar BG                                                      65         76000    Lossless
@@ -980,7 +980,7 @@ Minimized Window Example                                           60          5
 Open Windows copy                                                 133         23236    Lossless
 Overlay Control Rest                                              205          1024    Lossless
 Zoom Control Rest                                                 301          1024    Lossless
-Layer 1                                                          7588        320000    JPEG Quality=100
+Layer 1                                                          7590        320000    JPEG Quality=100
 Layer 3                                                          1919         12032    JPEG Quality=100
 
 
