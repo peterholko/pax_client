@@ -4,7 +4,7 @@
  <name>Human Skirmisher</name>
  <level>1</level>
  <type>Melee</type>
- <building_req>barracks 1</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>5</atk>
  <def>6</def>
@@ -26,14 +26,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>5</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>2</image48>
  </row>
 <row>
  <id>12</id>
  <name>Human Infantry</name>
  <level>2</level>
  <type>Melee</type>
- <building_req>barracks 2</building_req>
+ <building_req>53</building_req>
  <hp>1</hp>
  <atk>6</atk>
  <def>7</def>
@@ -55,14 +56,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>8</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>3</image48>
  </row>
 <row>
  <id>13</id>
  <name>Human Heavy Infantry</name>
  <level>3</level>
  <type>Melee</type>
- <building_req>barracks 3</building_req>
+ <building_req>54</building_req>
  <hp>2</hp>
  <atk>7</atk>
  <def>8</def>
@@ -84,14 +86,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>10</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>4</image48>
  </row>
 <row>
  <id>14</id>
  <name>Human Knight</name>
  <level>4</level>
  <type>Melee</type>
- <building_req>barracks 4</building_req>
+ <building_req>55</building_req>
  <hp>2</hp>
  <atk>8</atk>
  <def>9</def>
@@ -113,14 +116,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>12</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>5</image48>
  </row>
 <row>
  <id>15</id>
  <name>Human Champion</name>
  <level>5</level>
  <type>Melee</type>
- <building_req>barracks 5</building_req>
+ <building_req>56</building_req>
  <hp>3</hp>
  <atk>10</atk>
  <def>10</def>
@@ -142,14 +146,15 @@
  <max_size>0</max_size>
  <movement>8</movement>
  <value>15</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>6</image48>
  </row>
 <row>
  <id>16</id>
  <name>Human Bowman</name>
  <level>1</level>
  <type>Ranged</type>
- <building_req>barracks 1</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>5</atk>
  <def>6</def>
@@ -171,14 +176,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>5</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>7</image48>
  </row>
 <row>
  <id>17</id>
  <name>Human Archer</name>
  <level>2</level>
  <type>Ranged</type>
- <building_req>barracks 2</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>6</atk>
  <def>7</def>
@@ -200,14 +206,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>8</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>8</image48>
  </row>
 <row>
  <id>18</id>
  <name>Human Ranger</name>
  <level>3</level>
  <type>Ranged</type>
- <building_req>barracks 3</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>7</atk>
  <def>8</def>
@@ -229,14 +236,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>10</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>9</image48>
  </row>
 <row>
  <id>19</id>
  <name>Human Marksman</name>
  <level>4</level>
  <type>Ranged</type>
- <building_req>barracks 4</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>8</atk>
  <def>9</def>
@@ -258,14 +266,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>12</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>10</image48>
  </row>
 <row>
  <id>20</id>
  <name>Human Sniper</name>
  <level>5</level>
  <type>Ranged</type>
- <building_req>barracks 5</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>10</atk>
  <def>10</def>
@@ -287,14 +296,15 @@
  <max_size>0</max_size>
  <movement>8</movement>
  <value>15</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>11</image48>
  </row>
 <row>
  <id>21</id>
  <name>Human Acolyte</name>
  <level>1</level>
  <type>Magic</type>
- <building_req>temple 1</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>2</atk>
  <def>4</def>
@@ -316,14 +326,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>10</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>12</image48>
  </row>
 <row>
  <id>22</id>
  <name>Human Adept</name>
  <level>2</level>
  <type>Magic</type>
- <building_req>temple 2</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>4</atk>
  <def>6</def>
@@ -345,14 +356,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>15</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>13</image48>
  </row>
 <row>
  <id>23</id>
  <name>Human Mage</name>
  <level>3</level>
  <type>Magic</type>
- <building_req>temple 3</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>6</atk>
  <def>8</def>
@@ -374,14 +386,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>20</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>14</image48>
  </row>
 <row>
  <id>24</id>
  <name>Human Archmage</name>
  <level>4</level>
  <type>Magic</type>
- <building_req>temple 4</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>8</atk>
  <def>10</def>
@@ -403,14 +416,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>25</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>15</image48>
  </row>
 <row>
  <id>25</id>
  <name>Human Wizard</name>
  <level>5</level>
  <type>Magic</type>
- <building_req>temple 5</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>10</atk>
  <def>12</def>
@@ -432,14 +446,15 @@
  <max_size>0</max_size>
  <movement>8</movement>
  <value>30</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>16</image48>
  </row>
 <row>
  <id>26</id>
  <name>Elven Skirmisher</name>
  <level>1</level>
  <type>Melee</type>
- <building_req>barracks 1</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>5</atk>
  <def>6</def>
@@ -461,14 +476,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>5</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>17</image48>
  </row>
 <row>
  <id>27</id>
  <name>Elven Infantry</name>
  <level>2</level>
  <type>Melee</type>
- <building_req>barracks 2</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>6</atk>
  <def>7</def>
@@ -490,14 +506,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>8</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>18</image48>
  </row>
 <row>
  <id>28</id>
  <name>Elven Heavy Infantry</name>
  <level>3</level>
  <type>Melee</type>
- <building_req>barracks 3</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>7</atk>
  <def>8</def>
@@ -519,14 +536,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>10</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>19</image48>
  </row>
 <row>
  <id>29</id>
  <name>Elven Knight</name>
  <level>4</level>
  <type>Melee</type>
- <building_req>barracks 4</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>8</atk>
  <def>9</def>
@@ -548,14 +566,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>12</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>20</image48>
  </row>
 <row>
  <id>30</id>
  <name>Elven Champion</name>
  <level>5</level>
  <type>Melee</type>
- <building_req>barracks 5</building_req>
+ <building_req>52</building_req>
  <hp>3</hp>
  <atk>10</atk>
  <def>10</def>
@@ -577,14 +596,15 @@
  <max_size>0</max_size>
  <movement>8</movement>
  <value>15</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>21</image48>
  </row>
 <row>
  <id>31</id>
  <name>Elven Bowman</name>
  <level>1</level>
  <type>Ranged</type>
- <building_req>barracks 1</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>5</atk>
  <def>6</def>
@@ -606,14 +626,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>5</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>22</image48>
  </row>
 <row>
  <id>32</id>
  <name>Elven Archer</name>
  <level>2</level>
  <type>Ranged</type>
- <building_req>barracks 2</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>6</atk>
  <def>7</def>
@@ -635,14 +656,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>8</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>23</image48>
  </row>
 <row>
  <id>33</id>
  <name>Elven Ranger</name>
  <level>3</level>
  <type>Ranged</type>
- <building_req>barracks 3</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>7</atk>
  <def>8</def>
@@ -664,14 +686,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>10</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>24</image48>
  </row>
 <row>
  <id>34</id>
  <name>Elven Marksman</name>
  <level>4</level>
  <type>Ranged</type>
- <building_req>barracks 4</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>8</atk>
  <def>9</def>
@@ -693,14 +716,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>12</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>25</image48>
  </row>
 <row>
  <id>35</id>
  <name>Elven Sniper</name>
  <level>5</level>
  <type>Ranged</type>
- <building_req>barracks 5</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>10</atk>
  <def>10</def>
@@ -722,14 +746,15 @@
  <max_size>0</max_size>
  <movement>8</movement>
  <value>15</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>26</image48>
  </row>
 <row>
  <id>36</id>
  <name>Elven Acolyte</name>
  <level>1</level>
  <type>Magic</type>
- <building_req>temple 1</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>2</atk>
  <def>4</def>
@@ -751,14 +776,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>10</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>27</image48>
  </row>
 <row>
  <id>37</id>
  <name>Elven Adept</name>
  <level>2</level>
  <type>Magic</type>
- <building_req>temple 2</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>4</atk>
  <def>6</def>
@@ -780,14 +806,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>15</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>28</image48>
  </row>
 <row>
  <id>38</id>
  <name>Elven Mage</name>
  <level>3</level>
  <type>Magic</type>
- <building_req>temple 3</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>6</atk>
  <def>8</def>
@@ -809,14 +836,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>20</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>29</image48>
  </row>
 <row>
  <id>39</id>
  <name>Elven Archmage</name>
  <level>4</level>
  <type>Magic</type>
- <building_req>temple 4</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>8</atk>
  <def>10</def>
@@ -838,14 +866,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>25</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>30</image48>
  </row>
 <row>
  <id>40</id>
  <name>Elven Wizard</name>
  <level>5</level>
  <type>Magic</type>
- <building_req>temple 5</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>10</atk>
  <def>12</def>
@@ -867,14 +896,15 @@
  <max_size>0</max_size>
  <movement>8</movement>
  <value>30</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>31</image48>
  </row>
 <row>
  <id>41</id>
  <name>Goblin Skirmisher</name>
  <level>1</level>
  <type>Melee</type>
- <building_req>barracks 1</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>5</atk>
  <def>6</def>
@@ -896,14 +926,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>5</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>32</image48>
  </row>
 <row>
  <id>42</id>
  <name>Goblin Infantry</name>
  <level>2</level>
  <type>Melee</type>
- <building_req>barracks 2</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>6</atk>
  <def>7</def>
@@ -925,14 +956,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>8</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>33</image48>
  </row>
 <row>
  <id>43</id>
  <name>Goblin Heavy Infantry</name>
  <level>3</level>
  <type>Melee</type>
- <building_req>barracks 3</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>7</atk>
  <def>8</def>
@@ -954,14 +986,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>10</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>34</image48>
  </row>
 <row>
  <id>44</id>
  <name>Goblin Knight</name>
  <level>4</level>
  <type>Melee</type>
- <building_req>barracks 4</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>8</atk>
  <def>9</def>
@@ -983,14 +1016,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>12</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>35</image48>
  </row>
 <row>
  <id>45</id>
  <name>Goblin Champion</name>
  <level>5</level>
  <type>Melee</type>
- <building_req>barracks 5</building_req>
+ <building_req>52</building_req>
  <hp>3</hp>
  <atk>10</atk>
  <def>10</def>
@@ -1012,14 +1046,15 @@
  <max_size>0</max_size>
  <movement>8</movement>
  <value>15</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>36</image48>
  </row>
 <row>
  <id>46</id>
  <name>Goblin Bowman</name>
  <level>1</level>
  <type>Ranged</type>
- <building_req>barracks 1</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>5</atk>
  <def>6</def>
@@ -1041,14 +1076,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>5</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>37</image48>
  </row>
 <row>
  <id>47</id>
  <name>Goblin Archer</name>
  <level>2</level>
  <type>Ranged</type>
- <building_req>barracks 2</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>6</atk>
  <def>7</def>
@@ -1070,14 +1106,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>8</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>38</image48>
  </row>
 <row>
  <id>48</id>
  <name>Goblin Ranger</name>
  <level>3</level>
  <type>Ranged</type>
- <building_req>barracks 3</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>7</atk>
  <def>8</def>
@@ -1099,14 +1136,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>10</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>39</image48>
  </row>
 <row>
  <id>49</id>
  <name>Goblin Marksman</name>
  <level>4</level>
  <type>Ranged</type>
- <building_req>barracks 4</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>8</atk>
  <def>9</def>
@@ -1128,14 +1166,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>12</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>40</image48>
  </row>
 <row>
  <id>50</id>
  <name>Goblin Sniper</name>
  <level>5</level>
  <type>Ranged</type>
- <building_req>barracks 5</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>10</atk>
  <def>10</def>
@@ -1157,14 +1196,15 @@
  <max_size>0</max_size>
  <movement>8</movement>
  <value>15</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>41</image48>
  </row>
 <row>
  <id>51</id>
  <name>Goblin Acolyte</name>
  <level>1</level>
  <type>Magic</type>
- <building_req>temple 1</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>2</atk>
  <def>4</def>
@@ -1186,14 +1226,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>10</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>42</image48>
  </row>
 <row>
  <id>52</id>
  <name>Goblin Adept</name>
  <level>2</level>
  <type>Magic</type>
- <building_req>temple 2</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>4</atk>
  <def>6</def>
@@ -1215,14 +1256,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>15</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>43</image48>
  </row>
 <row>
  <id>53</id>
  <name>Goblin Mage</name>
  <level>3</level>
  <type>Magic</type>
- <building_req>temple 3</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>6</atk>
  <def>8</def>
@@ -1244,14 +1286,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>20</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>44</image48>
  </row>
 <row>
  <id>54</id>
  <name>Goblin Archmage</name>
  <level>4</level>
  <type>Magic</type>
- <building_req>temple 4</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>8</atk>
  <def>10</def>
@@ -1273,14 +1316,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>25</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>45</image48>
  </row>
 <row>
  <id>55</id>
  <name>Goblin Wizard</name>
  <level>5</level>
  <type>Magic</type>
- <building_req>temple 5</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>10</atk>
  <def>12</def>
@@ -1302,14 +1346,15 @@
  <max_size>0</max_size>
  <movement>8</movement>
  <value>30</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>46</image48>
  </row>
 <row>
  <id>56</id>
  <name>Dwarven Skirmisher</name>
  <level>1</level>
  <type>Melee</type>
- <building_req>barracks 1</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>5</atk>
  <def>6</def>
@@ -1331,14 +1376,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>5</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>47</image48>
  </row>
 <row>
  <id>57</id>
  <name>Dwarven Infantry</name>
  <level>2</level>
  <type>Melee</type>
- <building_req>barracks 2</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>6</atk>
  <def>7</def>
@@ -1360,14 +1406,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>8</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>48</image48>
  </row>
 <row>
  <id>58</id>
  <name>Dwarven Heavy Infantry</name>
  <level>3</level>
  <type>Melee</type>
- <building_req>barracks 3</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>7</atk>
  <def>8</def>
@@ -1389,14 +1436,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>10</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>49</image48>
  </row>
 <row>
  <id>59</id>
  <name>Dwarven Knight</name>
  <level>4</level>
  <type>Melee</type>
- <building_req>barracks 4</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>8</atk>
  <def>9</def>
@@ -1418,14 +1466,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>12</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>50</image48>
  </row>
 <row>
  <id>60</id>
  <name>Dwarven Champion</name>
  <level>5</level>
  <type>Melee</type>
- <building_req>barracks 5</building_req>
+ <building_req>52</building_req>
  <hp>3</hp>
  <atk>10</atk>
  <def>10</def>
@@ -1447,14 +1496,15 @@
  <max_size>0</max_size>
  <movement>8</movement>
  <value>15</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>51</image48>
  </row>
 <row>
  <id>61</id>
  <name>Dwarven Bowman</name>
  <level>1</level>
  <type>Ranged</type>
- <building_req>barracks 1</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>5</atk>
  <def>6</def>
@@ -1476,14 +1526,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>5</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>52</image48>
  </row>
 <row>
  <id>62</id>
  <name>Dwarven Archer</name>
  <level>2</level>
  <type>Ranged</type>
- <building_req>barracks 2</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>6</atk>
  <def>7</def>
@@ -1505,14 +1556,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>8</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>53</image48>
  </row>
 <row>
  <id>63</id>
  <name>Dwarven Ranger</name>
  <level>3</level>
  <type>Ranged</type>
- <building_req>barracks 3</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>7</atk>
  <def>8</def>
@@ -1534,14 +1586,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>10</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>54</image48>
  </row>
 <row>
  <id>64</id>
  <name>Dwarven Marksman</name>
  <level>4</level>
  <type>Ranged</type>
- <building_req>barracks 4</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>8</atk>
  <def>9</def>
@@ -1563,14 +1616,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>12</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>55</image48>
  </row>
 <row>
  <id>65</id>
  <name>Dwarven Sniper</name>
  <level>5</level>
  <type>Ranged</type>
- <building_req>barracks 5</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>10</atk>
  <def>10</def>
@@ -1592,14 +1646,15 @@
  <max_size>0</max_size>
  <movement>8</movement>
  <value>15</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>56</image48>
  </row>
 <row>
  <id>66</id>
  <name>Dwarven Acolyte</name>
  <level>1</level>
  <type>Magic</type>
- <building_req>temple 1</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>2</atk>
  <def>4</def>
@@ -1621,14 +1676,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>10</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>57</image48>
  </row>
 <row>
  <id>67</id>
  <name>Dwarven Adept</name>
  <level>2</level>
  <type>Magic</type>
- <building_req>temple 2</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>4</atk>
  <def>6</def>
@@ -1650,14 +1706,15 @@
  <max_size>0</max_size>
  <movement>10</movement>
  <value>15</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>58</image48>
  </row>
 <row>
  <id>68</id>
  <name>Dwarven Mage</name>
  <level>3</level>
  <type>Magic</type>
- <building_req>temple 3</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>6</atk>
  <def>8</def>
@@ -1679,14 +1736,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>20</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>59</image48>
  </row>
 <row>
  <id>69</id>
  <name>Dwarven Archmage</name>
  <level>4</level>
  <type>Magic</type>
- <building_req>temple 4</building_req>
+ <building_req>52</building_req>
  <hp>1</hp>
  <atk>8</atk>
  <def>10</def>
@@ -1708,14 +1766,15 @@
  <max_size>0</max_size>
  <movement>9</movement>
  <value>25</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>60</image48>
  </row>
 <row>
  <id>70</id>
  <name>Dwarven Wizard</name>
  <level>5</level>
  <type>Magic</type>
- <building_req>temple 5</building_req>
+ <building_req>52</building_req>
  <hp>2</hp>
  <atk>10</atk>
  <def>12</def>
@@ -1737,14 +1796,15 @@
  <max_size>0</max_size>
  <movement>8</movement>
  <value>30</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>61</image48>
  </row>
 <row>
  <id>71</id>
  <name>Siege Wagon</name>
  <level>1</level>
  <type>Wagon</type>
- <building_req>siege 1</building_req>
+ <building_req>52</building_req>
  <hp>100</hp>
  <atk>2</atk>
  <def>40</def>
@@ -1767,13 +1827,14 @@
  <movement>10</movement>
  <value>20</value>
  <notes>Able to transport siege weapons, ammo, and bombs.</notes>
+ <image48>62</image48>
  </row>
 <row>
  <id>72</id>
  <name>Supply Wagon</name>
  <level>1</level>
  <type>Wagon</type>
- <building_req>market 1</building_req>
+ <building_req>52</building_req>
  <hp>100</hp>
  <atk>2</atk>
  <def>40</def>
@@ -1796,13 +1857,14 @@
  <movement>10</movement>
  <value>20</value>
  <notes>Able to transport all other goods and items.</notes>
+ <image48>64</image48>
  </row>
 <row>
  <id>73</id>
  <name>Slave Wagon</name>
  <level>1</level>
  <type>Wagon</type>
- <building_req>market 1</building_req>
+ <building_req>52</building_req>
  <hp>100</hp>
  <atk>2</atk>
  <def>40</def>
@@ -1825,13 +1887,14 @@
  <movement>10</movement>
  <value>20</value>
  <notes>Able to transport citizens. Makes citizen slave caste.</notes>
+ <image48>66</image48>
  </row>
 <row>
  <id>74</id>
  <name>Galley</name>
  <level>1</level>
  <type>Rowing Ship</type>
- <building_req>shipyard 1</building_req>
+ <building_req>52</building_req>
  <hp>250</hp>
  <atk>50</atk>
  <def>50</def>
@@ -1853,14 +1916,15 @@
  <max_size>50</max_size>
  <movement>3</movement>
  <value>250</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>67</image48>
  </row>
 <row>
  <id>75</id>
  <name>Bireme</name>
  <level>2</level>
  <type>Rowing Ship</type>
- <building_req>shipyard 2</building_req>
+ <building_req>52</building_req>
  <hp>500</hp>
  <atk>80</atk>
  <def>80</def>
@@ -1882,14 +1946,15 @@
  <max_size>100</max_size>
  <movement>3</movement>
  <value>500</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>68</image48>
  </row>
 <row>
  <id>76</id>
  <name>Trireme</name>
  <level>3</level>
  <type>Rowing Ship</type>
- <building_req>shipyard 3</building_req>
+ <building_req>52</building_req>
  <hp>1000</hp>
  <atk>100</atk>
  <def>100</def>
@@ -1911,14 +1976,15 @@
  <max_size>200</max_size>
  <movement>4</movement>
  <value>1000</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>69</image48>
  </row>
 <row>
  <id>77</id>
  <name>Sloop</name>
  <level>1</level>
  <type>Sailing Ship</type>
- <building_req>shipyard 1</building_req>
+ <building_req>52</building_req>
  <hp>250</hp>
  <atk>50</atk>
  <def>50</def>
@@ -1940,14 +2006,15 @@
  <max_size>50</max_size>
  <movement>3</movement>
  <value>250</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>70</image48>
  </row>
 <row>
  <id>78</id>
  <name>Brig</name>
  <level>2</level>
  <type>Sailing Ship</type>
- <building_req>shipyard 2</building_req>
+ <building_req>52</building_req>
  <hp>500</hp>
  <atk>80</atk>
  <def>80</def>
@@ -1969,14 +2036,15 @@
  <max_size>100</max_size>
  <movement>3</movement>
  <value>500</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>71</image48>
  </row>
 <row>
  <id>79</id>
  <name>Corvette</name>
  <level>3</level>
  <type>Sailing Ship</type>
- <building_req>shipyard 3</building_req>
+ <building_req>52</building_req>
  <hp>1000</hp>
  <atk>100</atk>
  <def>100</def>
@@ -1998,14 +2066,15 @@
  <max_size>200</max_size>
  <movement>4</movement>
  <value>1000</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>72</image48>
  </row>
 <row>
  <id>80</id>
  <name>Frigate</name>
  <level>4</level>
  <type>Sailing Ship</type>
- <building_req>shipyard 4</building_req>
+ <building_req>52</building_req>
  <hp>2000</hp>
  <atk>150</atk>
  <def>150</def>
@@ -2027,14 +2096,15 @@
  <max_size>300</max_size>
  <movement>4</movement>
  <value>2000</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>73</image48>
  </row>
 <row>
  <id>81</id>
  <name>Ship of the Line</name>
  <level>5</level>
  <type>Sailing Ship</type>
- <building_req>shipyard 5</building_req>
+ <building_req>52</building_req>
  <hp>4000</hp>
  <atk>200</atk>
  <def>200</def>
@@ -2056,14 +2126,15 @@
  <max_size>400</max_size>
  <movement>5</movement>
  <value>4000</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>74</image48>
  </row>
 <row>
  <id>82</id>
  <name>Steamboat</name>
  <level>1</level>
  <type>Steam Ship</type>
- <building_req>shipyard 3</building_req>
+ <building_req>52</building_req>
  <hp>2000</hp>
  <atk>200</atk>
  <def>200</def>
@@ -2085,14 +2156,15 @@
  <max_size>300</max_size>
  <movement>3</movement>
  <value>2000</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>75</image48>
  </row>
 <row>
  <id>83</id>
  <name>Ironclad</name>
  <level>2</level>
  <type>Steam Ship</type>
- <building_req>shipyard 4</building_req>
+ <building_req>52</building_req>
  <hp>4000</hp>
  <atk>250</atk>
  <def>250</def>
@@ -2114,14 +2186,15 @@
  <max_size>400</max_size>
  <movement>3</movement>
  <value>4000</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>76</image48>
  </row>
 <row>
  <id>84</id>
  <name>Heavy Ironclad</name>
  <level>3</level>
  <type>Steam Ship</type>
- <building_req>shipyard 5</building_req>
+ <building_req>52</building_req>
  <hp>8000</hp>
  <atk>300</atk>
  <def>300</def>
@@ -2143,14 +2216,15 @@
  <max_size>600</max_size>
  <movement>4</movement>
  <value>8000</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>77</image48>
  </row>
 <row>
  <id>85</id>
  <name>Cloud Skiff</name>
  <level>1</level>
  <type>Skysail Airship</type>
- <building_req>airstrip 1</building_req>
+ <building_req>52</building_req>
  <hp>500</hp>
  <atk>100</atk>
  <def>100</def>
@@ -2172,14 +2246,15 @@
  <max_size>100</max_size>
  <movement>2</movement>
  <value>500</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>78</image48>
  </row>
 <row>
  <id>86</id>
  <name>Zeppelin</name>
  <level>2</level>
  <type>Skysail Airship</type>
- <building_req>airstrip 2</building_req>
+ <building_req>52</building_req>
  <hp>1000</hp>
  <atk>150</atk>
  <def>150</def>
@@ -2201,14 +2276,15 @@
  <max_size>200</max_size>
  <movement>2</movement>
  <value>1000</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>79</image48>
  </row>
 <row>
  <id>87</id>
  <name>Hulk</name>
  <level>3</level>
  <type>Skysail Airship</type>
- <building_req>airstrip 3</building_req>
+ <building_req>52</building_req>
  <hp>2000</hp>
  <atk>200</atk>
  <def>200</def>
@@ -2230,14 +2306,15 @@
  <max_size>300</max_size>
  <movement>3</movement>
  <value>2000</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>80</image48>
  </row>
 <row>
  <id>88</id>
  <name>Cloud Corvette</name>
  <level>4</level>
  <type>Skysail Airship</type>
- <building_req>airstrip 4</building_req>
+ <building_req>52</building_req>
  <hp>4000</hp>
  <atk>250</atk>
  <def>250</def>
@@ -2259,14 +2336,15 @@
  <max_size>400</max_size>
  <movement>3</movement>
  <value>4000</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>81</image48>
  </row>
 <row>
  <id>89</id>
  <name>Sky Frigate</name>
  <level>5</level>
  <type>Skysail Airship</type>
- <building_req>airstrip 5</building_req>
+ <building_req>52</building_req>
  <hp>8000</hp>
  <atk>300</atk>
  <def>300</def>
@@ -2288,14 +2366,15 @@
  <max_size>600</max_size>
  <movement>4</movement>
  <value>8000</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>82</image48>
  </row>
 <row>
  <id>90</id>
  <name>Cruiser</name>
  <level>1</level>
  <type>Lifter Airship</type>
- <building_req>airstrip 1</building_req>
+ <building_req>52</building_req>
  <hp>500</hp>
  <atk>100</atk>
  <def>100</def>
@@ -2317,14 +2396,15 @@
  <max_size>100</max_size>
  <movement>2</movement>
  <value>500</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>83</image48>
  </row>
 <row>
  <id>91</id>
  <name>Battlecruiser</name>
  <level>2</level>
  <type>Lifter Airship</type>
- <building_req>airstrip 2</building_req>
+ <building_req>52</building_req>
  <hp>1000</hp>
  <atk>150</atk>
  <def>150</def>
@@ -2346,14 +2426,15 @@
  <max_size>200</max_size>
  <movement>2</movement>
  <value>1000</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>84</image48>
  </row>
 <row>
  <id>92</id>
  <name>Destroyer</name>
  <level>3</level>
  <type>Lifter Airship</type>
- <building_req>airstrip 3</building_req>
+ <building_req>52</building_req>
  <hp>2000</hp>
  <atk>200</atk>
  <def>200</def>
@@ -2375,14 +2456,15 @@
  <max_size>300</max_size>
  <movement>3</movement>
  <value>2000</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>85</image48>
  </row>
 <row>
- <id>92</id>
+ <id>93</id>
  <name>Battleship</name>
  <level>4</level>
  <type>Lifter Airship</type>
- <building_req>airstrip 4</building_req>
+ <building_req>52</building_req>
  <hp>4000</hp>
  <atk>250</atk>
  <def>250</def>
@@ -2404,14 +2486,15 @@
  <max_size>400</max_size>
  <movement>3</movement>
  <value>4000</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>86</image48>
  </row>
 <row>
  <id>94</id>
  <name>Dreadnaught</name>
  <level>5</level>
  <type>Lifter Airship</type>
- <building_req>airstrip 5</building_req>
+ <building_req>52</building_req>
  <hp>8000</hp>
  <atk>300</atk>
  <def>300</def>
@@ -2433,6 +2516,547 @@
  <max_size>600</max_size>
  <movement>4</movement>
  <value>8000</value>
- <notes></notes>
+ <notes>none</notes>
+ <image48>87</image48>
+ </row>
+<row>
+ <id>95</id>
+ <name>Skeleton Swordsman</name>
+ <level>1</level>
+ <type>Slash</type>
+ <building_req>0</building_req>
+ <hp>1</hp>
+ <atk>5</atk>
+ <def>6</def>
+ <range>1</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>20</def_size>
+ <min_size>10</min_size>
+ <max_size>30</max_size>
+ <movement>10</movement>
+ <value>50</value>
+ <notes>none</notes>
+ <image48>102</image48>
+ </row>
+<row>
+ <id>96</id>
+ <name>Skeleton Spearman</name>
+ <level>1</level>
+ <type>Pierce</type>
+ <building_req>0</building_req>
+ <hp>1</hp>
+ <atk>5</atk>
+ <def>6</def>
+ <range>1</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>20</def_size>
+ <min_size>10</min_size>
+ <max_size>30</max_size>
+ <movement>10</movement>
+ <value>50</value>
+ <notes>none</notes>
+ <image48>103</image48>
+ </row>
+<row>
+ <id>97</id>
+ <name>Skeleton Archer</name>
+ <level>1</level>
+ <type>Ranged</type>
+ <building_req>0</building_req>
+ <hp>1</hp>
+ <atk>5</atk>
+ <def>6</def>
+ <range>3</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>20</def_size>
+ <min_size>10</min_size>
+ <max_size>30</max_size>
+ <movement>10</movement>
+ <value>50</value>
+ <notes>none</notes>
+ <image48>104</image48>
+ </row>
+<row>
+ <id>98</id>
+ <name>Zombie</name>
+ <level>2</level>
+ <type>Slash</type>
+ <building_req>0</building_req>
+ <hp>1</hp>
+ <atk>6</atk>
+ <def>7</def>
+ <range>1</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>15</def_size>
+ <min_size>10</min_size>
+ <max_size>20</max_size>
+ <movement>10</movement>
+ <value>150</value>
+ <notes>none</notes>
+ <image48>105</image48>
+ </row>
+<row>
+ <id>99</id>
+ <name>Ghoul</name>
+ <level>3</level>
+ <type>Slash</type>
+ <building_req>0</building_req>
+ <hp>2</hp>
+ <atk>7</atk>
+ <def>8</def>
+ <range>1</range>
+ <speed>5</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>10</def_size>
+ <min_size>5</min_size>
+ <max_size>15</max_size>
+ <movement>9</movement>
+ <value>250</value>
+ <notes>none</notes>
+ <image48>106</image48>
+ </row>
+<row>
+ <id>100</id>
+ <name>Barbarian</name>
+ <level>1</level>
+ <type>Bludgeon</type>
+ <building_req>0</building_req>
+ <hp>1</hp>
+ <atk>2</atk>
+ <def>3</def>
+ <range>1</range>
+ <speed>7</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>20</def_size>
+ <min_size>10</min_size>
+ <max_size>30</max_size>
+ <movement>10</movement>
+ <value>50</value>
+ <notes>none</notes>
+ <image48>107</image48>
+ </row>
+<row>
+ <id>101</id>
+ <name>Ravager</name>
+ <level>3</level>
+ <type>Bludgeon</type>
+ <building_req>0</building_req>
+ <hp>2</hp>
+ <atk>4</atk>
+ <def>3</def>
+ <range>1</range>
+ <speed>5</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>10</def_size>
+ <min_size>5</min_size>
+ <max_size>15</max_size>
+ <movement>10</movement>
+ <value>250</value>
+ <notes>none</notes>
+ <image48>108</image48>
+ </row>
+<row>
+ <id>102</id>
+ <name>Giant</name>
+ <level>5</level>
+ <type>Bludgeon</type>
+ <building_req>0</building_req>
+ <hp>25</hp>
+ <atk>30</atk>
+ <def>60</def>
+ <range>1</range>
+ <speed>4</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>2</def_size>
+ <min_size>1</min_size>
+ <max_size>5</max_size>
+ <movement>8</movement>
+ <value>1000</value>
+ <notes>none</notes>
+ <image48>124</image48>
+ </row>
+<row>
+ <id>103</id>
+ <name>Imp</name>
+ <level>1</level>
+ <type>Ranged</type>
+ <building_req>0</building_req>
+ <hp>1</hp>
+ <atk>5</atk>
+ <def>6</def>
+ <range>2</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>12</def_size>
+ <min_size>9</min_size>
+ <max_size>15</max_size>
+ <movement>10</movement>
+ <value>50</value>
+ <notes>none</notes>
+ <image48>109</image48>
+ </row>
+<row>
+ <id>104</id>
+ <name>Sludge Hound</name>
+ <level>2</level>
+ <type>Slash</type>
+ <building_req>0</building_req>
+ <hp>1</hp>
+ <atk>6</atk>
+ <def>7</def>
+ <range>2</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>9</def_size>
+ <min_size>6</min_size>
+ <max_size>12</max_size>
+ <movement>10</movement>
+ <value>150</value>
+ <notes>none</notes>
+ <image48>110</image48>
+ </row>
+<row>
+ <id>105</id>
+ <name>Naga</name>
+ <level>3</level>
+ <type>Ranged</type>
+ <building_req>0</building_req>
+ <hp>2</hp>
+ <atk>7</atk>
+ <def>8</def>
+ <range>3</range>
+ <speed>5</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>6</def_size>
+ <min_size>3</min_size>
+ <max_size>9</max_size>
+ <movement>9</movement>
+ <value>250</value>
+ <notes>none</notes>
+ <image48>111</image48>
+ </row>
+<row>
+ <id>106</id>
+ <name>Demon</name>
+ <level>4</level>
+ <type>Ranged</type>
+ <building_req>0</building_req>
+ <hp>5</hp>
+ <atk>8</atk>
+ <def>9</def>
+ <range>3</range>
+ <speed>5</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>3</def_size>
+ <min_size>1</min_size>
+ <max_size>6</max_size>
+ <movement>6</movement>
+ <value>500</value>
+ <notes>none</notes>
+ <image48>112</image48>
+ </row>
+<row>
+ <id>107</id>
+ <name>Dragon</name>
+ <level>5</level>
+ <type>Ranged</type>
+ <building_req>0</building_req>
+ <hp>25</hp>
+ <atk>60</atk>
+ <def>30</def>
+ <range>4</range>
+ <speed>4</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>1</def_size>
+ <min_size>1</min_size>
+ <max_size>3</max_size>
+ <movement>3</movement>
+ <value>1000</value>
+ <notes>none</notes>
+ <image48>124</image48>
+ </row>
+<row>
+ <id>108</id>
+ <name>Haunting</name>
+ <level>1</level>
+ <type>Magic</type>
+ <building_req>0</building_req>
+ <hp>1</hp>
+ <atk>2</atk>
+ <def>4</def>
+ <range>2</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>12</def_size>
+ <min_size>9</min_size>
+ <max_size>15</max_size>
+ <movement>10</movement>
+ <value>50</value>
+ <notes>none</notes>
+ <image48>113</image48>
+ </row>
+<row>
+ <id>109</id>
+ <name>Vampire</name>
+ <level>2</level>
+ <type>Magic</type>
+ <building_req>0</building_req>
+ <hp>2</hp>
+ <atk>4</atk>
+ <def>6</def>
+ <range>2</range>
+ <speed>6</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>9</def_size>
+ <min_size>6</min_size>
+ <max_size>12</max_size>
+ <movement>10</movement>
+ <value>150</value>
+ <notes>none</notes>
+ <image48>114</image48>
+ </row>
+<row>
+ <id>110</id>
+ <name>Oculus</name>
+ <level>3</level>
+ <type>Magic</type>
+ <building_req>0</building_req>
+ <hp>3</hp>
+ <atk>6</atk>
+ <def>8</def>
+ <range>3</range>
+ <speed>5</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>6</def_size>
+ <min_size>3</min_size>
+ <max_size>9</max_size>
+ <movement>9</movement>
+ <value>250</value>
+ <notes>none</notes>
+ <image48>115</image48>
+ </row>
+<row>
+ <id>111</id>
+ <name>Wraith</name>
+ <level>4</level>
+ <type>Magic</type>
+ <building_req>0</building_req>
+ <hp>5</hp>
+ <atk>8</atk>
+ <def>10</def>
+ <range>3</range>
+ <speed>5</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>3</def_size>
+ <min_size>1</min_size>
+ <max_size>6</max_size>
+ <movement>9</movement>
+ <value>500</value>
+ <notes>none</notes>
+ <image48></image48>
+ </row>
+<row>
+ <id>112</id>
+ <name>Lich</name>
+ <level>5</level>
+ <type>Magic</type>
+ <building_req>0</building_req>
+ <hp>10</hp>
+ <atk>50</atk>
+ <def>50</def>
+ <range>8</range>
+ <speed>4</speed>
+ <acc>0</acc>
+ <eva>0</eva>
+ <effect_amount>0</effect_amount>
+ <effect_type>none</effect_type>
+ <production_cost>0</production_cost>
+ <gold_cost>0</gold_cost>
+ <material_amount>none</material_amount>
+ <material_category>none</material_category>
+ <upkeep>0</upkeep>
+ <food>0</food>
+ <capacity>0</capacity>
+ <def_size>1</def_size>
+ <min_size>1</min_size>
+ <max_size>3</max_size>
+ <movement>6</movement>
+ <value>1000</value>
+ <notes>none</notes>
+ <image48></image48>
  </row>
 </unit_template>

@@ -1,1 +1,1 @@
-﻿package net.packet {	public class UnitPacket implements IPacket	{		public var id:int;		public var recipe_id:int;		public var size:int;		public var name:String;		public var gear:Array;				public var items:Array;				public function UnitPacket() 		{		}			}	}
+﻿package net.packet {	public class UnitPacket implements IPacket	{		public var id:int;		public var template_id:int;		public var size:int;		public var name:String;		public var gear:Array;				public var items:Array;				public function UnitPacket() 		{		}			}	}
