@@ -1,15 +1,1 @@
-﻿package net.packet  
-{
-	public class BattleDamage implements IPacket
-	{
-		public var battleId:int;
-		public var sourceId:int;
-		public var targetId:int;
-		public var damage:int;
-		
-		public function BattleDamage() : void
-		{		
-		}
-	}
-	
-}
+﻿package net.packet  {	public class BattleDamage implements IPacket	{		public var battleId:int;		public var sourceArmyId:int;		public var sourceUnitId:int;		public var targetArmyId:int;		public var targetUnitId:int;		public var damage:int;				public function BattleDamage() : void		{				}	}	}
