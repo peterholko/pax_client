@@ -1,0 +1,1 @@
+﻿package ui {		import flash.display.MovieClip;			public class HeroCover extends MovieClip 	{		public var inscribeButton:ClaimButton;				public function HeroCover() {			// constructor code		}	}	}

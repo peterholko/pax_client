@@ -1,0 +1,1 @@
+﻿package net.packet {		public class CityUpdateTax implements IPacket 	{		public var cityId:int;		public var taxes:Array;		public function CityUpdateTax() 		{		}	}	}

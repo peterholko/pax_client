@@ -1,0 +1,1 @@
+﻿package ui {		import flash.display.MovieClip;			public class HeroBuilder extends MovieClip 	{		public var cover:HeroCover;						public function HeroBuilder() 		{			// constructor code		}				public function showPanel() : void		{			cover.visible = true;		}	}	}
