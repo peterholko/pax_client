@@ -1,1 +1,1 @@
-﻿package ui {		import flash.display.MovieClip;			public class SmallRightArrow extends MovieClip 	{						public function SmallRightArrow() 		{		}	}	}
+﻿package ui {		import flash.display.MovieClip;			public class HeroBuilder extends MovieClip 	{				public function HeroBuilder() 		{			// constructor code		}	}	}
